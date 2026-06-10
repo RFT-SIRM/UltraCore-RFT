@@ -1,174 +1,49 @@
-# UltraCore RFT
-## Unified Deterministic Architecture for Runtime Stability
+# UltraCore Rift & RFT Command Console
 
-<p align="center">
-  <img src="./rft-overview.png" width="100%">
-</p>
+**Live Operational Interface of Reality Fractal Theory**
 
----
-
-# Overview
-
-UltraCore RFT (Reality Fractal Theory) is a deterministic systems architecture focused on runtime stability, invariant preservation, execution topology, and high-concurrency distributed computation.
-
-The project explores how complex execution environments can maintain structural coherence under extreme load conditions through deterministic scheduling, memory topology control, invariant-locked execution, and anti-entropy runtime coordination.
-
-Unlike conventional distributed systems that rely heavily on probabilistic conflict resolution and reactive execution models, RFT treats execution as a topological coordination problem.
-
-Inside RFT:
-
-- schedulers become topology coordinators,
-- runtime state becomes an evolving manifold,
-- memory regions become coherence fields,
-- execution graphs become deterministic structures,
-- and validation becomes invariant verification.
+**Research and Engineering Platform for Deterministic Invariant Systems, where UltraCore Rift is the first practical implementation.**
 
 ---
 
-# Core Principle
+### Overview
 
-The central principle of UltraCore RFT is:
+The **UltraCore Rift Command Console** is a real-time interactive visualization system built for the **UltraCore Rift** architecture — the first practical embodiment of **Reality Fractal Theory (RFT)** and the **Stable Invariant Rift Model (SIRM)**.
 
-> Stable execution emerges from invariant preservation across time, memory, and state transitions.
+This console allows observation of how mathematical invariants, negative entropy mechanisms, and deterministic execution work together in a unified living system.
 
-The framework attempts to minimize:
+### Documented Core Interface Blocks
 
-- entropy amplification,
-- scheduler turbulence,
-- execution fragmentation,
-- state divergence,
-- writable permission leakage,
-- and recursive instability under nested execution.
+**1. Command Center**  
+Central operational hub. Displays overall system coherence, global field pressure, entropy trends, and key health metrics.
 
----
+**2. UltraCore Rift Engine**  
+Visualization of the core execution engine on Solana. Shows transaction flow, scheduler activity, memory management, and deterministic state transitions.
 
-# Stable Invariant Rift Model (SIRM)
-
-At the center of the architecture lies:
-
-## SIRM — Stable Invariant Rift Model
-
-SIRM defines a deterministic invariant-preservation framework governing:
-
-- runtime coherence,
-- execution stability,
-- scheduler synchronization,
-- distributed validation,
-- and economic state conservation.
-
-The primary invariant structure is represented as:
-
-```
-TOTAL_SUPPLY = TOTAL_BASE_SUM + (GLOBAL_FIELD × P)
-```
-This invariant acts as a persistent conservation constraint across execution cycles.
-Architecture Layers
-1. Protocol Core
-The protocol layer governs:
-temporal state coherence,
-adaptive scheduling,
-deterministic packet prioritization,
-distributed incentive balancing,
-and pre-runtime execution filtering.
-The system introduces topology-aware pre-filtering capable of reducing execution instability before transaction dispatch.
-2. Solana Execution Layer
-The Solana runtime subsystem focuses on:
-dynamic memory region management,
-per-frame writable permission rollback,
-deterministic batch execution,
-Trusted Batch Fast-Path processing,
-and zero-copy execution mechanics.
-The objective is to preserve runtime coherence while reducing scheduler overhead and lock contention.
-3. RFT Mathematical Framework
-The mathematical layer introduces structural runtime interpretations of several topological and analytical operators.
-These include:
-P vs NP asymmetry,
-Riemann state-spacing control,
-Navier-Stokes runtime smoothness,
-Yang-Mills invariant floors,
-Hodge materialization structures,
-Birch–Swinnerton-Dyer relational identity,
-and Poincaré topology smoothing.
-Inside RFT these operators are treated not as abstract mathematics, but as deterministic runtime coordination mechanisms.
-Current Research Areas
-UltraCore RFT is currently focused on:
-deterministic runtime scheduling,
-execution graph topology,
-memory coherence systems,
-distributed execution stability,
-runtime entropy minimization,
-invariant-preserving architectures,
-DAG-based coordination,
-deterministic validation systems,
-and high-load runtime simulation.
-Repository Structure
-Main Documents
-RFT Overview
-Core architectural overview of UltraCore RFT.
-RFT Mathematical Foundations
-Structural interpretation of 7 Millennium Operators governing deterministic runtime stability.
-RFT Development Strategy & Roadmap
-Parallel development architecture of the RFT ecosystem.
-Long-Term Objective
-The long-term objective of UltraCore RFT is the development of:
-fully deterministic runtime environments,
-invariant-preserving distributed systems,
-topology-aware execution architectures,
-anti-entropy coordination frameworks,
-and stable high-concurrency computational ecosystems.
-Research Support
-<p align="center"> <img src="./research-nodes.png" width="100%"> </p>
-UltraCore RFT operates as an independent research laboratory.
-Support contributions directly fund:
-runtime research,
-infrastructure expansion,
-distributed systems testing,
-experimental simulations,
-hardware resources,
-validation environments,
-and independent systems development.
+**3. SIRM Core**  
+The mathematical heart of the system. Displays the primary invariant:
+```math
+total_supply = total_base_sum + (global_field × p)
 
 
-# Contribution Addresses
+and related parameters (NEG_E, dust accumulator, debt limits).
+4. Invariant Reactor
+Live visualization of anti-entropy mechanisms and LCF-Reactor. Shows active compression of system disorder.
+5. Millennium Problems Laboratory
+Research module demonstrating how RFT operators map and model the Millennium Problems.
+6. Cognitive Processor & Topology View
+Visualization of cognitive processes and topological state evolution.
+7. Execution Pipeline
+Animated real-time pipeline showing pre-filtering, coordination, and invariant verification.
 
-## Solana (SOL)
+Technology & Philosophy
+	•	UltraCore Rift — deterministic economic and execution engine on Solana SVM.
+	•	RFT (Reality Fractal Theory) — overarching framework treating code, mathematics, physics, and economics as a single temporal topology.
+	•	SIRM — Stable Invariant Rift Model enforcing mathematical laws.
+	•	neg_E — Negative Entropy for active stabilization.
+	•	Intent_I — Primary operator of directed system evolution.
+Linked interactive system console runtime for live invariant validation tracking.
 
-```
-9923eHhdL246uWURV4Sp7CSU8sSJb5ZvMGkXgbstgneA
-```
-
-## Bitcoin (BTC)
-
-```
-bc1quuc6s3la2rgfhux4anrg0f9v3dr34888yraesg
-```
-
-## Ethereum (ETH)
-
-```
-0xd816F421e3A6272712b1B8eFC1e88e45f8800B4f
-```
-
----
-
-# Open Collaboration
-
-The project remains open to collaboration with:
-
-- runtime engineers,
-- distributed systems researchers,
-- Solana infrastructure developers,
-- mathematicians,
-- physicists,
-- systems architects,
-- and complex systems researchers.
-
-UltraCore RFT evolves through:
-
-- iterative implementation,
-- empirical validation,
-- runtime experimentation,
-- deterministic systems research,
-- and continuous architectural refinement.
-
----
+Live Demo
+Open UltraCore Rift Command Console →
+Main Repository: UltraCore-RFT
