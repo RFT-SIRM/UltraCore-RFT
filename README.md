@@ -46,4 +46,4 @@ Animated real-time pipeline showing pre-filtering, coordination, and invariant v
 Linked interactive system console runtime for live invariant validation tracking.
 
 ### Live Demo
-Open UltraCore Rift Command Console →  https://ai.studio/apps/4bef
+Open UltraCore Rift Command Console →  https://aistudio.google.com/u/0/apps/4beff45d-9405-4a6c-a002-1044d725476a?showPreview=true&showAssistant=true 
