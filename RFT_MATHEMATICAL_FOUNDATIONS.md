@@ -1,262 +1,131 @@
 
 # RFT Mathematical Foundations
 
-<p align="center">
-  <img src="./rft-math-foundations.png" width="100%">
-</p>
+UltraCore RFT defines a deterministic execution framework for distributed runtime systems under high concurrency. This document explains how seven mathematical operators translate into Solana runtime mechanics, memory topology, deterministic scheduling, and execution coherence.
 
-## 7 Millennium Operators Governing Deterministic Runtime Stability
+## Runtime core
 
-UltraCore RFT introduces a deterministic execution framework for distributed runtime systems operating under high concurrency conditions.
+The Solana SVM runtime is treated as a deterministic substrate coordinated by RFT topology logic. Every transaction modifies execution geometry, and the goal is to preserve coherent state evolution without entropy amplification or instability.
 
-Unlike probabilistic execution architectures that rely on reactive conflict resolution, RFT models execution as a topological coordination process where runtime stability emerges from invariant preservation across memory, state transitions, and scheduler topology.
+## Seven runtime operators
 
-The purpose of this document is to explain how seven mathematical operators are projected into practical Solana runtime mechanics, memory topology control, deterministic scheduling, and execution coherence systems.
+### 1. P vs NP asymmetry
 
-The operators described below are not treated as purely abstract mathematical entities.
+**Scheduling path generation vs invariant verification.**
 
-Inside RFT they become structural runtime metaphors governing:
+This operator models the difference between constructing a conflict-free execution topology and verifying deterministic invariants after execution.
 
-- scheduler coordination,
-- execution topology,
-- invariant preservation,
-- memory coherence,
-- CPI entropy control,
-- and deterministic state evolution.
+In practice, generating optimal dependency graphs can be expensive, while invariant checks are comparatively lightweight. RFT separates:
 
----
+- expensive topology analysis before execution
+- efficient invariant validation during or after execution
 
-# Runtime Core
+This supports:
 
-At the center of the architecture lies the Solana SVM Runtime operating as a deterministic execution substrate coordinated by RFT topology logic.
+- pre-filtered fast-path execution
+- deterministic DAG routing
+- conflict-domain separation
+- low-overhead runtime verification
 
-The runtime environment is treated as a continuously evolving state manifold where every transaction modifies execution geometry.
+### 2. Poincaré conjecture
 
-The primary objective is to preserve coherent state evolution under extreme parallelism without introducing entropy amplification or execution instability.
+**State manifold smoothing.**
 
----
+Transaction contention creates singularities in execution state-space: deadlocks, cyclic dependencies, bottlenecks, and fragmentation.
 
-# 1. P vs NP Asymmetry
+RFT interprets Ricci Flow as a runtime smoothing mechanism that reduces topological irregularities until the execution manifold converges toward a stable structure.
 
-## Scheduling Path Generation vs Invariant Verification
+This influences:
 
-The P vs NP operator models the asymmetry between:
+- scheduler graph simplification
+- dependency unfolding
+- execution path stabilization
+- deterministic queue restructuring
 
-- constructing a conflict-free execution topology,
-- and verifying deterministic invariants after execution.
+### 3. Riemann hypothesis
 
-In practical Solana runtime conditions:
+**Deterministic state spacing.**
 
-- generating optimal dependency graphs may approach exponential complexity,
-- while invariant verification can remain near constant-time.
+Nested CPI execution introduces high-frequency state perturbations that can destabilize runtime determinism.
 
-RFT leverages this asymmetry by separating:
+RFT models these perturbations as entropy waves and seeks predictable state intervals between execution transitions.
 
-1. expensive pre-execution topology construction,
-2. lightweight runtime invariant verification.
+This operator supports:
 
-This creates the foundation for:
+- CPI entropy regulation
+- deterministic state intervals
+- oscillation damping
+- controlled runtime propagation
 
-- Trusted Batch Fast-Path execution,
-- deterministic DAG routing,
-- scheduler pre-filtering,
-- and low-overhead runtime validation.
+### 4. Navier-Stokes smoothness
 
-### Runtime Projection
+**Dynamic memory region hydrodynamics.**
 
-RFT introduces:
+Writable account regions, stack frames, and execution buffers behave like fluid flows under high concurrency. Without constraints, this can cause memory freezes, region starvation, scheduler turbulence, or execution collapse.
 
-- DAG dependency pre-analysis,
-- transaction topology classification,
-- conflict-domain separation,
-- and invariant-locked execution batches.
-
-This allows execution to bypass repeated reactive lock contention checks during runtime.
-
----
-
-# 2. Poincaré Conjecture
-
-## State Manifold Smoothing
-
-The Poincaré operator governs topological coherence inside execution state-space.
-
-In distributed runtimes, transaction contention creates singularities:
-
-- deadlocks,
-- cyclic dependencies,
-- scheduler bottlenecks,
-- and execution fragmentation.
-
-RFT interprets Ricci Flow as a runtime smoothing mechanism.
-
-The objective is to continuously reduce topological irregularities until the execution manifold converges into a stable coherent structure.
-
-### Runtime Projection
-
-This operator influences:
-
-- scheduler graph simplification,
-- execution path stabilization,
-- dependency manifold flattening,
-- and deterministic queue restructuring.
-
-Within UltraCore RFT:
-
-RicciFlow → Stable Execution Topology
-
-The runtime continuously attempts to eliminate unstable execution curvature before transaction dispatch.
-
----
-
-# 3. Riemann Hypothesis
-
-## Deterministic State Spacing
-
-The Riemann operator governs ordered state progression and entropy control.
-
-Nested CPI execution introduces high-frequency state perturbations capable of destabilizing runtime determinism.
-
-RFT models these perturbations as entropy waves propagating through execution space.
-
-The objective is to maintain predictable state spacing between execution transitions.
-
-### Runtime Projection
-
-This operator controls:
-
-- CPI entropy regulation,
-- deterministic state intervals,
-- execution oscillation damping,
-- and predictable runtime propagation.
-
-The runtime attempts to prevent chaotic state divergence under recursive execution chains.
-
----
-
-# 4. Navier-Stokes Smoothness
-
-## Dynamic Memory Region Hydrodynamics
-
-The Navier-Stokes operator governs transaction flow stability inside dynamic memory regions.
-
-Under high concurrency:
-
-- writable account regions,
-- stack frames,
-- and execution buffers
-
-behave similarly to turbulent hydrodynamic systems.
-
-Unbounded execution velocity may produce:
-
-- memory freezes,
-- region starvation,
-- scheduler turbulence,
-- and execution collapse.
-
-### Runtime Projection
-
-RFT introduces bounded execution velocity constraints across memory topology.
+RFT introduces bounded execution velocity across memory topology to preserve smooth runtime flow.
 
 This includes:
 
-- writable region stabilization,
-- bounded CPI propagation,
-- dynamic region flow regulation,
-- and freeze-prevention controls.
+- writable region stabilization
+- bounded CPI propagation
+- flow regulation
+- freeze-prevention controls
 
-The objective is to preserve smooth runtime flow under heavy execution pressure.
+### 5. Yang-Mills gap
 
----
+**Invariant floor security.**
 
-# 5. Yang-Mills Gap
+This operator represents a minimum execution energy barrier that supports runtime stability.
 
-## Invariant Floor Security
+In distributed economic systems, unconstrained execution can lead to balance drift, invalid state changes, or coherence collapse. RFT uses a positive invariant floor as a security threshold.
 
-The Yang-Mills operator defines the minimum invariant energy barrier required for runtime stability.
+It governs:
 
-In distributed economic systems, unconstrained execution may introduce balance drift, invalid state transitions, or coherence collapse.
+- invariant-locked balance systems
+- economic state preservation
+- anti-drift execution logic
+- deterministic security floors
 
-RFT introduces an invariant floor:
+### 6. Hodge conjecture
 
-StableGap_m > 0
+**Topological materialization.**
 
-This acts as a permanent execution-energy threshold below which runtime coherence cannot collapse.
+Abstract execution intent, transaction topology, and execution graphs must eventually materialize into concrete runtime state.
 
-### Runtime Projection
-
-This operator governs:
-
-- invariant-locked balance systems,
-- economic state preservation,
-- anti-drift execution logic,
-- and deterministic security floors.
-
-The runtime continuously verifies that execution remains above the minimum coherence threshold.
-
----
-
-# 6. Hodge Conjecture
-
-## Topological Materialization
-
-The Hodge operator governs the transformation of abstract execution intent into physical runtime state.
-
-Inside distributed runtimes:
-
-- intent,
-- transaction topology,
-- and execution graphs
-
-must eventually materialize into persistent state structures.
-
-RFT interprets this process as geometric materialization.
-
-### Runtime Projection
+RFT interprets this materialization as a mapping from execution geometry to persistent storage topology.
 
 This operator influences:
 
-- state-write topology,
-- disk persistence geometry,
-- account-write coordination,
-- and structured execution realization.
+- state-write coordination
+- persistence geometry
+- account-write ordering
+- structured execution realization
 
-Abstract runtime relationships become concrete storage topology through deterministic execution mapping.
+### 7. Birch–Swinnerton-Dyer conjecture
 
----
+**Algebraic rank identity.**
 
-# 7. Birch-Swinnerton-Dyer Conjecture
+This operator models the relationship between state graph connectivity and observable execution behavior.
 
-## Algebraic Rank Identity
+In RFT, richer deterministic dependency structure improves the predictability and analyzability of runtime execution.
 
-The BSD operator governs the relationship between:
+It affects:
 
-- state graph connectivity,
-- and analytical execution behavior.
+- execution graph ranking
+- scheduler relational analysis
+- performance identity
+- runtime coherence metrics
 
-Inside RFT:
+## Rift pre-filter and SIRM
 
-execution performance is treated as a function of topological relational rank.
+A key runtime subsystem in UltraCore RFT is the Rift Pre-Filter. It identifies unstable execution paths before the Solana scheduler executes them and reduces CPI topology drift.
 
-The richer the deterministic dependency structure, the more predictable and analyzable execution becomes.
+The Stable Invariant Rift Model (SIRM) defines the deterministic invariant structure governing runtime coherence. It frames execution as coordinated state topology rather than probabilistic transaction processing.
 
-### Runtime Projection
+## Summary
 
-This operator affects:
-
-- query-performance identity,
-- execution graph ranking,
-- scheduler relational analysis,
-- and runtime coherence metrics.
-
-The runtime attempts to maintain analytical consistency between execution topology and observable performance behavior.
-
----
-
-# Rift Pre-Filter Runtime
-
-One of the primary runtime subsystems inside UltraCore RFT is the Rift Pre-Filter.
+UltraCore RFT proposes a deterministic runtime interpretation for distributed systems. It combines invariant-preserving operators, scheduler topology control, and field dynamics to maintain stability under high concurrency.
 
 This subsystem performs:
 

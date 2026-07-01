@@ -1,49 +1,59 @@
-# UltraCore Rift & RFT Command Console
+# UltraCore RFT
 
-**Live Operational Interface of Reality Fractal Theory**
+UltraCore RFT is a launch-ready research repository for Reality Fractal Theory (RFT) and the UltraCore Rift architecture. It combines a structured documentation site, architectural narrative, and field-trial readiness guidance for deterministic invariant systems.
 
-**Research and Engineering Platform for Deterministic Invariant Systems, where UltraCore Rift is the first practical implementation.**
+This repository is designed for reviewers, engineers, and launch teams. It is aligned with the external Solana implementation repository:
 
----
+https://github.com/RFT-SIRM/Rift-Network
 
-### Overview
+## What is included
 
-The **UltraCore Rift Command Console** is a real-time interactive visualization system built for the **UltraCore Rift** architecture — the first practical embodiment of **Reality Fractal Theory (RFT)** and the **Stable Invariant Rift Model (SIRM)**.
+- `ARCHITECT.md` — architecture overview and research mindset
+- `RFT_DEVELOPMENT_STRATEGY.md` — development strategy and roadmap
+- `RFT_MATHEMATICAL_FOUNDATIONS.md` — mathematical foundations and runtime operators
+- `RESEARCH_SUPPORT.md` — collaboration guidance and research positioning
 
-This console allows observation of how mathematical invariants, negative entropy mechanisms, and deterministic execution work together in a unified living system.
+## Objectives
 
-### Documented Core Interface Blocks
+- document the core ideas behind UltraCore Rift and SIRM
+- maintain a clear conceptual foundation for field trials
+- provide a stable reference for deterministic runtime design
+- explain how invariant systems map to execution environments
 
-**1. Command Center**  
-Central operational hub. Displays overall system coherence, global field pressure, entropy trends, and key health metrics.
+## Key concepts
 
-**2. UltraCore Rift Engine**  
-Visualization of the core execution engine on Solana. Shows transaction flow, scheduler activity, memory management, and deterministic state transitions.
+- **Reality Fractal Theory (RFT)** — a unified framework for code, mathematics, physics, economics, and distributed systems
+- **Stable Invariant Rift Model (SIRM)** — an invariant-preserving runtime model that aims to maintain coherence under extreme concurrency
+- **UltraCore Rift** — the applied Solana-oriented architecture for RFT research and validation
 
-**3. SIRM Core**  
-The mathematical heart of the system. Displays the primary invariant:
-and related parameters (`NEG_E`, dust accumulator, debt limits).
+## Usage
 
-#### 4. Invariant Reactor
-Live visualization of anti-entropy mechanisms and LCF-Reactor. Shows active compression of system disorder.
+Read the documents in this repository in the following order:
 
-#### 5. Millennium Problems Laboratory
-Research module demonstrating how RFT operators map and model the Millennium Problems.
+1. `ARCHITECT.md`
+2. `RFT_DEVELOPMENT_STRATEGY.md`
+3. `RFT_MATHEMATICAL_FOUNDATIONS.md`
 
-#### 6. Cognitive Processor & Topology View
-Visualization of cognitive processes and topological state evolution.
+## Field trials
 
-#### 7. Execution Pipeline
-Animated real-time pipeline showing pre-filtering, coordination, and invariant verification.
+This repository is prepared as a reference design and research artifact. For the actual Solana implementation and runtime engineering work, use:
 
-### Technology & Philosophy
-* **UltraCore Rift** – deterministic economic and execution engine on Solana SVM.
-* **RFT (Reality Fractal Theory)** – overarching framework treating code, mathematics, physics, and economics as a single temporal topology.
-* **SIRM** – Stable Invariant Rift Model enforcing mathematical laws.
-* **neg_E** – Negative Entropy for active stabilization.
-* **Intent_I** – Primary operator of directed system evolution.
+https://github.com/RFT-SIRM/Rift-Network
 
-Linked interactive system console runtime for live invariant validation tracking.
+## Build and validation
 
-### Live Demo
-Open UltraCore Rift Command Console →  https://aistudio.google.com/u/0/apps/4beff45d-9405-4a6c-a002-1044d725476a?showPreview=true&showAssistant=true 
+To build the documentation locally:
+
+```bash
+python3 -m pip install --user -r requirements.txt
+~/.local/bin/mkdocs build --strict
+```
+
+## CI
+
+The repository includes a documentation CI workflow at `.github/workflows/docs.yml`. It validates the MkDocs site on `push`, `pull_request`, and manual dispatch.
+
+## Contact
+
+For collaboration and technical review, use GitHub issues or the repository profile. This repository avoids direct donation links and keeps the focus on research, implementation, and launch readiness.
+

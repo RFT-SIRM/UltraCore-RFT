@@ -1,0 +1,41 @@
+site_name: UltraCore RFT
+site_description: Research documentation for Reality Fractal Theory and the UltraCore Rift architecture.
+site_author: 9261834245z-ui
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: teal
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - content.action.edit
+
+plugins:
+  - mermaid2
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Strategy: strategy.md
+  - Foundations: foundations.md
+  - Implementation: implementation.md
+  - Field Trials: field_trials.md
+  - Glossary: glossary.md
+  - Research Support: support.md

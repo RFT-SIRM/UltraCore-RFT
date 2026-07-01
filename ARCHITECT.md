@@ -1,213 +1,59 @@
-# ULTRACORE RFT
+# UltraCore RFT Architecture Overview
 
-### Architect in Flesh
+UltraCore RFT is a research initiative exploring how deterministic invariant systems can remain stable under extreme recursion, concurrency, and uncertainty. The work combines formal modeling, runtime architecture, and experimental implementation.
 
-Media:
+## Origins
 
-https://drive.google.com/file/d/1GRar92YA-K40i2JhKS2jvUcNRqEVPfMb/view?usp=share_link
+The project began as a search for invariant structures that remain stable while surrounding system conditions change. Before runtime code and validator modifications, the work started as model construction and verification. Implementation followed as a result of this research.
 
----
+## Scope
 
-## Before the Runtime
+Research spans:
 
-Most engineering projects begin with code.
+- distributed systems
+- runtime architecture
+- validator infrastructure
+- execution scheduling
+- memory topology
+- deterministic simulation
+- mathematical modeling
+- complex adaptive systems
 
-This one did not.
+The objective is to translate models into executable systems that survive validation and real-world testing.
 
-UltraCore RFT began as an attempt to answer a much larger question:
+## Methodology
 
-**Can complex systems remain stable under extreme recursion, concurrency and uncertainty without relying on endless layers of reactive correction?**
+The development process integrates human reasoning with AI-assisted analysis. Multiple analytical layers were used to test concepts, compare alternatives, and verify assumptions.
 
-Before validator modifications, before schedulers, before memory contexts and deterministic execution engines, the work began as a search for invariant structures — principles that remain stable while everything around them changes.
+This process is designed to amplify human judgment, not replace it. Strong ideas are retained after repeated verification and weaker ideas are discarded.
 
-The first stage was not software engineering.
+## Implementation path
 
-It was model construction.
+The work has progressed through:
 
-The second stage was verification.
+1. model construction
+2. verification
+3. implementation
 
-The third stage became implementation.
+The current public artifacts reflect the outcome of those stages and are intended as a basis for technical review and validation.
 
-And implementation eventually arrived inside real systems.
+## Current stage
 
----
+UltraCore RFT is now expressed through:
 
-## The Architect
+- executable code
+- runtime modification concepts
+- scheduler prototypes
+- memory systems
+- deterministic simulations
+- invariant verification frameworks
 
-The Architect is not presented here as a traditional specialist confined to a single discipline.
+The focus is on practical validation rather than abstract claims.
 
-The work spans:
+## Open invitation
 
-* distributed systems,
-* runtime architecture,
-* validator infrastructure,
-* execution scheduling,
-* memory topology,
-* deterministic simulation,
-* mathematical modeling,
-* systems theory,
-* complex adaptive systems,
-* and human–AI collaborative reasoning.
+This work is open to researchers, engineers, mathematicians, runtime developers, systems architects, and AI researchers. The best verification is through review, testing, and real execution.
 
-A more accurate description would be:
+For implementation details, see:
 
-**Independent Systems Architect**
-**Research Engineer**
-**Cross-Domain Polymath**
-
-The purpose is not to collect theories.
-
-The purpose is to convert theories into executable systems.
-
-Everything is expected to survive implementation.
-
-Everything is expected to survive testing.
-
-Everything is expected to survive contact with reality.
-
----
-
-## January 2026
-
-The foundations of RFT were not created yesterday.
-
-The initial framework emerged during January 2026.
-
-The concepts later referred to as:
-
-* RFT,
-* SIRM,
-* invariant preservation,
-* scheduler topology,
-* anti-entropy execution,
-* deterministic coordination,
-
-were already being constructed before the current public repositories existed.
-
-The repositories visible today are not the beginning.
-
-They are the public engineering manifestation of earlier work.
-
----
-
-## Human–AI Symbiosis
-
-One of the unusual aspects of this project is the development methodology itself.
-
-UltraCore RFT was built through continuous interaction between human reasoning and large-scale AI systems.
-
-Multiple AI models were used as independent analytical layers.
-
-Different systems were intentionally cross-tested against one another.
-
-Contradictions were preserved.
-
-Weak arguments were discarded.
-
-Strong arguments were forced through repeated verification cycles.
-
-The objective was never automation.
-
-The objective was amplification.
-
-The Architect does not delegate thinking to AI.
-
-The Architect uses AI as an epistemic stress-testing environment.
-
-This process generated thousands of iterations across:
-
-* architecture,
-* mathematics,
-* runtime systems,
-* economics,
-* and systems design.
-
-The result is not an AI-generated project.
-
-The result is a human-directed research process operating with unprecedented analytical leverage.
-
----
-
-## Why the Runtime Came Later
-
-Many projects start from technology and search for meaning.
-
-RFT followed the opposite path.
-
-Meaning came first.
-
-Technology followed.
-
-The concepts eventually produced:
-
-* UltraCore Rift,
-* Rift Scheduler,
-* ABIv2 Memory Contexts,
-* deterministic execution models,
-* invariant verification systems.
-
-The validator modifications are therefore not isolated experiments.
-
-They are consequences of a larger architectural framework.
-
----
-
-## Current Stage
-
-Today the repositories represent a public testing ground.
-
-The concepts are no longer restricted to documents.
-
-They now exist as:
-
-* executable code,
-* runtime modifications,
-* scheduler prototypes,
-* memory systems,
-* deterministic simulations,
-* invariant engines,
-* validator research.
-
-The goal is not to convince institutions through claims.
-
-The goal is to demonstrate working systems.
-
-If the systems work, validation follows naturally.
-
----
-
-## Open Invitation
-
-Researchers.
-
-Engineers.
-
-Mathematicians.
-
-Runtime developers.
-
-Systems architects.
-
-AI researchers.
-
-If you are interested in deterministic systems, invariant-preserving architectures, runtime stability, execution topology or cross-domain research, you are welcome to explore the repositories.
-
-Read the code.
-
-Read the documentation.
-
-Run the simulations.
-
-Challenge the assumptions.
-
-Verify everything.
-
-Questions, discussion and collaboration inquiries are welcome.
-
-Contact information is available within the repository profile.
-
-The work remains open.
-
-The verification remains ongoing.
-
-The implementation continues.
+https://github.com/RFT-SIRM/Rift-Network
