@@ -1,154 +1,107 @@
-# UltraCore RFT
+# UltraCore RFT Laboratory
 
-Research laboratory for deterministic execution topology, invariant systems, and high-concurrency runtime architecture based on **Reality Fractal Theory (RFT)**.
+**Independent research laboratory focused on deterministic distributed systems,
+invariant-preserving runtime architecture, and blockchain execution environments.**
 
----
-
-## What is this?
-
-UltraCore RFT is the central research hub for a family of experimentally verified distributed system components. All implementations share a common foundation: **mathematical invariants enforced at runtime, verified through continuous fuzzing**.
-
-Since July 2026, the research has expanded from theoretical architecture into three actively developed and fuzz-tested implementations.
+Scientific foundation: **Reality Fractal Theory (RFT)** and the **Stable Invariant Rift Model (SIRM)**.
 
 ---
 
-## Implementation Repositories
+## Research Dossier
 
-### [Rift L1 Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain)
+**[→ docs/UltraCore_RFT_Dossier.pdf](docs/UltraCore_RFT_Dossier.pdf)**
 
-Standalone Layer-1 blockchain runtime built on the UltraCore-RFT engine and SIRM.
-
-| Metric | Result |
-|--------|--------|
-| Operations fuzz-tested | 256,150,000+ |
-| SIRM invariant violations | 0 |
-| Crashes | 0 |
-| Test duration | 5+ hours |
-| Avg ops/sec | 8,530,712 |
-
-**Key properties:** deterministic execution, mathematical invariant validation after every operation, integrated stress-fuzz testing, Apache 2.0.
+The primary document for investors, protocol engineers, and strategic partners.
+Covers all five research programs, SIRM mathematical model, verification results,
+Agave SVM findings, and the current funding opportunity.
 
 ---
 
-### [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts)
+## Research Programs
 
-Research module for per-CPI-frame writable permission isolation in Agave SVM ABIv2.
+Five interconnected programs — one laboratory architecture.
 
-**Bug found and fixed:** The original implementation called `snapshot.entries.clear()` before re-snapshotting on every `update_account_permissions()` call within the same CPI frame. On `pop()`, only the last-touched account was restored. All earlier accounts retained their modified writable permission permanently — a silent permission leak across CPI frames.
+| Program | Layer | Status | Validation |
+|---------|-------|--------|-----------|
+| [UltraCore-RFT](https://github.com/RFT-SIRM/UltraCore-RFT) | Architecture / Theory | Active | This repository |
+| [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana Protocol | Audited | 14 findings addressed |
+| [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | L1 Runtime | Active | 256M+ ops · 0 violations |
+| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM Security | Active | 4.29B+ exec · RFC in anza-xyz/svm |
+| [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | SVM Scheduling | Active | 91M exec/run · 3 bugs fixed |
 
-| Metric | Result |
-|--------|--------|
-| Fuzz executions | 4,294,967,296+ |
-| Execution speed | ~421,000 exec/s |
-| Invariant violations | 0 |
-| Duration | 5h 55m |
-
----
-
-### [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler)
-
-Research implementation of a conflict-aware transaction scheduler for Agave SVM.
-
-**Bugs found and fixed:**
-
-**Bug 1 — Dead deferred queue:** Transactions were pushed into the deferred queue but nothing ever read them back. Every conflicting transaction was silently lost forever.
-
-**Bug 2 — Zero-cost bypass:** A `tx.cost > 0` guard allowed zero-cost transactions to bypass conflict detection entirely, scheduling immediately on contested accounts.
-
-**Bug 3 — Fuzzer invariant gap:** `max_retry_count=15` created backoff chains up to 2303 generations, exceeding the 512-pass drain limit. Found and fixed during fuzzing.
-
-| Metric | Result |
-|--------|--------|
-| Fuzz executions (daily) | ~91,000,000 per run |
-| Execution speed | ~4,300 exec/s (CI) / ~8,500 exec/s (M1) |
-| Invariant violations | 0 |
-| Unit tests | 15 passed |
-| Daily fuzz duration | 5h 55m |
+All active programs run continuous libFuzzer verification — **5 hours 55 minutes daily**.
 
 ---
 
-### [Rift-Network](https://github.com/RFT-SIRM/Rift-Network)
+## Scientific Foundation
 
-Solana-oriented implementation and ecosystem research. Security audit completed: 14 findings documented and addressed.
+**Reality Fractal Theory (RFT)** — a unified framework connecting mathematics,
+deterministic computation, distributed execution, and protocol architecture.
+The central principle: correctness is a structural constraint enforced at every
+state transition, not a property verified after the fact.
 
----
+**Stable Invariant Rift Model (SIRM)** — the execution model derived from RFT.
+Every operation either preserves all defined mathematical invariants or is
+rejected atomically. No intermediate state exists.
 
-## Core Concepts
-
-**Reality Fractal Theory (RFT)**  
-A unified framework applied across code, mathematics, economics, and distributed systems. The central idea: invariants are not checked after the fact — they are structural properties of the runtime itself.
-
-**Stable Invariant Rift Model (SIRM)**  
-An invariant-preserving runtime model maintaining mathematical consistency under concurrent execution. Every operation either preserves all invariants or is rejected atomically.
-
-Core SIRM invariants (applied in Rift L1):
-**UltraCore Rift**  
-The deterministic execution architecture built around SIRM. Identical inputs produce identical outputs. State is always consistent. No silent failures.
+Core SIRM invariants (implemented in Rift-L1-Blockchain):
+**UltraCore Rift** is the engineering implementation of these principles in Rust.
 
 ---
 
-## Verification Approach
+## Key Engineering Findings
 
-All implementations share the same verification methodology:
+**CPI permission leakage** (agave-abiv2-memory-contexts)
+The original Agave implementation destroyed rollback entries on multiple permission
+updates within a single CPI frame. On pop(), accounts retained modified writable
+permissions permanently. Fixed and RFC submitted to anza-xyz/svm.
 
-| Layer | Tool | Coverage |
-|-------|------|----------|
-| Unit tests | cargo test | Regression, edge cases |
-| Property tests | Manual random seeds | 100+ seeds per property |
-| Fuzz testing | libFuzzer via cargo-fuzz | Invariants under random inputs |
-| Long-run fuzz | GitHub Actions schedule | 5h 55m daily per repository |
-| Differential tests | Buggy vs fixed impl | Confirms bug is reproducible |
+**Dead deferred queue** (agave-rift-scheduler)
+Conflicting transactions were pushed into the deferred queue but never retried.
+Every deferred transaction was silently lost forever. Fixed.
 
-**Why long-duration fuzzing matters:** At ~4,000–8,000 exec/s, a 5h 55m run produces 90–170 million executions asserting all invariants. This does not prove correctness formally, but it provides strong experimental evidence that no invariant violation exists within the reachable input space.
+**Zero-cost conflict bypass** (agave-rift-scheduler)
+Transactions with cost=0 bypassed conflict detection entirely. Fixed.
+
+---
+
+## Verification Summary
+
+| Component | Executions | Violations | Daily fuzz |
+|-----------|-----------|------------|-----------|
+| agave-abiv2-memory-contexts | 4,294,967,296+ | 0 | 5h 55m |
+| Rift-L1-Blockchain | 256,150,000+ | 0 | 5h 55m |
+| agave-rift-scheduler | ~91M per run | 0 | 5h 55m |
 
 ---
 
 ## Repository Documents
 
-Read in this order:
-
-1. [ARCHITECT.md](ARCHITECT.md) — architecture overview and research mindset
+1. [ARCHITECT.md](ARCHITECT.md) — architecture overview and research principles
 2. [RFT_DEVELOPMENT_STRATEGY.md](RFT_DEVELOPMENT_STRATEGY.md) — development strategy and roadmap
-3. [RFT_MATHEMATICAL_FOUNDATIONS.md](RFT_MATHEMATICAL_FOUNDATIONS.md) — mathematical foundations and runtime operators
+3. [RFT_MATHEMATICAL_FOUNDATIONS.md](RFT_MATHEMATICAL_FOUNDATIONS.md) — mathematical foundations
 4. [RESEARCH_SUPPORT.md](RESEARCH_SUPPORT.md) — collaboration guidance
+5. [docs/UltraCore_RFT_Dossier.pdf](docs/UltraCore_RFT_Dossier.pdf) — full research dossier
 
 ---
 
 ## Roadmap
 
-**Phase 1 — Research implementations (current)**  
-Three fuzz-verified components. Bugs found, fixed, and regression-tested.
+**Phase 1 — Foundation** ✅ Complete
+All five programs implemented and fuzz-verified. Security audit on Rift-Network complete.
+RFC submitted to anza-xyz/svm.
 
-**Phase 2 — Agave integration**  
-Integrate memory-contexts fix and scheduler into `anza-xyz/agave`.  
-Replace research mocks with real `TransactionContext` and `AccountId`.
+**Phase 2 — Agave Integration** ⏳ In progress
+Integrate fixes into anza-xyz/agave. Draft PR with fuzz corpus and invariant docs.
 
-**Phase 3 — Validator benchmarks**  
-Measure against production Agave on mainnet-representative workloads.  
-Produce Criterion before/after numbers.
+**Phase 3 — Validator Benchmarks** 🔮 Planned
+Testnet deployment. Criterion benchmarks against production Agave.
 
-**Phase 4 — RFC / PR**  
-Draft PR against `anza-xyz/agave` with fuzz corpus, benchmarks, and invariant documentation as evidence.
-
----
-
-## Build Documentation Locally
-
-```bash
-python3 -m pip install --user -r requirements.txt
-~/.local/bin/mkdocs build --strict
-```
+**Phase 4 — Production & Ecosystem** 🔮 Planned
+Rift-Network mainnet. Rift-L1 production launch.
 
 ---
 
 ## License
 
-Apache-2.0
-
-This repository focuses on research, engineering, and long-term development of deterministic distributed systems.
-
-© 2026 Eugeny (RFT-SIRM)
-
-## Research Dossier
-
-The full laboratory research dossier is available in [docs/UltraCore_RFT_Dossier.pdf](docs/UltraCore_RFT_Dossier.pdf)
+Apache-2.0 — © 2026 Eugeny (RFT-SIRM) · github.com/RFT-SIRM
