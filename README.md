@@ -148,3 +148,7 @@ Apache-2.0
 This repository focuses on research, engineering, and long-term development of deterministic distributed systems.
 
 © 2026 Eugeny (RFT-SIRM)
+
+## Research Dossier
+
+The full laboratory research dossier is available in [docs/UltraCore_RFT_Dossier.pdf](docs/UltraCore_RFT_Dossier.pdf)
