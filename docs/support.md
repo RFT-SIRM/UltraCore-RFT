@@ -15,8 +15,8 @@ We welcome technical collaboration in the following areas:
 
 ## How to Contribute
 
-1. Review our [Contributing Guidelines](../CONTRIBUTING.md)
-2. Follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+1. Review our [Contributing Guidelines](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/CONTRIBUTING.md)
+2. Follow our [Code of Conduct](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/CODE_OF_CONDUCT.md)
 3. Open an issue in the relevant repository with a clear technical description
 
 ## Repositories
@@ -30,7 +30,7 @@ We welcome technical collaboration in the following areas:
 
 ## Citation
 
-If you use or reference this work, please cite it using the provided [CITATION.cff](../CITATION.cff).
+If you use or reference this work, please cite it using the provided [CITATION.cff](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/CITATION.cff).
 
 ## License
 
