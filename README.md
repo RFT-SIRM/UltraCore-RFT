@@ -1,107 +1,174 @@
-# UltraCore RFT Laboratory
+# agave-abiv2-memory-contexts
 
-**Independent research laboratory focused on deterministic distributed systems,
-invariant-preserving runtime architecture, and blockchain execution environments.**
+Alternative ABIv2 `MemoryContexts` implementation for Agave SVM focused on safer permission handling, cleaner region management, and future-proof memory mapping behavior.
 
-Scientific foundation: **Reality Fractal Theory (RFT)** and the **Stable Invariant Rift Model (SIRM)**.
+## Overview
 
----
+This repository contains an experimental refinement of the Agave SVM ABIv2 memory context implementation.
 
-## Research Dossier
+![ABIv2 MemoryContexts Architecture](./agave-abiv2-rift-architecture.png)
 
-**[→ docs/UltraCore_RFT_Dossier.pdf](docs/UltraCore_RFT_Dossier.pdf)**
+The primary focus is improving correctness and safety around writable account permission handling during nested CPI execution flows while preserving compatibility with the existing ABIv2 execution model.
 
-The primary document for investors, protocol engineers, and strategic partners.
-Covers all five research programs, SIRM mathematical model, verification results,
-Agave SVM findings, and the current funding opportunity.
+The implementation introduces:
 
----
+* Per-frame writable permission rollback
+* Safer region initialization and bounds validation
+* Dynamic region count calculation instead of hardcoded constants
+* Improved error propagation
+* Cleaner ABIv2 region construction flow
+* Better isolation between nested execution frames
 
-## Research Programs
-
-Five interconnected programs — one laboratory architecture.
-
-| Program | Layer | Status | Validation |
-|---------|-------|--------|-----------|
-| [UltraCore-RFT](https://github.com/RFT-SIRM/UltraCore-RFT) | Architecture / Theory | Active | This repository |
-| [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana Protocol | Audited | 14 findings addressed |
-| [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | L1 Runtime | Active | 256M+ ops · 0 violations |
-| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM Security | Active | 4.29B+ exec · RFC in anza-xyz/svm |
-| [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | SVM Scheduling | Active | 91M exec/run · 3 bugs fixed |
-
-All active programs run continuous libFuzzer verification — **5 hours 55 minutes daily**.
+The goal is not to redesign the SVM memory model, but to improve correctness and robustness of the existing architecture.
 
 ---
 
-## Scientific Foundation
+# Motivation
 
-**Reality Fractal Theory (RFT)** — a unified framework connecting mathematics,
-deterministic computation, distributed execution, and protocol architecture.
-The central principle: correctness is a structural constraint enforced at every
-state transition, not a property verified after the fact.
+In the current ABIv2 flow, writable permissions can be updated dynamically during instruction execution.
 
-**Stable Invariant Rift Model (SIRM)** — the execution model derived from RFT.
-Every operation either preserves all defined mathematical invariants or is
-rejected atomically. No intermediate state exists.
+However, under nested CPI scenarios, writable permission changes may persist across instruction frames unless explicitly restored.
 
-Core SIRM invariants (implemented in Rift-L1-Blockchain):
-**UltraCore Rift** is the engineering implementation of these principles in Rust.
+This can potentially create:
 
----
+* permission leakage between nested calls
+* inconsistent writable state visibility
+* harder-to-debug execution behavior
+* future maintenance complexity for deeper ABIv2 integrations
 
-## Key Engineering Findings
-
-**CPI permission leakage** (agave-abiv2-memory-contexts)
-The original Agave implementation destroyed rollback entries on multiple permission
-updates within a single CPI frame. On pop(), accounts retained modified writable
-permissions permanently. Fixed and RFC submitted to anza-xyz/svm.
-
-**Dead deferred queue** (agave-rift-scheduler)
-Conflicting transactions were pushed into the deferred queue but never retried.
-Every deferred transaction was silently lost forever. Fixed.
-
-**Zero-cost conflict bypass** (agave-rift-scheduler)
-Transactions with cost=0 bypassed conflict detection entirely. Fixed.
+This repository explores a rollback-safe approach where writable account permissions are restored automatically when execution frames are popped.
 
 ---
 
-## Verification Summary
+# Key Improvements
 
-| Component | Executions | Violations | Daily fuzz |
-|-----------|-----------|------------|-----------|
-| agave-abiv2-memory-contexts | 4,294,967,296+ | 0 | 5h 55m |
-| Rift-L1-Blockchain | 256,150,000+ | 0 | 5h 55m |
-| agave-rift-scheduler | ~91M per run | 0 | 5h 55m |
+## 1. Per-Frame Writable Permission Rollback
 
----
+The original implementation updates writable permissions in-place.
 
-## Repository Documents
+This implementation stores writable state snapshots before mutation and restores them automatically during frame teardown.
 
-1. [ARCHITECT.md](ARCHITECT.md) — architecture overview and research principles
-2. [RFT_DEVELOPMENT_STRATEGY.md](RFT_DEVELOPMENT_STRATEGY.md) — development strategy and roadmap
-3. [RFT_MATHEMATICAL_FOUNDATIONS.md](RFT_MATHEMATICAL_FOUNDATIONS.md) — mathematical foundations
-4. [RESEARCH_SUPPORT.md](RESEARCH_SUPPORT.md) — collaboration guidance
-5. [docs/UltraCore_RFT_Dossier.pdf](docs/UltraCore_RFT_Dossier.pdf) — full research dossier
+### Benefits
+
+* Prevents writable permission leakage
+* Improves nested CPI isolation
+* Keeps execution frame boundaries deterministic
+* Makes permission transitions explicit and reversible
 
 ---
 
-## Roadmap
+## 2. Dynamic Region Count
 
-**Phase 1 — Foundation** ✅ Complete
-All five programs implemented and fuzz-verified. Security audit on Rift-Network complete.
-RFC submitted to anza-xyz/svm.
+Instead of relying on a hardcoded region count (`392`), region sizing is derived dynamically from VM address layout boundaries.
 
-**Phase 2 — Agave Integration** ⏳ In progress
-Integrate fixes into anza-xyz/agave. Draft PR with fuzz corpus and invariant docs.
+### Benefits
 
-**Phase 3 — Validator Benchmarks** 🔮 Planned
-Testnet deployment. Criterion benchmarks against production Agave.
-
-**Phase 4 — Production & Ecosystem** 🔮 Planned
-Rift-Network mainnet. Rift-L1 production launch.
+* Better future compatibility
+* Safer against VM layout evolution
+* Reduces hidden assumptions in memory mapping logic
 
 ---
 
-## License
+## 3. Safer Error Handling
 
-Apache-2.0 — © 2026 Eugeny (RFT-SIRM) · github.com/RFT-SIRM
+The implementation replaces several panic-prone paths (`unwrap`, `expect`) with structured error propagation using `InstructionError`.
+
+### Benefits
+
+* Prevents unexpected validator panics
+* Improves robustness under malformed states
+* Easier debugging and testing
+
+---
+
+## 4. Cleaner ABIv2 Region Construction
+
+ABIv2 region creation is reorganized into a safer and more explicit initialization flow.
+
+### Benefits
+
+* Easier auditing
+* Better maintainability
+* Reduced implicit assumptions
+* Clearer separation of memory regions
+
+---
+
+# Design Goals
+
+This repository intentionally avoids introducing architectural changes to the SVM execution model.
+
+The objective is:
+
+* preserve compatibility
+* improve execution safety
+* reduce state leakage risks
+* simplify future ABIv2 evolution
+
+The implementation is designed as a minimal invasive refinement rather than a scheduler or runtime rewrite.
+
+---
+
+# Relation to Scheduler Research
+
+This work was developed alongside experiments involving contention-aware transaction scheduling for Agave banking_stage.
+
+Although independent from scheduling itself, safer memory isolation becomes increasingly important when execution batching and dependency-aware scheduling strategies are introduced.
+
+In particular:
+
+* deterministic batching
+* reduced lock churn
+* independent execution groups
+* trusted execution paths
+
+all benefit from stricter execution-frame memory correctness.
+
+---
+
+# Current Status
+
+Experimental / research implementation.
+
+The repository is intended for:
+
+* architecture discussion
+* ABIv2 experimentation
+* nested CPI safety analysis
+* scheduler + memory interaction research
+
+It is not production-ready validator code.
+
+---
+
+# Potential Future Work
+
+Possible areas for future exploration:
+
+* per-frame region allocators
+* immutable sysvar snapshots
+* trusted batch memory fast-paths
+* arena-based allocation strategies
+* tighter scheduler ↔ memory integration
+* lock-aware memory locality optimizations
+
+---
+
+# Testing Focus
+
+The implementation was tested primarily against:
+
+* nested CPI flows
+* writable permission restoration
+* repeated instruction frame transitions
+* ABIv2 region initialization consistency
+
+Additional stress testing and benchmarking are still required.
+
+---
+
+# Repository Purpose
+
+This repository exists primarily as a technical exploration of safer ABIv2 memory semantics inside Agave SVM.
+
+Feedback, corrections, and architecture discussion are welcome.
