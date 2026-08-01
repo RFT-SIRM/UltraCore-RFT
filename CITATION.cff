@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software or research, please cite it as below."
 title: "UltraCore RFT: Deterministic Invariant Systems Research"
 authors:
   - family-names: "RFT-SIRM"
@@ -7,3 +7,4 @@ authors:
 date-released: 2026-08-01
 url: "https://github.com/RFT-SIRM/UltraCore-RFT"
 license: Apache-2.0
+repository-code: "https://github.com/RFT-SIRM/UltraCore-RFT"

@@ -1,8 +1,23 @@
-node_modules/
-build/
+# MkDocs
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
 dist/
-coverage/
+build/
+
+# macOS
 .DS_Store
-*.log
-.env*
-!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak

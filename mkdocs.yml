@@ -1,34 +1,62 @@
 site_name: UltraCore RFT
-site_description: Research documentation for Reality Fractal Theory and the UltraCore Rift architecture.
+site_description: Deterministic Invariant Systems Research Laboratory
 site_author: Eugeny (RFT-SIRM)
+site_url: https://rft-sirm.github.io/UltraCore-RFT
+copyright: Copyright 2026 Eugeny (RFT-SIRM) — Licensed under Apache-2.0
 
 theme:
   name: material
   palette:
-    primary: indigo
-    accent: teal
-  font:
-    text: Roboto
-    code: Roboto Mono
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
-    - navigation.instant
+    - navigation.tabs
     - navigation.sections
-    - navigation.top
-    - content.action.edit
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
 
 plugins:
-  - mermaid2
+  - search
+  - mermaid2:
+      arguments:
+        theme: default
 
 markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
-  - pymdownx.superfences
-  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.emoji
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
   - toc:
       permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/RFT-SIRM
+  version:
+    provider: mike
 
 nav:
   - Home: index.md
@@ -38,4 +66,4 @@ nav:
   - Implementation: implementation.md
   - Field Trials: field_trials.md
   - Glossary: glossary.md
-  - Research Support: support.md
+  - Support: support.md

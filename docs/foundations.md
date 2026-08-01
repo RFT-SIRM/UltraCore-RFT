@@ -1,28 +1,153 @@
 # Mathematical Foundations
 
-This section captures the core mathematical ideas behind UltraCore RFT and the Stable Invariant Rift Model.
+## Core Invariants
 
-## Core concepts
+The SIRM (Scalar Invariant Resource Model) defines four hard constraints that every RFT-SIRM system must satisfy after every state-mutating operation.
 
-- deterministic invariant systems
-- runtime topology
-- negative entropy dynamics
-- field-based balance models
+### I1: Supply Conservation
 
-## Execution operators
-
-```mermaid
-flowchart TB
-    A[P vs NP] --> B[Topology analysis]
-    B --> C[Invariant verification]
-    D[Poincaré] --> E[Manifold smoothing]
-    F[Riemann] --> G[State spacing]
-    H[Navier-Stokes] --> I[Memory flow]
-    J[Yang-Mills] --> K[Invariant floor]
-    L[Hodge] --> M[Materialization]
-    N[BSD] --> O[Execution rank]
+```
+total_supply = total_base_sum + global_field * p
 ```
 
-## Notes
+Where:
+- `total_supply` -- total economic supply in the system
+- `total_base_sum` -- sum of all individual base balances
+- `global_field` -- uniform scalar shift applied to all participants
+- `p` -- number of active participants
 
-These ideas are intended as research metaphors for runtime engineering. The external repository provides an Anchor/Solana implementation that explores the practical form of these models.
+The total supply is decomposed into a uniform field component (`global_field * p`) and individual deviations (`total_base_sum`). This decomposition enables O(1) redistribution.
+
+### I2: Mint/Burn Accounting
+
+```
+total_supply = total_minted - total_burned
+```
+
+Supply is strictly derived from minted and burned amounts. No implicit inflation or deflation paths exist.
+
+### I3: Dust Bound
+
+```
+dust_accumulator < p   (when p > 0)
+```
+
+Dust (rounding remainder from division operations) is bounded by participant count. When `p` decreases (unregister), dust is re-normalized to maintain the bound.
+
+### I4: Debt Limit
+
+```
+effective_balance[i] >= -(total_supply / 10p)
+```
+
+Where `effective_balance[i] = base_balance[i] + global_field`.
+
+No participant can accumulate debt beyond a fraction of total supply. The factor of 10 is a protocol parameter.
+
+## O(1) Distribution
+
+### Standard Model
+
+In typical distributed systems, distributing a reward `R` to `p` participants requires:
+
+```
+for i in 0..p:
+    balance[i] += R / p     -- O(p) operations
+```
+
+At `p = 1,000,000`, this is 1,000,000 storage writes.
+
+### RFT Model
+
+In RFT-SIRM, distribution is a single scalar update:
+
+```
+global_field += R / p     -- O(1) operation
+```
+
+All participants' effective balances increase by `R / p` simultaneously because `effective_balance[i] = base_balance[i] + global_field`.
+
+This is a different mathematical model, not an optimization.
+
+## Scalar Field Mechanics
+
+### Effective Balance
+
+```
+effective_balance[i] = base_balance[i] + global_field
+```
+
+- `base_balance[i]` -- individual deviation from the uniform field
+- `global_field` -- shared scalar shift
+
+### Transfer with Edge Cost
+
+```
+// From sender
+delta_from = amount + edge_cost
+base_balance[from] -= delta_from
+
+// To receiver
+delta_to = amount
+base_balance[to] += delta_to
+
+// Edge cost handling
+if edge_cost > 0:
+    // Burn: reduce total supply
+    total_supply -= edge_cost
+elif edge_cost < 0:
+    // Mint: increase total supply
+    total_supply += |edge_cost|
+```
+
+Edge cost is a protocol-level mechanism for directed taxation or subsidization.
+
+### Negative Entropy
+
+```
+// Deflationary tick
+global_field -= e * 10^18    // where e is Euler's number
+
+// Compensate total_base_sum to preserve I1
+total_base_sum += e * 10^18 * p
+```
+
+This creates deflationary pressure on effective balances while preserving the supply invariant.
+
+## Operational Analogies
+
+The RFT runtime framework uses mathematical concepts as operational design patterns:
+
+| Operator | Mathematical Concept | Runtime Function |
+|----------|---------------------|------------------|
+| Ricci Flow | Differential geometry | Memory context curvature and rollback |
+| P vs NP | Computational complexity | Scheduler conflict classification |
+| Poincare Conjecture | Topological invariance | State space homeomorphism under transforms |
+| Riemann Hypothesis | Zeta function zeros | Zero-cost transaction anomaly detection |
+| Navier-Stokes | Fluid dynamics | Transaction flow turbulence and queue behavior |
+| Yang-Mills | Gauge theory | Cross-program invocation symmetry |
+| Hodge Conjecture | Algebraic cycles | State composition and decomposition |
+| BSD | Elliptic curves | Economic curve behavior and rational points |
+
+These are architectural analogies and design metaphors, not formal mathematical proofs or claims of solving the Millennium Prize Problems. They inform the structural design of runtime operators.
+
+## Type Safety
+
+All arithmetic uses checked operations:
+
+```rust
+// Checked addition
+let new_supply = total_supply.checked_add(amount)?;
+
+// Checked subtraction
+let new_base = total_base_sum.checked_sub(burn_amount)?;
+
+// Safe casting
+let field_i128: i128 = global_field.try_into()?;
+```
+
+Overflow, underflow, and invalid casts return `Err` rather than panicking.
+
+---
+
+See also: [Architecture](architecture.md) for system design, [Implementation](implementation.md) for code-level details.

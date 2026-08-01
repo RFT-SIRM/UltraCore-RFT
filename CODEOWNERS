@@ -1,0 +1,9 @@
+# Global code owners
+* @RFT-SIRM
+
+# Documentation
+/docs/ @RFT-SIRM
+*.md @RFT-SIRM
+
+# CI/CD
+/.github/workflows/ @RFT-SIRM

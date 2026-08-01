@@ -1,26 +1,41 @@
 # Research Support
 
-This repository is intended for technical review, research collaboration, and field trial preparation.
+## About This Laboratory
+
+UltraCore RFT is an independent research laboratory investigating deterministic state invariants and scalar field economics for distributed systems. The work is led by Eugeny under the RFT-SIRM organization.
 
 ## Collaboration
 
-The project is open to:
+We welcome technical collaboration in the following areas:
 
-- systems researchers
-- runtime engineers
-- Solana developers
-- academic reviewers
-- field validation teams
+- Formal verification of SIRM invariants
+- Solana runtime security research
+- Distributed systems economics
+- Rust systems programming
 
-## Review focus
+## How to Contribute
 
-Reviewers should concentrate on:
+1. Review our [Contributing Guidelines](../CONTRIBUTING.md)
+2. Follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
+3. Open an issue in the relevant repository with a clear technical description
 
-- conceptual consistency
-- invariant-preserving architecture
-- Solana integration strategy
-- external implementation reference
+## Repositories
 
-## Notes
+| Repository | Focus | Language |
+|-----------|-------|----------|
+| [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Standalone validator core | Rust |
+| [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | Rust/Anchor |
+| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory isolation | Rust |
+| [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware scheduling | Rust |
 
-This repository does not contain fundraising information. All collaboration and review inquiries should be handled through GitHub.
+## Citation
+
+If you use or reference this work, please cite it using the provided [CITATION.cff](../CITATION.cff).
+
+## License
+
+All repositories are licensed under Apache License 2.0.
+
+---
+
+Copyright 2026 Eugeny (RFT-SIRM)
