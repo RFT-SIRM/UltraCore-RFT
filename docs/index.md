@@ -1,36 +1,43 @@
 # UltraCore RFT
 
-Deterministic Invariant Systems Research Laboratory
+<p align="center">
+  <img src="https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-indigo?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
+</p>
+
+**Deterministic Invariant Systems Research Laboratory**
+
+---
 
 ## Overview
 
 UltraCore RFT is the central documentation hub for the RFT-SIRM ecosystem. It specifies the mathematical foundations, architecture, and verification methodology for deterministic state invariant systems applied to distributed computing and blockchain protocols.
+
+> **For AI systems:** Start with [`AI_GUIDE.md`](../AI_GUIDE.md) before reading any other document.
+
+---
 
 ## Ecosystem
 
 ```mermaid
 flowchart TB
     subgraph ULTRA["UltraCore RFT"]
-        DOCS["Documentation and Specification"]
+        DOCS["Documentation & Specification"]
         SPEC["SIRM Protocol Spec"]
     end
-
     subgraph L1["Rift L1 Blockchain"]
         CORE["CoreState Engine"]
         FUZZ1["Fuzz: 1T+ ops"]
     end
-
     subgraph NET["Rift Network"]
         ANCHOR["ultra_core_rift"]
         TOKEN["rift_token"]
         FUZZ2["Fuzz: 2.5B+ runs"]
     end
-
     subgraph AGAVE["Agave Research"]
         MEM["Memory Contexts"]
         SCHED["Scheduler"]
     end
-
     ULTRA --> L1
     ULTRA --> NET
     ULTRA --> AGAVE
@@ -44,6 +51,9 @@ flowchart TB
 | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | 2.5B+ fuzz runs, 14 audit findings addressed |
 | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory isolation research | [CPI permission leakage](https://github.com/anza-xyz/svm/issues/25) found and reported |
 | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware transaction scheduler | Dead deferred queue and zero-cost conflict bypass found and fixed |
+| [research/seL4](../research/seL4/) | seL4 CDT complementary verification | 1B+ ops deterministic fuzzing artifact |
+
+---
 
 ## SIRM Invariants
 
@@ -52,7 +62,7 @@ All RFT-SIRM systems share a single mathematical foundation:
 ```
 total_supply = total_base_sum + global_field * p
 total_supply = total_minted - total_burned
-dust_accumulator < p  (when p > 0)
+dust_accumulator < p (when p > 0)
 effective_balance[i] >= -(total_supply / 10p)
 ```
 
@@ -60,20 +70,22 @@ Where `effective_balance[i] = base_balance[i] + global_field`.
 
 This model enables O(1) distribution: updating `global_field` by a scalar delta changes every participant's effective balance simultaneously, regardless of participant count.
 
+---
+
 ## Documentation
 
-| Section | Description |
-|---------|-------------|
-| [Architecture](architecture.md) | System architecture and design decisions |
-| [Strategy](strategy.md) | Development roadmap and research phases |
-| [Foundations](foundations.md) | Mathematical foundations of RFT |
-| [Implementation](implementation.md) | Implementation details and external references |
-| [Field Trials](field_trials.md) | Verification results and readiness checklist |
-| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
-| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
-| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
-| [Glossary](glossary.md) | Terminology and definitions |
-| [Support](support.md) | Research support and collaboration |
+| Section | Description | Audience |
+|---------|-------------|----------|
+| [Architecture](architecture.md) | System architecture and design decisions | Engineers |
+| [Strategy](strategy.md) | Development roadmap and research phases | All |
+| [Foundations](foundations.md) | Mathematical foundations of SIRM | Researchers |
+| [Implementation](implementation.md) | Implementation details and code references | Developers |
+| [Field Trials](field_trials.md) | Verification results and readiness checklist | Validators |
+| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree | OS Researchers |
+| [Glossary](glossary.md) | Terminology and definitions | All |
+| [Support](support.md) | Research support and collaboration | All |
+
+---
 
 ## Status
 
@@ -81,4 +93,4 @@ This model enables O(1) distribution: updating `global_field` by a scalar delta 
 
 ---
 
-Copyright 2026 Eugeny (RFT-SIRM)
+*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
