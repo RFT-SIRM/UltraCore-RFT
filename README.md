@@ -1,8 +1,13 @@
 # UltraCore-RFT
 
-[![Platform](https://img.shields.io/badge/Platform-Execution%20Architecture-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
-[![Verification](https://img.shields.io/badge/Verification-4.29B%2B%20ops-22c55e?style=for-the-badge)](docs/field_trials.md)
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![Math](https://img.shields.io/badge/Math-Invariant%20Systems-6366f1?style=for-the-badge)](docs/foundations.md)
+[![Verify](https://img.shields.io/badge/Verify-4.29B%2B%20ops%20%7C%200%20violations-22c55e?style=for-the-badge)](docs/field_trials.md)
+[![Scope](https://img.shields.io/badge/Scope-Kernel--Agnostic-f97316?style=for-the-badge)](#-what-is-ultracore-rft)
+[![Fields](https://img.shields.io/badge/Fields-Multi--Disciplinary-06b6d4?style=for-the-badge)](SCIENTIFIC_BASIS.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
+
+**Deterministic Invariant Systems Research Laboratory**
 
 **Deterministic Invariant Systems Research Laboratory**
 
