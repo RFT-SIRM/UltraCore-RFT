@@ -1,5 +1,9 @@
 # UltraCore-RFT
 
+![Platform](https://img.shields.io/badge/Platform-Execution%20Architecture-6366f1?style=for-the-badge)
+![Verification](https://img.shields.io/badge/Verification-4.29B%2B%20ops-22c55e?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)
+
 **Deterministic Invariant Systems Research Laboratory**
 
 _Central documentation and coordination hub for the RFT-SIRM ecosystem_
@@ -7,8 +11,6 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 * * *
 
 ## 🧭 Start Here
-
-Permalink: 🧭 Start Here
 
 | Audience | Document | What You Will Learn |
 | --- | --- | --- |
@@ -24,8 +26,6 @@ Permalink: 🧭 Start Here
 * * *
 
 ## ⚡ At a Glance
-
-Permalink: ⚡ At a Glance
 
 ```mermaid
 flowchart TB
@@ -61,8 +61,6 @@ flowchart TB
 * * *
 
 ## 🏛️ What Is UltraCore RFT?
-
-Permalink: 🏛️ What Is UltraCore RFT?
 
 UltraCore RFT is best understood as an **execution architecture** — a deterministic execution substrate — rather than as a single blockchain or mathematical theory.
 
@@ -113,8 +111,6 @@ See [`EXECUTION_PLATFORM.md`](EXECUTION_PLATFORM.md) for the full strategic iden
 
 ## 📐 What Is SIRM?
 
-Permalink: 📐 What Is SIRM?
-
 **SIRM** = Stable Invariant Rift Model. It is the mathematical core of every RFT-SIRM system.
 
 All systems enforce four hard constraints after every state-mutating operation:
@@ -136,8 +132,6 @@ See [`docs/foundations.md`](docs/foundations.md) for the mathematical derivation
 
 ## 🔬 Research Programs
 
-Permalink: 🔬 Research Programs
-
 | Repository | Role | Status | Key Evidence |
 | --- | --- | --- | --- |
 | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Standalone L1 runtime | Active | 1T+ ops, 0 invariant violations |
@@ -149,8 +143,6 @@ Permalink: 🔬 Research Programs
 * * *
 
 ## 🧪 Verification
-
-Permalink: 🧪 Verification
 
 Every claim is backed by reproducible verification. We measure correctness rather than asserting it.
 
@@ -168,8 +160,6 @@ See [`docs/field_trials.md`](docs/field_trials.md) for the full verification rep
 
 ## 🧪 seL4 Complementary Verification
 
-Permalink: 🧪 seL4 Complementary Verification
-
 Independent engineering validation of the formally verified seL4 microkernel:
 
 - **Subsystem:** Capability Derivation Tree (CDT)
@@ -182,8 +172,6 @@ Independent engineering validation of the formally verified seL4 microkernel:
 * * *
 
 ## 📚 Documentation
-
-Permalink: 📚 Documentation
 
 Full documentation is built with MkDocs Material:
 
@@ -207,8 +195,6 @@ mkdocs serve
 * * *
 
 ## 🤝 Contributing
-
-Permalink: 🤝 Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). For security disclosures, see [`SECURITY.md`](SECURITY.md).
 
