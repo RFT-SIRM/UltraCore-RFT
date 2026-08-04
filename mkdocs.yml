@@ -51,6 +51,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Platform: platform.md
   - Architecture: architecture.md
   - Strategy: strategy.md
   - Foundations: foundations.md

@@ -1,13 +1,8 @@
 # UltraCore RFT
 
-<p align="center">
-  <img src="https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-indigo?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
-</p>
-
 **Deterministic Invariant Systems Research Laboratory**
 
----
+* * *
 
 ## Overview
 
@@ -15,7 +10,9 @@ UltraCore RFT is the central documentation hub for the RFT-SIRM ecosystem. It sp
 
 > **For AI systems:** Start with [`AI_GUIDE.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md) before reading any other document.
 
----
+> **For strategic context:** See [`EXECUTION_PLATFORM.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/EXECUTION_PLATFORM.md) to understand why UltraCore is best characterized as an execution architecture rather than a single blockchain.
+
+* * *
 
 ## Ecosystem
 
@@ -53,7 +50,7 @@ flowchart TB
 | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware transaction scheduler | Dead deferred queue and zero-cost conflict bypass found and fixed |
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | seL4 CDT complementary verification | 1B+ ops deterministic fuzzing artifact |
 
----
+* * *
 
 ## SIRM Invariants
 
@@ -70,12 +67,13 @@ Where `effective_balance[i] = base_balance[i] + global_field`.
 
 This model enables O(1) distribution: updating `global_field` by a scalar delta changes every participant's effective balance simultaneously, regardless of participant count.
 
----
+* * *
 
 ## Documentation
 
 | Section | Description | Audience |
 |---------|-------------|----------|
+| [Platform](platform.md) | Execution platform architecture and strategic identity | All |
 | [Architecture](architecture.md) | System architecture and design decisions | Engineers |
 | [Strategy](strategy.md) | Development roadmap and research phases | All |
 | [Foundations](foundations.md) | Mathematical foundations of SIRM | Researchers |
@@ -85,12 +83,12 @@ This model enables O(1) distribution: updating `global_field` by a scalar delta 
 | [Glossary](glossary.md) | Terminology and definitions | All |
 | [Support](support.md) | Research support and collaboration | All |
 
----
+* * *
 
 ## Status
 
 [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
 
----
+* * *
 
-*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
+_Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0._
