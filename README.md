@@ -19,7 +19,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 | Audience | Document | What You Will Learn |
 | --- | --- | --- |
 | 🎯 **First-time visitor** | This README | What UltraCore is, why it exists, and where everything lives |
-| 🏛️ **Strategic context** | [EXECUTION_PLATFORM.md](EXECUTION_PLATFORM.md) | Why UltraCore is an execution architecture, not just a blockchain |
+| 🏛️ **Strategic context** | [docs/platform.md](docs/platform.md) | Why UltraCore is an execution architecture, not just a blockchain |
 | 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
 | 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
 | 🔬 **Researcher** | [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Disciplinary foundations and methodological boundaries |
@@ -109,7 +109,7 @@ flowchart TB
 
 **Key insight:** The blockchain is one implementation. The runtime is another. The verification methodology is another. Together they form one coherent architecture — layered, verifiable, and kernel-agnostic.
 
-See [EXECUTION_PLATFORM.md](EXECUTION_PLATFORM.md) for the full strategic identity document.
+See [docs/platform.md](docs/platform.md) for the full strategic identity document. for the full strategic identity document.
 
 * * *
 
@@ -186,7 +186,7 @@ mkdocs serve
 
 | Document | Description | Audience |
 | --- | --- | --- |
-| [EXECUTION_PLATFORM.md](EXECUTION_PLATFORM.md) | Strategic identity: what UltraCore is and why it matters | Everyone |
+| [docs/platform.md](docs/platform.md) | Strategic identity: what UltraCore is and why it matters | Everyone |
 | [docs/architecture.md](docs/architecture.md) | Detailed architecture with Mermaid diagrams | Engineers |
 | [docs/foundations.md](docs/foundations.md) | Formalized SIRM invariants | Researchers |
 | [docs/field_trials.md](docs/field_trials.md) | Verification results & readiness checklist | Validators |
