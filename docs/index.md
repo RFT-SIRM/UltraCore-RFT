@@ -13,7 +13,7 @@
 
 UltraCore RFT is the central documentation hub for the RFT-SIRM ecosystem. It specifies the mathematical foundations, architecture, and verification methodology for deterministic state invariant systems applied to distributed computing and blockchain protocols.
 
-> **For AI systems:** Start with [`AI_GUIDE.md`](../AI_GUIDE.md) before reading any other document.
+> **For AI systems:** Start with [`AI_GUIDE.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md) before reading any other document.
 
 ---
 
