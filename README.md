@@ -1,8 +1,8 @@
 # UltraCore-RFT
 
-![Platform](https://img.shields.io/badge/Platform-Execution%20Architecture-6366f1?style=for-the-badge)
-![Verification](https://img.shields.io/badge/Verification-4.29B%2B%20ops-22c55e?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)
+[![Platform](https://img.shields.io/badge/Platform-Execution%20Architecture-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![Verification](https://img.shields.io/badge/Verification-4.29B%2B%20ops-22c55e?style=for-the-badge)](docs/field_trials.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
 
 **Deterministic Invariant Systems Research Laboratory**
 
@@ -10,22 +10,22 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 
 * * *
 
-## 🧭 Start Here
+## 🎯 Start Here
 
 | Audience | Document | What You Will Learn |
 | --- | --- | --- |
 | 🎯 **First-time visitor** | This README | What UltraCore is, why it exists, and where everything lives |
-| 🏛️ **Strategic context** | [`EXECUTION_PLATFORM.md`](EXECUTION_PLATFORM.md) | Why UltraCore is an execution architecture, not just a blockchain |
-| 🤖 **AI / LLM** | [`AI_GUIDE.md`](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
-| 🏗️ **Engineer** | [`ARCHITECT.md`](ARCHITECT.md) | System design, components, and technical decisions |
-| 🔬 **Researcher** | [`SCIENTIFIC_BASIS.md`](SCIENTIFIC_BASIS.md) | Disciplinary foundations and methodological boundaries |
-| 💼 **Investor / Partner** | [`PITCH.md`](PITCH.md) | Full dossier with metrics, roadmap, and evidence |
+| 🏛️ **Strategic context** | [EXECUTION_PLATFORM.md](EXECUTION_PLATFORM.md) | Why UltraCore is an execution architecture, not just a blockchain |
+| 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
+| 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
+| 🔬 **Researcher** | [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Disciplinary foundations and methodological boundaries |
+| 💼 **Investor / Partner** | [PITCH.md](PITCH.md) | Full dossier with metrics, roadmap, and evidence |
 
 > **One-sentence summary:** UltraCore RFT is a research laboratory building a deterministic execution platform for distributed systems, where mathematical invariants are hard constraints enforced after every state transition.
 
 * * *
 
-## ⚡ At a Glance
+## ✨ At a Glance
 
 ```mermaid
 flowchart TB
@@ -60,7 +60,7 @@ flowchart TB
 
 * * *
 
-## 🏛️ What Is UltraCore RFT?
+## 🌐 What Is UltraCore RFT?
 
 UltraCore RFT is best understood as an **execution architecture** — a deterministic execution substrate — rather than as a single blockchain or mathematical theory.
 
@@ -105,11 +105,11 @@ flowchart TB
 
 **Key insight:** The blockchain is one implementation. The runtime is another. The verification methodology is another. Together they form one coherent architecture — layered, verifiable, and kernel-agnostic.
 
-See [`EXECUTION_PLATFORM.md`](EXECUTION_PLATFORM.md) for the full strategic identity document.
+See [EXECUTION_PLATFORM.md](EXECUTION_PLATFORM.md) for the full strategic identity document.
 
 * * *
 
-## 📐 What Is SIRM?
+## ⚖️ What Is SIRM?
 
 **SIRM** = Stable Invariant Rift Model. It is the mathematical core of every RFT-SIRM system.
 
@@ -126,7 +126,7 @@ Where `effective_balance[i] = base_balance[i] + global_field`.
 
 This model enables **O(1) distribution**: updating `global_field` by a scalar delta changes every participant's effective balance simultaneously, regardless of participant count. No iteration. No per-account writes.
 
-See [`docs/foundations.md`](docs/foundations.md) for the mathematical derivation.
+See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 
 * * *
 
@@ -142,7 +142,7 @@ See [`docs/foundations.md`](docs/foundations.md) for the mathematical derivation
 
 * * *
 
-## 🧪 Verification
+## ✅ Verification
 
 Every claim is backed by reproducible verification. We measure correctness rather than asserting it.
 
@@ -154,7 +154,7 @@ Every claim is backed by reproducible verification. We measure correctness rathe
 | L3b — Kernel | seL4 CDT complementary verification | 1B+ ops, 0 kernel crashes |
 | L4 — Formal | TLA+ / Coq | Planned |
 
-See [`docs/field_trials.md`](docs/field_trials.md) for the full verification report.
+See [docs/field_trials.md](docs/field_trials.md) for the full verification report.
 
 * * *
 
@@ -167,7 +167,7 @@ Independent engineering validation of the formally verified seL4 microkernel:
 - **Kernel crashes:** 0
 - **Post-marathon test suite:** 123 / 123 passed
 
-> **Important:** This was infrastructure research, not a claim of production deployment. See [`SEL4_CDT_FUZZING.md`](SEL4_CDT_FUZZING.md) and [`docs/field_trials_sel4.md`](docs/field_trials_sel4.md).
+> **Important:** This was infrastructure research, not a claim of production deployment. See [SEL4_CDT_FUZZING.md](SEL4_CDT_FUZZING.md) and [docs/field_trials_sel4.md](docs/field_trials_sel4.md).
 
 * * *
 
@@ -182,22 +182,26 @@ mkdocs serve
 
 | Document | Description | Audience |
 | --- | --- | --- |
-| [`EXECUTION_PLATFORM.md`](EXECUTION_PLATFORM.md) | Strategic identity: what UltraCore is and why it matters | Everyone |
-| [`docs/architecture.md`](docs/architecture.md) | Detailed architecture with Mermaid diagrams | Engineers |
-| [`docs/foundations.md`](docs/foundations.md) | Formalized SIRM invariants | Researchers |
-| [`docs/field_trials.md`](docs/field_trials.md) | Verification results & readiness checklist | Validators |
-| [`docs/field_trials_sel4.md`](docs/field_trials_sel4.md) | seL4 CDT stress-verification report | OS Researchers |
-| [`docs/strategy.md`](docs/strategy.md) | Full development strategy | All |
-| [`docs/implementation.md`](docs/implementation.md) | Build instructions and component architecture | Developers |
-| [`docs/glossary.md`](docs/glossary.md) | Terminology and definitions | All |
-| [`docs/support.md`](docs/support.md) | Research support and collaboration | All |
+| [EXECUTION_PLATFORM.md](EXECUTION_PLATFORM.md) | Strategic identity: what UltraCore is and why it matters | Everyone |
+| [docs/architecture.md](docs/architecture.md) | Detailed architecture with Mermaid diagrams | Engineers |
+| [docs/foundations.md](docs/foundations.md) | Formalized SIRM invariants | Researchers |
+| [docs/field_trials.md](docs/field_trials.md) | Verification results & readiness checklist | Validators |
+| [docs/field_trials_sel4.md](docs/field_trials_sel4.md) | seL4 CDT stress-verification report | OS Researchers |
+| [docs/strategy.md](docs/strategy.md) | Full development strategy | All |
+| [docs/implementation.md](docs/implementation.md) | Build instructions and component architecture | Developers |
+| [docs/glossary.md](docs/glossary.md) | Terminology and definitions | All |
+| [docs/support.md](docs/support.md) | Research support and collaboration | All |
 
 * * *
 
 ## 🤝 Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). For security disclosures, see [`SECURITY.md`](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). For security disclosures, see [SECURITY.md](SECURITY.md).
 
 * * *
 
-_Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0._
+## 📋 License
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
+
+_Copyright 2026 Eugeny (RFT-SIRM). Licensed under [Apache 2.0](LICENSE)._
