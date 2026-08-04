@@ -69,6 +69,9 @@ This model enables O(1) distribution: updating `global_field` by a scalar delta 
 | [Foundations](foundations.md) | Mathematical foundations of RFT |
 | [Implementation](implementation.md) | Implementation details and external references |
 | [Field Trials](field_trials.md) | Verification results and readiness checklist |
+| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
+| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
+| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
 | [Glossary](glossary.md) | Terminology and definitions |
 | [Support](support.md) | Research support and collaboration |
 

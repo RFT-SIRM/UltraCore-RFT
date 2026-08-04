@@ -70,6 +70,7 @@ Security research and runtime improvements developed within the RFT-SIRM ecosyst
 | Rift Network (Solana) | 🔄 RC v1.0 | Anchor + security audit | On-chain protocol, production candidate |
 | Agave Memory Contexts | 🔬 Active research | Bug reported upstream | SVM memory isolation, [svm#25](https://github.com/anza-xyz/svm/issues/25) |
 | Agave Scheduler | 📋 RFC published | Invariants verified | [agave#14274](https://github.com/anza-xyz/agave/issues/14274) upstream discussion open |
+| seL4 Complementary Verification | ✅ Complete | Deterministic fuzzing (1B+ ops) | Kernel CDT stress-test; see [Field Trial](docs/field_trials_sel4.md) |
 | Formal Verification | 📅 Planned | Model checking / theorem proving | TLA+ / Coq specifications in development |
 
 **Legend:** ✅ Complete · 🔄 Release Candidate · 🔬 Active Research · 📋 RFC Published · 📅 Planned
@@ -92,6 +93,7 @@ mkdocs serve
 | [Foundations](docs/foundations.md) | Mathematical foundations of SIRM |
 | [Implementation](docs/implementation.md) | Implementation details and external references |
 | [Field Trials](docs/field_trials.md) | Verification results and readiness checklist |
+| [seL4 CDT Verification](docs/field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree |
 | [Glossary](docs/glossary.md) | Terminology and definitions |
 | [Support](docs/support.md) | Research support and collaboration |
 
