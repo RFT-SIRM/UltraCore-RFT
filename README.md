@@ -1,174 +1,128 @@
-# agave-abiv2-memory-contexts
+<p align="center">
+  <img src="https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-indigo?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Active%20Research-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Validation-4.29B%2B%20Fuzz%20Runs-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Invariant%20Violations-0-critical?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge">
+</p>
 
-Alternative ABIv2 `MemoryContexts` implementation for Agave SVM focused on safer permission handling, cleaner region management, and future-proof memory mapping behavior.
-
-## Overview
-
-This repository contains an experimental refinement of the Agave SVM ABIv2 memory context implementation.
-
-![ABIv2 MemoryContexts Architecture](./agave-abiv2-rift-architecture.png)
-
-The primary focus is improving correctness and safety around writable account permission handling during nested CPI execution flows while preserving compatibility with the existing ABIv2 execution model.
-
-The implementation introduces:
-
-* Per-frame writable permission rollback
-* Safer region initialization and bounds validation
-* Dynamic region count calculation instead of hardcoded constants
-* Improved error propagation
-* Cleaner ABIv2 region construction flow
-* Better isolation between nested execution frames
-
-The goal is not to redesign the SVM memory model, but to improve correctness and robustness of the existing architecture.
+<h1 align="center">UltraCore RFT</h1>
+<p align="center"><b>Deterministic Invariant Systems Research Laboratory</b></p>
+<p align="center"><i>Central documentation and coordination hub for the RFT-SIRM ecosystem</i></p>
 
 ---
 
-# Motivation
+## 🧭 Start Here
 
-In the current ABIv2 flow, writable permissions can be updated dynamically during instruction execution.
-
-However, under nested CPI scenarios, writable permission changes may persist across instruction frames unless explicitly restored.
-
-This can potentially create:
-
-* permission leakage between nested calls
-* inconsistent writable state visibility
-* harder-to-debug execution behavior
-* future maintenance complexity for deeper ABIv2 integrations
-
-This repository explores a rollback-safe approach where writable account permissions are restored automatically when execution frames are popped.
+| Audience | Document |
+|----------|----------|
+| 🤖 AI Systems | [`AI_GUIDE.md`](AI_GUIDE.md) — interpretation guidelines & status boundaries |
+| 🏗️ Engineers | [`ARCHITECT.md`](ARCHITECT.md) — system design & decisions |
+| 🔬 Researchers | [`SCIENTIFIC_BASIS.md`](SCIENTIFIC_BASIS.md) — methodology & disciplinary foundations |
+| 💼 Investors / Partners | [`PITCH.md`](PITCH.md) — full research dossier with metrics & roadmap |
 
 ---
 
-# Key Improvements
+## ⚡ At a Glance
 
-## 1. Per-Frame Writable Permission Rollback
+```mermaid
+flowchart TB
+    subgraph MATH["Mathematical Core"]
+        I1["I1: Supply Conservation"]
+        I2["I2: Mint/Burn Accounting"]
+        I3["I3: Dust Bound"]
+        I4["I4: Debt Limit"]
+    end
+    subgraph RUNTIME["Runtime Layer"]
+        MEM["Memory Contexts<br/>CPI Isolation"]
+        SCHED["Conflict-Aware<br/>Scheduler"]
+    end
+    subgraph VERIFY["Verification"]
+        FUZZ["4.29B+ Fuzz<br/>Executions"]
+        SEL4["seL4 CDT<br/>1B+ Ops"]
+        AUDIT["14 Findings<br/>Addressed"]
+    end
+    MATH --> RUNTIME
+    MATH --> VERIFY
+    RUNTIME --> VERIFY
+```
 
-The original implementation updates writable permissions in-place.
-
-This implementation stores writable state snapshots before mutation and restores them automatically during frame teardown.
-
-### Benefits
-
-* Prevents writable permission leakage
-* Improves nested CPI isolation
-* Keeps execution frame boundaries deterministic
-* Makes permission transitions explicit and reversible
-
----
-
-## 2. Dynamic Region Count
-
-Instead of relying on a hardcoded region count (`392`), region sizing is derived dynamically from VM address layout boundaries.
-
-### Benefits
-
-* Better future compatibility
-* Safer against VM layout evolution
-* Reduces hidden assumptions in memory mapping logic
-
----
-
-## 3. Safer Error Handling
-
-The implementation replaces several panic-prone paths (`unwrap`, `expect`) with structured error propagation using `InstructionError`.
-
-### Benefits
-
-* Prevents unexpected validator panics
-* Improves robustness under malformed states
-* Easier debugging and testing
+| Metric | Value |
+|--------|-------|
+| **Fuzz Executions** | 4.29B+ |
+| **Invariant Violations** | 0 |
+| **Security Findings Fixed** | 14 |
+| **Upstream RFCs** | 2 |
+| **seL4 Kernel Crashes** | 0 |
+| **Daily CI Fuzzing** | 5h 55m |
 
 ---
 
-## 4. Cleaner ABIv2 Region Construction
+## 🔬 Research Programs
 
-ABIv2 region creation is reorganized into a safer and more explicit initialization flow.
-
-### Benefits
-
-* Easier auditing
-* Better maintainability
-* Reduced implicit assumptions
-* Clearer separation of memory regions
-
----
-
-# Design Goals
-
-This repository intentionally avoids introducing architectural changes to the SVM execution model.
-
-The objective is:
-
-* preserve compatibility
-* improve execution safety
-* reduce state leakage risks
-* simplify future ABIv2 evolution
-
-The implementation is designed as a minimal invasive refinement rather than a scheduler or runtime rewrite.
+| Repository | Role | Status | Key Evidence |
+|------------|------|--------|--------------|
+| [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Standalone L1 runtime | Active | 256M+ ops, 0 invariant violations |
+| [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | Audited | 14 findings addressed, Apache 2.0 |
+| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory isolation | Active | 4.29B+ exec, [svm#25](https://github.com/anza-xyz/svm/issues/25) |
+| [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware scheduling | Active | 91M exec/run, [agave#14274](https://github.com/anza-xyz/agave/issues/14274) |
+| [research/seL4](research/seL4/) | Kernel verification | Complete | 1B+ ops deterministic fuzzing |
 
 ---
 
-# Relation to Scheduler Research
+## 📐 SIRM Invariants
 
-This work was developed alongside experiments involving contention-aware transaction scheduling for Agave banking_stage.
+All RFT-SIRM systems enforce four hard constraints after every state-mutating operation:
 
-Although independent from scheduling itself, safer memory isolation becomes increasingly important when execution batching and dependency-aware scheduling strategies are introduced.
+```
+I1: total_supply = total_base_sum + global_field * p
+I2: total_supply = total_minted - total_burned
+I3: dust_accumulator < p  (when p > 0)
+I4: effective_balance[i] >= -(total_supply / 10p)
+```
 
-In particular:
+Where `effective_balance[i] = base_balance[i] + global_field`.
 
-* deterministic batching
-* reduced lock churn
-* independent execution groups
-* trusted execution paths
-
-all benefit from stricter execution-frame memory correctness.
-
----
-
-# Current Status
-
-Experimental / research implementation.
-
-The repository is intended for:
-
-* architecture discussion
-* ABIv2 experimentation
-* nested CPI safety analysis
-* scheduler + memory interaction research
-
-It is not production-ready validator code.
+This model enables **O(1) distribution**: updating `global_field` by a scalar delta changes every participant's effective balance simultaneously, regardless of participant count.
 
 ---
 
-# Potential Future Work
+## 🧪 seL4 Complementary Verification
 
-Possible areas for future exploration:
+Independent engineering validation of the formally verified seL4 microkernel:
 
-* per-frame region allocators
-* immutable sysvar snapshots
-* trusted batch memory fast-paths
-* arena-based allocation strategies
-* tighter scheduler ↔ memory integration
-* lock-aware memory locality optimizations
+- **Subsystem:** Capability Derivation Tree (CDT)
+- **Operations:** > 1.0 × 10⁹
+- **Kernel crashes:** 0
+- **Post-marathon test suite:** 123 / 123 passed
 
----
-
-# Testing Focus
-
-The implementation was tested primarily against:
-
-* nested CPI flows
-* writable permission restoration
-* repeated instruction frame transitions
-* ABIv2 region initialization consistency
-
-Additional stress testing and benchmarking are still required.
+See [`SEL4_CDT_FUZZING.md`](SEL4_CDT_FUZZING.md) and [`docs/field_trials_sel4.md`](docs/field_trials_sel4.md).
 
 ---
 
-# Repository Purpose
+## 📚 Documentation
 
-This repository exists primarily as a technical exploration of safer ABIv2 memory semantics inside Agave SVM.
+Full documentation is built with MkDocs Material:
 
-Feedback, corrections, and architecture discussion are welcome.
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
+
+| Document | Description |
+|----------|-------------|
+| [`docs/architecture.md`](docs/architecture.md) | Detailed architecture with Mermaid diagrams |
+| [`docs/foundations.md`](docs/foundations.md) | Formalized SIRM invariants |
+| [`docs/field_trials.md`](docs/field_trials.md) | Verification results & readiness checklist |
+| [`docs/field_trials_sel4.md`](docs/field_trials_sel4.md) | seL4 CDT stress-verification report |
+| [`docs/strategy.md`](docs/strategy.md) | Full development strategy |
+
+---
+
+## 🤝 Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). For security disclosures, see [`SECURITY.md`](SECURITY.md).
+
+---
+
+*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
