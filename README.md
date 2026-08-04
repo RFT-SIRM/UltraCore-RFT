@@ -7,7 +7,6 @@
 [![Fields](https://img.shields.io/badge/Fields-Multi--Disciplinary-06b6d4?style=for-the-badge)](SCIENTIFIC_BASIS.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
 
-**Deterministic Invariant Systems Research Laboratory**
 
 **Deterministic Invariant Systems Research Laboratory**
 
