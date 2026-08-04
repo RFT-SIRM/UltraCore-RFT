@@ -13,7 +13,7 @@
 >
 > The physical and mathematical terminology herein serves as a **modeling language** for describing computational processes. It does not constitute a physical theory of the Universe, nor does it claim to solve Millennium Prize Problems.
 >
-> For the full disciplinary foundation, see [`SCIENTIFIC_BASIS.md`](../SCIENTIFIC_BASIS.md).
+> For the full disciplinary foundation, see [`SCIENTIFIC_BASIS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SCIENTIFIC_BASIS.md).
 
 ### Disciplines Employed
 
