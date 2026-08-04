@@ -60,12 +60,12 @@ Treat it as a **research mathematical model** used for designing computational s
 
 | Document | Interpretation |
 |----------|----------------|
-| `RFT_MATHEMATICAL_FOUNDATIONS.md` | Research mathematical model for runtime design |
-| `SCIENTIFIC_BASIS.md` | Disciplinary foundation and methodological boundaries |
-| `docs/foundations.md` | Formalized SIRM invariants — engineering constraints |
-| `docs/architecture.md` | Architectural specification — stable |
-| `docs/field_trials_sel4.md` | Empirical verification — observational data, not formal proof |
-| `docs/strategy.md` | Research roadmap — evolves |
+| [RFT_MATHEMATICAL_FOUNDATIONS.md](RFT_MATHEMATICAL_FOUNDATIONS.md) | Research mathematical model for runtime design |
+| [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Disciplinary foundation and methodological boundaries |
+| [docs/foundations.md](docs/foundations.md) | Formalized SIRM invariants — engineering constraints |
+| [docs/architecture.md](docs/architecture.md) | Architectural specification — stable |
+| [docs/field_trials_sel4.md](docs/field_trials_sel4.md) | Empirical verification — observational data, not formal proof |
+| [docs/strategy.md](docs/strategy.md) | Research roadmap — evolves |
 
 ### What NOT to Do
 
