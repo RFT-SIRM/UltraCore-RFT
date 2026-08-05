@@ -1,11 +1,15 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-indigo?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Validation-4.29B%2B%20Fuzz%20Runs-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Invariant%20Violations-0-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/seL4-CDT%20Verified-indigo?style=for-the-badge">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge">
-</p>
+<div align="center">
 
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![RFT-SIRM](https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM)
+[![Validation](https://img.shields.io/badge/Validation-4.29B%2B%20Fuzz%20Runs-2563eb?style=for-the-badge)](docs/field_trials.md)
+[![Invariant Violations](https://img.shields.io/badge/Invariant%20Violations-0-22c55e?style=for-the-badge)](docs/field_trials.md)
+[![seL4](https://img.shields.io/badge/seL4-CDT%20Verified-4a148c?style=for-the-badge)](SEL4_CDT_FUZZING.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
+
+</div>
+
+<h1 align="center">UltraCore RFT Laboratory</h1>
 <h1 align="center">UltraCore RFT Laboratory</h1>
 <p align="center"><b>Deterministic Execution Architecture · Runtime Security · Invariant-Preserving Computation</b></p>
 
