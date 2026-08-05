@@ -1,11 +1,13 @@
-# Mathematical Foundations
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/SIRM-Mathematical%20Core-indigo?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge">
-</p>
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![SIRM](https://img.shields.io/badge/SIRM-MATHEMATICAL%20CORE-4a148c?style=for-the-badge)](foundations.md)
+[![Status](https://img.shields.io/badge/STATUS-STABLE-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](../LICENSE)
 
----
+</div>
+
+<h1 align="center">Mathematical Foundations</h1>
 
 ## Scientific Background
 
