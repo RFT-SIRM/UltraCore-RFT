@@ -1,18 +1,14 @@
-# SEL4_CDT_FUZZING.md
+<div align="center">
 
-> **Complementary Engineering Validation of the Formally Verified seL4 Microkernel**
->
-> Document ID: RFT-SELC4-SUMMARY-2026-001
-> Classification: Reproducible Research Artifact Summary
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![seL4](https://img.shields.io/badge/SEL4-CDT%20VERIFICATION-4a148c?style=for-the-badge)](SEL4_CDT_FUZZING.md)
+[![Operations](https://img.shields.io/badge/OPERATIONS-%3E1B-2563eb?style=for-the-badge)](docs/field_trials_sel4.md)
+[![Kernel Crashes](https://img.shields.io/badge/KERNEL%20CRASHES-0-22c55e?style=for-the-badge)](docs/field_trials.md)
+[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/seL4-CDT%20Verification-indigo?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Operations-%3E1B-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Kernel%20Crashes-0-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge">
-</p>
+</div>
 
----
+<h1 align="center">SEL4_CDT_FUZZING.md</h1>
 
 ## Summary
 
