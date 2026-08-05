@@ -1,15 +1,13 @@
-# Scientific Basis
+<div align="center">
 
-> **Scientific and Methodological Foundation of the UltraCore RFT Laboratory**
->
-> This document explains which disciplines the laboratory employs and establishes the boundaries of applicability for mathematical models.
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![Type](https://img.shields.io/badge/TYPE-METHODOLOGY-4a148c?style=for-the-badge)](SCIENTIFIC_BASIS.md)
+[![Scope](https://img.shields.io/badge/SCOPE-FOUNDATIONAL-2563eb?style=for-the-badge)](docs/foundations.md)
+[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Type-Methodology-purple?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Scope-Foundational-blue?style=for-the-badge">
-</p>
+</div>
 
----
+<h1 align="center">Scientific Basis</h1>
 
 ## Disciplinary Foundation
 
