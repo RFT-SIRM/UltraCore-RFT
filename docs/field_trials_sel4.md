@@ -1,14 +1,5 @@
 # Field Trial: seL4 Capability Derivation Tree Stress-Verification
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Lab-RFT--SIRM-indigo?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Operations-%3E1B-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Kernel%20Crashes-0-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge">
-</p>
-
----
 
 **Document ID:** RFT-EXP-SELC4-2026-001  
 **Date:** 2026-08-03  
