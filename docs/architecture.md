@@ -8,33 +8,33 @@ RFT-SIRM systems enforce mathematical invariants as hard constraints at every la
 
 ```mermaid
 flowchart TB
-    subgraph MATH["Mathematical Core"]
-        I1["I1: supply = base_sum + field * p"]
-        I2["I2: supply = minted - burned"]
-        I3["I3: dust < p"]
-        I4["I4: effective_balance >= -(supply / 10p)"]
-    end
+ subgraph MATH["Mathematical Core"]
+ I1["I1: supply = base_sum + field * p"]
+ I2["I2: supply = minted - burned"]
+ I3["I3: dust < p"]
+ I4["I4: effective_balance >= -(supply / 10p)"]
+ end
 
-    subgraph RUNTIME["Runtime Layer"]
-        MEM["Memory Contexts: CPI Permission Isolation"]
-        SCHED["Scheduler: Conflict-Aware Ordering"]
-    end
+ subgraph RUNTIME["Runtime Layer"]
+ MEM["Memory Contexts: CPI Permission Isolation"]
+ SCHED["Scheduler: Conflict-Aware Ordering"]
+ end
 
-    subgraph ECON["Economic Interface"]
-        SPL["SPL Token: Mint / Burn / Rebase"]
-        FEE["Fee Mechanics: Field-Pressure Pricing"]
-    end
+ subgraph ECON["Economic Interface"]
+ SPL["SPL Token: Mint / Burn / Rebase"]
+ FEE["Fee Mechanics: Field-Pressure Pricing"]
+ end
 
-    subgraph VERIFY["Verification"]
-        FUZZ["libFuzzer: Stateful Invariant Fuzzing"]
-        AUDIT["Security Audit: 14 Findings Addressed"]
-    end
+ subgraph VERIFY["Verification"]
+ FUZZ["libFuzzer: Stateful Invariant Fuzzing"]
+ AUDIT["Security Audit: 14 Findings Addressed"]
+ end
 
-    MATH --> RUNTIME
-    MATH --> ECON
-    MATH --> VERIFY
-    RUNTIME --> VERIFY
-    ECON --> VERIFY
+ MATH --> RUNTIME
+ MATH --> ECON
+ MATH --> VERIFY
+ RUNTIME --> VERIFY
+ ECON --> VERIFY
 ```
 
 ## Component Map
@@ -44,29 +44,29 @@ flowchart TB
 | CoreState | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Rust | O(1) distribution, invariant enforcement, fuzz verification |
 | ultra_core_rift | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Rust/Anchor | On-chain SIRM invariant program |
 | rift_token | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Rust/Anchor | SPL token interface, read-only access to CoreState |
-| Memory Contexts | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Rust | Per-CPI-frame writable permission isolation |
+| Memory Contexts | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Rust | Per-CPI-frame writable permission isolation (PoC research) |
 | Scheduler | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Rust | Conflict-aware transaction scheduling with bounded retries |
 
 ## Invariant Enforcement Flow
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant CoreState
-    participant Invariant
-    participant Token
+ participant User
+ participant CoreState
+ participant Invariant
+ participant Token
 
-    User->>CoreState: register() / transfer() / redistribute()
-    CoreState->>CoreState: update base_sum, field, p
-    CoreState->>Invariant: check_invariant()
-    alt Invariant OK
-        Invariant-->>CoreState: Ok(())
-        CoreState-->>User: success
-        CoreState->>Token: emit state change (read-only)
-    else Invariant Violation
-        Invariant-->>CoreState: Err(RiftError)
-        CoreState-->>User: operation rejected
-    end
+ User->>CoreState: register() / transfer() / redistribute()
+ CoreState->>CoreState: update base_sum, field, p
+ CoreState->>Invariant: check_invariant()
+ alt Invariant OK
+ Invariant-->>CoreState: Ok(())
+ CoreState-->>User: success
+ CoreState->>Token: emit state change (read-only)
+ else Invariant Violation
+ Invariant-->>CoreState: Err(RiftError)
+ CoreState-->>User: operation rejected
+ end
 ```
 
 ## Separation of Concerns
@@ -82,8 +82,8 @@ sequenceDiagram
 - Never writes to `CoreState`
 
 ### Memory Contexts (Runtime Layer)
-- Tracks per-CPI-frame writable permissions
-- Ensures rollback on `pop()`
+- Tracks per-CPI-frame writable permissions (PoC research)
+- Ensures rollback on `pop()` (snapshot-based prototype; upstream `feat/abiv2` uses `abi_v2_prepare_for_instruction` + `make_immutable`)
 - Independent of economic logic
 
 ### Scheduler (Runtime Layer)
@@ -95,24 +95,24 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    subgraph L1["Rift L1 Blockchain"]
-        CORE1["CoreState: Rust native"]
-    end
+ subgraph L1["Rift L1 Blockchain"]
+ CORE1["CoreState: Rust native"]
+ end
 
-    subgraph NET["Rift Network"]
-        CORE2["ultra_core_rift: Anchor PDA"]
-        TOKEN["rift_token: SPL Mint"]
-    end
+ subgraph NET["Rift Network"]
+ CORE2["ultra_core_rift: Anchor PDA"]
+ TOKEN["rift_token: SPL Mint"]
+ end
 
-    subgraph AGAVE["Agave Research"]
-        MEM["Memory Contexts"]
-        SCHED["Scheduler"]
-    end
+ subgraph AGAVE["Agave Research"]
+ MEM["Memory Contexts"]
+ SCHED["Scheduler"]
+ end
 
-    CORE1 -->|"invariant spec"| CORE2
-    CORE2 -->|"read-only: global_field"| TOKEN
-    MEM -->|"permission model"| CORE2
-    SCHED -->|"ordering model"| CORE1
+ CORE1 -->|"invariant spec"| CORE2
+ CORE2 -->|"read-only: global_field"| TOKEN
+ MEM -->|"permission model"| CORE2
+ SCHED -->|"ordering model"| CORE1
 ```
 
 ## O(1) Distribution
@@ -120,12 +120,12 @@ flowchart LR
 Standard approach (Ethereum, most L1s):
 ```
 for each participant:
-    balance[i] += reward / N     -- O(N) gas, O(N) time
+ balance[i] += reward / N -- O(N) gas, O(N) time
 ```
 
 RFT approach:
 ```
-global_field += reward / p       -- O(1), one integer, all participants
+global_field += reward / p -- O(1), one integer, all participants
 ```
 
 At 1,000,000 participants:
@@ -141,7 +141,7 @@ This is a different mathematical model, not an optimization.
 | Arithmetic | No overflow/underflow | `checked_add`, `checked_sub`, `checked_mul`, `try_into()` |
 | State | Atomic operations | Full success or `Err` -- no partial writes |
 | Access | Authority validation | PDA seeds, `has_one`, `Signer` constraints |
-| Runtime | Memory isolation | Per-frame permission snapshots, rollback on `pop()` |
+| Runtime | Memory isolation | Per-frame permission snapshots, rollback on `pop()` (PoC research; upstream `feat/abiv2` uses `abi_v2_prepare_for_instruction` + `make_immutable`) |
 | Scheduling | No silent loss | Bounded retry count, explicit drain passes |
 | Economics | Supply integrity | `check_invariant()` after every mutation |
 
