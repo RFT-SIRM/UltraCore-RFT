@@ -223,7 +223,7 @@ No verification method can exhaustively prove absence of bugs. Our approach is d
 
 ### Agave Research
 
-- [x] Agave memory contexts: CPI permission leakage found and reported ([svm#25](https://github.com/anza-xyz/svm/issues/25))
+- [x] Agave memory contexts: CPI permission leakage found in **PoC prototype** and reported upstream ([svm#25](https://github.com/anza-xyz/svm/issues/25)); official `feat/abiv2` uses `abi_v2_prepare_for_instruction` + `make_immutable`
 - [x] Agave scheduler: bounded retry semantics and starvation observability researched
 - [x] Agave scheduler: RFC published ([agave#14274](https://github.com/anza-xyz/agave/issues/14274))
 - [x] Agave scheduler: synthetic benchmark completed (4 scenarios, 2,000 tx each)
@@ -245,3 +245,4 @@ No verification method can exhaustively prove absence of bugs. Our approach is d
 - [Strategy](strategy.md) — Research phases and development roadmap
 - [Architecture](architecture.md) — System design decisions
 - [Foundations](foundations.md) — Mathematical foundations of SIRM
+  
