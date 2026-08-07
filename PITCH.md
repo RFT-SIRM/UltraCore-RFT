@@ -88,7 +88,7 @@ flowchart TB
     end
     subgraph L2["Runtime Layer"]
         RL1["Rift-L1-Blockchain<br/>Standalone Validator"]
-        MEM["agave-abiv2-memory-contexts<br/>SVM Security"]
+       MEM["agave-abiv2-memory-contexts<br/>SVM Memory Isolation (PoC)"]
         SCHED["agave-rift-scheduler<br/>Conflict-Aware Scheduling"]
     end
     subgraph L3["Reference Layer"]
@@ -105,7 +105,7 @@ flowchart TB
 | **UltraCore-RFT** | Architecture / Theory | Active | Living documentation, SIRM spec, [`ARCHITECT.md`](ARCHITECT.md) |
 | **Rift-Network** | Solana Protocol | Audited | 14 findings addressed, Apache 2.0, on-chain invariant enforcement |
 | **Rift-L1-Blockchain** | L1 Runtime | Active | 256M+ ops verified, 0 violations, 5h 55m daily CI |
-| **agave-abiv2-memory-contexts** | SVM Security | Active | 4.29B+ exec, 0 violations, [RFC svm#25](https://github.com/anza-xyz/svm/issues/25) |
+| **agave-abiv2-memory-contexts** | SVM Memory Isolation (PoC) | Research Complete | 4.29B+ exec, 0 violations, [RFC svm#25](https://github.com/anza-xyz/svm/issues/25) (closed, PoC-only) |
 | **agave-rift-scheduler** | SVM Scheduling | Active | 91M exec/run, 0 violations, [RFC agave#14274](https://github.com/anza-xyz/agave/issues/14274) |
 
 ### 3.1 UltraCore-RFT — Architectural Reference
@@ -123,11 +123,9 @@ Purest implementation of SIRM — no external protocol constraints, no smart con
 | GitHub CI (ubuntu x86, 2 vCPU) | ~2,000,000 | ~42 billion |
 | Apple M1 (arm64) | ~8,500,000 | ~181 billion |
 | 32-core server (projected) | 50–60M | ~1.0–1.3 trillion |
-
-### 3.4 agave-abiv2-memory-contexts — SVM Security
+### 3.4 agave-abiv2-memory-contexts — SVM Memory Isolation (PoC)
 Investigates per-CPI-frame writable permission isolation in Agave SVM ABIv2.
-
-**Bug found:** `snapshot.entries.clear()` destroyed rollback entries within a single CPI frame, causing permission leakage.
+**Bug found (PoC only):** `snapshot.entries.clear()` destroyed rollback entries within a single CPI frame, causing permission leakage in the prototype. The official `agave-runtime/feat/abiv2` uses `abi_v2_prepare_for_instruction()` + `make_immutable()` and does not exhibit this bug.
 **Fix:** HashSet-based first-occurrence snapshot ensures only the first permission state is recorded per frame.
 
 | Metric | Value |
@@ -257,7 +255,7 @@ Security research and runtime improvements are reported back to the Solana core 
 
 | Issue | Repository | Description | Status |
 |-------|-----------|-------------|--------|
-| [svm#25](https://github.com/anza-xyz/svm/issues/25) | anza-xyz/svm | CPI permission leakage: per-frame writable rollback failure | Reported |
+| [svm#25](https://github.com/anza-xyz/svm/issues/25) | anza-xyz/svm | CPI permission model research (PoC-only finding, superseded by upstream `abi_v2_prepare_for_instruction` architecture) | Closed |
 | [agave#14274](https://github.com/anza-xyz/agave/issues/14274) | anza-xyz/agave | Bounded retry semantics and starvation observability for GreedyScheduler | RFC Open |
 
 ---
