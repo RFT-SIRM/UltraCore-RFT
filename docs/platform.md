@@ -12,8 +12,8 @@
 
 UltraCore RFT began as a research project investigating invariant structures in distributed systems. After sustained engineering work — spanning runtime architecture, blockchain protocol implementation, Solana SVM research, deterministic kernel verification, and continuous empirical validation — it has evolved into something significantly larger.
 
-It is no longer just a blockchain.  
-It is no longer just a mathematical framework.  
+It is no longer just a blockchain.
+It is no longer just a mathematical framework.
 It is becoming an **execution platform for deterministic distributed computation**.
 
 This document explains that transition and defines what the platform is, how it is structured, and why the distinction matters.
@@ -41,39 +41,39 @@ UltraCore RFT is a layered execution architecture. Each layer is independently v
 
 ```mermaid
 flowchart TB
-    subgraph L0["L0: Scientific Foundations"]
-        MATH["Mathematics · Graph Theory · Category Theory<br/>Information Theory · Dynamical Systems · Invariant Theory"]
-    end
-    subgraph L1["L1: Conceptual Framework"]
-        RFT["Reality Fractal Theory"]
-    end
-    subgraph L2["L2: Execution Model"]
-        SIRM["Stable Invariant Rift Model<br/>I1–I4 Hard Constraints"]
-    end
-    subgraph L3["L3: Runtime Engine"]
-        UC["UltraCore Runtime<br/>Deterministic State Machine · O(1) Distribution"]
-    end
-    subgraph L4["L4: Execution Architecture"]
-        MEM["Memory Contexts · CPI Isolation"]
-        SCHED["Conflict-Aware Scheduler"]
-        ROLL["Permission Rollback · Atomic Operations"]
-    end
-    subgraph L5["L5: Blockchain Layer"]
-        L1B["Rift-L1 Blockchain<br/>Standalone Validator Core"]
-        NET["Rift Network<br/>Solana On-Chain Protocol"]
-    end
-    subgraph L6["L6: Future Targets"]
-        HA["High-Assurance Infrastructure"]
-        CRIT["Critical Computing Environments"]
-        KERNEL["Additional Verified Kernels"]
-    end
-    L0 --> L1
-    L1 --> L2
-    L2 --> L3
-    L3 --> L4
-    L4 --> L5
-    L5 --> L6
-    L4 -.->|"kernel-agnostic"| L6
+ subgraph L0["L0: Scientific Foundations"]
+ MATH["Mathematics · Graph Theory · Category Theory\nInformation Theory · Dynamical Systems · Invariant Theory"]
+ end
+ subgraph L1["L1: Conceptual Framework"]
+ RFT["Reality Fractal Theory"]
+ end
+ subgraph L2["L2: Execution Model"]
+ SIRM["Stable Invariant Rift Model\nI1–I4 Hard Constraints"]
+ end
+ subgraph L3["L3: Runtime Engine"]
+ UC["UltraCore Runtime\nDeterministic State Machine · O(1) Distribution"]
+ end
+ subgraph L4["L4: Execution Architecture"]
+ MEM["Memory Contexts · CPI Isolation"]
+ SCHED["Conflict-Aware Scheduler"]
+ ROLL["Permission Rollback · Atomic Operations"]
+ end
+ subgraph L5["L5: Blockchain Layer"]
+ L1B["Rift-L1 Blockchain\nStandalone Validator Core"]
+ NET["Rift Network\nSolana On-Chain Protocol"]
+ end
+ subgraph L6["L6: Future Targets"]
+ HA["High-Assurance Infrastructure"]
+ CRIT["Critical Computing Environments"]
+ KERNEL["Additional Verified Kernels"]
+ end
+ L0 --> L1
+ L1 --> L2
+ L2 --> L3
+ L3 --> L4
+ L4 --> L5
+ L5 --> L6
+ L4 -.->|"kernel-agnostic"| L6
 ```
 
 These are not separate projects. They are different manifestations of the same deterministic execution substrate.
@@ -98,32 +98,32 @@ The platform operates through a clean separation between the system kernel and t
 
 ```mermaid
 flowchart TB
-    subgraph HW["Hardware"]
-        CPU["CPU · Memory · Storage · Network"]
-    end
-    subgraph KERNEL["System Kernel"]
-        K1["Linux"]
-        K2["seL4"]
-        K3["Future Deterministic Kernels"]
-    end
-    subgraph RUNTIME["UltraCore Runtime"]
-        INV["Invariant Engine<br/>I1–I4 Enforcement"]
-        DET["Deterministic State Machine"]
-    end
-    subgraph DIST["Distributed Execution Layer"]
-        CONS["Consensus Coordination"]
-        SCHED["Conflict-Aware Scheduling"]
-        MEM["Memory Isolation · Permission Rollback"]
-    end
-    subgraph APP["Applications"]
-        BC["Blockchain / Protocol"]
-        VAL["Validator Infrastructure"]
-        HA["High-Assurance Systems"]
-    end
-    HW --> KERNEL
-    KERNEL --> RUNTIME
-    RUNTIME --> DIST
-    DIST --> APP
+ subgraph HW["Hardware"]
+ CPU["CPU · Memory · Storage · Network"]
+ end
+ subgraph KERNEL["System Kernel"]
+ K1["Linux"]
+ K2["seL4"]
+ K3["Future Deterministic Kernels"]
+ end
+ subgraph RUNTIME["UltraCore Runtime"]
+ INV["Invariant Engine\nI1–I4 Enforcement"]
+ DET["Deterministic State Machine"]
+ end
+ subgraph DIST["Distributed Execution Layer"]
+ CONS["Consensus Coordination"]
+ SCHED["Conflict-Aware Scheduling"]
+ MEM["Memory Isolation · Permission Rollback"]
+ end
+ subgraph APP["Applications"]
+ BC["Blockchain / Protocol"]
+ VAL["Validator Infrastructure"]
+ HA["High-Assurance Systems"]
+ end
+ HW --> KERNEL
+ KERNEL --> RUNTIME
+ RUNTIME --> DIST
+ DIST --> APP
 ```
 
 This separation is intentional and structural. The execution architecture is independent from any specific blockchain implementation. The same SIRM invariants, the same deterministic state machine, and the same verification methodology can be instantiated in:
@@ -184,25 +184,25 @@ Verification in UltraCore is not an afterthought applied to a finished product. 
 
 ```mermaid
 flowchart TB
-    subgraph L4["Level 4: Formal Methods"]
-        TLA["TLA+ / Coq"]
-        MC["Model Checking"]
-    end
-    subgraph L3["Level 3: Deterministic Fuzzing"]
-        FUZZ["libFuzzer: 4.29B+ executions"]
-        SEED["Seed-Controlled Reproducibility"]
-        TEL["Invariant Telemetry"]
-    end
-    subgraph L2["Level 2: Engineering Testing"]
-        UNIT["Unit Tests"]
-        DIFF["Differential Tests"]
-        AUDIT["Security Audit: 14 Findings"]
-    end
-    subgraph L1["Level 1: Static Analysis"]
-        CLIP["Clippy / Miri"]
-        FMT["rustfmt"]
-    end
-    L1 --> L2 --> L3 --> L4
+ subgraph L4["Level 4: Formal Methods"]
+ TLA["TLA+ / Coq"]
+ MC["Model Checking"]
+ end
+ subgraph L3["Level 3: Deterministic Fuzzing"]
+ FUZZ["libFuzzer: 4.29B+ executions"]
+ SEED["Seed-Controlled Reproducibility"]
+ TEL["Invariant Telemetry"]
+ end
+ subgraph L2["Level 2: Engineering Testing"]
+ UNIT["Unit Tests"]
+ DIFF["Differential Tests"]
+ AUDIT["Security Audit: 14 Findings"]
+ end
+ subgraph L1["Level 1: Static Analysis"]
+ CLIP["Clippy / Miri"]
+ FMT["rustfmt"]
+ end
+ L1 --> L2 --> L3 --> L4
 ```
 
 | Layer | Method | Evidence |
@@ -225,7 +225,7 @@ The execution platform is not theoretical. It is expressed through concrete, val
 |----------------|-------|--------|------------|
 | **Rift-L1-Blockchain** | Standalone validator core | Active | 1T+ ops fuzzed, 0 invariant violations |
 | **Rift-Network** | Solana on-chain protocol | Audited | 14 findings addressed, 2.5B+ fuzz runs |
-| **agave-abiv2-memory-contexts** | SVM memory isolation | Active | 4.29B+ exec, CPI permission leakage found (svm#25) |
+| **agave-abiv2-memory-contexts** | SVM memory isolation (PoC research) | Active | 4.29B+ exec, PoC permission model validated; upstream confirmed `abi_v2_prepare_for_instruction` architecture (svm#25) |
 | **agave-rift-scheduler** | Conflict-aware scheduling | Active | 91M exec/run, RFC agave#14274 |
 | **seL4 CDT Fuzzer** | Kernel verification methodology | Complete | 1B+ ops, 0 kernel crashes, 123/123 post-marathon tests |
 
