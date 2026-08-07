@@ -46,7 +46,7 @@ flowchart TB
 |------------|------|-------------|
 | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Standalone Rust validator core | 1T+ ops fuzzed, 0 invariant violations |
 | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | 2.5B+ fuzz runs, 14 audit findings addressed |
-| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory isolation research | [CPI permission leakage](https://github.com/anza-xyz/svm/issues/25) found and reported |
+| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM Memory Isolation (PoC) | Research complete — PoC bug documented, upstream uses `abi_v2_prepare_for_instruction` architecture |
 | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware transaction scheduler | Dead deferred queue and zero-cost conflict bypass found and fixed |
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | seL4 CDT complementary verification | 1B+ ops deterministic fuzzing artifact |
 
