@@ -34,7 +34,7 @@
 
 ## Core Invariants
 
-The SIRM (Scalar Invariant Resource Model) defines four hard constraints that every RFT-SIRM system must satisfy after every state-mutating operation.
+The SIRM (Stable Invariant Resource Model) defines four hard constraints that every RFT-SIRM system must satisfy after every state-mutating operation.
 
 ### I1: Supply Conservation
 
