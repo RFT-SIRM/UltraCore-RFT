@@ -227,6 +227,7 @@ The execution platform is not theoretical. It is expressed through concrete, val
 | **Rift-Network** | Solana on-chain protocol | Audited | 14 findings addressed, 2.5B+ fuzz runs |
 | **agave-abiv2-memory-contexts** | SVM memory isolation (PoC research) | Active | 4.29B+ exec, PoC permission model validated; upstream confirmed `abi_v2_prepare_for_instruction` architecture (svm#25) |
 | **agave-rift-scheduler** | Conflict-aware scheduling | Active | 91M exec/run, RFC agave#14274 |
+| **aave-v4-hub-model-review** | DeFi ledger invariant model (Aave V4 Hub) | Complete | 184K ops, 0 violations, complementary to Certora FV |
 | **seL4 CDT Fuzzer** | Kernel verification methodology | Complete | 1B+ ops, 0 kernel crashes, 123/123 post-marathon tests |
 
 Each implementation validates a different layer of the platform stack. Together, they demonstrate that the execution architecture is real, reproducible, and transferable across domains.
