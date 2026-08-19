@@ -58,6 +58,15 @@ Our verification pipeline operates at three levels:
 | Synthetic benchmark | Scenarios | 4 (see §4) |
 | Synthetic benchmark | Transactions per scenario | 2,000 |
 
+### 2.5 Aave V4 Hub Model Review
+
+| Method | Metric | Result |
+|:-------|:-------|:-------|
+| Python deterministic fuzz | Operations | 184,000 |
+| Python deterministic fuzz | Invariant violations | **0** |
+| Python deterministic fuzz | Boundary cases | B-1 … B-5 passed |
+| Model scope | Transitions tested | draw, restore, reportDeficit, eliminateDeficit |
+
 ---
 
 ## 3. Fuzz Harness Design
@@ -105,6 +114,19 @@ Four invariants asserted after every scheduling pass:
 | I4 | Deferred queue drains to zero within bounded passes after input stops | Unbounded starvation |
 
 > **Note:** I1 ensures every transaction is accounted for (scheduled, deferred, or dropped). It does not assert that all transactions are scheduled — bounded retry semantics explicitly allow dropping after `max_retry_count`.
+
+### 3.5 Aave V4 Hub
+
+Python state-machine harness simulating Aave V4 Hub drawn/deficit ledger:
+
+- `draw` — mint shares, decrease liquidity
+- `restore` — burn shares, increase liquidity
+- `reportDeficit` — convert drawn shares to deficit
+- `eliminateDeficit` — cover deficit via added-share burn
+
+Exact on-chain interest accrual (`calculateLinearInterest` from `MathUtils.sol`). RAY-precision arithmetic. 4 seeded configurations + 200-seed dust-heavy boundary sweep.
+
+Complementary to Certora Hub FV (March 2026). No novel Class A/B finding claimed.
 
 ---
 
@@ -245,4 +267,3 @@ No verification method can exhaustively prove absence of bugs. Our approach is d
 - [Strategy](strategy.md) — Research phases and development roadmap
 - [Architecture](architecture.md) — System design decisions
 - [Foundations](foundations.md) — Mathematical foundations of SIRM
-  
