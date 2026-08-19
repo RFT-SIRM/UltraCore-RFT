@@ -141,6 +141,7 @@ This model enables **O(1) distribution**: updating `global_field` by a scalar de
 | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | Rust/Anchor | 2.5B+ fuzz runs, 14 security audit findings addressed |
 | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory isolation research | Rust | CPI permission leakage found and reported upstream (svm#25) |
 | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware scheduler | Rust | RFC published (agave#14274) |
+| [aave-v4-hub-model-review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | DeFi ledger invariant model (Aave V4 Hub) | Python | 184K ops, 0 violations, complementary to Certora FV |
 
 ---
 
