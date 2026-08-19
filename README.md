@@ -142,6 +142,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | Audited | 14 findings addressed, 2.5B+ fuzz runs |
 | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory isolation (PoC) | Research Complete | 4.29B+ exec, PoC-only bug found & documented — upstream uses `abi_v2_prepare_for_instruction` architecture |
 | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware scheduling | Active | 91M exec/run, [agave#14274](https://github.com/anza-xyz/agave/issues/14274) |
+| [aave-v4-hub-model-review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | DeFi ledger invariant model (Aave V4 Hub) | Complete | 184K ops, 0 violations, complementary to Certora FV |
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | Kernel verification | Complete | 1B+ ops deterministic fuzzing |
 
 * * *
@@ -156,6 +157,7 @@ Every claim is backed by reproducible verification. We measure correctness rathe
 | L2 — Engineering | Unit + integration + differential tests | 15+ tests per component |
 | L3 — Fuzzing | libFuzzer deterministic fuzzing | 4.29B+ exec, 0 invariant violations |
 | L3b — Kernel | seL4 CDT complementary verification | 1B+ ops, 0 kernel crashes |
+| L3c — DeFi Model | Python deterministic state-machine fuzz | 184K ops, 0 INV violations |
 | L4 — Formal | TLA+ / Coq | Planned |
 
 See [docs/field_trials.md](docs/field_trials.md) for the full verification report.
