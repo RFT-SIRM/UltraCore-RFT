@@ -6,7 +6,7 @@
 [![Scope](https://img.shields.io/badge/Scope-Kernel--Agnostic-f97316?style=for-the-badge)](#-what-is-ultracore-rft)
 [![Fields](https://img.shields.io/badge/Fields-Multi--Disciplinary-06b6d4?style=for-the-badge)](SCIENTIFIC_BASIS.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
-
+[![Website](https://img.shields.io/badge/🌐%20Website-rft--sirm.github.io-000000?style=for-the-badge)](https://rft-sirm.github.io)
 
 **Deterministic Invariant Systems Research Laboratory**
 
@@ -19,6 +19,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 | Audience | Document | What You Will Learn |
 | --- | --- | --- |
 | 🎯 **First-time visitor** | This README | What UltraCore is, why it exists, and where everything lives |
+| 🌐 **Interactive overview** | [rft-sirm.github.io](https://rft-sirm.github.io) | Live laboratory website with metrics, case studies, and evidence |
 | 🏛️ **Strategic context** | [docs/platform.md](docs/platform.md) | Why UltraCore is an execution architecture, not just a blockchain |
 | 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
 | 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
