@@ -1,5 +1,3 @@
-<div align="center">
-
 [![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
 [![RFT-SIRM](https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM)
 [![Validation](https://img.shields.io/badge/Validation-4.29B%2B%20Fuzz%20Runs-2563eb?style=for-the-badge)](docs/field_trials.md)
@@ -7,17 +5,17 @@
 [![seL4](https://img.shields.io/badge/seL4-CDT%20Verified-4a148c?style=for-the-badge)](SEL4_CDT_FUZZING.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
 
-</div>
+## UltraCore RFT Laboratory
 
-<h1 align="center">UltraCore RFT Laboratory</h1>
-<h1 align="center">UltraCore RFT Laboratory</h1>
-<p align="center"><b>Deterministic Execution Architecture · Runtime Security · Invariant-Preserving Computation</b></p>
+## UltraCore RFT Laboratory
+
+**Deterministic Execution Architecture · Runtime Security · Invariant-Preserving Computation**
 
 ---
 
 ## 1. Executive Summary
 
-UltraCore RFT Laboratory is an independent research laboratory focused on next-generation deterministic distributed systems. The laboratory investigates blockchain runtime architecture, deterministic execution environments, invariant-preserving computation, transaction scheduling, memory safety, and formal runtime verification.
+UltraCore RFT Laboratory is an independent research laboratory focused on next-generation deterministic distributed systems. The laboratory investigates blockchain runtime architecture, deterministic execution environments, invariant-preserving computation, transaction scheduling, memory safety, formal runtime verification, and DeFi protocol modeling.
 
 The scientific foundation consists of two interconnected frameworks:
 - **Reality Fractal Theory (RFT)** — conceptual and mathematical basis
@@ -35,9 +33,10 @@ The scientific foundation consists of two interconnected frameworks:
 
 ### Audience
 - Blockchain infrastructure engineers evaluating runtime contributions
-- Protocol architects reviewing Solana SVM and Layer-1 designs
+- Protocol architects reviewing Solana SVM, Ethereum, and Layer-1 designs
 - Venture funds considering early-stage infrastructure research
-- Strategic partners in the Solana and broader blockchain ecosystem
+- Strategic partners in the Solana, Ethereum, and broader blockchain ecosystem
+- DeFi security researchers and protocol auditors
 
 ---
 
@@ -56,10 +55,10 @@ SIRM specifies a runtime in which mathematical invariants are intrinsic properti
 The four core SIRM invariants, implemented across all laboratory programs:
 
 ```
-I1 (Economic balance):  total_supply = total_base_sum + (global_field × participants)
-I2 (Mint/burn ledger):  total_supply = total_minted - total_burned
-I3 (Dust control):      dust_accumulator < participants
-I4 (Debt ceiling):      effective_balance >= -(supply / (10 × participants))
+I1 (Economic balance): total_supply = total_base_sum + (global_field × participants)
+I2 (Mint/burn ledger): total_supply = total_minted - total_burned
+I3 (Dust control): dust_accumulator < participants
+I4 (Debt ceiling): effective_balance >= -(supply / (10 × participants))
 ```
 
 Each invariant has a precise mathematical statement, a reason for existence, a defined failure mode, a corresponding fuzz assertion, and a regression test.
@@ -79,25 +78,35 @@ Production-quality Rust implementing deterministic state machines, invariant-pre
 
 ## 3. Research Programs
 
-Five interconnected programs addressing different layers of the UltraCore RFT architecture.
+Six interconnected programs addressing different layers of the UltraCore RFT architecture.
 
 ```mermaid
 flowchart TB
-    subgraph L1["Protocol Layer"]
-        RN["Rift-Network<br/>Solana Protocol"]
-    end
-    subgraph L2["Runtime Layer"]
-        RL1["Rift-L1-Blockchain<br/>Standalone Validator"]
-       MEM["agave-abiv2-memory-contexts<br/>SVM Memory Isolation (PoC)"]
-        SCHED["agave-rift-scheduler<br/>Conflict-Aware Scheduling"]
-    end
-    subgraph L3["Reference Layer"]
-        UC["UltraCore-RFT<br/>Architecture & Theory"]
-    end
-    UC --> RN
-    UC --> RL1
-    UC --> MEM
-    UC --> SCHED
+ subgraph L1["Protocol Layer"]
+ RN["Rift-Network
+Solana Protocol"]
+ end
+ subgraph L2["Runtime Layer"]
+ RL1["Rift-L1-Blockchain
+Standalone Validator"]
+ MEM["agave-abiv2-memory-contexts
+SVM Memory Isolation (PoC)"]
+ SCHED["agave-rift-scheduler
+Conflict-Aware Scheduling"]
+ end
+ subgraph L3["Reference Layer"]
+ UC["UltraCore-RFT
+Architecture & Theory"]
+ end
+ subgraph L4["DeFi Modeling"]
+ AAVE["aave-v4-hub-model-review
+DeFi Ledger Invariant Model"]
+ end
+ UC --> RN
+ UC --> RL1
+ UC --> MEM
+ UC --> SCHED
+ UC --> AAVE
 ```
 
 | Program | Layer | Status | Key Evidence |
@@ -107,6 +116,7 @@ flowchart TB
 | **Rift-L1-Blockchain** | L1 Runtime | Active | 256M+ ops verified, 0 violations, 5h 55m daily CI |
 | **agave-abiv2-memory-contexts** | SVM Memory Isolation (PoC) | Research Complete | 4.29B+ exec, 0 violations, [RFC svm#25](https://github.com/anza-xyz/svm/issues/25) (closed, PoC-only) |
 | **agave-rift-scheduler** | SVM Scheduling | Active | 91M exec/run, 0 violations, [RFC agave#14274](https://github.com/anza-xyz/agave/issues/14274) |
+| **aave-v4-hub-model-review** | DeFi Ledger Model | Complete | 184K ops, 0 violations, complementary to Certora Hub FV |
 
 ### 3.1 UltraCore-RFT — Architectural Reference
 Research goal: establish the theoretical foundation and architectural specification for deterministic distributed systems.
@@ -123,6 +133,7 @@ Purest implementation of SIRM — no external protocol constraints, no smart con
 | GitHub CI (ubuntu x86, 2 vCPU) | ~2,000,000 | ~42 billion |
 | Apple M1 (arm64) | ~8,500,000 | ~181 billion |
 | 32-core server (projected) | 50–60M | ~1.0–1.3 trillion |
+
 ### 3.4 agave-abiv2-memory-contexts — SVM Memory Isolation (PoC)
 Investigates per-CPI-frame writable permission isolation in Agave SVM ABIv2.
 **Bug found (PoC only):** `snapshot.entries.clear()` destroyed rollback entries within a single CPI frame, causing permission leakage in the prototype. The official `agave-runtime/feat/abiv2` uses `abi_v2_prepare_for_instruction()` + `make_immutable()` and does not exhibit this bug.
@@ -150,6 +161,22 @@ Four scheduling invariants verified through continuous fuzzing:
 - **I3 (Monotonicity):** scheduler_passes increments on every schedule()
 - **I4 (Drain bound):** deferred queue reaches zero within 8192 drain passes
 
+### 3.6 aave-v4-hub-model-review — DeFi Ledger Invariant Model
+Model-level deterministic state-machine review of the Aave V4 Hub drawn/deficit ledger. Complementary to Certora Hub FV (March 2026).
+
+| Metric | Value |
+|--------|-------|
+| Total operations | 184,000 |
+| Invariant violations | 0 |
+| Boundary cases | B-1 … B-5 passed |
+| CI runtime | ~7 sec |
+| Scope | draw, restore, reportDeficit, eliminateDeficit |
+
+- Exact on-chain interest accrual (`calculateLinearInterest` from `MathUtils.sol`)
+- RAY-precision arithmetic (`ray_mul_up/down`, `ray_div_up/down`)
+- 4 seeded configurations + 200-seed dust-heavy boundary sweep
+- No novel Class A/B finding claimed
+
 ---
 
 ## 4. Validation Methodology
@@ -158,24 +185,27 @@ All programs are validated through a unified multi-layer methodology.
 
 ```mermaid
 flowchart TB
-    subgraph L4["Level 4: Formal Verification"]
-        TLA["TLA+ / Coq / Model Checking"]
-    end
-    subgraph L3["Level 3: Deterministic Fuzzing"]
-        FUZZ["libFuzzer<br/>4.29B+ executions"]
-        SEED["Seed-Controlled"]
-        INV["Invariant Telemetry"]
-    end
-    subgraph L2["Level 2: Engineering Testing"]
-        UNIT["Unit Tests"]
-        DIFF["Differential Tests"]
-        AUDIT["Security Audit"]
-    end
-    subgraph L1["Level 1: Static Analysis"]
-        CLIP["Clippy / Miri"]
-        FMT["rustfmt"]
-    end
-    L1 --> L2 --> L3 --> L4
+ subgraph L4["Level 4: Formal Verification"]
+ TLA["TLA+ / Coq / Model Checking"]
+ end
+ subgraph L3["Level 3: Deterministic Fuzzing"]
+ FUZZ["libFuzzer
+4.29B+ executions"]
+ SEED["Seed-Controlled"]
+ INV["Invariant Telemetry"]
+ AAVE["Python Model
+184K ops"]
+ end
+ subgraph L2["Level 2: Engineering Testing"]
+ UNIT["Unit Tests"]
+ DIFF["Differential Tests"]
+ AUDIT["Security Audit"]
+ end
+ subgraph L1["Level 1: Static Analysis"]
+ CLIP["Clippy / Miri"]
+ FMT["rustfmt"]
+ end
+ L1 --> L2 --> L3 --> L4
 ```
 
 | Layer | Method | Coverage |
@@ -184,6 +214,7 @@ flowchart TB
 | L2 | Unit + integration + differential tests | 15+ tests, all passing |
 | L3 | libFuzzer deterministic fuzzing | 4.29B+ exec, 0 invariant violations |
 | L3b | seL4 CDT complementary verification | 1B+ ops, 0 kernel crashes |
+| L3c | Python DeFi model fuzz | 184K ops, 0 INV violations |
 | L4 | TLA+ / Coq formal verification | Planned |
 
 ### 4.1 Why Deterministic Validation Matters
@@ -204,25 +235,50 @@ Independent engineering validation of the formally verified seL4 microkernel thr
 
 See [`SEL4_CDT_FUZZING.md`](SEL4_CDT_FUZZING.md) and [`docs/field_trials_sel4.md`](docs/field_trials_sel4.md).
 
+### 4.3 Aave V4 Hub Model Review
+
+Complementary model-level verification of Aave V4 Hub drawn/deficit ledger transitions.
+
+| Metric | Value |
+|--------|-------|
+| Total operations | 184,000 |
+| Invariant violations | 0 |
+| R-01 dust events | 9,564 (bounded 0–1 shares) |
+| R-02 liquidity checks | 63,050 passed |
+| Boundary matrix | B-1 … B-5 all passed |
+
+See [aave-v4-hub-model-review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) repository.
+
 ---
 
 ## 5. Ecosystem Architecture
 
 ```mermaid
 flowchart LR
-    RFT["RFT<br/>Research Fractal Theory"] --> SIRM["SIRM<br/>Scalar Invariant<br/>Resource Model"]
-    SIRM --> UC["UltraCore<br/>Runtime Engine"]
-    UC --> RT["Runtime<br/>Execution Env"]
-    RT --> VAL["Validator<br/>Consensus + Verify"]
-    VAL --> BC["Blockchain<br/>Distributed Ledger"]
-    BC --> APP["Applications<br/>End-user Protocols"]
-    style RFT fill:#4a148c,color:#fff
-    style SIRM fill:#1a237e,color:#fff
-    style UC fill:#0d47a1,color:#fff
-    style RT fill:#01579b,color:#fff
-    style VAL fill:#006064,color:#fff
-    style BC fill:#1b5e20,color:#fff
-    style APP fill:#33691e,color:#fff
+ RFT["RFT
+Research Fractal Theory"] --> SIRM["SIRM
+Scalar Invariant
+Resource Model"]
+ SIRM --> UC["UltraCore
+Runtime Engine"]
+ UC --> RT["Runtime
+Execution Env"]
+ UC --> DEFI["DeFi Model
+Protocol Analysis"]
+ RT --> VAL["Validator
+Consensus + Verify"]
+ VAL --> BC["Blockchain
+Distributed Ledger"]
+ BC --> APP["Applications
+End-user Protocols"]
+ style RFT fill:#4a148c,color:#fff
+ style SIRM fill:#1a237e,color:#fff
+ style UC fill:#0d47a1,color:#fff
+ style RT fill:#01579b,color:#fff
+ style VAL fill:#006064,color:#fff
+ style BC fill:#1b5e20,color:#fff
+ style APP fill:#33691e,color:#fff
+ style DEFI fill:#b71c1c,color:#fff
 ```
 
 ---
@@ -231,18 +287,22 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    C["Phase 1: Foundation<br/>✅ Complete"] --> M["Phase 2: Agave Integration<br/>🔄 In Progress"]
-    M --> R["Phase 3: Testnet & Benchmarks<br/>📅 Planned"]
-    R --> K["Phase 4: Production & Ecosystem<br/>📅 Planned"]
-    style C fill:#1b5e20,color:#fff
-    style M fill:#0d47a1,color:#fff
-    style R fill:#01579b,color:#fff
-    style K fill:#4a148c,color:#fff
+ C["Phase 1: Foundation
+✅ Complete"] --> M["Phase 2: Agave Integration
+🔄 In Progress"]
+ M --> R["Phase 3: Testnet & Benchmarks
+📅 Planned"]
+ R --> K["Phase 4: Production & Ecosystem
+📅 Planned"]
+ style C fill:#1b5e20,color:#fff
+ style M fill:#0d47a1,color:#fff
+ style R fill:#01579b,color:#fff
+ style K fill:#4a148c,color:#fff
 ```
 
 | Phase | Status | Deliverables |
 |-------|--------|--------------|
-| **Phase 1: Foundation** | ✅ Complete | 5 programs, SIRM invariants, security audit, RFC submitted |
+| **Phase 1: Foundation** | ✅ Complete | 6 programs, SIRM invariants, security audit, RFC submitted, DeFi model review |
 | **Phase 2: Agave Integration** | 🔄 Active | Upstream PRs, Criterion benchmarks, real Agave types |
 | **Phase 3: Testnet & Benchmarks** | 📅 Planned | Rift-L1 testnet, formal verification engagement |
 | **Phase 4: Production** | 📅 Planned | Mainnet deployment, DeFi ecosystem on SIRM-verified runtime |
@@ -264,17 +324,17 @@ Security research and runtime improvements are reported back to the Solana core 
 
 ```
 UltraCore-RFT/
-├── AI_GUIDE.md              ← Start here (for AI systems)
-├── PITCH.md                 ← You are here (full dossier)
-├── SCIENTIFIC_BASIS.md      ← Disciplinary foundations & boundaries
-├── ARCHITECT.md             ← System architecture
-├── RFT_DEVELOPMENT_STRATEGY.md  ← Research roadmap
-├── RFT_MATHEMATICAL_FOUNDATIONS.md  ← Formal models
-├── SEL4_CDT_FUZZING.md      ← seL4 verification summary
+├── AI_GUIDE.md ← Start here (for AI systems)
+├── PITCH.md ← You are here (full dossier)
+├── SCIENTIFIC_BASIS.md ← Disciplinary foundations & boundaries
+├── ARCHITECT.md ← System architecture
+├── RFT_DEVELOPMENT_STRATEGY.md ← Research roadmap
+├── RFT_MATHEMATICAL_FOUNDATIONS.md ← Formal models
+├── SEL4_CDT_FUZZING.md ← seL4 verification summary
 ├── research/
-│   └── seL4/
-│       └── src/rft_cdt_fuzzer_sel4.c  ← Reproducible fuzzer artifact
-└── docs/                    ← MkDocs documentation
+│ └── seL4/
+│ └── src/rft_cdt_fuzzer_sel4.c ← Reproducible fuzzer artifact
+└── docs/ ← MkDocs documentation
 ```
 
 ---
