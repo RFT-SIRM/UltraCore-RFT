@@ -7,6 +7,7 @@
 [![Fields](https://img.shields.io/badge/Fields-Multi--Disciplinary-06b6d4?style=for-the-badge)](SCIENTIFIC_BASIS.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
 [![Website](https://img.shields.io/badge/🌐%20Website-rft--sirm.github.io-000000?style=for-the-badge)](https://rft-sirm.github.io)
+[![Demo](https://img.shields.io/badge/🖥%20Live%20Demo-rift--network.vercel.app-22c55e?style=for-the-badge)](https://rift-network.vercel.app)
 
 **Deterministic Invariant Systems Research Laboratory**
 
@@ -20,6 +21,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 | --- | --- | --- |
 | 🎯 **First-time visitor** | This README | What UltraCore is, why it exists, and where everything lives |
 | 🌐 **Interactive overview** | [rft-sirm.github.io](https://rft-sirm.github.io) | Live laboratory website with metrics, case studies, and evidence |
+| 🖥️ **Live demo (Devnet)** | [rift-network.vercel.app](https://rift-network.vercel.app) | Interactive web client for the Solana on-chain protocol, running on Devnet |
 | 🏛️ **Strategic context** | [docs/platform.md](docs/platform.md) | Why UltraCore is an execution architecture, not just a blockchain |
 | 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
 | 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
