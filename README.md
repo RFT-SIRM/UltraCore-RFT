@@ -2,6 +2,7 @@
 
 [![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
 [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Spectral%20Physics-dc2626?style=for-the-badge)](https://rft-sirm.github.io/Phi-Genesis/)
+[![Evgeny-Theorem](https://img.shields.io/badge/Evgeny--Theorem-Spectral%20Math-5aa9ff?style=for-the-badge)](https://rft-sirm.github.io/Evgeny-Theorem/)
 [![Math](https://img.shields.io/badge/Math-Invariant%20Systems-6366f1?style=for-the-badge)](docs/foundations.md)
 [![Verify](https://img.shields.io/badge/Verify-4.29B%2B%20ops%20%7C%200%20violations-22c55e?style=for-the-badge)](docs/field_trials.md)
 [![Scope](https://img.shields.io/badge/Scope-Kernel--Agnostic-f97316?style=for-the-badge)](#-what-is-ultracore-rft)
@@ -25,6 +26,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 | 🖥️ **Live demo (Devnet)** | [rift-network.vercel.app](https://rift-network.vercel.app) | Interactive web client for the Solana on-chain protocol, running on Devnet |
 | 🏛️ **Strategic context** | [docs/platform.md](docs/platform.md) | Why UltraCore is an execution architecture, not just a blockchain |
 | 🔺 **Physics research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [Live site](https://rft-sirm.github.io/Phi-Genesis/) | Honest, test-driven audit of a fermion mass-formula conjecture via spectral computation on the Sierpiński gasket — claims verified, rejected, or marked open, never just asserted |
+| 🔷 **Math research** | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Live site](https://rft-sirm.github.io/Evgeny-Theorem/) | A closed-form gauge-invariant fourth spectral moment for a noncommutative SU(2) connection on the Sierpiński gasket — proven by computation, verified to 1e-13, reproducible by anyone |
 | 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
 | 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
 | 🔬 **Researcher** | [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Disciplinary foundations and methodological boundaries |
@@ -150,6 +152,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 | [aave-v4-hub-model-review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | DeFi ledger invariant model (Aave V4 Hub) | Complete | 184K ops, 0 violations, complementary to Certora FV |
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | Kernel verification | Complete | 1B+ ops deterministic fuzzing |
 | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Fractal spectral physics — mass-formula audit | Active | 14/14 tests passing · 2 claims formally rejected (η-invariant, ad hoc topology fit) · 2 open problems documented, not hidden · [live site](https://rft-sirm.github.io/Phi-Genesis/) |
+| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Noncommutative spectral geometry — SU(2) gauge theory on fractals | Active | 55/55 tests passing · closed-form H⁴ identity verified to 1e-13, held-out cross-check, gauge invariance to 8e-15 · [live site](https://rft-sirm.github.io/Evgeny-Theorem/) |
 
 * * *
 
