@@ -171,6 +171,60 @@ The RFT runtime framework uses mathematical concepts as operational design patte
 
 ---
 
+## Evgeny's Theorem: An Exact Spectral Identity
+
+> **Unlike the operational analogies above, this section states a concrete mathematical result about a concrete object.** It is independent of the runtime modeling language used elsewhere in this document. Source, tests and data: [RFT-SIRM/Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
+
+### Object
+
+`SG(m)` is the Sierpiński-gasket graph at refinement level `m`, with `n(m) = (3^(m+1) + 3) / 2` vertices and `3^m` elementary triangles. The Hilbert space is `C^n ⊗ C²`. Every edge carries an SU(2) unitary, and flux is injected through one designated edge per triangle. Two configurations are compared at the same angle `θ`:
+
+- **C (non-commuting):** the rotation axis cycles x / y / z by triangle index, so holonomies of neighbouring triangles genuinely do not commute.
+- **C′ (commuting control):** the axis is fixed to z, which is exactly two decoupled U(1) copies.
+
+### Statement
+
+```
+Δ_m(H⁴, θ) = Tr(H_C⁴) − Tr(H_C′⁴) = −16 · (3^(m−1) + 1) · sin²(θ/2)
+```
+
+Normalizing by `dim(H) = 3^(m+1) + 3` gives the intensive invariant `I_m(θ)`, which converges to `−(16/9) · sin²(θ/2)`. At `θ = π/2` the limit is exactly `−8/9`.
+
+| m | dim(H) | Δ_m(H⁴, π/2) | I_m(π/2) |
+|---|--------|--------------|----------|
+| 1 | 12 | −16 | −1.333333 |
+| 3 | 84 | −80 | −0.952381 |
+| 5 | 732 | −656 | −0.896175 |
+| 7 | 6,564 | −5,840 | −0.889701 |
+
+The defect vanishes exactly for the moments `p = 1, 2, 3` and first appears at `p = 4`, so a single gauge-invariant spectral moment separates a non-Abelian connection from its commuting control.
+
+### Verification Status
+
+| Statement | Status |
+|-----------|--------|
+| The closed form matches direct computation for every tested `(m, θ)`, `m = 1…7` (held-out pairs, θ-grid, level 7) | Established (reproducible) |
+| The fourth moment is gauge-invariant under random SU(2) gauge transformations | Established (spectrum change ≤ 8 × 10⁻¹⁵) |
+| The closed form holds for all `m` and `θ` | Verified numerically; analytic proof pending |
+| Lean 4 formalization | Scaffold only; the operator-level identity is not yet proved |
+
+### Scope and Limits
+
+- The closed form applies strictly to the fourth moment. It is not a statement about the full spectrum, the spectral gap, or any other moment.
+- It is not a physical theory, and it does not address the Yang–Mills existence-and-mass-gap problem or any other Millennium Prize Problem.
+- Relationship to SIRM: the two share a methodology (state the invariant first, then test it at every scale, with held-out checks). There is currently no mathematical derivation connecting the theorem to the runtime invariants I1–I4.
+
+### Reproduce
+
+```bash
+git clone https://github.com/RFT-SIRM/Evgeny-Theorem.git && cd Evgeny-Theorem
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r reproducibility/requirements.txt
+pytest tests/ -m "not slow" -v
+```
+
+---
+
 ## Type Safety
 
 All arithmetic uses checked operations:
