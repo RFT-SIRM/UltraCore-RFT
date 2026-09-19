@@ -3,6 +3,7 @@
 [![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
 [![Type](https://img.shields.io/badge/TYPE-METHODOLOGY-4a148c?style=for-the-badge)](SCIENTIFIC_BASIS.md)
 [![Scope](https://img.shields.io/badge/SCOPE-FOUNDATIONAL-2563eb?style=for-the-badge)](docs/foundations.md)
+[![Theorem](https://img.shields.io/badge/EVGENY'S%20THEOREM-VERIFIED%20m%3D1..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem)
 [![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
 
 </div>
@@ -31,6 +32,9 @@ The UltraCore RFT laboratory operates at the intersection of the following scien
 | **Probability Theory** | Stochastic analysis | Fuzzing, statistical validation, probabilistic error bounds |
 | **Linear Algebra** | Structural analysis | State vector spaces, transformation operators |
 | **Type Theory** | Code correctness | Checked arithmetic, type safety, absence of runtime panics |
+| **Spectral Graph Theory** | Exact results | Fourth-moment trace identity for a graph operator (Evgeny's Theorem); a mathematical research result, not used in runtime design |
+| **Gauge Theory on Graphs** | Non-Abelian structure | SU(2) connections, holonomy, commuting versus non-commuting configurations, gauge invariance, in the literal mathematical sense |
+| **Analysis on Fractals** | Self-similar geometry | Sierpiński-gasket graphs `SG(m)` and their exact level-by-level refinement |
 
 ---
 
@@ -81,6 +85,41 @@ The `RFT_MATHEMATICAL_FOUNDATIONS.md` document describes seven operators inspire
 
 ---
 
+## Literal Mathematics: Evgeny's Theorem
+
+> **Evgeny's Theorem is the one place in this laboratory where mathematical objects are used literally rather than as modeling vocabulary.**
+
+| | Modeling vocabulary (rest of the repository) | Evgeny's Theorem |
+|---|---|---|
+| **Objects** | Metaphors with a defined computational meaning (field = shared scalar, turbulence = scheduler contention) | Explicit finite matrices: an SU(2)-valued connection on the Sierpiński-gasket graph `SG(m)`, Hilbert space `C^n ⊗ C²` |
+| **Claim** | Design heuristics, not statements about nature | An exact identity: `Δ_m(H⁴, θ) = −16 · (3^(m−1) + 1) · sin²(θ/2)` |
+| **Test** | Runtime invariants I1–I4, fuzzing of implementations | Direct computation against the closed form, held-out parameters, gauge-invariance test |
+| **Nature** | Engineering | Mathematics |
+
+### Why the Distinction Matters
+
+Every statement in "What This Does NOT Mean" above applies to the theorem as well: it is not a physical theory, not a claim to have discovered a physical law, and not a proof or refutation of any physical hypothesis. Terms such as connection, holonomy and gauge invariance are used here in their mathematical sense for an operator on a finite graph, not as claims about physical fields.
+
+### Status
+
+| Statement | Status |
+|-----------|--------|
+| The closed form equals direct computation for every tested `(m, θ)`, `m = 1…7` (level 7: 1.6 × 10⁻¹⁶ relative residual) | ✅ Established, reproducible |
+| The fourth moment is gauge-invariant (spectrum change ≤ 8 × 10⁻¹⁵ under random SU(2) gauge transformations) | ✅ Established |
+| The closed form holds for all `m` and `θ` | 🔬 Verified numerically; analytic proof pending |
+| Machine-checked proof | 🔬 Lean 4 scaffold only |
+| Peer review; novelty relative to existing literature | 📅 Not yet |
+
+### Boundaries
+
+- The **Yang-Mills** operator listed above is an architectural pattern. The theorem contains an explicit SU(2) connection on a finite graph, but it does not address the Yang–Mills existence-and-mass-gap problem and is not a component of that operator.
+- No mathematical derivation connects the theorem to the SIRM invariants I1–I4. The relationship is methodological: state the invariant first, then test it at every scale with held-out checks.
+- Possible uses in quantum-simulation benchmarking and trace-estimation testing are **hypotheses** with a stated validation path, not results. See [PITCH.md](PITCH.md#2-evgenys-theorem).
+
+Full statement, evidence and scope: [docs/foundations.md](docs/foundations.md#evgenys-theorem-an-exact-spectral-identity) · Source, tests and data: [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
+
+---
+
 ## Verification Methodology
 
 The laboratory applies multi-layer verification:
@@ -90,11 +129,13 @@ flowchart TB
     subgraph L4["Level 4: Formal Verification"]
         TLA["TLA+ / Coq"]
         MC["Model Checking"]
+        LEAN["Lean 4: Theorem Scaffold"]
     end
     subgraph L3["Level 3: Deterministic Fuzzing"]
         FUZZ["libFuzzer"]
         SEED["Seed-Controlled"]
         INV["Invariant Telemetry"]
+        HELD["Held-Out Numerical Tests"]
     end
     subgraph L2["Level 2: Engineering Testing"]
         UNIT["Unit Tests"]
@@ -115,6 +156,8 @@ flowchart TB
 | Level 2 | Unit/integration tests, security audit | ✅ Active |
 | Level 3 | Deterministic fuzzing (1T+ ops, seed-controlled) | ✅ Active |
 | Level 4 | TLA+ / Coq formal verification | 📅 Planned |
+| Level 3 (mathematics) | Held-out numerical verification of exact identities (Evgeny's Theorem: `m = 1…7`, 55/55 checks) | ✅ Active |
+| Level 4 (mathematics) | Analytic proof and Lean 4 formalization of Evgeny's Theorem | 🔬 In progress (scaffold exists) |
 
 ---
 
@@ -128,6 +171,8 @@ flowchart TB
 | `docs/architecture.md` | Architectural specification |
 | `docs/field_trials.md` | Empirical validation results |
 | `docs/field_trials_sel4.md` | Empirical verification of seL4 kernel |
+| `PITCH.md` | Full research dossier: theorem evidence, hypotheses, claims register |
+| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Exact spectral identity: statement, tests, data, Lean scaffold |
 
 ---
 
