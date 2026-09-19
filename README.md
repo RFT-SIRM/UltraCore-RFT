@@ -156,6 +156,94 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 
 * * *
 
+## 🔷 Evgeny's Theorem
+
+[![Tests](https://img.shields.io/badge/Tests-55%2F55%20passing-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions)
+[![Verified](https://img.shields.io/badge/Verified-m%20%3D%201..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
+[![Precision](https://img.shields.io/badge/Level%207%20residual-1.6e--16%20relative-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
+[![Gauge](https://img.shields.io/badge/Gauge%20invariance-8e--15-06b6d4?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/tests/test_gauge_invariance.py)
+[![Live](https://img.shields.io/badge/Live%20site-rft--sirm.github.io%2FEvgeny--Theorem-000000?style=for-the-badge)](https://rft-sirm.github.io/Evgeny-Theorem/)
+
+> **An exact, closed-form, gauge-invariant fingerprint of non-commutativity for an SU(2) gauge field on a fractal — one number at every refinement level, reproducible in seconds.**
+
+**The object.** The Sierpiński-gasket graph `SG(m)` with Hilbert space `C^n ⊗ C²` and an SU(2)-valued connection whose rotation axis cycles x / y / z from triangle to triangle, so that the holonomies of neighbouring triangles genuinely do not commute. It is compared against the commuting control `C′` (fixed axis: exactly two decoupled U(1) copies) at the same angle `θ`.
+
+**The result.** The raw fourth-moment trace defect is given exactly by
+
+$$
+\Delta_m(H^4,\theta)=\mathrm{Tr}\left(H_C^4\right)-\mathrm{Tr}\left(H_{C'}^4\right)=-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right)
+$$
+
+**The invariant.** Normalizing by `dim(H) = 3^(m+1) + 3` gives the intensive quantity
+
+$$
+I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
+\qquad\Longrightarrow\qquad
+\lim_{m\to\infty} I_m(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
+\qquad
+\lim_{m\to\infty} I_m\left(\frac{\pi}{2}\right)=-\frac{8}{9}
+$$
+
+Equivalently, with `F = 3^m` triangular faces, the defect is linear in the face count:
+
+$$
+\Delta_m=-\frac{16}{3}\left(3^{m}+3\right)\sin^2\left(\frac{\theta}{2}\right)
+$$
+
+### Convergence at θ = π/2
+
+| m | dim(H) | Δ_m(H⁴, π/2) | I_m(π/2) | distance to −8/9 |
+| --- | --- | --- | --- | --- |
+| 1 | 12 | -16 | -1.333333 | 0.444444 |
+| 2 | 30 | -32 | -1.066667 | 0.177778 |
+| 3 | 84 | -80 | -0.952381 | 0.063492 |
+| 4 | 246 | -224 | -0.910569 | 0.021680 |
+| 5 | 732 | -656 | -0.896175 | 0.007286 |
+| 6 | 2,190 | -1,952 | -0.891324 | 0.002435 |
+| 7 | 6,564 | -5,840 | -0.889701 | 0.000813 |
+
+### Why it stands out
+
+| | Property | Evidence |
+| --- | --- | --- |
+| 🎯 | **Exact** | One closed form gives `Δ_m` for any `m` and `θ` in O(1). At level 20 the operator has more than 10¹⁰ dimensions; the closed form costs a few arithmetic operations. *(Applies to this single quantity only, not to the full spectrum.)* |
+| 🔒 | **Gauge-invariant** | Under a Haar-random SU(2) gauge transformation the spectrum changes by at most 8 × 10⁻¹⁵ and `M₄` is identical |
+| 🧪 | **Held-out tested** | Five `(m, θ)` pairs chosen *after* the formula was fixed agree to 10⁻¹¹–10⁻¹⁴; a 20-point θ-grid agrees to below 10⁻⁹ |
+| 📐 | **A non-Abelian witness** | The defect is exactly zero for moments `p = 1, 2, 3` and first appears at `p = 4`; it vanishes in the commuting limit |
+| ♻️ | **Reproducible** | 55 fast checks run in seconds; level 7 (dim 6,564) agrees with the closed form to 9 × 10⁻¹³ absolute, 1.6 × 10⁻¹⁶ relative |
+
+### Verification status
+
+| Statement | Status |
+| --- | --- |
+| Closed form equals direct computation for every tested `(m, θ)`, `m = 1…7` | ✅ Established (reproducible) |
+| Gauge invariance of the fourth moment | ✅ Established |
+| The closed form holds for **all** `m` and `θ` | 🔬 Verified numerically — analytic proof in progress |
+| Lean 4 formalization | 🔬 Scaffold only; the operator-level identity is not yet machine-checked |
+| Peer review / independent replication | 📅 Not yet |
+
+### Where it could matter — hypotheses, not results
+
+- **Quantum simulation:** a known-answer benchmark for simulators of non-Abelian gauge dynamics. The state space is a site register plus one spin-½: level 7 fits in 13 qubits by dimension count. Circuit cost is not yet studied.
+- **Trace estimation:** an exact test vector for spectral-moment estimators, quantum or randomized classical.
+- **Further identities:** the same framework may yield exact results for other moments, fractals and gauge groups.
+
+**Not claimed:** any speed-up for quantum algorithms, any statement about physical gauge theories, or any result on Millennium Prize Problems. Details, validation program and boundaries: [PITCH.md](PITCH.md#2-evgenys-theorem).
+
+### Reproduce it yourself
+
+```bash
+git clone https://github.com/RFT-SIRM/Evgeny-Theorem.git && cd Evgeny-Theorem
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r reproducibility/requirements.txt
+pytest tests/ -m "not slow" -v     # 55 checks, seconds
+pytest tests/ -m slow -v           # level 7, a few minutes
+```
+
+Full statement: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · Numerical record: [VERIFICATION.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md) · Mathematical framework: [docs/foundations.md](docs/foundations.md)
+
+* * *
+
 ## ✅ Verification
 
 Every claim is backed by reproducible verification. We measure correctness rather than asserting it.
