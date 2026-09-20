@@ -1,4 +1,4 @@
-[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT) [![RFT-SIRM](https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM) [![Theorem](https://img.shields.io/badge/Evgeny's%20Theorem-Verified%20m%3D1..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem) [![Rift-Network](https://img.shields.io/badge/Rift--Network-Live%20on%20Devnet-9945ff?style=for-the-badge)](https://rift-network.vercel.app) [![Fuzzing](https://img.shields.io/badge/Fuzzing-4.29B%2B%20Runs-2563eb?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials.md) [![Invariant Violations](https://img.shields.io/badge/Invariant%20Violations-0-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials.md) [![seL4](https://img.shields.io/badge/seL4%20CDT-Stress--Tested-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/LICENSE)
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT) [![RFT-SIRM](https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM) [![Theorem](https://img.shields.io/badge/Evgeny's%20Theorem-Verified%20m%3D1..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem) [![Rift-Network](https://img.shields.io/badge/Rift--Network-Live%20on%20Devnet-9945ff?style=for-the-badge)](https://rift-network.vercel.app) [![Fuzzing](https://img.shields.io/badge/Fuzzing-1T%2B%20Ops-2563eb?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials.md) [![Invariant Violations](https://img.shields.io/badge/Invariant%20Violations-0-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials.md) [![seL4](https://img.shields.io/badge/seL4%20CDT-Stress--Tested-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/LICENSE)
 
 # UltraCore RFT Laboratory
 
@@ -17,7 +17,7 @@ The laboratory has three assets that reinforce each other:
 
 | Asset | What it is | State today |
 |---|---|---|
-| **SIRM runtime programs** | Deterministic invariant-preserving execution: L1 runtime, SVM scheduler, SVM memory-isolation PoC, DeFi ledger model | Working prototypes, billions of fuzzed executions, 0 violations |
+| **SIRM runtime programs** | Deterministic invariant-preserving execution: L1 runtime, SVM scheduler, SVM memory-isolation PoC, DeFi ledger model | Working prototypes, up to 1T+ fuzzed operations (SIRM core), 0 violations |
 | **Rift-Network** | SIRM invariants enforced on-chain (Solana/Anchor) with a web client | **Live on Devnet**, reproducible-build hashes verifiable on-chain, independent security review (14 findings addressed) |
 | **Evgeny's Theorem** | Exact fourth-spectral-moment identity for an SU(2) gauge field on a fractal graph | Verified for every tested `(m, θ)`, `m = 1…7`; analytic and machine-checked proof in progress |
 
@@ -274,7 +274,7 @@ DeFi Ledger Invariant Model"]
 | **Evgeny-Theorem** | Mathematics | Verified (m ≤ 7); proof in progress | 55 fast checks + level-7 run, held-out set, gauge test; Lean scaffold |
 | **UltraCore-RFT** | Architecture / theory | Active | Living documentation, SIRM spec, [`ARCHITECT.md`](ARCHITECT.md) |
 | **Rift-Network** | Solana protocol | **Live on Devnet** | 14 findings addressed, 2.5B+ fuzz runs, on-chain verified hashes |
-| **Rift-L1-Blockchain** | L1 runtime | Active | 256M+ ops verified, 0 violations, 5h 55m daily CI |
+| **Rift-L1-Blockchain** | L1 runtime | Active | 1T+ ops fuzzed, 0 violations, 5h 55m daily CI |
 | **agave-abiv2-memory-contexts** | SVM memory isolation (PoC) | Research complete | 4.29B+ exec, 0 violations, [RFC svm#25](https://github.com/anza-xyz/svm/issues/25) (closed, PoC-only) |
 | **agave-rift-scheduler** | SVM scheduling | Active | 91M exec/run, 0 violations, [RFC agave#14274](https://github.com/anza-xyz/agave/issues/14274) |
 | **aave-v4-hub-model-review** | DeFi ledger model | Complete | 184K ops, 0 violations, complementary to Certora Hub FV |
@@ -285,11 +285,14 @@ DeFi Ledger Invariant Model"]
 
 The purest implementation of SIRM: no external protocol constraints and no smart-contract layer.
 
-| Platform | Verified ops/sec | Per 5h 55m run |
+| Platform | Verified ops/sec | Per 5h 55m run (21,300 s) |
 |---|---|---|
-| GitHub CI (ubuntu x86, 2 vCPU) | ~2,000,000 | ~42 billion |
-| Apple M1 (arm64) | ~8,500,000 | ~181 billion |
-| 32-core server (projected) | 50–60M | ~1.0–1.3 trillion |
+| GitHub runner (CI) | ~5,750,000 | ~122 billion |
+| Intel i7 (12th gen) | ~8,000,000 | ~170 billion |
+| Apple M1 / M4 | >10,000,000 | >213 billion |
+| AMD Ryzen 9 | ~15,000,000 | ~320 billion |
+
+*Throughput is taken from the Rift-L1-Blockchain README; per-run figures are throughput × 21,300 s. The 1T+ total therefore accumulates across multiple runs.*
 
 ### 4.2 agave-abiv2-memory-contexts: SVM memory isolation (PoC)
 
@@ -315,7 +318,7 @@ flowchart TB
     TLA["TLA+ / Coq / Lean (planned; Lean scaffold exists for the theorem)"]
   end
   subgraph L3["Level 3: Deterministic Fuzzing / Held-out Testing"]
-    FUZZ["libFuzzer: 4.29B+ executions"]
+    FUZZ["libFuzzer: 1T+ operations"]
     HELD["Held-out parameters chosen after the claim is fixed"]
   end
   subgraph L2["Level 2: Engineering Testing"]
@@ -332,7 +335,7 @@ flowchart TB
 |---|---|---|
 | L1 | Static analysis (Clippy, Miri, cargo-audit) | Every push |
 | L2 | Unit, integration, differential tests; security review | All passing |
-| L3 | libFuzzer deterministic fuzzing | 4.29B+ exec, 0 invariant violations |
+| L3 | libFuzzer deterministic fuzzing | 1T+ ops (SIRM core), 0 invariant violations |
 | L3b | seL4 CDT complementary stress test | 1B+ ops, 0 kernel crashes |
 | L3c | Python DeFi model fuzz | 184K ops, 0 violations |
 | L3d | Theorem: direct computation vs closed form, held-out set, gauge test | 55 fast checks + level 7 |
