@@ -259,8 +259,8 @@ Full statement: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/mai
 ## ⚛️ RFT-QPU-Sierpinski
 
 [![Repository](https://img.shields.io/badge/Repository-RFT--QPU--Sierpinski-8b5cf6?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![Architecture](https://img.shields.io/badge/Architecture-SU%282%29%20Gauge--Covariant-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![Status](https://img.shields.io/badge/Status-Pre--Experimental-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
+[![Architecture](https://img.shields.io/badge/Architecture-SU%282%29%20Gauge--Covariant-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/ARCHITECTURE.md)
+[![Status](https://img.shields.io/badge/Status-Pre--Experimental-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md)
 
 > **A research architecture connecting the Sierpiński fractal, SU(2) transport, and candidate quantum-processing primitives.**
 
@@ -279,8 +279,8 @@ The QPU program extends the noncommutative SU(2) structure developed in **Evgeny
 ## 🔋 RFT-Invariant-Battery
 
 [![Repository](https://img.shields.io/badge/Repository-RFT--Invariant--Battery-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
-[![Architecture](https://img.shields.io/badge/Architecture-Invariant--Driven-ef4444?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
-[![Status](https://img.shields.io/badge/Status-Exploratory%20Research-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
+[![Architecture](https://img.shields.io/badge/Architecture-Invariant--Driven-ef4444?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/MODEL_SPEC.md)
+[![Status](https://img.shields.io/badge/Status-Exploratory%20Research-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/RESEARCH_STATUS.md)
 
 > **An exploratory systems program applying invariant-driven modelling to battery and energy-system scenarios.**
 
