@@ -18,7 +18,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 * * *
 
 [![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-SU%282%29%20Quantum%20Architecture-8b5cf6?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Invariant%20Systems-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
+[![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Invariant%20Systems-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
 
 ## 🎯 Start Here
 
@@ -31,7 +31,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 | 🔺 **Physics research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [Live site](https://rft-sirm.github.io/Phi-Genesis/) | Honest, test-driven audit of a fermion mass-formula conjecture via spectral computation on the Sierpiński gasket — claims verified, rejected, or marked open, never just asserted |
 | 🔷 **Math research** | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Live site](https://rft-sirm.github.io/Evgeny-Theorem/) | A closed-form gauge-invariant fourth spectral moment for a noncommutative SU(2) connection on the Sierpiński gasket — verified numerically for levels 1–7 to machine precision (55/55 tests), reproducible by anyone |
 | ⚛️ **Quantum architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
-| 🔋 **Invariant systems** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Invariant-driven battery-system architecture | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions, and auditable CSV outputs |
+| 🔋 **Invariant systems** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Invariant-driven battery-system architecture | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions, and auditable CSV outputs |
 | 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
 | 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
 | 🔬 **Researcher** | [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Disciplinary foundations and methodological boundaries |
@@ -159,7 +159,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Fractal spectral physics — mass-formula audit | Active | 14/14 tests passing · 2 claims formally rejected (η-invariant, ad hoc topology fit) · 2 open problems documented, not hidden · [live site](https://rft-sirm.github.io/Phi-Genesis/) |
 | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Noncommutative spectral geometry — SU(2) gauge theory on fractals | Active | 55/55 tests passing · closed-form H⁴ identity verified to 1e-13, held-out cross-check, gauge invariance to 8e-15 · [live site](https://rft-sirm.github.io/Evgeny-Theorem/) |
 | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Research architecture / pre-experimental | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
-| [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Invariant-driven battery-system architecture | Exploratory computational research | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions and auditable CSV outputs |
+| [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Invariant-driven battery-system architecture | Exploratory computational research | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions and auditable CSV outputs |
 
 
 * * *
@@ -278,9 +278,9 @@ The QPU program extends the noncommutative SU(2) structure developed in **Evgeny
 
 ## 🔋 RFT-Invariant-Battery
 
-[![Repository](https://img.shields.io/badge/Repository-RFT--Invariant--Battery-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
-[![Architecture](https://img.shields.io/badge/Architecture-Invariant--Driven-ef4444?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
-[![Status](https://img.shields.io/badge/Status-Exploratory%20Research-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
+[![Repository](https://img.shields.io/badge/Repository-RFT--Invariant--Battery-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
+[![Architecture](https://img.shields.io/badge/Architecture-Invariant--Driven-ef4444?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
+[![Status](https://img.shields.io/badge/Status-Exploratory%20Research-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
 
 > **An exploratory systems program applying invariant-driven modelling to battery and energy-system scenarios.**
 
@@ -293,7 +293,7 @@ The Battery program provides a deterministic reference model with reproducible l
 - Explicit modelling assumptions
 - Auditable numerical outputs
 
-[**Open RFT-Invariant-Battery →**](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
+[**Open RFT-Invariant-Battery →**](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
 
 ## ✅ Verification
 
