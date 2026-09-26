@@ -153,6 +153,9 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | Kernel verification | Complete | 1B+ ops deterministic fuzzing |
 | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Fractal spectral physics — mass-formula audit | Active | 14/14 tests passing · 2 claims formally rejected (η-invariant, ad hoc topology fit) · 2 open problems documented, not hidden · [live site](https://rft-sirm.github.io/Phi-Genesis/) |
 | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Noncommutative spectral geometry — SU(2) gauge theory on fractals | Active | 55/55 tests passing · closed-form H⁴ identity verified to 1e-13, held-out cross-check, gauge invariance to 8e-15 · [live site](https://rft-sirm.github.io/Evgeny-Theorem/) |
+| [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Research architecture / pre-experimental | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
+| [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Invariant-driven battery-system architecture | Exploratory computational research | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions and auditable CSV outputs |
+
 
 * * *
 
