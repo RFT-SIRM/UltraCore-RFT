@@ -3,7 +3,7 @@
 [![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
 [![Type](https://img.shields.io/badge/TYPE-METHODOLOGY-4a148c?style=for-the-badge)](SCIENTIFIC_BASIS.md)
 [![Scope](https://img.shields.io/badge/SCOPE-FOUNDATIONAL-2563eb?style=for-the-badge)](docs/foundations.md)
-[![Theorem](https://img.shields.io/badge/EVGENY'S%20THEOREM-VERIFIED%20m%3D1..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem)
+[![Theorem](https://img.shields.io/badge/EVGENY'S%20THEOREM-PROVED%20IN%20LEAN%204%20FOR%20ALL%20m%20%E2%89%A5%201-3ee290?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem)
 [![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
 
 </div>
@@ -106,8 +106,8 @@ Every statement in "What This Does NOT Mean" above applies to the theorem as wel
 |-----------|--------|
 | The closed form equals direct computation for every tested `(m, θ)`, `m = 1…7` (level 7: 1.6 × 10⁻¹⁶ relative residual) | ✅ Established, reproducible |
 | The fourth moment is gauge-invariant (spectrum change ≤ 8 × 10⁻¹⁵ under random SU(2) gauge transformations) | ✅ Established |
-| The closed form holds for all `m` and `θ` | 🔬 Verified numerically; analytic proof pending |
-| Machine-checked proof | 🔬 Lean 4 scaffold only |
+| The closed form holds for all `m ≥ 1` and `θ` | ✅ Machine-checked in Lean 4 (fourth moment, concrete operators) |
+| Machine-checked proof | ✅ Complete for the stated scope (`traceDefect_closed`; no `sorry`, standard axioms only) |
 | Peer review; novelty relative to existing literature | 📅 Not yet |
 
 ### Boundaries
@@ -129,7 +129,7 @@ flowchart TB
     subgraph L4["Level 4: Formal Verification"]
         TLA["TLA+ / Coq"]
         MC["Model Checking"]
-        LEAN["Lean 4: Theorem Scaffold"]
+        LEAN["Lean 4: Theorem Proved"]
     end
     subgraph L3["Level 3: Deterministic Fuzzing"]
         FUZZ["libFuzzer"]
@@ -157,7 +157,7 @@ flowchart TB
 | Level 3 | Deterministic fuzzing (1T+ ops, seed-controlled) | ✅ Active |
 | Level 4 | TLA+ / Coq formal verification | 📅 Planned |
 | Level 3 (mathematics) | Held-out numerical verification of exact identities (Evgeny's Theorem: `m = 1…7`, 55/55 checks) | ✅ Active |
-| Level 4 (mathematics) | Analytic proof and Lean 4 formalization of Evgeny's Theorem | 🔬 In progress (scaffold exists) |
+| Level 4 (mathematics) | Lean 4 formalization of Evgeny's Theorem | ✅ Complete for `m ≥ 1` (fourth moment); independent review pending |
 
 ---
 
@@ -172,7 +172,7 @@ flowchart TB
 | `docs/field_trials.md` | Empirical validation results |
 | `docs/field_trials_sel4.md` | Empirical verification of seL4 kernel |
 | `PITCH.md` | Full research dossier: theorem evidence, hypotheses, claims register |
-| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Exact spectral identity: statement, tests, data, Lean scaffold |
+| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Exact spectral identity: statement, tests, data, Lean 4 proof |
 
 ---
 

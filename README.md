@@ -29,7 +29,7 @@ _Central documentation and coordination hub for the RFT-SIRM ecosystem_
 | 🖥️ **Live demo (Devnet)** | [rift-network.vercel.app](https://rift-network.vercel.app) | Interactive web client for the Solana on-chain protocol, running on Devnet |
 | 🏛️ **Strategic context** | [docs/platform.md](docs/platform.md) | Why UltraCore is an execution architecture, not just a blockchain |
 | 🔺 **Physics research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [Live site](https://rft-sirm.github.io/Phi-Genesis/) | Honest, test-driven audit of a fermion mass-formula conjecture via spectral computation on the Sierpiński gasket — claims verified, rejected, or marked open, never just asserted |
-| 🔷 **Math research** | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Live site](https://rft-sirm.github.io/Evgeny-Theorem/) | A closed-form gauge-invariant fourth spectral moment for a noncommutative SU(2) connection on the Sierpiński gasket — verified numerically for levels 1–7 to machine precision (55/55 tests), reproducible by anyone |
+| 🔷 **Math research** | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Live site](https://rft-sirm.github.io/Evgeny-Theorem/) | A closed-form gauge-invariant fourth spectral moment for a noncommutative SU(2) connection on the Sierpiński gasket — verified numerically for levels 1–7 to machine precision (55/55 tests) and machine-checked in Lean 4 for every level `m ≥ 1`, reproducible by anyone |
 | ⚛️ **Quantum architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
 | 🔋 **Invariant systems** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Invariant-driven battery-system architecture | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions, and auditable CSV outputs |
 | 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
@@ -157,7 +157,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 | [aave-v4-hub-model-review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | DeFi ledger invariant model (Aave V4 Hub) | Complete | 184K ops, 0 violations, complementary to Certora FV |
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | Kernel verification | Complete | 1B+ ops deterministic fuzzing |
 | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Fractal spectral physics — mass-formula audit | Active | 14/14 tests passing · 2 claims formally rejected (η-invariant, ad hoc topology fit) · 2 open problems documented, not hidden · [live site](https://rft-sirm.github.io/Phi-Genesis/) |
-| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Noncommutative spectral geometry — SU(2) gauge theory on fractals | Active | 55/55 tests passing · closed-form H⁴ identity verified to 1e-13, held-out cross-check, gauge invariance to 8e-15 · [live site](https://rft-sirm.github.io/Evgeny-Theorem/) |
+| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Noncommutative spectral geometry — SU(2) gauge theory on fractals | Active | 55/55 tests passing · closed-form H⁴ identity verified to 1e-13, held-out cross-check, gauge invariance to 8e-15 · Lean 4 proof for every `m ≥ 1` · [live site](https://rft-sirm.github.io/Evgeny-Theorem/) |
 | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Research architecture / pre-experimental | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
 | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Invariant-driven battery-system architecture | Exploratory computational research | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions and auditable CSV outputs |
 
@@ -168,6 +168,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 
 [![Tests](https://img.shields.io/badge/Tests-55%2F55%20passing-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions)
 [![Verified](https://img.shields.io/badge/Verified-m%20%3D%201..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
+[![Lean 4](https://img.shields.io/badge/Lean%204-Proved%20for%20all%20m%20%E2%89%A5%201-3ee290?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)
 [![Precision](https://img.shields.io/badge/Level%207%20residual-1.6e--16%20relative-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
 [![Gauge](https://img.shields.io/badge/Gauge%20invariance-8e--15-06b6d4?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/tests/test_gauge_invariance.py)
 [![Live](https://img.shields.io/badge/Live%20site-rft--sirm.github.io%2FEvgeny--Theorem-000000?style=for-the-badge)](https://rft-sirm.github.io/Evgeny-Theorem/)
@@ -226,8 +227,8 @@ $$
 | --- | --- |
 | Closed form equals direct computation for every tested `(m, θ)`, `m = 1…7` | ✅ Established (reproducible) |
 | Gauge invariance of the fourth moment | ✅ Established |
-| The closed form holds for **all** `m` and `θ` | 🔬 Verified numerically — analytic proof in progress |
-| Lean 4 formalization | 🔬 Scaffold only; the operator-level identity is not yet machine-checked |
+| The closed form holds for **all** `m ≥ 1` and `θ` | ✅ Machine-checked in Lean 4 (no `sorry`; standard axioms only) |
+| Lean 4 formalization | ✅ Complete for the stated scope: concrete SU(2) connection operators on `SG(m)`, fourth moment, every `m ≥ 1`, every `θ` — [`formalization/README.md`](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md) |
 | Peer review / independent replication | 📅 Not yet |
 
 ### Where it could matter — hypotheses, not results

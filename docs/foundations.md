@@ -205,8 +205,8 @@ The defect vanishes exactly for the moments `p = 1, 2, 3` and first appears at `
 |-----------|--------|
 | The closed form matches direct computation for every tested `(m, θ)`, `m = 1…7` (held-out pairs, θ-grid, level 7) | Established (reproducible) |
 | The fourth moment is gauge-invariant under random SU(2) gauge transformations | Established (spectrum change ≤ 8 × 10⁻¹⁵) |
-| The closed form holds for all `m` and `θ` | Verified numerically; analytic proof pending |
-| Lean 4 formalization | Scaffold only; the operator-level identity is not yet proved |
+| The closed form holds for all `m ≥ 1` and `θ` | Machine-checked in Lean 4 (concrete operators, fourth moment; no `sorry`, standard axioms only) |
+| Lean 4 formalization | Complete for the stated scope ([`formalization/README.md`](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)); independent review of the formal definitions pending |
 
 ### Scope and Limits
 

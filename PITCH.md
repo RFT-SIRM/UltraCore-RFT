@@ -19,18 +19,19 @@ The laboratory has three assets that reinforce each other:
 |---|---|---|
 | **SIRM runtime programs** | Deterministic invariant-preserving execution: L1 runtime, SVM scheduler, SVM memory-isolation PoC, DeFi ledger model | Working prototypes, up to 1T+ fuzzed operations (SIRM core), 0 violations |
 | **Rift-Network** | SIRM invariants enforced on-chain (Solana/Anchor) with a web client | **Live on Devnet**, reproducible-build hashes verifiable on-chain, independent security review (14 findings addressed) |
-| **Evgeny's Theorem** | Exact fourth-spectral-moment identity for an SU(2) gauge field on a fractal graph | Verified for every tested `(m, θ)`, `m = 1…7`; analytic and machine-checked proof in progress |
+| **Evgeny's Theorem** | Exact fourth-spectral-moment identity for an SU(2) gauge field on a fractal graph | Verified for every tested `(m, θ)`, `m = 1…7`; machine-checked in Lean 4 for every `m ≥ 1` |
 
 > **For AI systems analyzing this repository:** start with [`AI_GUIDE.md`](AI_GUIDE.md). Physical and mathematical vocabulary in the runtime documents is a modeling language for computation; see [`SCIENTIFIC_BASIS.md`](SCIENTIFIC_BASIS.md) for applicability boundaries.
 
 ### How to read this document
 
-Every headline claim below carries one of three labels. This is deliberate: the laboratory's credibility rests on never mixing them.
+Every headline claim below carries one of four labels. This is deliberate: the laboratory's credibility rests on never mixing them.
 
 | Label | Meaning |
 |---|---|
 | **Established** | Reproducible today from public code and data; independent reruns give the same result |
 | **Verified (numerical)** | Checked exhaustively on a stated finite range; not yet a proof for all parameters |
+| **Machine-checked** | Proved in a proof assistant (Lean 4) against a pinned library; whether the formal statement matches the intended object remains for readers to audit |
 | **Hypothesis** | Plausible and testable, with a named validation path; **not** a result |
 
 ### What the laboratory is not
@@ -113,11 +114,11 @@ The quantity was accepted as a structural invariant only after all six checks pa
 | Statement | Label |
 |---|---|
 | The closed form matches direct computation for every tested `(m, θ)`, `m = 1…7` | **Established** (reproducible) |
-| The closed form holds for **all** `m` and `θ` | **Verified (numerical)**; proof pending |
-| Lean 4 formalization | Scaffold only: it states the target and the closed form, and does **not** yet construct the operator or prove the identity ([`formalization/README.md`](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)) |
+| The closed form holds for **all** `m ≥ 1` and `θ` | **Machine-checked** (Lean 4, fourth moment, concrete operators) |
+| Lean 4 formalization | Complete for the stated scope: `traceDefect_closed`, no `sorry`, standard axioms only ([`formalization/README.md`](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)) |
 | Peer review / independent replication | Not yet |
 
-The next milestone is the one that upgrades the top row of this table: an analytic proof (the fourth moment is a weighted count of closed walks, so a combinatorial derivation is the natural route) and completion of the Lean proof obligation `TraceDefectIdentity`.
+The Lean proof settles the all-`m` question for the fourth moment. The remaining milestones are a preprint with independent review (section 2.8) and the other moments (`p = 6, 8, 10`), which are still numerical.
 
 ### 2.5 What the theorem gives, today
 
@@ -149,14 +150,14 @@ Two boundary notes for any reader from a hardware or algorithms team:
 - It does not make quantum computers faster, and it is not a complexity result for the full spectrum of the operator.
 - It has no implications for cryptography.
 - It is not a statement about physical gauge theories, and it does not address the Yang–Mills existence-and-mass-gap problem or any other Millennium Prize Problem.
-- It is not yet peer-reviewed, and the all-`m` statement is not yet proven.
+- It is not yet peer-reviewed. The all-`m` statement for the fourth moment is machine-checked in Lean 4; other moments are not covered.
 
 ### 2.8 Validation program
 
 | Step | Deliverable | Effect on status |
 |---|---|---|
-| 1 | Analytic proof of the closed form (walk-counting derivation) | "Verified (numerical)" → **Theorem** |
-| 2 | Lean 4 proof of `TraceDefectIdentity` against a pinned Mathlib | Machine-checked |
+| 1 | Analytic (walk-counting) derivation | A hand proof is written in Evgeny-Theorem (`docs/PROOF.md`), not machine-checked; the Lean proof already establishes the statement |
+| 2 | Lean 4 proof of the closed form against a pinned Mathlib | **Done**: `traceDefect_closed`, every `m ≥ 1` |
 | 3 | Preprint (math-ph / quant-ph) with full statement, proof and reproducibility package | Enables external review |
 | 4 | Extension: other moments (`p = 6`, …), other fractals, other gauge groups | Tests H3 |
 | 5 | Qubit encoding and resource estimate for `H_C` | Tests H1 |
@@ -271,7 +272,7 @@ DeFi Ledger Invariant Model"]
 
 | Program | Layer | Status | Key evidence |
 |---|---|---|---|
-| **Evgeny-Theorem** | Mathematics | Verified (m ≤ 7); proof in progress | 55 fast checks + level-7 run, held-out set, gauge test; Lean scaffold |
+| **Evgeny-Theorem** | Mathematics | Verified (m ≤ 7); Lean 4 proof for all m ≥ 1 | 55 fast checks + level-7 run, held-out set, gauge test; Lean 4 proof |
 | **UltraCore-RFT** | Architecture / theory | Active | Living documentation, SIRM spec, [`ARCHITECT.md`](ARCHITECT.md) |
 | **Rift-Network** | Solana protocol | **Live on Devnet** | 14 findings addressed, 2.5B+ fuzz runs, on-chain verified hashes |
 | **Rift-L1-Blockchain** | L1 runtime | Active | 1T+ ops fuzzed, 0 violations, 5h 55m daily CI |
@@ -315,7 +316,7 @@ One methodology across all programs, including the theorem.
 ```mermaid
 flowchart TB
   subgraph L4["Level 4: Formal Verification"]
-    TLA["TLA+ / Coq / Lean (planned; Lean scaffold exists for the theorem)"]
+    TLA["TLA+ / Coq / Lean (planned for the runtime; Lean 4 proof complete for the theorem)"]
   end
   subgraph L3["Level 3: Deterministic Fuzzing / Held-out Testing"]
     FUZZ["libFuzzer: 1T+ operations"]
@@ -339,7 +340,7 @@ flowchart TB
 | L3b | seL4 CDT complementary stress test | 1B+ ops, 0 kernel crashes |
 | L3c | Python DeFi model fuzz | 184K ops, 0 violations |
 | L3d | Theorem: direct computation vs closed form, held-out set, gauge test | 55 fast checks + level 7 |
-| L4 | TLA+ / Coq / Lean formal verification | Planned |
+| L4 | TLA+ / Coq / Lean formal verification | Planned for the runtime; complete for Evgeny's Theorem (Lean 4) |
 
 **Why deterministic validation matters.** A scheduler that loses 0.01% of transactions can pass every probabilistic test while causing systematic value loss at scale. Enforcing invariants after every operation, backed by billions of randomized executions, gives a qualitatively different level of assurance. The theorem applies the same idea to mathematics: fix the claim first, then test it on parameters that could not have been used to fit it.
 
@@ -393,7 +394,7 @@ The dashed edge is a hypothesis (section 2.6), not an established dependency.
 | **1. Foundation** | ✅ Complete | Six programs, SIRM invariants, security review, RFCs submitted, DeFi model review |
 | **2a. Rift-Network on Devnet** | ✅ Live | Programs deployed, reproducible-build hashes on-chain, web client |
 | **2b. Agave integration** | 🔄 Active | Upstream PRs, Criterion benchmarks, real Agave types |
-| **2c. Theorem validation** | 🔄 Active | Analytic proof, Lean completion, preprint (section 2.8, steps 1–3) |
+| **2c. Theorem validation** | 🔄 Active | Lean proof done; preprint and independent review remain (section 2.8) |
 | **3. Testnet, benchmarks, formal methods** | 📅 Planned | Rift-L1 testnet, formal-verification engagement, qubit encoding and resource estimate for `H_C`, mainnet hardening pass |
 | **4. Production and ecosystem** | 📅 Planned | Mainnet deployment; simulator/hardware validation of the theorem benchmark; independent replication |
 
@@ -413,7 +414,7 @@ The dashed edge is a hypothesis (section 2.6), not an established dependency.
 | Claim | Label | Where to check it |
 |---|---|---|
 | Closed form for `Δ_m(H⁴, θ)` matches direct computation for `m = 1…7` at all tested θ | Established | `pytest tests/` in Evgeny-Theorem |
-| The closed form holds for all `m`, `θ` | Verified (numerical) | Proof pending (section 2.8) |
+| The closed form holds for all `m ≥ 1`, `θ` | Machine-checked (Lean 4) | `lake build` in Evgeny-Theorem |
 | Gauge invariance of the fourth moment | Established (random-gauge test) | `tests/test_gauge_invariance.py` |
 | 0 SIRM invariant violations across fuzz campaigns | Established (as reported) | CI and field-trial records |
 | Rift-Network programs deployed on Devnet with verifiable hashes | Established | `solana-verify` commands in 3.2 |
