@@ -24,8 +24,6 @@ UltraCore-RFT is the documentation and coordination hub for the RFT-SIRM ecosyst
 
 > **Important scope statement.** The phrase *Evgeny's Theory of Everything* names a broad, ongoing research programme. It does not mean that a complete physical theory of the Universe has been established. The source repository reports a Lean 4 proof of a specific fourth-moment identity for defined SU(2) operators on Sierpiński-gasket graphs. Higher-moment all-level recurrence and the Phi-Genesis Gate A mechanism remain open. Those boundaries are part of the result, not footnotes to hide.
 
-
-
 ## Historical record: research and engineering strands
 
 This programme has developed across separate repositories. The following are **documented workstreams**, not claims of institutional endorsement or that every project has the same verification status.
@@ -50,7 +48,6 @@ For collaboration proposals, research correspondence, licensing questions, or re
 
 See [CONTACT.md](CONTACT.md) for the submission and attribution policy. Public contact details should be a dedicated, controlled mailbox that the maintainer intends to monitor; do not assume that a commit-author email is automatically the official legal or business contact.
 
-
 ---
 
 ## 1. The mathematical anchor
@@ -64,8 +61,8 @@ $$
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m=1,2,3,\ldots.
-
 $$
+
 The normalized quantity is
 
 $$
@@ -73,8 +70,8 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty} I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-
 $$
+
 At the special angle $\theta=\frac{\pi}{2}$, the limit simplifies to:
 
 ```math
@@ -157,8 +154,8 @@ I_2:\quad &\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},
 I_3:\quad &\mathtt{dust\_accumulator}<p\quad (p>0),\\
 I_4:\quad &\mathtt{effective\_balance}[i]\geq-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
-
 $$
+
 Here $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's stated integer and scaling conventions. The $O(1)$ distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is $O(1)$, nor does it itself establish security of every implementation.
 
 SIRM is an engineering model and specification. The Lean theorem above is a separate mathematical result; there is no claim that the spectral theorem proves the runtime invariants.
