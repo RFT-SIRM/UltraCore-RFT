@@ -155,12 +155,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 
 ## 🔷 Evgeny's Theorem
 
-[![Tests](https://img.shields.io/badge/Tests-55%2F55%20passing-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions)
-[![Verified](https://img.shields.io/badge/Verified-m%20%3D%201..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
-[![Lean 4](https://img.shields.io/badge/Lean%204-Proved%20for%20all%20m%20%E2%89%A5%201-3ee290?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)
-[![Precision](https://img.shields.io/badge/Level%207%20residual-1.6e--16%20relative-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
-[![Gauge](https://img.shields.io/badge/Gauge%20invariance-8e--15-06b6d4?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/tests/test_gauge_invariance.py)
-[![Live](https://img.shields.io/badge/Live%20site-rft--sirm.github.io%2FEvgeny--Theorem-000000?style=for-the-badge)](https://rft-sirm.github.io/Evgeny-Theorem/)
+**Evidence and status:** [Lean 4 formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md) · [Test workflow](https://github.com/RFT-SIRM/Evgeny-Theorem/actions) · [Project site](https://rft-sirm.github.io/Evgeny-Theorem/)
 
 > **An exact, closed-form, gauge-invariant fingerprint of non-commutativity for an SU(2) gauge field on a fractal — one number at every refinement level, reproducible in seconds.**
 
@@ -242,15 +237,9 @@ Full statement: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/mai
 
 * * *
 
-* * *
-
-* * *
-
 ## ⚛️ RFT-QPU-Sierpinski
 
-[![Repository](https://img.shields.io/badge/Repository-RFT--QPU--Sierpinski-8b5cf6?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![Architecture](https://img.shields.io/badge/Architecture-SU%282%29%20Gauge--Covariant-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/ARCHITECTURE.md)
-[![Status](https://img.shields.io/badge/Status-Pre--Experimental-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md)
+**Repository:** [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · **Architecture:** [SU(2) gauge-covariant design](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/ARCHITECTURE.md) · **Status:** [Pre-experimental](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md)
 
 > **A research architecture connecting the Sierpiński fractal, SU(2) transport, and candidate quantum-processing primitives.**
 
@@ -268,9 +257,7 @@ The QPU program extends the noncommutative SU(2) structure developed in **Evgeny
 
 ## 🔋 RFT-Invariant-Battery
 
-[![Repository](https://img.shields.io/badge/Repository-RFT--Invariant--Battery-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
-[![Architecture](https://img.shields.io/badge/Architecture-Invariant--Driven-ef4444?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/MODEL_SPEC.md)
-[![Status](https://img.shields.io/badge/Status-Exploratory%20Research-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/RESEARCH_STATUS.md)
+**Repository:** [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) · **Model specification:** [MODEL_SPEC.md](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/MODEL_SPEC.md) · **Status:** [Exploratory research](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/RESEARCH_STATUS.md)
 
 > **An exploratory systems program applying invariant-driven modelling to battery and energy-system scenarios.**
 
@@ -327,6 +314,7 @@ mkdocs serve
 | Document | Description | Audience |
 | --- | --- | --- |
 | [docs/platform.md](docs/platform.md) | Strategic identity: what UltraCore is and why it matters | Everyone |
+| [docs/research-map.md](docs/research-map.md) | Research relationships, evidence classes, and seven-step documentation plan | Researchers and maintainers |
 | [docs/architecture.md](docs/architecture.md) | Detailed architecture with Mermaid diagrams | Engineers |
 | [docs/foundations.md](docs/foundations.md) | Formalized SIRM invariants | Researchers |
 | [docs/field_trials.md](docs/field_trials.md) | Verification results & readiness checklist | Validators |
