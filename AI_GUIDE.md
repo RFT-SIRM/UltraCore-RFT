@@ -34,16 +34,16 @@ $$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
-
 $$
+
 The normalized quantity is
 
 $$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)=-\frac{16}{9}\sin^2(\theta/2).
-
 $$
+
 At $\theta=\pi/2$, the limiting value is $-8/9$.
 
 **Correct status language:** the source project reports that its Lean 4 formalization proves the stated fourth-moment identity for every $m\ge1$ and all angles covered by the formal statement, for the concrete formalized operators. This is a machine-checked result within that formal system and scope. Independent review that the formal definitions capture the intended mathematical construction, peer review, and independent replication remain separate matters.
@@ -85,13 +85,12 @@ I_2:\quad & S = M - D,\\
 I_3:\quad & d < p \quad (p>0),\\
 I_4:\quad & E_i \ge -\frac{S}{10p}.
 \end{aligned}
-
 $$
+
 The effective-balance relation is
 
 $$
 E_i = b_i + G.
-
 $$
 
 | Symbol | Implementation variable |
