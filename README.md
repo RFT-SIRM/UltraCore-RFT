@@ -6,6 +6,12 @@
 
 [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml) [![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
+**Core engineering and formal-verification strands**
+
+[![Rift-L1 Blockchain](https://img.shields.io/badge/Rift--L1-Blockchain-2563eb?style=flat-square)](https://github.com/RFT-SIRM/Rift-L1-Blockchain) [![Rift Network](https://img.shields.io/badge/Rift-Network-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/Rift-Network) [![Agave Rift Scheduler CI](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml/badge.svg)](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml) [![Agave Rift Scheduler Fuzz](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml/badge.svg)](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml) [![Lean 4 formalization tests](https://img.shields.io/github/actions/workflow/status/RFT-SIRM/Evgeny-Theorem/tests.yml?branch=main&label=Lean%204%20tests&style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/workflows/tests.yml)
+
+These are **separate repositories and separate evidence scopes**. Rift-L1 and Rift Network publish source-available code under their own restrictive terms; the Apache-2.0 badge above applies only to original material in this UltraCore-RFT repository. Scheduler CI/fuzz and Lean 4 test badges link to their source workflows; a badge reflects that workflow, not a universal proof of the wider programme.
+
 **Start with the research, not the applications:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [Lean-formalized fourth-moment theorem](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Phi-Genesis spectral audit](https://github.com/RFT-SIRM/Phi-Genesis) · [Research map](docs/research-map.md) · [AI reading guide](AI_GUIDE.md)
 
 UltraCore-RFT is the documentation and coordination hub for the RFT-SIRM ecosystem. Its scientific story begins with mathematical definitions, theorem statements, and their evidence boundaries. Runtime systems, blockchain protocols, and other applications are downstream research programmes—not the foundation used to certify the mathematics.
