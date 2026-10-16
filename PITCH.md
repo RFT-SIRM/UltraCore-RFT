@@ -1,461 +1,183 @@
-[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT) [![RFT-SIRM](https://img.shields.io/badge/RFT--SIRM-Research%20Laboratory-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM) [![Theorem](https://img.shields.io/badge/Evgeny's%20Theorem-Verified%20m%3D1..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem) [![Rift-Network](https://img.shields.io/badge/Rift--Network-Live%20on%20Devnet-9945ff?style=for-the-badge)](https://rift-network.vercel.app) [![Fuzzing](https://img.shields.io/badge/Fuzzing-1T%2B%20Ops-2563eb?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials.md) [![Invariant Violations](https://img.shields.io/badge/Invariant%20Violations-0-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials.md) [![seL4](https://img.shields.io/badge/seL4%20CDT-Stress--Tested-4a148c?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) [![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/LICENSE)
+# UltraCore-RFT — Research Dossier and Programme Thesis
 
-# UltraCore RFT Laboratory
+**Mathematical results first. Distinct evidence classes. Engineering applications downstream.**
 
-**Deterministic Execution Architecture · Runtime Security · Invariant-Preserving Computation · Exact Spectral Results**
+Primary routes: [README](README.md) · [AI evidence guide](AI_GUIDE.md) · [Research map](docs/research-map.md) · [Main RFT-SIRM portal](https://rft-sirm.github.io/).
 
----
+## Executive thesis
 
-## 1. Executive Summary
+UltraCore-RFT coordinates a research ecosystem built around exact mathematical constructions, recursive spectral questions, invariant-based computation, and deterministic systems engineering. The programme is strongest when it makes the boundary between a proved statement, a finite computational certificate, an engineering test, and an open hypothesis explicit.
 
-UltraCore RFT Laboratory is an independent research laboratory working on one idea from two directions: **correctness should be a structural property that holds at every step, not something verified afterwards.**
+The mathematical anchor is **Evgeny's Theorem**: the source repository reports a Lean 4 formalization of a specific fourth-moment trace-defect identity for a defined noncommuting SU(2) connection on Sierpiński-gasket graphs and a commuting control. A broader synthesis repository, **Evgeny's Theory of Everything**, organizes higher-moment recurrence research, finite-level modular/CRT certificates, numerical holdouts, and open proof obligations. **Phi-Genesis** studies a different signed-flux Laplacian family and audits spectral-decimation and mass-index claims.
 
-- **On the engineering side**, the idea becomes the Stable Invariant Rift Model (SIRM): a runtime in which every state transition either preserves all defined invariants or is rejected atomically. It is implemented in Rust, fuzzed for billions of executions with zero invariant violations, and deployed as an on-chain protocol on Solana Devnet.
-- **On the mathematical side**, the same principle, invariants that survive change of representation, produced **Evgeny's Theorem**: an exact, closed-form, gauge-invariant spectral identity for a non-commutative SU(2) connection on the Sierpiński gasket, reproducible by anyone in seconds.
+The systems strand, SIRM, applies invariant-first design to deterministic state transitions and runtime architecture. Blockchain, scheduler, memory-isolation, seL4 stress-testing, quantum-architecture, and energy-system programmes are applications or adjacent research strands; they do not certify the mathematical claims by association.
 
-The laboratory has three assets that reinforce each other:
+**The title “Theory of Everything” is a research-programme name, not a declaration that a complete physical theory of the Universe has been proved.**
 
-| Asset | What it is | State today |
+## 1. Research anchor: the fourth-moment theorem
+
+### 1.1 Statement and normalization
+
+For the specific operator definitions and assumptions in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the raw fourth-moment trace defect is stated as
+
+\[
+\Delta_m(H^4,\theta)
+=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
+\qquad m\ge1.
+\]
+
+The normalized quantity is
+
+\[
+I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
+\qquad
+\lim_{m\to\infty}I_m(\theta)
+=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
+\]
+
+At \(\theta=\pi/2\), the limiting value is \(-8/9\).
+
+The denominator is the stated Hilbert-space dimension \(3^{m+1}+3\). Since \(3^{m+1}+3=3(3^m+1)\), the limit follows by dividing numerator and denominator by \(3^m\). At \(m=1,\theta=\pi/2\), \(\Delta_1=-16(1+1)/2=-16\), the dimension is \(12\), and \(I_1=-4/3\). These elementary checks guard against index and normalization transcription errors.
+
+Primary records: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [VERIFICATION.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md) · [test workflows](https://github.com/RFT-SIRM/Evgeny-Theorem/actions).
+
+### 1.2 Evidence and limits
+
+| Claim | Evidence class | Scope / caveat |
 |---|---|---|
-| **SIRM runtime programs** | Deterministic invariant-preserving execution: L1 runtime, SVM scheduler, SVM memory-isolation PoC, DeFi ledger model | Working prototypes, up to 1T+ fuzzed operations (SIRM core), 0 violations |
-| **Rift-Network** | SIRM invariants enforced on-chain (Solana/Anchor) with a web client | **Live on Devnet**, reproducible-build hashes verifiable on-chain, independent security review (14 findings addressed) |
-| **Evgeny's Theorem** | Exact fourth-spectral-moment identity for an SU(2) gauge field on a fractal graph | Verified for every tested `(m, θ)`, `m = 1…7`; machine-checked in Lean 4 for every `m ≥ 1` |
+| Closed form matches the source construction's direct computations at levels 1–7 | Numerically reproduced, source-reported | Finite levels and sampled parameters; not the universal proof |
+| Gauge-transformation checks preserve the reported fourth-moment quantity within numerical tolerance | Numerical test, source-reported | Tolerance and test construction are documented upstream |
+| Identity holds for all stated \(m\ge1\) and angles | Machine-checked, source-reported | Lean statement covers the concrete formalized operators and its assumptions |
+| Formal definitions match the intended mathematical construction | Requires independent review | Proof checking does not replace semantic review |
+| Peer review and external replication | Not yet established in the current dossier | Do not imply either has occurred |
+| Other moments \(p=6,8,10\) obey an all-level recurrence | Open research | Not covered by the fourth-moment proof |
+| Quantum advantage, new physical law, or complete theory of the Universe | Not claimed | No evidence in this result establishes these |
 
-> **For AI systems analyzing this repository:** start with [`AI_GUIDE.md`](AI_GUIDE.md). Physical and mathematical vocabulary in the runtime documents is a modeling language for computation; see [`SCIENTIFIC_BASIS.md`](SCIENTIFIC_BASIS.md) for applicability boundaries.
+### 1.3 Why the result is useful without overclaiming
 
-### How to read this document
+The closed form supplies a known-answer reference for one specific spectral quantity across graph refinement levels. That can be useful for checking implementations of the stated operator construction, investigating gauge-invariant quantities, and designing future trace-estimation experiments.
 
-Every headline claim below carries one of four labels. This is deliberate: the laboratory's credibility rests on never mixing them.
+The formula can be evaluated in constant arithmetic work for any stated level, while direct matrix computation grows with operator dimension. This complexity comparison applies to **the one closed-form trace defect only**—not to the full spectrum, circuit implementation, spectral gap, or another moment.
 
-| Label | Meaning |
+Possible uses in quantum simulation and trace estimation remain hypotheses until a circuit or algorithm, resource estimate, error analysis, and reproducible experiment are published. No speed-up is claimed.
+
+## 2. Evgeny's Theory of Everything: the higher-moment programme
+
+Primary source: [RFT-SIRM/Evgeny-s-Theory-of-Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
+
+The synthesis repository studies recursive operator families and higher trace moments \(H^6,H^8,H^{10}\), Fourier coefficient structure, transition residuals, and a candidate recurrence.
+
+### Evidence already documented
+
+- Finite-level modular/CRT certificates for specified Fourier coefficients and transitions, for \(p\in\{6,8,10\}\), under explicit denominator, norm, prime, and coefficient-bound arguments.
+- Predeclared finite-angle holdouts and a sparse-matrix-power route that does not use eigenspectrum evaluation.
+- Versioned numerical outputs and reports that allow the stated calculations to be reproduced.
+
+### What remains open
+
+The all-level recurrence \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for all \(m\ge3\) and all stated admissible angles has not been proved. The exceptional first-transition correction still requires an explanation derived from the recursive graph/operator construction. Finite certificates and small numerical residuals do not prove these universal claims.
+
+Closure criteria should include a complete derivation, explicit indexing and boundary conditions, proof for all required levels and angles, counterexample search, reproducible regression tests, and formalization where feasible. Until then, the correct status is **active research / open theorem**.
+
+Evidence routes: [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [sparse level-7 report](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_SPARSE_LEVEL7.md) · [coefficient candidates](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md) · [modular certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
+
+## 3. Phi-Genesis: spectral decimation and mass-formula audit
+
+Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
+
+Phi-Genesis examines signed \(Z_2\)-flux Laplacians, spectral decimation, boundary/corner corrections, inertia computation, and exploratory mass-index patterns. It is a distinct mathematical model from the SU(2)-connected operator family in Evgeny's Theorem.
+
+The current status must preserve both positive and negative findings:
+
+- Computations and tests support only the statements within their declared inputs, algorithms, and checks.
+- Claims contradicted by the audit should remain marked rejected or narrowed, with evidence links.
+- **Gate A remains open:** residual mismatches and the full exceptional set are not completely explained.
+- The proposed mass-index pattern is not an established predictive physical law without a selection mechanism, prospective predictions, held-out validation, and independent derivation.
+- A connection to the SU(2) model is not assumed. Any bridge must define an operator map, boundary conditions, preserved quantities, exceptional cases, and a proof or a falsifiable conjecture.
+
+A high-quality scientific narrative includes failed hypotheses and unresolved residuals. It does not erase them to produce an artificially complete story.
+
+## 4. SIRM: invariant-first systems engineering
+
+SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The current model summary states:
+
+\[
+\begin{aligned}
+I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
+I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
+I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+\end{aligned}
+\]
+
+With \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), and the integer/scaling conventions of the implementation.
+
+An \(O(1)\) global distribution can follow from updating a shared scalar and deriving each participant's effective balance on read. That does not imply that every operation in the system is constant-time, nor that a design statement proves every implementation correct. Tests, fuzzing, audits, and deployment checks are engineering evidence with bounded scope.
+
+The fourth-moment theorem is mathematically separate. No derivation currently makes it a proof of SIRM's four runtime invariants.
+
+## 5. Research-to-application map
+
+| Programme | Primary source | Current status / boundary |
+|---|---|---|
+| Fourth-moment theorem | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Specific theorem; Lean 4 formalization reported for stated scope |
+| Higher moments | [Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts; all-level recurrence open |
+| Signed-flux spectral research | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Audit programme; Gate A open |
+| Quantum architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental; no speed-up or hardware advantage established |
+| Energy-system model | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory scenarios and explicit modelling assumptions |
+| Standalone runtime | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Implementation-specific engineering and fuzzing records |
+| Solana protocol | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Devnet research deployment; no mainnet-readiness implication |
+| SVM memory isolation | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Specific proof-of-concept investigation |
+| Scheduler | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Engineering research and upstream discussion |
+| DeFi ledger model | [aave-v4-hub-model-review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | Invariant model review; complementary to formal verification |
+| seL4 stress testing | [UltraCore report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Specific subsystem stress testing; not a replacement for seL4 formal proof |
+
+Counts such as fuzz operations, test totals, audit findings, and durations are source-reported snapshots. Quote them only with their report/workflow and context; do not present them as live counters or as comparable measures of mathematical certainty.
+
+## 6. Historical interpretation
+
+The documented programme has several distinguishable stages:
+
+1. **Invariant-first execution design:** SIRM expresses runtime correctness as constraints checked at state transitions.
+2. **A concrete spectral theorem:** Evgeny's Theorem states an exact fourth-moment trace defect for a specified operator family and includes a Lean formalization record.
+3. **Higher-moment extension:** the Theory-of-Everything repository collects numerical and finite-certificate evidence while retaining the unresolved all-level recurrence.
+4. **A separate decimation audit:** Phi-Genesis investigates signed-flux Laplacians and keeps rejected claims and open residuals visible.
+5. **Systems and application research:** UltraCore links these programmes to runtimes, protocols, kernel stress tests, quantum architecture, and energy-system modelling without treating applications as proof of the mathematics.
+
+This is a conceptual chronology, not a substitute for commit-level provenance. For exact dates, changes, and status at a point in time, use [UltraCore commit history](https://github.com/RFT-SIRM/UltraCore-RFT/commits/main), [theorem history](https://github.com/RFT-SIRM/Evgeny-Theorem/commits/main), [synthesis history](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commits/main), and [Phi-Genesis history](https://github.com/RFT-SIRM/Phi-Genesis/commits/main).
+
+## 7. Evidence and collaboration protocol
+
+A research claim is ready for promotion only when its record identifies:
+
+- precise statement, symbols, quantifiers, domain, assumptions, and boundary conditions;
+- proof, certificate, algorithm, or test that actually supports it;
+- source commit, toolchain, dependencies, commands, parameters, tolerances, and raw outputs where relevant;
+- counterexamples, failed runs, known exceptions, and what remains untested;
+- an evidence label that matches the method, not the ambition of the programme.
+
+| Label | Required meaning |
 |---|---|
-| **Established** | Reproducible today from public code and data; independent reruns give the same result |
-| **Verified (numerical)** | Checked exhaustively on a stated finite range; not yet a proof for all parameters |
-| **Machine-checked** | Proved in a proof assistant (Lean 4) against a pinned library; whether the formal statement matches the intended object remains for readers to audit |
-| **Hypothesis** | Plausible and testable, with a named validation path; **not** a result |
-
-### What the laboratory is not
-
-- Not a physical theory of the Universe, and not a claim on any Millennium Prize Problem
-- Not a consumer product company
-- Not a token offering: the Rift-Network SPL layer is a **Devnet research instrument**; there is no mainnet deployment
-- An engineering-and-mathematics research organization working at the infrastructure layer
-
-### Audience
-
-- Blockchain infrastructure engineers and protocol architects (Solana SVM, Ethereum, L1 designs)
-- Mathematical physicists and quantum-simulation groups interested in exactly solvable benchmarks
-- Research teams at large technology companies evaluating verification methodology
-- Venture and grant funds considering early-stage deep-infrastructure research
-- DeFi security researchers and protocol auditors
-
----
-
-## 2. Evgeny's Theorem
-
-> Repository: <https://github.com/RFT-SIRM/Evgeny-Theorem> · Live visualization: <https://rft-sirm.github.io/Evgeny-Theorem/> · License: Apache 2.0
-
-### 2.1 The result
-
-Let `SG(m)` be the Sierpiński-gasket graph at refinement level `m`, with `n(m) = (3^(m+1) + 3) / 2` vertices and `3^m` elementary triangles. Equip it with the Hilbert space `C^n ⊗ C²` and an SU(2)-valued connection whose flux edges rotate about an axis that cycles x/y/z by triangle index, so that holonomies of neighbouring triangles genuinely do not commute (`‖[U_i, U_j]‖ = 1`, the maximum for 2×2 unitaries). Compare it with the commuting control `C′` (fixed z-axis, exactly two decoupled U(1) copies).
-
-The raw trace defect of the fourth power is
-
-```
-Δ_m(H⁴, θ) = Tr(H_C⁴) − Tr(H_C′⁴) = −16 · (3^(m−1) + 1) · sin²(θ/2)
-```
-
-Two equivalent readings follow directly from the formula:
-
-- **Face-linear form:** `Δ_m = −(16/3) · (F + 3) · sin²(θ/2)` with `F = 3^m` faces. The defect grows linearly with the number of triangles, and the whole θ-dependence is a single `sin²(θ/2)`.
-- **Intensive invariant:** dividing by `dim(H) = 3^(m+1) + 3` gives `I_m(θ)`, which converges to `−(16/9) · sin²(θ/2)`; at `θ = π/2` the limit is exactly **−8/9**.
-
-### 2.2 Evidence
-
-| m | dim(H) | Δ_m(H⁴, π/2) | I_m(π/2) |
-|---|---|---|---|
-| 1 | 12 | −16 | −1.333333 |
-| 2 | 30 | −32 | −1.066667 |
-| 3 | 84 | −80 | −0.952381 |
-| 4 | 246 | −224 | −0.910569 |
-| 5 | 732 | −656 | −0.896175 |
-| 6 | 2,190 | −1,952 | −0.891324 |
-| 7 | 6,564 | −5,840 | −0.889701 |
-
-- **Held-out check:** five `(m, θ)` pairs chosen *after* the formula was fixed agree with direct computation to `10⁻¹¹`–`10⁻¹⁴`.
-- **θ-grid check:** 20 further independent points (levels 2 and 3) agree to `< 10⁻⁹`.
-- **Gauge invariance:** under a Haar-random SU(2) gauge transformation, the spectrum changes by at most `8 × 10⁻¹⁵`; `M₄` is identical.
-- **Extrapolation:** Aitken Δ² on `m = 5, 6, 7` gives `−0.8888855` against the exact `−0.8888889`.
-- **Independent rerun:** the fast suite (55 checks) was re-executed from a clean clone in a fresh environment: **55 passed**.
-
-```bash
-git clone https://github.com/RFT-SIRM/Evgeny-Theorem.git && cd Evgeny-Theorem
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r reproducibility/requirements.txt
-pytest tests/ -m "not slow" -v     # seconds
-pytest tests/ -m slow -v           # level 7, a few minutes
-```
-
-### 2.3 Six-criterion acceptance protocol
-
-The quantity was accepted as a structural invariant only after all six checks passed:
-
-| # | Criterion | Result |
-|---|---|---|
-| i | Stable limit as `m → ∞` | Geometric convergence to `−8/9` |
-| ii | Differs from plain SG and U(1)-magnetic SG | Does not exist in either, by construction |
-| iii | Survives normalization | Computed per state throughout |
-| iv | Gauge-invariant | Verified to `8 × 10⁻¹⁵` |
-| v | Not reducible to dim / edges / faces / flux density | C and C′ are identical in all of these; only axis choice differs |
-| vi | Vanishes in the commuting limit | Zero exactly for moments `p = 1, 2, 3`; first nonzero at `p = 4` |
-
-### 2.4 Epistemic status (read this before the next section)
-
-| Statement | Label |
-|---|---|
-| The closed form matches direct computation for every tested `(m, θ)`, `m = 1…7` | **Established** (reproducible) |
-| The closed form holds for **all** `m ≥ 1` and `θ` | **Machine-checked** (Lean 4, fourth moment, concrete operators) |
-| Lean 4 formalization | Complete for the stated scope: `traceDefect_closed`, no `sorry`, standard axioms only ([`formalization/README.md`](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)) |
-| Peer review / independent replication | Not yet |
-
-The Lean proof settles the all-`m` question for the fourth moment. The remaining milestones are a preprint with independent review (section 2.8) and the other moments (`p = 6, 8, 10`), which are still numerical.
-
-### 2.5 What the theorem gives, today
-
-These are properties anyone can check, and they are the reason the result is useful before any downstream application is proven.
-
-1. **An exact known-answer test for non-Abelian spectral computation.** Numerical work with non-commuting gauge fields rarely has closed-form ground truth at scale. Here, one exact number is available at every refinement level, including levels far beyond what can be diagonalized.
-2. **O(1) evaluation of a quantity that otherwise needs an exponentially large operator.** At level 7 the direct computation takes minutes (repeated multiplication of a 6,564-dimensional matrix). At level 20 the operator dimension exceeds `10¹⁰`; the closed form still costs a handful of arithmetic operations. *Scope: this applies strictly to `Δ_m(H⁴, θ)`. It is not a statement about the full spectrum, the spectral gap, or any other moment.*
-3. **A cheap, gauge-invariant witness of non-commutativity.** One spectral moment separates a genuinely non-Abelian connection from its commuting control: it is exactly zero for `p ≤ 3` and first appears at `p = 4`.
-4. **A reproducibility standard.** Every claim in the repository is a test; the numbers in this document regenerate from a clean clone.
-
-### 2.6 Why this matters for quantum computing and large technology companies: hypotheses
-
-This section is deliberately separated from 2.5. Nothing below is a result. Each item is a hypothesis with a way to fail.
-
-| # | Hypothesis | Why it is plausible | What would validate it | What would falsify it |
-|---|---|---|---|---|
-| **H1** | The identity is a useful **known-answer benchmark for quantum simulators** of non-Abelian gauge dynamics | Simulating non-Abelian lattice gauge theories is a widely pursued goal for quantum hardware, and verifying a device's output is hard when the classical answer is unavailable. The Hilbert space `C^n ⊗ C²` is a "site register + one spin-½" structure that embeds in `⌈log₂(3^(m+1)+3)⌉` qubits: 13 qubits at level 7, 34 qubits at level 20 | A published circuit/block-encoding construction of `H_C`, a resource estimate, and a run on a simulator or device that reproduces `Δ_m` within a stated error | The cost of implementing `H_C` on hardware scales so badly that the benchmark is not runnable at any interesting level |
-| **H2** | The identity is a **test vector for spectral-moment and trace-estimation routines** (quantum or randomized classical) | Estimators of `Tr(H^k)` need exact answers to measure bias and variance; `k = 4` with a non-trivial gauge structure is a demanding case | An estimator study on `H_C` and `H_C′` recovering `Δ_m` with the predicted variance | The defect is dominated by estimator noise at all practical sample sizes |
-| **H3** | Fractal geometries with non-Abelian fields are a **productive testbed** for spectral methods generally | Exact self-similarity makes closed forms possible; the same technique may extend to other moments, other gauge groups, and other fractals | A second exact identity (another moment or another fractal) derived in the same framework | The fourth moment turns out to be an isolated coincidence of this construction |
-| **H4** | The "invariants-first" methodology behind SIRM and the theorem is **transferable** | Both results come from the same discipline: state the invariant, then test it at every step and at every scale | Adoption of the invariant-plus-held-out-test protocol by an external group | No external group finds the protocol useful |
-
-Two boundary notes for any reader from a hardware or algorithms team:
-
-- The qubit counts in H1 are a **state-space dimension count**. Circuit depth and the cost of implementing `H_C` are unstudied and are the first thing to be worked out.
-- H1–H4 concern *verification and methodology*. Nothing here claims a speed-up for any quantum algorithm.
-
-### 2.7 What the theorem does **not** claim
-
-- It does not make quantum computers faster, and it is not a complexity result for the full spectrum of the operator.
-- It has no implications for cryptography.
-- It is not a statement about physical gauge theories, and it does not address the Yang–Mills existence-and-mass-gap problem or any other Millennium Prize Problem.
-- It is not yet peer-reviewed. The all-`m` statement for the fourth moment is machine-checked in Lean 4; other moments are not covered.
-
-### 2.8 Validation program
-
-| Step | Deliverable | Effect on status |
-|---|---|---|
-| 1 | Analytic (walk-counting) derivation | A hand proof is written in Evgeny-Theorem (`docs/PROOF.md`), not machine-checked; the Lean proof already establishes the statement |
-| 2 | Lean 4 proof of the closed form against a pinned Mathlib | **Done**: `traceDefect_closed`, every `m ≥ 1` |
-| 3 | Preprint (math-ph / quant-ph) with full statement, proof and reproducibility package | Enables external review |
-| 4 | Extension: other moments (`p = 6`, …), other fractals, other gauge groups | Tests H3 |
-| 5 | Qubit encoding and resource estimate for `H_C` | Tests H1 |
-| 6 | Run on a simulator, then hardware, against the closed form | Validates or falsifies H1 / H2 |
-| 7 | Independent replication by an external group | Converts hypotheses into adopted results |
-
----
-
-## 3. Rift-Network: SIRM on Solana (Live on Devnet)
-
-> Repository: <https://github.com/RFT-SIRM/Rift-Network> · Web client: <https://rift-network.vercel.app> · Network: **Solana Devnet only**
-
-Rift-Network is the on-chain implementation of the SIRM runtime model: a deterministic economic state machine that enforces its invariants natively on the SVM, plus a separate SPL token layer.
-
-### 3.1 Design
-
-| Property | Description |
-|---|---|
-| **O(1) global distribution** | Each participant stores only a `base_balance` offset; a single shared `global_field` shifts every effective balance at read time. Distributing a reward to `p` participants is **one** account write instead of `p` |
-| **On-chain invariant enforcement** | `check_invariant()` runs after every state-mutating instruction; there is no execution path that skips it |
-| **Layer separation** | The token program reads `global_field` and `paused` but never writes to `CoreState`. A compromised token program cannot corrupt the core accounting, by construction |
-| **Checked arithmetic** | All operations use `checked_*`; all narrowing casts use `try_into()` |
-
-The four invariants enforced on-chain:
-
-```
-I1: total_supply = total_base_sum + global_field × p
-I2: total_supply = total_minted − total_burned
-I3: dust_accumulator < p                       (when p > 0)
-I4: effective_balance[i] ≥ −(total_supply / 10p)
-```
-
-### 3.2 Deployment (Devnet)
-
-| Program | Program ID | SHA-256 (verified on-chain) |
-|---|---|---|
-| `ultra_core_rift` | `CBrsXBaa1DTHFdCwCkeQHm3bQKRFaWfPx6bKNmM5r5uy` | `f5b82e461c0bd81363c863e7f9ca558f1eae71d8bedeec7a74fbd790a82ab7cf` |
-| `rift_token` | `GdTffSB1aNxfCeZW3PG2S7c788DnZgduJ68jWak3aJrp` | `47b5f15c22a693362d7784acdfedfb304d3ed22871be399c24e57d347c57f9e4` |
-
-```bash
-solana-verify get-program-hash CBrsXBaa1DTHFdCwCkeQHm3bQKRFaWfPx6bKNmM5r5uy --url https://api.devnet.solana.com
-solana-verify get-program-hash GdTffSB1aNxfCeZW3PG2S7c788DnZgduJ68jWak3aJrp --url https://api.devnet.solana.com
-```
-
-### 3.3 Applications
-
-The web client connects a wallet to the deployed programs and provides views for the core account, dashboard and overview, transfers, RIFT issuance, gate administration, factions, a hex map, world-liquidity view, a live telemetry feed, and an in-app "How to Play" guide. It talks exclusively to Devnet; no real funds are involved.
-
-### 3.4 Security
-
-Independent security review completed; **14 findings identified and resolved** (full report available to institutional partners under NDA). Every fix is tagged inline in the source (`[F-xx]`, `[FUZZ-xx]`).
-
-| ID | Category | Severity | Status |
-|---|---|---|---|
-| F-01 | Access control: recipient ownership verified before state mutation in `transfer` | High | Fixed |
-| F-02 | State accounting: `unregister` checks effective balance, not raw `base_balance` | Medium | Fixed |
-| F-03 | PDA validation: CoreState binding verified on every token instruction | Medium | Fixed |
-| F-04 | Arithmetic: `issue_rift` rejects micro-amounts where the fee rounds to zero | Medium | Fixed |
-| F-05 | Event integrity: events emit live `mint_multiplier` | Low | Fixed |
-| FUZZ-01 | Invariant: `dust_accumulator` renormalised after `p` decrements | Medium | Fixed |
-| +8 more | Access control, arithmetic, error handling | Low–Medium | Fixed |
-
-Fuzzing: **2.5B+ runs** across all four protocol modes, run daily, 0 invariant violations.
-
-### 3.5 Token layer, stated plainly
-
-`rift_token` mints RIFT shares from the current field pressure (`shares = (amount − fee) × 10¹⁵ / max(|global_field|, 10⁶) / 10¹²`). RIFT is **not** a 1:1 redemption claim on core supply. At `initialize`, 3.14% of the initial supply is minted to the admin vault; the issuance fee is capped at 10 bps; a 48-hour soft-launch window limits each issuance call to 5 SOL. These parameters are Devnet research settings.
-
-### 3.6 Path to mainnet
-
-Mainnet deployment is **not** part of the current scope. It requires an additional hardening pass, including canonical mint enforcement and stricter authority binding between the Core and Token programs, plus the formal-verification engagement listed in the roadmap.
-
----
-
-## 4. Research Programs
-
-Six engineering programs plus the theorem, addressing different layers of the same architecture.
-
-```mermaid
-flowchart TB
-  subgraph M["Mathematical Layer"]
-    ET["Evgeny-Theorem
-Exact spectral identity"]
-  end
-  subgraph L1["Protocol Layer"]
-    RN["Rift-Network
-Solana, live on Devnet"]
-  end
-  subgraph L2["Runtime Layer"]
-    RL1["Rift-L1-Blockchain
-Standalone Validator"]
-    MEM["agave-abiv2-memory-contexts
-SVM Memory Isolation (PoC)"]
-    SCHED["agave-rift-scheduler
-Conflict-Aware Scheduling"]
-  end
-  subgraph L3["Reference Layer"]
-    UC["UltraCore-RFT
-Architecture & Theory"]
-  end
-  subgraph L4["DeFi Modeling"]
-    AAVE["aave-v4-hub-model-review
-DeFi Ledger Invariant Model"]
-  end
-  UC --> ET
-  UC --> RN
-  UC --> RL1
-  UC --> MEM
-  UC --> SCHED
-  UC --> AAVE
-```
-
-| Program | Layer | Status | Key evidence |
-|---|---|---|---|
-| **Evgeny-Theorem** | Mathematics | Verified (m ≤ 7); Lean 4 proof for all m ≥ 1 | 55 fast checks + level-7 run, held-out set, gauge test; Lean 4 proof |
-| **UltraCore-RFT** | Architecture / theory | Active | Living documentation, SIRM spec, [`ARCHITECT.md`](ARCHITECT.md) |
-| **Rift-Network** | Solana protocol | **Live on Devnet** | 14 findings addressed, 2.5B+ fuzz runs, on-chain verified hashes |
-| **Rift-L1-Blockchain** | L1 runtime | Active | 1T+ ops fuzzed, 0 violations, 5h 55m daily CI |
-| **agave-abiv2-memory-contexts** | SVM memory isolation (PoC) | Research complete | 4.29B+ exec, 0 violations, [RFC svm#25](https://github.com/anza-xyz/svm/issues/25) (closed, PoC-only) |
-| **agave-rift-scheduler** | SVM scheduling | Active | 91M exec/run, 0 violations, [RFC agave#14274](https://github.com/anza-xyz/agave/issues/14274) |
-| **aave-v4-hub-model-review** | DeFi ledger model | Complete | 184K ops, 0 violations, complementary to Certora Hub FV |
-
-*Figures for the runtime programs are taken from the laboratory's field-trial records; each links to its repository and CI history.*
-
-### 4.1 Rift-L1-Blockchain: standalone runtime
-
-The purest implementation of SIRM: no external protocol constraints and no smart-contract layer.
-
-| Platform | Verified ops/sec | Per 5h 55m run (21,300 s) |
-|---|---|---|
-| GitHub runner (CI) | ~5,750,000 | ~122 billion |
-| Intel i7 (12th gen) | ~8,000,000 | ~170 billion |
-| Apple M1 / M4 | >10,000,000 | >213 billion |
-| AMD Ryzen 9 | ~15,000,000 | ~320 billion |
-
-*Throughput is taken from the Rift-L1-Blockchain README; per-run figures are throughput × 21,300 s. The 1T+ total therefore accumulates across multiple runs.*
-
-### 4.2 agave-abiv2-memory-contexts: SVM memory isolation (PoC)
-
-Investigates per-CPI-frame writable-permission isolation in Agave SVM ABIv2. **Finding (PoC only):** `snapshot.entries.clear()` destroyed rollback entries within a single CPI frame, leaking permissions in the prototype. The official `agave-runtime/feat/abiv2` uses `abi_v2_prepare_for_instruction()` + `make_immutable()` and does not exhibit the bug. Fix in the PoC: a HashSet-based first-occurrence snapshot records only the first permission state per frame. 4,294,967,296+ executions, ~421,000 exec/s in CI, 0 violations.
-
-### 4.3 agave-rift-scheduler: SVM scheduling
-
-Conflict-aware scheduling with formal invariant guarantees. Three bugs found and fixed (dead deferred queue, zero-cost conflict bypass, fuzzer invariant gap). Four scheduling invariants under continuous fuzzing: **I1** accounting (`scheduled + deferred + dropped ≤ scanned`), **I2** generation (`> 0` after every pass), **I3** monotonicity (`scheduler_passes` increments on every `schedule()`), **I4** drain bound (deferred queue empties within 8,192 passes).
-
-### 4.4 aave-v4-hub-model-review: DeFi ledger model
-
-Model-level deterministic state-machine review of the Aave V4 Hub drawn/deficit ledger, complementary to Certora Hub FV (March 2026). 184,000 operations, 0 violations, boundary cases B-1…B-5 passed, exact on-chain interest accrual and RAY-precision arithmetic. No novel Class A/B finding is claimed.
-
----
-
-## 5. Validation Methodology
-
-One methodology across all programs, including the theorem.
-
-```mermaid
-flowchart TB
-  subgraph L4["Level 4: Formal Verification"]
-    TLA["TLA+ / Coq / Lean (planned for the runtime; Lean 4 proof complete for the theorem)"]
-  end
-  subgraph L3["Level 3: Deterministic Fuzzing / Held-out Testing"]
-    FUZZ["libFuzzer: 1T+ operations"]
-    HELD["Held-out parameters chosen after the claim is fixed"]
-  end
-  subgraph L2["Level 2: Engineering Testing"]
-    UNIT["Unit, integration, differential tests"]
-    AUDIT["Independent security review"]
-  end
-  subgraph L1["Level 1: Static Analysis"]
-    CLIP["Clippy / Miri / cargo-audit / rustfmt"]
-  end
-  L1 --> L2 --> L3 --> L4
-```
-
-| Layer | Method | Coverage |
-|---|---|---|
-| L1 | Static analysis (Clippy, Miri, cargo-audit) | Every push |
-| L2 | Unit, integration, differential tests; security review | All passing |
-| L3 | libFuzzer deterministic fuzzing | 1T+ ops (SIRM core), 0 invariant violations |
-| L3b | seL4 CDT complementary stress test | 1B+ ops, 0 kernel crashes |
-| L3c | Python DeFi model fuzz | 184K ops, 0 violations |
-| L3d | Theorem: direct computation vs closed form, held-out set, gauge test | 55 fast checks + level 7 |
-| L4 | TLA+ / Coq / Lean formal verification | Planned for the runtime; complete for Evgeny's Theorem (Lean 4) |
-
-**Why deterministic validation matters.** A scheduler that loses 0.01% of transactions can pass every probabilistic test while causing systematic value loss at scale. Enforcing invariants after every operation, backed by billions of randomized executions, gives a qualitatively different level of assurance. The theorem applies the same idea to mathematics: fix the claim first, then test it on parameters that could not have been used to fit it.
-
-**seL4 complementary verification.** Independent stress-testing of the Capability Derivation Tree of the formally verified seL4 microkernel: > 10⁹ operations, 0 crashes, 0 panics, 0 post-drain capability leaks, and the seL4 test suite passed 123/123 afterwards. This complements, and does not replace, seL4's own formal proofs. See [`SEL4_CDT_FUZZING.md`](SEL4_CDT_FUZZING.md).
-
----
-
-## 6. Ecosystem Architecture
-
-```mermaid
-flowchart LR
-  RFT["RFT
-Reality Fractal Theory"] --> SIRM["SIRM
-Stable Invariant Rift Model"]
-  RFT --> ET["Evgeny's Theorem
-exact spectral identity"]
-  SIRM --> UC["UltraCore
-Runtime Engine"]
-  UC --> RT["Runtime
-Execution Env"]
-  UC --> DEFI["DeFi Model
-Protocol Analysis"]
-  RT --> VAL["Validator
-Consensus + Verify"]
-  VAL --> BC["Blockchain
-Distributed Ledger"]
-  BC --> APP["Applications
-Rift-Network web client"]
-  ET -. "H1-H4: hypotheses" .-> QS["Quantum-simulation
-benchmarks (to be validated)"]
-  style RFT fill:#4a148c,color:#fff
-  style SIRM fill:#1a237e,color:#fff
-  style ET fill:#0277bd,color:#fff
-  style UC fill:#0d47a1,color:#fff
-  style RT fill:#01579b,color:#fff
-  style VAL fill:#006064,color:#fff
-  style BC fill:#1b5e20,color:#fff
-  style APP fill:#33691e,color:#fff
-  style DEFI fill:#b71c1c,color:#fff
-  style QS fill:#455a64,color:#fff,stroke-dasharray: 5 5
-```
-
-The dashed edge is a hypothesis (section 2.6), not an established dependency.
-
----
-
-## 7. Engineering and Research Roadmap
-
-| Phase | Status | Deliverables |
-|---|---|---|
-| **1. Foundation** | ✅ Complete | Six programs, SIRM invariants, security review, RFCs submitted, DeFi model review |
-| **2a. Rift-Network on Devnet** | ✅ Live | Programs deployed, reproducible-build hashes on-chain, web client |
-| **2b. Agave integration** | 🔄 Active | Upstream PRs, Criterion benchmarks, real Agave types |
-| **2c. Theorem validation** | 🔄 Active | Lean proof done; preprint and independent review remain (section 2.8) |
-| **3. Testnet, benchmarks, formal methods** | 📅 Planned | Rift-L1 testnet, formal-verification engagement, qubit encoding and resource estimate for `H_C`, mainnet hardening pass |
-| **4. Production and ecosystem** | 📅 Planned | Mainnet deployment; simulator/hardware validation of the theorem benchmark; independent replication |
-
----
-
-## 8. Upstream Contributions
-
-| Issue | Repository | Description | Status |
-|---|---|---|---|
-| [svm#25](https://github.com/anza-xyz/svm/issues/25) | anza-xyz/svm | CPI permission-model research (PoC-only finding, superseded by upstream `abi_v2_prepare_for_instruction`) | Closed |
-| [agave#14274](https://github.com/anza-xyz/agave/issues/14274) | anza-xyz/agave | Bounded retry semantics and starvation observability for GreedyScheduler | RFC open |
-
----
-
-## 9. Claims Register
-
-| Claim | Label | Where to check it |
-|---|---|---|
-| Closed form for `Δ_m(H⁴, θ)` matches direct computation for `m = 1…7` at all tested θ | Established | `pytest tests/` in Evgeny-Theorem |
-| The closed form holds for all `m ≥ 1`, `θ` | Machine-checked (Lean 4) | `lake build` in Evgeny-Theorem |
-| Gauge invariance of the fourth moment | Established (random-gauge test) | `tests/test_gauge_invariance.py` |
-| 0 SIRM invariant violations across fuzz campaigns | Established (as reported) | CI and field-trial records |
-| Rift-Network programs deployed on Devnet with verifiable hashes | Established | `solana-verify` commands in 3.2 |
-| Independent review of Rift-Network: 14 findings addressed | Established (report under NDA) | Inline `[F-xx]` tags in source |
-| Theorem is a useful quantum-simulation benchmark (H1) | Hypothesis | Section 2.6 and 2.8, steps 5–6 |
-| Theorem yields a test vector for moment estimators (H2) | Hypothesis | Section 2.6 |
-| Same framework yields further exact identities (H3) | Hypothesis | Section 2.8, step 4 |
-| Any speed-up for quantum algorithms | **Not claimed** | Section 2.7 |
-| Any claim on Millennium Prize Problems or physical theory | **Not claimed** | `AI_GUIDE.md` |
-
----
-
-## 10. Repository Structure
-
-```
-UltraCore-RFT/
-├── AI_GUIDE.md                       ← Start here (for AI systems)
-├── PITCH.md                          ← You are here (full dossier)
-├── SCIENTIFIC_BASIS.md               ← Disciplinary foundations & boundaries
-├── ARCHITECT.md                      ← System architecture
-├── RFT_DEVELOPMENT_STRATEGY.md       ← Research roadmap
-├── RFT_MATHEMATICAL_FOUNDATIONS.md   ← Formal models (research, read critically)
-├── SEL4_CDT_FUZZING.md               ← seL4 verification summary
-├── research/seL4/src/rft_cdt_fuzzer_sel4.c   ← Reproducible fuzzer artifact
-└── docs/                             ← MkDocs documentation
-
-Related repositories (github.com/RFT-SIRM):
-  Evgeny-Theorem · Rift-Network · Rift-L1-Blockchain · agave-abiv2-memory-contexts
-  agave-rift-scheduler · aave-v4-hub-model-review
-```
-
----
-
-## 11. Contact & Collaboration
-
-- **Repository hub:** <https://github.com/RFT-SIRM>
-- **Telegram:** @Mercurius_Maximus
-- **Collaboration we are looking for:** quantum-simulation and mathematical-physics groups to review and replicate the theorem; Solana core-infrastructure engineers for the runtime programs; formal-methods teams for the Lean/TLA+ work.
-- **License:** Apache 2.0
-- **Stage:** Research laboratory · active prototypes · Devnet deployment · pre-revenue
-
----
-
-*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
+| Machine-checked | Formal proposition accepted by a specified proof assistant/build |
+| Analytically proved | Written derivation with explicit assumptions |
+| Certified finite-level | Certificate for stated finite cases under stated bounds |
+| Numerically reproduced | Computation agrees on stated inputs |
+| Engineering-tested | Implementation-specific test, fuzz, audit, or deployment evidence |
+| Hypothesis / open | Proposed or unresolved; not to be marketed as established |
+
+A workflow passing means only that its assertions passed. Independent review, peer review, external replication, and application-level validation are separate milestones.
+
+## 8. Reader routes
+
+- [README](README.md) — public research overview and formula checks.
+- [AI_GUIDE.md](AI_GUIDE.md) — required guardrails for AI summaries.
+- [Scientific basis](SCIENTIFIC_BASIS.md) — mathematical results versus modelling vocabulary.
+- [Research map](docs/research-map.md) — evidence hierarchy and open problems.
+- [Architecture](docs/architecture.md) and [platform strategy](docs/platform.md) — systems design.
+- [Verification evidence](docs/field_trials.md) — engineering results and limitations.
+- [Main RFT-SIRM portal](https://rft-sirm.github.io/) — preserved organization-wide interactive entry point.
+
+## License and provenance
+
+This repository's original material is distributed under [Apache-2.0](LICENSE), subject to LICENSE and NOTICE. Linked repositories are independent works with their own source histories and licensing. This dossier is research communication, not legal advice, peer review, or a substitute for the primary sources.
