@@ -28,33 +28,33 @@ Never rewrite “a theorem within a Theory-of-Everything research programme” a
 
 Primary sources: [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md).
 
-For the specific SU(2)-connected Sierpiński-gasket operator \(H_C\), its specified commuting control \(H_{C'}\), and the definitions and assumptions in the source repository, the stated fourth-moment trace-defect identity is
+For the specific SU(2)-connected Sierpiński-gasket operator $H_C$, its specified commuting control $H_{C'}$, and the definitions and assumptions in the source repository, the stated fourth-moment trace-defect identity is
 
-\[
+$
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
-\]
+$
 
 The normalized quantity is
 
-\[
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)=-\frac{16}{9}\sin^2(\theta/2).
-\]
+$
 
-At \(\theta=\pi/2\), the limiting value is \(-8/9\).
+At $\theta=\pi/2$, the limiting value is $-8/9$.
 
-**Correct status language:** the source project reports that its Lean 4 formalization proves the stated fourth-moment identity for every \(m\ge1\) and all angles covered by the formal statement, for the concrete formalized operators. This is a machine-checked result within that formal system and scope. Independent review that the formal definitions capture the intended mathematical construction, peer review, and independent replication remain separate matters.
+**Correct status language:** the source project reports that its Lean 4 formalization proves the stated fourth-moment identity for every $m\ge1$ and all angles covered by the formal statement, for the concrete formalized operators. This is a machine-checked result within that formal system and scope. Independent review that the formal definitions capture the intended mathematical construction, peer review, and independent replication remain separate matters.
 
-**Do not claim:** the proof covers \(H^6,H^8,H^{10}\); proves the full spectrum; proves a physical law; establishes quantum speed-up; solves Yang–Mills or another Millennium Prize Problem; or proves SIRM runtime invariants. None follows from this theorem.
+**Do not claim:** the proof covers $H^6,H^8,H^{10}$; proves the full spectrum; proves a physical law; establishes quantum speed-up; solves Yang–Mills or another Millennium Prize Problem; or proves SIRM runtime invariants. None follows from this theorem.
 
 ## 4. Higher moments: keep the open problem visible
 
 Primary synthesis: [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [modular/CRT certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
 
-- The repository reports finite-level modular/CRT certificates for specified Fourier coefficients and transitions for \(p\in\{6,8,10\}\), under the certificate's explicit construction and bounds.
+- The repository reports finite-level modular/CRT certificates for specified Fourier coefficients and transitions for $p\in\{6,8,10\}$, under the certificate's explicit construction and bounds.
 - Numerical holdouts and sparse-matrix-power checks are finite computational evidence.
 - **The all-level higher-moment recurrence remains open.** A finite certificate does not quantify over all graph levels. Numerical agreement over finite levels and angles does not establish a universal identity.
 - The exceptional first-transition correction needs a derivation from the recursive graph/operator construction; proposed explanations remain hypotheses until proved.
@@ -65,7 +65,7 @@ Do not use the fourth-moment Lean proof as if it formalized the higher-moment re
 
 Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
 
-Phi-Genesis investigates signed \(Z_2\)-flux Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory mass-index patterns.
+Phi-Genesis investigates signed $Z_2$-flux Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory mass-index patterns.
 
 - Gate A is **not closed** while decimation residual mismatches and the full exceptional set remain unresolved.
 - Reported test success is evidence only for assertions actually run.
@@ -78,16 +78,16 @@ Preserve negative results, failed checks, and open questions. They are part of t
 
 The stated SIRM model uses four constraints:
 
-\[
+$
 \begin{aligned}
 I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
 I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
 I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
-\]
+$
 
-Here \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), subject to the implementation's stated integer and scaling conventions.
+Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, subject to the implementation's stated integer and scaling conventions.
 
 These are model/runtime constraints. Do not state that the fourth-moment theorem proves them, or that passing fuzz tests is a formal proof of all possible executions.
 
@@ -111,12 +111,12 @@ A green CI badge does not imply that every claim in a repository is proved. A te
 Before copying or rewriting a formula:
 
 1. Open the primary theorem/specification and check symbol definitions, domains, quantifiers, index origin, and boundary conditions.
-2. Check equivalent forms algebraically. For example, with \(F=3^m\),
-   \[
+2. Check equivalent forms algebraically. For example, with $F=3^m$,
+   $
    -16(3^{m-1}+1)=-\frac{16}{3}(3^m+3).
-   \]
-3. Check the normalization independently: \(3^{m+1}+3=3(3^m+1)\), so the stated ratio tends to \(-16/9\sin^2(\theta/2)\).
-4. Substitute a small level and angle as a sanity check; for \(m=1,\theta=\pi/2\), the raw defect is \(-16\), and division by dimension \(12\) gives \(-4/3\).
+   $
+3. Check the normalization independently: $3^{m+1}+3=3(3^m+1)$, so the stated ratio tends to $-16/9\sin^2(\theta/2)$.
+4. Substitute a small level and angle as a sanity check; for $m=1,\theta=\pi/2$, the raw defect is $-16$, and division by dimension $12$ gives $-4/3$.
 5. Distinguish exact algebra, floating-point tolerance, finite-grid tests, and proof-assistant theorems.
 6. If the source and a summary disagree, do not silently pick the more impressive version. Record the discrepancy and inspect the definitions/code.
 
