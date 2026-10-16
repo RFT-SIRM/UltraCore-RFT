@@ -7,7 +7,7 @@ UltraCore-RFT is the architecture and coordination hub for the RFT-SIRM ecosyste
 [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
-**Primary routes:** [Platform](docs/platform.md) · [Architecture](docs/architecture.md) · [Mathematical foundations](docs/foundations.md) · [Verification evidence](docs/field_trials.md) · [Scientific boundaries](SCIENTIFIC_BASIS.md)
+**Primary routes:** [Platform](docs/platform.md) · [Architecture](docs/architecture.md) · [Research map](docs/research-map.md) · [Mathematical foundations](docs/foundations.md) · [Verification evidence](docs/field_trials.md) · [Scientific boundaries](SCIENTIFIC_BASIS.md)
 
 ---
 
