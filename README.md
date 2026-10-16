@@ -146,7 +146,7 @@ The project hierarchy is intentional: theorem and evidence first, related resear
 | **Higher-moment research** | [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts; all-level recurrence open |
 | **Signed-flux spectral research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Spectral decimation and mass-formula audit; Gate A open |
 | **Quantum-processing architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental architecture; no quantum advantage or speed-up established |
-| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory computational scenarios with explicit assumptions |
+| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Exploratory computational scenarios with explicit assumptions |
 | **Standalone execution runtime** | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Implementation-specific runtime, invariant checks, and fuzzing reports |
 | **On-chain protocol** | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) · [Devnet client](https://rift-network.vercel.app) | Solana Devnet research deployment; not a claim of mainnet readiness |
 | **SVM memory-context research** | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Proof-of-concept investigation; findings are specific to its studied code path |
