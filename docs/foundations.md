@@ -248,4 +248,4 @@ See also: [Architecture](architecture.md) for system design, [Implementation](im
 
 ---
 
-*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
+*Copyright 2026 Evgeniy Zaprudnov (RFT-SIRM). License: Apache 2.0.*
