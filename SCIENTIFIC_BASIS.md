@@ -67,16 +67,33 @@ Rejected claims and failed experiments are part of the scientific record and sho
 
 ## 5. SIRM: mathematical model for software systems
 
-SIRM (Stable Invariant Rift Model) uses four stated runtime constraints:
+SIRM (Stable Invariant Rift Model) uses four stated runtime constraints, expressed in compact notation and mapped to implementation variables below.
 
 $$
 \begin{aligned}
-I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
-I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
-I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
+I_1:\quad & S = B + Gp,\\
+I_2:\quad & S = M - D,\\
+I_3:\quad & d < p \quad (p>0),\\
+I_4:\quad & E_i \ge -\frac{S}{10p}.
 \end{aligned}
 $$
+
+The effective-balance relation is
+
+$$
+E_i = b_i + G.
+$$
+
+| Symbol | Implementation variable |
+|---|---|
+| $S$ | `total_supply` |
+| $B$ | `total_base_sum` |
+| $G$ | `global_field` |
+| $M$ | `total_minted` |
+| $D$ | `total_burned` |
+| $d$ | `dust_accumulator` |
+| $E_i$ | `effective_balance[i]` |
+| $b_i$ | `base_balance[i]` |
 
 Where $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the implementation's integer and scaling conventions.
 
