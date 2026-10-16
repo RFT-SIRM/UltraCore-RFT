@@ -152,14 +152,14 @@ The four stated runtime constraints are:
 
 $$
 \begin{aligned}
-I_1:\quad &\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\quad &\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\quad &\text{dust\_accumulator}<p\quad (p>0),\\
-I_4:\quad &\text{effective\_balance}[i]\geq-\frac{\text{total\_supply}}{10p}.
+I_1:\quad &\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
+I_2:\quad &\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
+I_3:\quad &\mathtt{dust\_accumulator}<p\quad (p>0),\\
+I_4:\quad &\mathtt{effective\_balance}[i]\geq-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
 $$
 
-Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, under the model's stated integer and scaling conventions. The $O(1)$ distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is $O(1)$, nor does it itself establish security of every implementation.
+Here $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's stated integer and scaling conventions. The $O(1)$ distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is $O(1)$, nor does it itself establish security of every implementation.
 
 SIRM is an engineering model and specification. The Lean theorem above is a separate mathematical result; there is no claim that the spectral theorem proves the runtime invariants.
 
