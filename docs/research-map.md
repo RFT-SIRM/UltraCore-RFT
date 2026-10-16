@@ -49,7 +49,11 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
 
-At the special angle \(\theta=\frac{\pi}{2}\), the limiting value simplifies to \(-\frac{8}{9}\).
+At the special angle \(\theta=\frac{\pi}{2}\), the limiting value is:
+
+```math
+-\frac{8}{9}
+```
 
 ### Algebraic sanity checks
 
