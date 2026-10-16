@@ -24,20 +24,20 @@ The roadmap presents the research in evidence order before moving to implementat
 
 The engineering strand uses four stated runtime constraints. To avoid renderer-specific failures with underscores in identifiers, the equations use short mathematical symbols and the table maps each symbol to its implementation variable.
 
-$
+$$
 \\begin{aligned}
 I_1:\\quad & S = B + Gp,\\\\
 I_2:\\quad & S = M - D,\\\\
 I_3:\\quad & d < p \\quad (p>0),\\\\
 I_4:\\quad & E_i \\ge -\\frac{S}{10p}.
 \\end{aligned}
-$
+$$
 
 The effective-balance relation is
 
-$
+$$
 E_i = b_i + G.
-$
+$$
 
 | Symbol | Implementation variable |
 |---|---|
