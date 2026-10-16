@@ -10,6 +10,8 @@
 
 [![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalized-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis) [![Interactive portal](https://img.shields.io/badge/Interactive-Research%20portal-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
 
+[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
+
 [![Theory of Everything upstream verification](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml) [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml) [![Pages deployment](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml) [![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
 **Core engineering and formal-verification strands**
@@ -191,7 +193,7 @@ The project hierarchy is intentional: theorem and evidence first, related resear
 | **Higher-moment research** | [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts; all-level recurrence open |
 | **Signed-flux spectral research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Spectral decimation and mass-formula audit; Gate A open |
 | **Quantum-processing architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental architecture; no quantum advantage or speed-up established |
-| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Exploratory computational scenarios with explicit assumptions |
+| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory computational scenarios with explicit assumptions |
 | **Standalone execution runtime** | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Implementation-specific runtime, invariant checks, and fuzzing reports |
 | **On-chain protocol** | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) · [Devnet client](https://rift-network.vercel.app) | Solana Devnet research deployment; not a claim of mainnet readiness |
 | **SVM memory-context research** | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Proof-of-concept investigation; findings are specific to its studied code path |
