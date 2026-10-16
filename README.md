@@ -48,7 +48,11 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
 
-At the special angle \(\theta=\frac{\pi}{2}\), the limit simplifies to \(-\frac{8}{9}\).
+At the special angle \(\theta=\frac{\pi}{2}\), the limit simplifies to:
+
+```math
+-\frac{8}{9}
+```
 
 **What is machine-checked:** the source project reports a Lean 4 formalization for every integer level \(m=1,2,3,\ldots\) and every angle covered by its statement, for the concrete operators defined there. The formal proof establishes the formal proposition; readers should still distinguish proof checking from independent review that the formal definitions fully capture the intended mathematical construction.
 
