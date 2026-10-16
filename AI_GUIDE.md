@@ -32,7 +32,7 @@ For the specific SU(2)-connected Sierpiński-gasket operator $H_C$, its specifie
 
 $$
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
 $$
 
@@ -80,10 +80,10 @@ The stated SIRM model uses four constraints:
 
 $$
 \begin{aligned}
-I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\quad &\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
+I_2:\quad &\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
+I_3:\quad &\text{dust\_accumulator}<p\quad(p>0),\\
+I_4:\quad &\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
 $$
 
