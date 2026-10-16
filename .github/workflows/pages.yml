@@ -35,6 +35,11 @@ jobs:
       - name: Build documentation strictly
         run: mkdocs build --strict --site-dir site
 
+      - name: Copy interactive HTML portal into site artifact
+        run: |
+          mkdir -p site/interactive
+          cp docs/interactive/index.html site/interactive/index.html
+
       - name: Verify interactive portal output
         run: |
           test -s site/interactive/index.html
