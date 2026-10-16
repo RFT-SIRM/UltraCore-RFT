@@ -32,21 +32,21 @@ UltraCore-RFT is the documentation and coordination hub for the RFT-SIRM ecosyst
 
 The primary theorem repository studies a specified SU(2)-valued connection on a Sierpiński-gasket graph and compares a noncommuting configuration \(C\) with a commuting control \(C'\). For the definitions and assumptions in the source project, the fourth-moment trace defect is stated as
 
-\[
+$
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\geq 1.
-\]
+$
 
 The normalized quantity is
 
-\[
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty} I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-\]
+$
 
 At \(\theta=\pi/2\), the limit is \(-8/9\).
 
@@ -119,14 +119,14 @@ SIRM (Stable Invariant Rift Model) is the systems-engineering strand: define sta
 
 The four stated runtime constraints are:
 
-\[
+$
 \begin{aligned}
 I_1:\quad &\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
 I_2:\quad &\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
 I_3:\quad &\text{dust\_accumulator}<p\quad (p>0),\\
 I_4:\quad &\text{effective\_balance}[i]\geq-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
-\]
+$
 
 Here \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), under the model's stated integer and scaling conventions. The \(O(1)\) distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is \(O(1)\), nor does it itself establish security of every implementation.
 
