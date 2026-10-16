@@ -65,9 +65,9 @@ $$
 
 At the special angle \(\theta=\frac{\pi}{2}\), the limiting value is:
 
-```math
+$
 -\frac{8}{9}
-```
+$
 
 ### Algebraic sanity checks
 
