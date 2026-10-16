@@ -20,6 +20,36 @@ The roadmap presents the research in evidence order before moving to implementat
 4. **SIRM engineering specification:** four runtime constraints, deterministic transition semantics, and implementation-specific tests, fuzzing, and audits.
 5. **Applications and deployment:** Rift-L1, Rift-Network, scheduler, memory-context, and exploratory application tracks, each assessed against its own evidence.
 
+### SIRM invariant notation
+
+The engineering strand uses four stated runtime constraints. To avoid renderer-specific failures with underscores in identifiers, the equations use short mathematical symbols and the table maps each symbol to its implementation variable.
+
+$
+\\begin{aligned}
+I_1:\\quad & S = B + Gp,\\\\
+I_2:\\quad & S = M - D,\\\\
+I_3:\\quad & d < p \\quad (p>0),\\\\
+I_4:\\quad & E_i \\ge -\\frac{S}{10p}.
+\\end{aligned}
+$
+
+The effective-balance relation is
+
+$
+E_i = b_i + G.
+$
+
+| Symbol | Implementation variable |
+|---|---|
+| $S$ | `total_supply` |
+| $B$ | `total_base_sum` |
+| $G$ | `global_field` |
+| $M$ | `total_minted` |
+| $D$ | `total_burned` |
+| $d$ | `dust_accumulator` |
+| $E_i$ | `effective_balance[i]` |
+| $b_i$ | `base_balance[i]` |
+
 This ordering is a research and documentation priority, not a claim that the spectral theorem proves SIRM invariants or that exploratory applications are validated production systems.
 
 
@@ -132,7 +162,7 @@ RFT-SIRM operates as a **multi-stage research pipeline**. Each stage feeds into 
 
 ---
 
-## 4. Velocity & Execution Pace
+## 5. Velocity & Execution Pace
 
 RFT-SIRM operates at **research velocity significantly above baseline** for solo infrastructure research:
 
@@ -153,7 +183,7 @@ RFT-SIRM operates at **research velocity significantly above baseline** for solo
 
 ---
 
-## 5. Repository Alignment
+## 6. Repository Alignment
 
 | Phase | Repository | Status | Primary Output |
 |:------|:-----------|:-------|:---------------|
@@ -168,7 +198,7 @@ RFT-SIRM operates at **research velocity significantly above baseline** for solo
 
 ---
 
-## 6. Verification Strategy
+## 7. Verification Strategy
 
 Every phase must satisfy four verification gates before advancing:
 
@@ -181,7 +211,7 @@ Every phase must satisfy four verification gates before advancing:
 
 ---
 
-## 7. Upstream Engagement
+## 8. Upstream Engagement
 
 Security research and architectural findings are reported back to the Solana core infrastructure. We do not hoard findings — we publish them to improve the ecosystem.
 
@@ -194,7 +224,7 @@ Security research and architectural findings are reported back to the Solana cor
 
 ---
 
-## 8. Risk Assessment
+## 9. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
 |:------|:-----------|:-------|:-----------|
@@ -206,7 +236,7 @@ Security research and architectural findings are reported back to the Solana cor
 
 ---
 
-## 9. Timeline (Accelerated)
+## 10. Timeline (Accelerated)
 
 | Milestone | Original Target | Accelerated Target | Status |
 |:----------|:----------------|:-------------------|:-------|
@@ -221,7 +251,7 @@ Security research and architectural findings are reported back to the Solana cor
 
 ---
 
-## 10. Funding Strategy
+## 11. Funding Strategy
 
 RFT-SIRM operates on a **milestone-based, accelerated funding model**. Each research phase is scoped, costed, and delivered independently — with timelines compressed to match execution velocity.
 
@@ -236,7 +266,7 @@ RFT-SIRM operates on a **milestone-based, accelerated funding model**. Each rese
 
 ---
 
-## 11. Cross-References
+## 12. Cross-References
 
 - [Implementation](implementation.md) — Technical architecture and build instructions
 - [Field Trials](field_trials.md) — Verification metrics, fuzzing results, benchmark data
