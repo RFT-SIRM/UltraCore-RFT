@@ -106,14 +106,14 @@ SIRM specifies runtime constraints for deterministic state transitions:
 
 $$
 \begin{aligned}
-I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
+I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
+I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
 $$
 
-Where $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, under the model's integer and scaling conventions.
+Where $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's integer and scaling conventions.
 
 The $O(1)$ distribution argument concerns a shared scalar update and lazy effective-balance calculation. It does not imply every operation is $O(1)$, nor does the spectral theorem prove the SIRM invariants. Runtime tests, fuzzing, audits, and deployment evidence have implementation-specific scope.
 
