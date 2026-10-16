@@ -163,97 +163,66 @@ See [`SEL4_CDT_FUZZING.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/
 
 * * *
 
-## 6. The Laboratory Philosophy
+## 6. Research and engineering discipline
 
-What differentiates UltraCore from other distributed systems research is not any single technique, but the **combination** of techniques applied with invariant discipline:
+The programme contains different evidence types that must not be collapsed into one scorecard. A formal theorem, a finite numerical certificate, a runtime fuzz campaign, a protocol audit, and a kernel stress test answer different questions.
 
-| Discipline | How It Is Applied |
-|-----------|-------------------|
-| Mathematical modeling | SIRM invariants as hard constraints, not soft guidelines |
-| Deterministic runtime engineering | Identical inputs produce identical outputs; no hidden state |
-| Invariant preservation | Every operation either preserves all invariants or is rejected atomically |
-| Blockchain runtime architecture | Production-grade protocol implementations with real upstream engagement |
-| Protocol engineering | RFCs submitted to core infrastructure (svm#25, agave#14274) |
-| Runtime verification | Deterministic fuzzing with invariant telemetry after every operation |
-| Fuzz testing | Billions of executions, stratified modes, coverage stabilization tracking |
-| Empirical validation | Reproducible experiments with documented limitations |
-| Formal methods research | TLA+/Coq specifications planned; seL4 complementary verification completed |
-| Systems programming | Rust implementations, memory safety, checked arithmetic, no panics |
+| Workstream | What it investigates | Evidence boundary |
+|---|---|---|
+| Mathematical theorem | Fourth-moment identity for specified SU(2) operators | See the [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) and [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization). This does not prove the engineering implementations. |
+| Higher moments | Selected finite-level calculations and candidate recurrences | The all-level recurrence remains open; see the [Theory-of-Everything dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md). |
+| Phi-Genesis | Signed-flux spectral decimation and exceptional-set analysis | Gate A remains open; see [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis). |
+| Runtime and protocol tests | Invariants and expected behaviour in specific implementations | Results apply to the tested code revision, configuration, and workload. |
+| Fuzzing | Exploration of many generated input/state sequences | A count of executions is not a proof over all executions. |
+| Security review | Findings within the scope of a named review | “Addressed” should be read against the source repository's finding log; it does not imply the absence of all vulnerabilities. |
+| seL4 stress testing | Empirical testing of a specific CDT-related subsystem | Complementary to, not a replacement for, seL4's formal verification. |
+| TLA+/Coq or other formal methods | Future or separately documented model-level obligations | Planned work is not completed evidence; cite a checked model and tool result before upgrading the status. |
 
-This combination is rare. Most projects specialize in one or two of these areas. UltraCore treats them as interdependent layers of a single verification stack.
+This is an evidence hierarchy, not a claim that every implementation is covered by a single universal verification stack.
 
-* * *
+## 7. Verification and reported metrics
 
-## 7. Verification as a Platform Property
+Numbers displayed in linked repositories are **source-reported snapshots**, not live counters maintained by this document. Before quoting a number externally, check its source report, commit, parameters, and workflow result.
 
-Verification in UltraCore is not an afterthought applied to a finished product. It is a **platform property** — designed into every layer from the beginning.
+| Project | Where to inspect evidence | What not to infer |
+|---|---|---|
+| [Rift-L1 Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Repository README, test and fuzzing sections, linked reports | A large fuzz count does not prove all states or establish that the source is open-source. |
+| [Rift Network](https://github.com/RFT-SIRM/Rift-Network) | Repository README, security model, verification report | A reported finding count does not establish protocol-wide correctness or mainnet readiness. |
+| [Agave memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Proof-of-concept scope, test output, upstream discussions | A proof of concept is not an upstream release or a general guarantee for all SVM execution paths. |
+| [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | [CI workflow](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml), [daily fuzz workflow](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml), source benchmarks | CI/fuzz badges refer only to those workflows; benchmark results depend on workload and revision. |
+| [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | Model assumptions, test evidence, and limitations | A model review is not equivalent to protocol-wide formal verification. |
+| [seL4 CDT stress test](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Experiment configuration, report, and limitations | No crash in a finite campaign does not prove absence of crashes or replace the kernel proof. |
+| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/workflows/tests.yml) | [Lean 4 test workflow](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/workflows/tests.yml) and formalization files | A passing theorem-repository workflow does not validate unrelated repositories or broaden the theorem statement. |
 
-```mermaid
-flowchart TB
- subgraph L4["Level 4: Formal Methods"]
- TLA["TLA+ / Coq"]
- MC["Model Checking"]
- end
- subgraph L3["Level 3: Deterministic Fuzzing"]
- FUZZ["libFuzzer: 4.29B+ executions"]
- SEED["Seed-Controlled Reproducibility"]
- TEL["Invariant Telemetry"]
- end
- subgraph L2["Level 2: Engineering Testing"]
- UNIT["Unit Tests"]
- DIFF["Differential Tests"]
- AUDIT["Security Audit: 14 Findings"]
- end
- subgraph L1["Level 1: Static Analysis"]
- CLIP["Clippy / Miri"]
- FMT["rustfmt"]
- end
- L1 --> L2 --> L3 --> L4
-```
+**Status policy:** use “machine-checked” only for the exact proposition accepted by the proof assistant; “tested” for the assertions actually run; “fuzzed” for the reported campaign; “audited” only for the named review scope; and “open” when a required derivation or validation remains incomplete.
 
-| Layer | Method | Evidence |
-|-------|--------|----------|
-| L1 | Static analysis (Clippy, Miri, cargo-audit) | Every push |
-| L2 | Unit + integration + differential tests | 15+ tests per component |
-| L3 | libFuzzer deterministic fuzzing | 4.29B+ exec, 0 invariant violations |
-| L3b | seL4 CDT complementary verification | 1B+ ops, 0 kernel crashes |
-| L4 | TLA+ / Coq formal verification | Planned |
+## 8. Current implementation map
 
-The key insight: because the execution architecture is deterministic and invariant-governed, every implementation — regardless of target — can be verified through the same protocol. The verification methodology is as portable as the runtime model.
+The systems strand is a set of related projects, not one monolithic deployment. The labels below describe their role; current status and licensing are controlled by each linked repository.
 
-* * *
+| Project | Role | Read this as |
+|---|---|---|
+| [Rift-L1 Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Standalone Rust validator/runtime core | Source-reported implementation and test evidence; its repository declares source-available, restrictive terms. |
+| [Rift Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | Protocol implementation and its documented security/test scope; its repository declares source-available, restrictive terms. |
+| [Agave memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM memory-context proof of concept | Exploratory implementation work; do not treat as upstream integration unless the source proves it. |
+| [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware transaction scheduling | Research implementation with source-linked CI and fuzz workflows. |
+| [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | DeFi ledger invariant model | Model review with an explicitly bounded verification scope. |
+| [seL4 CDT stress test](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Kernel-adjacent stress-test harness | Complementary empirical work, not an UltraCore production deployment on seL4. |
 
-## 8. Current Platform Implementations
+No row in this table implies that the mathematical theorem proves the implementation, that every listed project is production-ready, or that all linked projects share one license.
 
-The execution platform is not theoretical. It is expressed through concrete, validated implementations:
+## 9. Long-term direction
 
-| Implementation | Layer | Status | Key Evidence |
-|----------------|-------|--------|------------|
-| **Rift-L1-Blockchain** | Standalone validator core | Active | 1T+ ops fuzzed, 0 invariant violations |
-| **Rift-Network** | Solana on-chain protocol | Audited | 14 findings addressed, 2.5B+ fuzz runs |
-| **agave-abiv2-memory-contexts** | SVM memory isolation (PoC research) | Active | 4.29B+ exec, PoC permission model validated; upstream confirmed `abi_v2_prepare_for_instruction` architecture (svm#25) |
-| **agave-rift-scheduler** | Conflict-aware scheduling | Active | 91M exec/run, RFC agave#14274 |
-| **aave-v4-hub-model-review** | DeFi ledger invariant model (Aave V4 Hub) | Complete | 184K ops, 0 violations, complementary to Certora FV |
-| **seL4 CDT Fuzzer** | Kernel verification methodology | Complete | 1B+ ops, 0 kernel crashes, 123/123 post-marathon tests |
+The engineering vision is to explore deterministic, invariant-governed execution in several environments:
 
-Each implementation validates a different layer of the platform stack. Together, they demonstrate that the execution architecture is real, reproducible, and transferable across domains.
+- **Ledger and protocol systems:** invariant-preserving state transitions in standalone and on-chain implementations.
+- **Validator and execution runtimes:** deterministic state machines, conflict-aware scheduling, and memory-context isolation.
+- **High-assurance computing:** investigate how invariant discipline and empirical testing complement existing formal verification.
+- **Research applications:** explore quantum-processing architectures and energy-system models without treating an architecture proposal or simulation as demonstrated physical performance.
 
-* * *
+These are research directions, not claims of completed deployment, universal correctness, quantum speed-up, or a proven physical law.
 
-## 9. Long-Term Vision
-
-UltraCore does not aim to build "another blockchain." Its long-term objective is creating **deterministic execution architectures** that may be applied to:
-
-- **Layer-1 blockchains** — invariant-preserving distributed ledgers
-- **Validator infrastructure** — deterministic consensus and state-transition engines
-- **Execution runtimes** — conflict-aware scheduling, memory isolation, permission rollback
-- **Distributed systems** — deterministic state coordination across untrusted nodes
-- **High-assurance infrastructure** — systems where correctness is measured, not assumed
-- **Critical computing environments** — aerospace, medical, financial infrastructure requiring hard invariant guarantees
-
-The vision is architectural, not product-centric. The goal is not to capture market share for a specific token or chain. The goal is to demonstrate that deterministic, invariant-governed execution architectures are feasible, verifiable, and deployable — and to make the methodology reusable.
-
-* * *
+---
 
 ## 10. Relationship to Other Documents
 
@@ -274,9 +243,7 @@ This document — `platform.md` — sits alongside these as a **strategic identi
 
 ## 11. Conclusion
 
-UltraCore RFT is an execution platform for deterministic distributed computation. The blockchain is one implementation. The runtime is another. The research laboratory is another. The verification methodology is another. Together they form one coherent architecture — layered, verifiable, and kernel-agnostic.
-
-The platform is active. The invariants are enforced. The verification is continuous. The methodology is transferable. The architecture is open.
+UltraCore-RFT coordinates a research programme with a mathematical foundation and a downstream systems-engineering strand. The theorem, higher-moment questions, Phi-Genesis audit, SIRM invariants, and each runtime implementation retain separate evidence obligations. The engineering vision is to make those obligations explicit and reproducible—not to imply that every application is already deployed, formally verified, or open-source.
 
 * * *
 
