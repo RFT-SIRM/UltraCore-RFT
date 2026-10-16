@@ -75,14 +75,14 @@ $$
 
 | Symbol | Implementation variable |
 |---|---|
-| $S$ | \`total_supply\` |
-| $B$ | \`total_base_sum\` |
-| $G$ | \`global_field\` |
-| $M$ | \`total_minted\` |
-| $D$ | \`total_burned\` |
-| $d$ | \`dust_accumulator\` |
-| $E_i$ | \`effective_balance[i]\` |
-| $b_i$ | \`base_balance[i]\` |
+| $S$ | `total_supply` |
+| $B$ | `total_base_sum` |
+| $G$ | `global_field` |
+| $M$ | `total_minted` |
+| $D$ | `total_burned` |
+| $d$ | `dust_accumulator` |
+| $E_i$ | `effective_balance[i]` |
+| $b_i$ | `base_balance[i]` |
 
 These constraints are an engineering specification; they are not consequences of the fourth-moment theorem.
 
