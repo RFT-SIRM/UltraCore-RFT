@@ -36,7 +36,7 @@ $$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
-\qquad m\geq 1.
+\qquad m=1,2,3,\ldots.
 $$
 
 The normalized quantity is
@@ -48,9 +48,9 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
 
-At \(\theta=\pi/2\), the limit is \(-8/9\).
+At the special angle \(\theta=\frac{\pi}{2}\), the limit simplifies to \(-\frac{8}{9}\).
 
-**What is machine-checked:** the source project reports a Lean 4 formalization for every integer level \(m\geq1\) and every angle covered by its statement, for the concrete operators defined there. The formal proof establishes the formal proposition; readers should still distinguish proof checking from independent review that the formal definitions fully capture the intended mathematical construction.
+**What is machine-checked:** the source project reports a Lean 4 formalization for every integer level \(m=1,2,3,\ldots\) and every angle covered by its statement, for the concrete operators defined there. The formal proof establishes the formal proposition; readers should still distinguish proof checking from independent review that the formal definitions fully capture the intended mathematical construction.
 
 **What the theorem does not establish:** it does not prove the full spectrum, all higher moments, a physical law, a quantum speed-up, a solution to a Millennium Prize Problem, or the entire broader Theory-of-Everything programme.
 
