@@ -80,14 +80,14 @@ The stated SIRM model uses four constraints:
 
 $$
 \begin{aligned}
-I_1:\quad &\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\quad &\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\quad &\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\quad &\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\quad &\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
+I_2:\quad &\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
+I_3:\quad &\mathtt{dust\_accumulator}<p\quad(p>0),\\
+I_4:\quad &\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
 $$
 
-Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, subject to the implementation's stated integer and scaling conventions.
+Here $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, subject to the implementation's stated integer and scaling conventions.
 
 These are model/runtime constraints. Do not state that the fourth-moment theorem proves them, or that passing fuzz tests is a formal proof of all possible executions.
 
