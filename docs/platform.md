@@ -1,22 +1,20 @@
-# Execution Platform Architecture
+# Research Programme and Execution Platform
 
 > **Strategic identity document.**
 >
-> UltraCore-RFT is best understood as an **execution architecture** — a deterministic execution substrate — rather than as a single blockchain, a mathematical theory, or an operating system.
+> UltraCore-RFT is the coordination hub for a research programme whose public scientific narrative starts with **mathematical definitions and evidence**: [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything), the [Lean-formalized fourth-moment theorem](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization), and the separate [Phi-Genesis spectral audit](https://github.com/RFT-SIRM/Phi-Genesis). The theorem is specific; the broader programme is not claimed to be a completed physical Theory of Everything.
 >
-> **For first-time readers:** See the [Home page](index.md) for a quick overview, then return here for the architectural narrative.
+> The programme then branches into invariant-based systems engineering and applications. UltraCore's engineering identity remains a deterministic execution architecture—not because the blockchain is the foundation, but because the runtime work is one downstream implementation strand. See the [research map](research-map.md) and [historical development](history.md).
 
 * * *
 
 ## 1. The Transition
 
-UltraCore RFT began as a research project investigating invariant structures in distributed systems. After sustained engineering work — spanning runtime architecture, blockchain protocol implementation, Solana SVM research, deterministic kernel verification, and continuous empirical validation — it has evolved into something significantly larger.
+The ecosystem contains two connected but distinct kinds of work: literal mathematical research and systems engineering. The mathematical strand includes a specific fourth-moment identity reported as machine-checked in Lean 4, higher-moment extensions that remain open at the all-level stage, and a separate signed-flux spectral-decimation audit. The systems strand applies invariant-first design to deterministic state transitions, runtimes, protocols, and verification.
 
-It is no longer just a blockchain.
-It is no longer just a mathematical framework.
-It is becoming an **execution platform for deterministic distributed computation**.
+The correct hierarchy is therefore not “blockchain first.” It is **definitions and theorem → evidence and open questions → engineering methodology → implementations and exploratory applications**. The arrows express a reading order and research motivation, not a claim that the theorem proves the applications.
 
-This document explains that transition and defines what the platform is, how it is structured, and why the distinction matters.
+This document explains the execution-platform strand within that larger research programme.
 
 * * *
 
@@ -30,8 +28,9 @@ An operating system manages hardware resources, process scheduling, device drive
 ### Not "Another Blockchain"
 While the Rift-L1 Blockchain and Rift Network are concrete implementations, the blockchain is one application of the execution architecture, not its defining identity. The same deterministic invariant model can govern validator infrastructure, execution runtimes, distributed systems, and high-assurance computing environments without ever issuing a token or producing a block.
 
-### Not a Physical Theory
-Reality Fractal Theory and its mathematical operators are research modeling tools for designing computational systems. They are not claims about the structure of the Universe. See [`SCIENTIFIC_BASIS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SCIENTIFIC_BASIS.md) and [`AI_GUIDE.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md) for the full methodological boundary.
+### Not a Completed Physical Theory of Everything
+
+The title of the [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) repository names a broad research programme; it does not claim that a complete physical theory of the Universe has been proved. The fourth-moment theorem in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) is a literal mathematical statement about defined operators and is reported as formalized in Lean 4. The all-level higher-moment recurrence remains open, and Phi-Genesis studies a separate signed-flux operator family. Physical vocabulary used elsewhere in RFT documents remains modelling language unless supported by a separate physical theory and evidence. See [Scientific Basis](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SCIENTIFIC_BASIS.md) and the [AI Guide](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md).
 
 * * *
 
@@ -41,6 +40,11 @@ UltraCore RFT is a layered execution architecture. Each layer is independently v
 
 ```mermaid
 flowchart TB
+ subgraph Lminus1["L−1: Mathematical Research Programme"]
+ THEOREM["Evgeny's Theorem\nFourth-moment identity · Lean 4 formalization reported"]
+ TOE["Evgeny's Theory of Everything\nHigher moments · all-level recurrence open"]
+ PHI["Phi-Genesis\nSigned-flux spectral audit · Gate A open"]
+ end
  subgraph L0["L0: Scientific Foundations"]
  MATH["Mathematics · Graph Theory · Category Theory\nInformation Theory · Dynamical Systems · Invariant Theory"]
  end
@@ -67,6 +71,7 @@ flowchart TB
  CRIT["Critical Computing Environments"]
  KERNEL["Additional Verified Kernels"]
  end
+ Lminus1 -.->|"research foundation / context"| L0
  L0 --> L1
  L1 --> L2
  L2 --> L3
@@ -76,12 +81,13 @@ flowchart TB
  L4 -.->|"kernel-agnostic"| L6
 ```
 
-These are not separate projects. They are different manifestations of the same deterministic execution substrate.
+The mathematical programmes and the execution stack are connected through research context, not interchangeable proof obligations. The theorem does not prove SIRM invariants; the runtime test record does not prove the spectral identity. Within the systems strand, the layers below are components of the deterministic execution architecture.
 
 ### 3.1 Layer Definitions
 
 | Layer | Responsibility | Current Artifacts |
 |-------|---------------|-----------------|
+| **L−1: Mathematical Research Programme** | Exact fourth-moment result, higher-moment recurrence research, and separate signed-flux spectral audit | [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), [Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything), [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) |
 | **L0: Scientific Foundations** | Disciplinary tools: graph theory, category theory, information theory, invariant theory, dynamical systems | [`SCIENTIFIC_BASIS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SCIENTIFIC_BASIS.md) |
 | **L1: Reality Fractal Theory** | Conceptual framework: execution as topology coordination, invariants as structural anchors | [`RFT_MATHEMATICAL_FOUNDATIONS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/RFT_MATHEMATICAL_FOUNDATIONS.md) |
 | **L2: SIRM** | Mathematical execution model: four hard invariants (I1–I4) enforced after every state transition | [Foundations](foundations.md) |

@@ -48,14 +48,21 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - Home: index.md
-  - Platform: platform.md
+  - Interactive Portal: interactive.md
   - Research Map: research-map.md
+  - History: history.md
+  - Platform: platform.md
   - Architecture: architecture.md
-  - Strategy: strategy.md
   - Foundations: foundations.md
+  - Strategy: strategy.md
   - Implementation: implementation.md
   - Field Trials: field_trials.md
   - seL4 CDT Verification: field_trials_sel4.md

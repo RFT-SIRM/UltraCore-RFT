@@ -1,179 +1,119 @@
-<div align="center">
+# Scientific Basis and Evidence Boundaries
 
-[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
-[![Type](https://img.shields.io/badge/TYPE-METHODOLOGY-4a148c?style=for-the-badge)](SCIENTIFIC_BASIS.md)
-[![Scope](https://img.shields.io/badge/SCOPE-FOUNDATIONAL-2563eb?style=for-the-badge)](docs/foundations.md)
-[![Theorem](https://img.shields.io/badge/EVGENY'S%20THEOREM-PROVED%20IN%20LEAN%204%20FOR%20ALL%20m%20%E2%89%A5%201-3ee290?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem)
-[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
+**This document separates literal mathematical results from computational modelling language and engineering claims.**
 
-</div>
+Primary routes: [README](README.md) · [AI evidence guide](AI_GUIDE.md) · [Research map](docs/research-map.md) · [PITCH](PITCH.md).
 
-<h1 align="center">Scientific Basis</h1>
+## 1. Foundational research hierarchy
 
-## Disciplinary Foundation
+The research programme is presented in this order:
 
-The UltraCore RFT laboratory operates at the intersection of the following scientific disciplines. Each contributes specific tools for designing distributed computational systems.
+1. **Literal mathematics:** the source-stated fourth-moment trace-defect identity for a specified SU(2)-connected Sierpiński-gasket operator and commuting control.
+2. **Formal and computational evidence:** the Lean 4 proof reported by the primary theorem repository, direct numerical checks, and separately scoped finite-level certificates.
+3. **Open mathematical programmes:** the all-level higher-moment recurrence and the Phi-Genesis Gate A decimation mechanism.
+4. **Engineering methodology:** SIRM state invariants, deterministic execution, tests, fuzzing, audit records, and deployment evidence.
+5. **Applications and hypotheses:** blockchain systems, quantum-processing architecture, and invariant-driven energy modelling.
 
-| Discipline | Role in Laboratory | Application |
-|------------|-------------------|-------------|
-| **Mathematics** | Fundamental base | Formalization of invariants, proof of system properties |
-| **Graph Theory** | Topology modeling | Transaction dependency representation, DAG routing |
-| **Category Theory** | Abstract structure | Composition of system components, functorial mappings between layers |
-| **Information Theory** | Quantitative assessment | State entropy measurement, channel capacity estimation |
-| **Algorithm Theory** | Complexity analysis | O(1) distribution, scheduling optimality |
-| **Distributed Systems** | Subject domain | Consensus, replication, fault tolerance, consistency |
-| **Theory of Computation** | Execution models | Deterministic automata, finite states, transition systems |
-| **Complexity Theory** | Computability boundaries | P vs NP as scheduling operator, conflict classification |
-| **Control Theory** | Stabilization | Feedback loops, regulators, oscillation damping in runtime |
-| **Dynamical Systems** | State evolution | Phase portraits, attractors, stability under load |
-| **Invariant Theory** | Core SIRM methodology | Preservation of topological properties under transformations |
-| **Scalar Fields** | Mathematical model | `global_field` as scalar field over participant set |
-| **Temporal Models** | Temporal logic | Temporal topology, causality, Lamport clocks |
-| **Probability Theory** | Stochastic analysis | Fuzzing, statistical validation, probabilistic error bounds |
-| **Linear Algebra** | Structural analysis | State vector spaces, transformation operators |
-| **Type Theory** | Code correctness | Checked arithmetic, type safety, absence of runtime panics |
-| **Spectral Graph Theory** | Exact results | Fourth-moment trace identity for a graph operator (Evgeny's Theorem); a mathematical research result, not used in runtime design |
-| **Gauge Theory on Graphs** | Non-Abelian structure | SU(2) connections, holonomy, commuting versus non-commuting configurations, gauge invariance, in the literal mathematical sense |
-| **Analysis on Fractals** | Self-similar geometry | Sierpiński-gasket graphs `SG(m)` and their exact level-by-level refinement |
+These layers are connected through research motivation, not by automatic implication. A result at one layer cannot be used as proof at another without an explicit derivation.
 
----
+## 2. Literal mathematical result
 
-## Important Clarification: Modeling Nature of Physical Terms
+For the operator definitions and assumptions in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the fourth-moment trace defect is stated as
 
-> **The use of physical terms in UltraCore RFT documentation is exclusively modeling in nature and serves as a language for describing computational processes.**
+\[
+\Delta_m(H^4,\theta)
+=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
+\quad m\ge1.
+\]
 
-### What This Means
+With the source's normalization,
 
-| Physical Term | Computational Interpretation | Example |
-|---------------|------------------------------|---------|
-| **Field** (`global_field`) | Scalar variable shared by all participants | One integer update instead of O(N) writes |
-| **Entropy** | Measure of runtime state unpredictability | Transaction conflict frequency, scheduler variability |
-| **Flow** (fluid flow) | Memory access dynamics | Read/write patterns in shared memory regions |
-| **Turbulence** | Scheduler instability | Contention spikes, starvation, deadlock |
-| **Energy** | Computational cost of operation | Gas, instruction count, wall-clock time |
-| **Pressure** | Load on subsystem | Queue depth, pending transactions, memory pressure |
-| **Topology** | Dependency structure | Transaction conflict graph, seL4 capability tree |
+\[
+I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
+\qquad
+\lim_{m\to\infty}I_m(\theta)
+=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
+\]
 
-### What This Does NOT Mean
+At \(\theta=\pi/2\), the limit is \(-8/9\). The dimension \(3^{m+1}+3\) is the stated dimension of the operator Hilbert space, twice the vertex count \(n(m)=(3^{m+1}+3)/2\).
 
-- This is **not** a physical theory of the Universe
-- This is **not** a claim to discover new physical laws
-- This is **not** a proof or refutation of physical hypotheses
-- This is **not** a metaphysical concept
+**Formal status:** the primary repository reports a Lean 4 formalization for every \(m\ge1\) and all angles in the formal statement, for the concrete operators encoded in the project. This establishes the formal proposition in the specified environment. Independent review of the formalization-to-mathematics correspondence, peer review, and external replication are separate questions.
 
-Physical analogies were chosen as a **heuristic design tool**: they allow intuitive understanding of complex computational system behavior through familiar concepts from classical physics and differential geometry.
+**Not implied:** the full spectrum, all higher moments, a physical law, a quantum speed-up, the SIRM runtime invariants, or a complete physical Theory of Everything.
 
----
+Sources: [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean code](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md).
 
-## Mathematical Models as Design Tools
+## 3. Higher moments and the broader Theory-of-Everything programme
 
-### Seven Runtime Operators
+[Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) is a synthesis and research programme for recursive operators, higher-moment trace laws, Fourier coefficients, and recurrence audits.
 
-The `RFT_MATHEMATICAL_FOUNDATIONS.md` document describes seven operators inspired by Millennium Prize Problems. Their role in the laboratory:
+The repository documents modular/CRT certificates for selected finite-level coefficients for \(p\in\{6,8,10\}\), plus numerical holdouts and sparse-matrix-power checks. These certificates are finite and conditional on their explicit construction and bounds.
 
-| Operator | Mathematical Source | Engineering Function |
-|----------|--------------------|---------------------|
-| P vs NP | Computational complexity | Scheduler conflict classification |
-| Poincaré | Topological invariance | State space stabilization |
-| Riemann | Zero distribution | State interval regulation |
-| Navier-Stokes | Fluid dynamics | Memory flow smoothing |
-| Yang-Mills | Gauge theory | Invariant protective barrier |
-| Hodge | Algebraic cycles | Abstract topology materialization |
-| BSD | Elliptic curves | Graph structure-behavior linkage |
+The all-level recurrence remains **open**. The fourth-moment Lean proof does not prove it. The exceptional first-transition correction also needs a derivation from the graph/operator recursion. A finite set of levels and angles—even with small residuals—does not establish a universal statement.
 
-> **These operators are research models.** They are not solutions to the corresponding mathematical problems. They serve as architectural patterns for designing runtime mechanisms.
+Primary sources: [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [modular certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
 
----
+## 4. Phi-Genesis: signed-flux spectral research
 
-## Literal Mathematics: Evgeny's Theorem
+[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) investigates signed \(Z_2\)-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns.
 
-> **Evgeny's Theorem is the one place in this laboratory where mathematical objects are used literally rather than as modeling vocabulary.**
+- Gate A remains open while the complete exceptional set and residual mismatches are unresolved.
+- Passing tests support only the assertions and parameter range that they actually test.
+- A fitted mass-index pattern is not an established predictive physical law without a mechanism, predeclared predictions, held-out validation, and independent derivation.
+- No equivalence with the SU(2)-connected operators is assumed. A bridge needs an explicit operator map, boundary conditions, preserved quantities, exceptional cases, and a proof or a clearly labelled conjecture.
 
-| | Modeling vocabulary (rest of the repository) | Evgeny's Theorem |
-|---|---|---|
-| **Objects** | Metaphors with a defined computational meaning (field = shared scalar, turbulence = scheduler contention) | Explicit finite matrices: an SU(2)-valued connection on the Sierpiński-gasket graph `SG(m)`, Hilbert space `C^n ⊗ C²` |
-| **Claim** | Design heuristics, not statements about nature | An exact identity: `Δ_m(H⁴, θ) = −16 · (3^(m−1) + 1) · sin²(θ/2)` |
-| **Test** | Runtime invariants I1–I4, fuzzing of implementations | Direct computation against the closed form, held-out parameters, gauge-invariance test |
-| **Nature** | Engineering | Mathematics |
+Rejected claims and failed experiments are part of the scientific record and should remain linked.
 
-### Why the Distinction Matters
+## 5. SIRM: mathematical model for software systems
 
-Every statement in "What This Does NOT Mean" above applies to the theorem as well: it is not a physical theory, not a claim to have discovered a physical law, and not a proof or refutation of any physical hypothesis. Terms such as connection, holonomy and gauge invariance are used here in their mathematical sense for an operator on a finite graph, not as claims about physical fields.
+SIRM (Stable Invariant Rift Model) uses four stated runtime constraints:
 
-### Status
+\[
+\begin{aligned}
+I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
+I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
+I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+\end{aligned}
+\]
 
-| Statement | Status |
-|-----------|--------|
-| The closed form equals direct computation for every tested `(m, θ)`, `m = 1…7` (level 7: 1.6 × 10⁻¹⁶ relative residual) | ✅ Established, reproducible |
-| The fourth moment is gauge-invariant (spectrum change ≤ 8 × 10⁻¹⁵ under random SU(2) gauge transformations) | ✅ Established |
-| The closed form holds for all `m ≥ 1` and `θ` | ✅ Machine-checked in Lean 4 (fourth moment, concrete operators) |
-| Machine-checked proof | ✅ Complete for the stated scope (`traceDefect_closed`; no `sorry`, standard axioms only) |
-| Peer review; novelty relative to existing literature | 📅 Not yet |
+Where \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), under the implementation's integer and scaling conventions.
 
-### Boundaries
+An \(O(1)\) distribution model can update a shared scalar and derive effective balances on read. That observation concerns this representation; it does not assert every operation is \(O(1)\), nor does it prove the correctness of every implementation. Runtime tests, fuzzing, audits, and deployment checks are engineering evidence bounded by the code and assertions examined.
 
-- The **Yang-Mills** operator listed above is an architectural pattern. The theorem contains an explicit SU(2) connection on a finite graph, but it does not address the Yang–Mills existence-and-mass-gap problem and is not a component of that operator.
-- No mathematical derivation connects the theorem to the SIRM invariants I1–I4. The relationship is methodological: state the invariant first, then test it at every scale with held-out checks.
-- Possible uses in quantum-simulation benchmarking and trace-estimation testing are **hypotheses** with a stated validation path, not results. See [PITCH.md](PITCH.md#2-evgenys-theorem).
+The SIRM constraints are not consequences of the spectral theorem. The theorem and runtime model are separate results.
 
-Full statement, evidence and scope: [docs/foundations.md](docs/foundations.md#evgenys-theorem-an-exact-spectral-identity) · Source, tests and data: [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
+## 6. Physical vocabulary in software documentation
 
----
+Terms such as *field*, *flow*, *entropy*, *energy*, *pressure*, and *topology* may be used as modelling vocabulary in runtime documents. Their computational meaning must be defined locally—for example, a shared scalar variable, a memory-access pattern, a measure of state variability, an operation cost, queue load, or a dependency graph.
 
-## Verification Methodology
+Such language does not imply a literal physical field, experimentally established physical phenomenon, or a new law of nature. Do not translate an analogy into a physics claim without a separate mathematical model, measurable predictions, and experimental evidence.
 
-The laboratory applies multi-layer verification:
+Likewise, references to P vs NP, the Riemann Hypothesis, Navier–Stokes, Yang–Mills, Hodge, BSD, or the Poincaré conjecture as design inspiration are not claims to solve those problems.
 
-```mermaid
-flowchart TB
-    subgraph L4["Level 4: Formal Verification"]
-        TLA["TLA+ / Coq"]
-        MC["Model Checking"]
-        LEAN["Lean 4: Theorem Proved"]
-    end
-    subgraph L3["Level 3: Deterministic Fuzzing"]
-        FUZZ["libFuzzer"]
-        SEED["Seed-Controlled"]
-        INV["Invariant Telemetry"]
-        HELD["Held-Out Numerical Tests"]
-    end
-    subgraph L2["Level 2: Engineering Testing"]
-        UNIT["Unit Tests"]
-        INT["Integration Tests"]
-        AUDIT["Security Audit"]
-    end
-    subgraph L1["Level 1: Static Analysis"]
-        CLIP["Clippy"]
-        MIRI["Miri"]
-        AUD["cargo-audit"]
-    end
-    L1 --> L2 --> L3 --> L4
-```
+## 7. Evidence classes
 
-| Level | Method | Status |
-|-------|--------|--------|
-| Level 1 | Static analysis (Clippy, Miri, cargo-audit) | ✅ Active |
-| Level 2 | Unit/integration tests, security audit | ✅ Active |
-| Level 3 | Deterministic fuzzing (1T+ ops, seed-controlled) | ✅ Active |
-| Level 4 | TLA+ / Coq formal verification | 📅 Planned |
-| Level 3 (mathematics) | Held-out numerical verification of exact identities (Evgeny's Theorem: `m = 1…7`, 55/55 checks) | ✅ Active |
-| Level 4 (mathematics) | Lean 4 formalization of Evgeny's Theorem | ✅ Complete for `m ≥ 1` (fourth moment); independent review pending |
+| Class | Meaning |
+|---|---|
+| **Machine-checked** | A stated proposition is accepted by a specified proof assistant/build configuration |
+| **Analytically proved** | A written proof follows from explicit assumptions |
+| **Certified finite-level** | A certificate proves a finite set of stated cases under stated bounds |
+| **Numerically reproduced** | Computation matches a prediction for stated inputs |
+| **Engineering-tested** | Tests, fuzzing, audit, or deployment checks support an implementation-specific statement |
+| **Hypothesis / open** | A proposed or unresolved extension |
+| **Rejected / not established** | Evidence or counterexamples do not support the stronger statement |
 
----
+No label is interchangeable with another. A passing CI run proves only the assertions executed by that workflow. A formal proof's strength is determined by its statement and definitions, not by the ambition of the project title.
 
-## Relationship to Other Documents
+## 8. Release and interpretation rules
 
-| Document | Content |
-|----------|---------|
-| `AI_GUIDE.md` | Instructions for LLMs on interpreting materials |
-| `RFT_MATHEMATICAL_FOUNDATIONS.md` | Research mathematical models |
-| `docs/foundations.md` | Formalized SIRM invariants |
-| `docs/architecture.md` | Architectural specification |
-| `docs/field_trials.md` | Empirical validation results |
-| `docs/field_trials_sel4.md` | Empirical verification of seL4 kernel |
-| `PITCH.md` | Full research dossier: theorem evidence, hypotheses, claims register |
-| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Exact spectral identity: statement, tests, data, Lean 4 proof |
+- Link every theorem to its primary statement and formalization.
+- Keep the fourth-moment theorem separate from higher-moment conjectures.
+- Keep SU(2)-connected and signed-flux operator families distinct unless a bridge is proved.
+- Attribute metrics to dated reports or workflows; do not present snapshots as live counters.
+- Preserve negative results, exceptional cases, failed checks, and open questions.
+- Do not imply peer review, independent replication, physical validation, or application-level advantage without evidence.
+- Keep the main [RFT-SIRM portal](https://rft-sirm.github.io/) intact; UltraCore documentation is one connected entry point, not a replacement for the organization-wide portal.
 
----
-
-*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
+This document defines interpretation boundaries. It does not replace the primary theorem, implementation specifications, source histories, or test artifacts.

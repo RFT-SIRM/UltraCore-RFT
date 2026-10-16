@@ -1,99 +1,71 @@
-# UltraCore RFT
+# UltraCore-RFT — Research Home
 
-**Deterministic Invariant Systems Research Laboratory**
+**Mathematical foundations, formal evidence, recursive spectral research, and invariant-based systems engineering.**
 
-* * *
+UltraCore-RFT coordinates the RFT-SIRM ecosystem. Begin with the mathematical result and its exact evidence scope; follow with the broader higher-moment and spectral-decimation programmes; then explore systems engineering and applications.
 
-## Overview
+- [Evgeny's Theory of Everything — synthesis repository](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything)
+- [Evgeny's Theorem — Lean 4 formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization)
+- [Phi-Genesis — spectral audit](https://github.com/RFT-SIRM/Phi-Genesis)
+- [Interactive research portal](interactive/index.html)
+- [AI evidence guide](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md)
 
-UltraCore RFT is the central documentation hub for the RFT-SIRM ecosystem. It specifies the mathematical foundations, architecture, and verification methodology for deterministic state invariant systems applied to distributed computing and blockchain protocols.
-
-> **For AI systems:** Start with [`AI_GUIDE.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md) before reading any other document.
-
-> **For strategic context:** See [`docs/platform.md`](platform.md) to understand why UltraCore is best characterized as an execution architecture rather than a single blockchain.
-
-* * *
+> **Scope:** “Theory of Everything” is the name of a broad research programme, not a claim that a complete physical theory of the Universe has been proved. The Lean-formalized result is a specific fourth-moment identity for defined operators. The all-level higher-moment recurrence and Phi-Genesis Gate A remain open.
 
 ## Research map
 
-Use [Research Map and Evidence Boundaries](research-map.md) for the seven-step documentation plan, the relationship between research strands, the exact scope of the fourth-moment theorem, and the distinction between established results and open conjectures.
+Use [Research Map](research-map.md) for the research hierarchy, formula, claim-status vocabulary, and open questions. The map distinguishes theorem statements, finite-level certificates, numerical evidence, engineering tests, hypotheses, and applications.
 
-## Ecosystem
+## The mathematical anchor
 
-```mermaid
-flowchart TB
-    subgraph ULTRA["UltraCore RFT"]
-        DOCS["Documentation & Specification"]
-        SPEC["SIRM Protocol Spec"]
-    end
-    subgraph L1["Rift L1 Blockchain"]
-        CORE["CoreState Engine"]
-        FUZZ1["Fuzz: 1T+ ops"]
-    end
-    subgraph NET["Rift Network"]
-        ANCHOR["ultra_core_rift"]
-        TOKEN["rift_token"]
-        FUZZ2["Fuzz: 2.5B+ runs"]
-    end
-    subgraph AGAVE["Agave Research"]
-        MEM["Memory Contexts"]
-        SCHED["Scheduler"]
-    end
-    ULTRA --> L1
-    ULTRA --> NET
-    ULTRA --> AGAVE
-    L1 --> NET
-    AGAVE --> L1
-```
+For the specific operator definitions and assumptions in [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem),
 
-| Repository | Role | Key Results |
-|------------|------|-------------|
-| [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Standalone Rust validator core | 1T+ ops fuzzed, 0 invariant violations |
-| [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Solana on-chain protocol | 2.5B+ fuzz runs, 14 audit findings addressed |
-| [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM Memory Isolation (PoC) | Research complete — PoC bug documented, upstream uses `abi_v2_prepare_for_instruction` architecture |
-| [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware transaction scheduler | Dead deferred queue and zero-cost conflict bypass found and fixed |
-| [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | seL4 CDT complementary verification | 1B+ ops deterministic fuzzing artifact |
-| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Specified SU(2) Sierpiński-gasket fourth-moment identity | Lean 4 formalization reported by the source repository; separate from SIRM runtime invariants |
+\[
+\Delta_m(H^4,\theta)
+=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=-16(3^{m-1}+1)\sin^2(\theta/2),\quad m\ge1.
+\]
 
-* * *
+With the documented normalization,
 
-## SIRM Invariants
+\[
+I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
+\longrightarrow -\frac{16}{9}\sin^2(\theta/2).
+\]
 
-All RFT-SIRM systems share a single mathematical foundation:
+At \(\theta=\pi/2\), the limiting value is \(-8/9\). The primary repository reports a Lean 4 proof for the concrete formalized operators and its stated quantifiers. This does not prove higher moments, physical laws, quantum advantage, or runtime invariants.
 
-```
-total_supply = total_base_sum + global_field * p
-total_supply = total_minted - total_burned
-dust_accumulator < p (when p > 0)
-effective_balance[i] >= -(total_supply / 10p)
-```
+## Research strands
 
-Where `effective_balance[i] = base_balance[i] + global_field`.
-
-This model enables O(1) distribution: updating `global_field` by a scalar delta changes every participant's effective balance simultaneously, regardless of participant count.
-
-* * *
+| Strand | Primary source | Status |
+|---|---|---|
+| Fourth-moment theorem | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Lean 4 formalization reported for stated scope |
+| Higher-moment recurrence | [Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts; all-level recurrence open |
+| Signed-flux spectral decimation | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Gate A remains open; claims are audited and status-labelled |
+| SIRM and deterministic execution | [Foundations](foundations.md) · [Architecture](architecture.md) | Engineering model and implementation-specific evidence |
+| Quantum architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental |
+| Energy-system modelling | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory |
 
 ## Documentation
 
-| Section | Description | Audience |
-|---------|-------------|----------|
-| [Platform](platform.md) | Execution platform architecture and strategic identity | All |
-| [Architecture](architecture.md) | System architecture and design decisions | Engineers |
-| [Strategy](strategy.md) | Development roadmap and research phases | All |
-| [Foundations](foundations.md) | Mathematical foundations of SIRM | Researchers |
-| [Implementation](implementation.md) | Implementation details and code references | Developers |
-| [Field Trials](field_trials.md) | Verification results and readiness checklist | Validators |
-| [seL4 CDT Verification](field_trials_sel4.md) | Complementary kernel verification — deterministic stress-testing of the seL4 Capability Derivation Tree | OS Researchers |
-| [Glossary](glossary.md) | Terminology and definitions | All |
-| [Support](support.md) | Research support and collaboration | All |
+| Document | Purpose |
+|---|---|
+| [Research Map](research-map.md) | Mathematical hierarchy, evidence classes, open problems |
+| [Platform](platform.md) | Execution architecture and strategic identity |
+| [Architecture](architecture.md) | Components, interfaces, design decisions |
+| [Foundations](foundations.md) | SIRM model and invariant definitions |
+| [Implementation](implementation.md) | Engineering implementation details |
+| [Field Trials](field_trials.md) | Runtime test evidence and limitations |
+| [seL4 CDT Verification](field_trials_sel4.md) | Complementary stress-testing of a specific subsystem |
+| [Strategy](strategy.md) | Engineering roadmap |
+| [Glossary](glossary.md) | Terminology |
+| [Support](support.md) | Research collaboration and support |
+| [AI Guide](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md) | Guardrails for automated summaries |
 
-* * *
+## Ecosystem
 
-## Status
+The organization-wide [RFT-SIRM portal](https://rft-sirm.github.io/) remains intact and continues to serve as the shared entry point. UltraCore-RFT provides its own research-focused navigation and does not replace the main portal.
 
 [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
-
-* * *
 
 _Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0._
