@@ -19,26 +19,24 @@ The systems strand, SIRM, applies invariant-first design to deterministic state 
 ### 1.1 Statement and normalization
 
 For the specific operator definitions and assumptions in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the raw fourth-moment trace defect is stated as
-
-\[
+$
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\ge1.
-\]
 
+$
 The normalized quantity is
-
-\[
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-\]
 
-At \(\theta=\pi/2\), the limiting value is \(-8/9\).
+$
+At $\theta=\pi/2$, the limiting value is $-8/9$.
 
-The denominator is the stated Hilbert-space dimension \(3^{m+1}+3\). Since \(3^{m+1}+3=3(3^m+1)\), the limit follows by dividing numerator and denominator by \(3^m\). At \(m=1,\theta=\pi/2\), \(\Delta_1=-16(1+1)/2=-16\), the dimension is \(12\), and \(I_1=-4/3\). These elementary checks guard against index and normalization transcription errors.
+The denominator is the stated Hilbert-space dimension $3^{m+1}+3$. Since $3^{m+1}+3=3(3^m+1)$, the limit follows by dividing numerator and denominator by $3^m$. At $m=1,\theta=\pi/2$, $\Delta_1=-16(1+1)/2=-16$, the dimension is $12$, and $I_1=-4/3$. These elementary checks guard against index and normalization transcription errors.
 
 Primary records: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [VERIFICATION.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md) · [test workflows](https://github.com/RFT-SIRM/Evgeny-Theorem/actions).
 
@@ -48,10 +46,10 @@ Primary records: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/ma
 |---|---|---|
 | Closed form matches the source construction's direct computations at levels 1–7 | Numerically reproduced, source-reported | Finite levels and sampled parameters; not the universal proof |
 | Gauge-transformation checks preserve the reported fourth-moment quantity within numerical tolerance | Numerical test, source-reported | Tolerance and test construction are documented upstream |
-| Identity holds for all stated \(m\ge1\) and angles | Machine-checked, source-reported | Lean statement covers the concrete formalized operators and its assumptions |
+| Identity holds for all stated $m\ge1$ and angles | Machine-checked, source-reported | Lean statement covers the concrete formalized operators and its assumptions |
 | Formal definitions match the intended mathematical construction | Requires independent review | Proof checking does not replace semantic review |
 | Peer review and external replication | Not yet established in the current dossier | Do not imply either has occurred |
-| Other moments \(p=6,8,10\) obey an all-level recurrence | Open research | Not covered by the fourth-moment proof |
+| Other moments $p=6,8,10$ obey an all-level recurrence | Open research | Not covered by the fourth-moment proof |
 | Quantum advantage, new physical law, or complete theory of the Universe | Not claimed | No evidence in this result establishes these |
 
 ### 1.3 Why the result is useful without overclaiming
@@ -66,17 +64,17 @@ Possible uses in quantum simulation and trace estimation remain hypotheses until
 
 Primary source: [RFT-SIRM/Evgeny-s-Theory-of-Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
 
-The synthesis repository studies recursive operator families and higher trace moments \(H^6,H^8,H^{10}\), Fourier coefficient structure, transition residuals, and a candidate recurrence.
+The synthesis repository studies recursive operator families and higher trace moments $H^6,H^8,H^{10}$, Fourier coefficient structure, transition residuals, and a candidate recurrence.
 
 ### Evidence already documented
 
-- Finite-level modular/CRT certificates for specified Fourier coefficients and transitions, for \(p\in\{6,8,10\}\), under explicit denominator, norm, prime, and coefficient-bound arguments.
+- Finite-level modular/CRT certificates for specified Fourier coefficients and transitions, for $p\in\{6,8,10\}$, under explicit denominator, norm, prime, and coefficient-bound arguments.
 - Predeclared finite-angle holdouts and a sparse-matrix-power route that does not use eigenspectrum evaluation.
 - Versioned numerical outputs and reports that allow the stated calculations to be reproduced.
 
 ### What remains open
 
-The all-level recurrence \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for all \(m\ge3\) and all stated admissible angles has not been proved. The exceptional first-transition correction still requires an explanation derived from the recursive graph/operator construction. Finite certificates and small numerical residuals do not prove these universal claims.
+The all-level recurrence $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for all $m\ge3$ and all stated admissible angles has not been proved. The exceptional first-transition correction still requires an explanation derived from the recursive graph/operator construction. Finite certificates and small numerical residuals do not prove these universal claims.
 
 Closure criteria should include a complete derivation, explicit indexing and boundary conditions, proof for all required levels and angles, counterexample search, reproducible regression tests, and formalization where feasible. Until then, the correct status is **active research / open theorem**.
 
@@ -86,7 +84,7 @@ Evidence routes: [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-o
 
 Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
 
-Phi-Genesis examines signed \(Z_2\)-flux Laplacians, spectral decimation, boundary/corner corrections, inertia computation, and exploratory mass-index patterns. It is a distinct mathematical model from the SU(2)-connected operator family in Evgeny's Theorem.
+Phi-Genesis examines signed $Z_2$-flux Laplacians, spectral decimation, boundary/corner corrections, inertia computation, and exploratory mass-index patterns. It is a distinct mathematical model from the SU(2)-connected operator family in Evgeny's Theorem.
 
 The current status must preserve both positive and negative findings:
 
@@ -101,19 +99,18 @@ A high-quality scientific narrative includes failed hypotheses and unresolved re
 ## 4. SIRM: invariant-first systems engineering
 
 SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The current model summary states:
-
-\[
+$
 \begin{aligned}
-I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
+I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
+I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
-\]
 
-With \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), and the integer/scaling conventions of the implementation.
+$
+With $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, and the integer/scaling conventions of the implementation.
 
-An \(O(1)\) global distribution can follow from updating a shared scalar and deriving each participant's effective balance on read. That does not imply that every operation in the system is constant-time, nor that a design statement proves every implementation correct. Tests, fuzzing, audits, and deployment checks are engineering evidence with bounded scope.
+An $O(1)$ global distribution can follow from updating a shared scalar and deriving each participant's effective balance on read. That does not imply that every operation in the system is constant-time, nor that a design statement proves every implementation correct. Tests, fuzzing, audits, and deployment checks are engineering evidence with bounded scope.
 
 The fourth-moment theorem is mathematically separate. No derivation currently makes it a proof of SIRM's four runtime invariants.
 

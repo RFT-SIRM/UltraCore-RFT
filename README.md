@@ -57,31 +57,27 @@ See [CONTACT.md](CONTACT.md) for the submission and attribution policy. Public c
 
 ### Evgeny's Theorem: a closed fourth-moment identity
 
-The primary theorem repository studies a specified SU(2)-valued connection on a Sierpiński-gasket graph and compares a noncommuting configuration \(C\) with a commuting control \(C'\). For the definitions and assumptions in the source project, the fourth-moment trace defect is stated as
-
-$$
+The primary theorem repository studies a specified SU(2)-valued connection on a Sierpiński-gasket graph and compares a noncommuting configuration $C$ with a commuting control $C'$. For the definitions and assumptions in the source project, the fourth-moment trace defect is stated as
+$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m=1,2,3,\ldots.
-$$
-
+$
 The normalized quantity is
-
-$$
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty} I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-$$
-
-At the special angle \(\theta=\frac{\pi}{2}\), the limit simplifies to:
+$
+At the special angle $\theta=\frac{\pi}{2}$, the limit simplifies to:
 
 ```math
 -\frac{8}{9}
 ```
 
-**What is machine-checked:** the source project reports a Lean 4 formalization for every integer level \(m=1,2,3,\ldots\) and every angle covered by its statement, for the concrete operators defined there. The formal proof establishes the formal proposition; readers should still distinguish proof checking from independent review that the formal definitions fully capture the intended mathematical construction.
+**What is machine-checked:** the source project reports a Lean 4 formalization for every integer level $m=1,2,3,\ldots$ and every angle covered by its statement, for the concrete operators defined there. The formal proof establishes the formal proposition; readers should still distinguish proof checking from independent review that the formal definitions fully capture the intended mathematical construction.
 
 **What the theorem does not establish:** it does not prove the full spectrum, all higher moments, a physical law, a quantum speed-up, a solution to a Millennium Prize Problem, or the entire broader Theory-of-Everything programme.
 
@@ -89,9 +85,9 @@ Primary sources: [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/
 
 ### Numerical cross-checks are a different evidence layer
 
-The source repository reports direct numerical comparisons for levels \(m=1,\ldots,7\), held-out angle checks, and gauge-transformation checks. These support the implementation and provide reproducibility evidence; the all-level statement rests on the Lean theorem, not on extrapolating a finite table.
+The source repository reports direct numerical comparisons for levels $m=1,\ldots,7$, held-out angle checks, and gauge-transformation checks. These support the implementation and provide reproducibility evidence; the all-level statement rests on the Lean theorem, not on extrapolating a finite table.
 
-| Level \(m\) | \(\dim(H)=3^{m+1}+3\) | \(\Delta_m(H^4,\pi/2)\) | \(I_m(\pi/2)\) |
+| Level $m$ | $\dim(H)=3^{m+1}+3$ | $\Delta_m(H^4,\pi/2)$ | $I_m(\pi/2)$ |
 |---:|---:|---:|---:|
 | 1 | 12 | −16 | −1.333333 |
 | 2 | 30 | −32 | −1.066667 |
@@ -100,9 +96,9 @@ The source repository reports direct numerical comparisons for levels \(m=1,\ldo
 | 5 | 732 | −656 | −0.896175 |
 | 6 | 2,190 | −1,952 | −0.891324 |
 | 7 | 6,564 | −5,840 | −0.889701 |
-| Limit | — | — | \(-8/9\) |
+| Limit | — | — | $-8/9$ |
 
-The raw formula, normalized denominator, and displayed table use the same convention. For example, at \(m=1\) and \(\theta=\pi/2\), the raw defect is \(-16(1+1)/2=-16\); dividing by \(12\) gives \(-4/3\). As \(m\) grows, the ratio tends to \(-16/9\sin^2(\theta/2)\).
+The raw formula, normalized denominator, and displayed table use the same convention. For example, at $m=1$ and $\theta=\pi/2$, the raw defect is $-16(1+1)/2=-16$; dividing by $12$ gives $-4/3$. As $m$ grows, the ratio tends to $-16/9\sin^2(\theta/2)$.
 
 ---
 
@@ -117,9 +113,9 @@ Primary repository: [RFT-SIRM/Evgeny-s-Theory-of-Everything](https://github.com/
 
 The synthesis programme studies higher-moment trace defects, Fourier coefficients, finite-level recurrence residuals, and the possibility of an all-level law for recursive graph/operator families.
 
-- **Certified finite-level work:** the repository documents modular/CRT certificates for specified Fourier coefficients at selected transitions for moments \(p\in\{6,8,10\}\), subject to the stated graph, operator, denominator, norm, and coefficient-bound assumptions.
+- **Certified finite-level work:** the repository documents modular/CRT certificates for specified Fourier coefficients at selected transitions for moments $p\in\{6,8,10\}$, subject to the stated graph, operator, denominator, norm, and coefficient-bound assumptions.
 - **Numerical evidence:** held-out angle grids, sparse-matrix-power calculations, and cross-checks are reported in versioned workflows and data artifacts.
-- **Open theorem:** the all-level recurrence \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for every \(m\geq3\) and all stated admissible angles has not been proved. A finite-level certificate is not an infinite-level proof.
+- **Open theorem:** the all-level recurrence $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\geq3$ and all stated admissible angles has not been proved. A finite-level certificate is not an infinite-level proof.
 - **Research obligation:** derive the exceptional first-transition correction from the recursive construction, prove the recurrence or find a counterexample, and formalize any complete derivation against explicit definitions.
 
 The dissertation itself explicitly distinguishes the fourth-moment theorem from the higher-moment programme. Read [the dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md), [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md), and [modular certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
@@ -131,7 +127,7 @@ The dissertation itself explicitly distinguishes the fourth-moment theorem from 
 
 Primary repository: [RFT-SIRM/Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live research site](https://rft-sirm.github.io/Phi-Genesis/).
 
-Phi-Genesis studies signed \(Z_2\)-flux graph Laplacians, spectral decimation with boundary/corner corrections, inertia calculations, and exploratory spectral or mass-index patterns. It is a separate operator family from the SU(2)-connected construction in Evgeny's Theorem.
+Phi-Genesis studies signed $Z_2$-flux graph Laplacians, spectral decimation with boundary/corner corrections, inertia calculations, and exploratory spectral or mass-index patterns. It is a separate operator family from the SU(2)-connected construction in Evgeny's Theorem.
 
 - Some proposed claims have been rejected or narrowed by the documented audits.
 - Numerical results and tests support specific computational statements only within their stated parameters and code paths.
@@ -149,17 +145,15 @@ Start with [the repository status and methods](https://github.com/RFT-SIRM/Phi-G
 SIRM (Stable Invariant Rift Model) is the systems-engineering strand: define state invariants and require every state transition to preserve them or fail atomically.
 
 The four stated runtime constraints are:
-
-$$
+$
 \begin{aligned}
-I_1:\quad &\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\quad &\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\quad &\text{dust\_accumulator}<p\quad (p>0),\\
-I_4:\quad &\text{effective\_balance}[i]\geq-\frac{\text{total\_supply}}{10p}.
+I_1:\quad &\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
+I_2:\quad &\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
+I_3:\quad &\mathtt{dust\_accumulator}<p\quad (p>0),\\
+I_4:\quad &\mathtt{effective\_balance}[i]\geq-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
-$$
-
-Here \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), under the model's stated integer and scaling conventions. The \(O(1)\) distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is \(O(1)\), nor does it itself establish security of every implementation.
+$
+Here $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's stated integer and scaling conventions. The $O(1)$ distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is $O(1)$, nor does it itself establish security of every implementation.
 
 SIRM is an engineering model and specification. The Lean theorem above is a separate mathematical result; there is no claim that the spectral theorem proves the runtime invariants.
 

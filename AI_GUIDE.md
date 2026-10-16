@@ -29,21 +29,17 @@ Never rewrite “a theorem within a Theory-of-Everything research programme” a
 Primary sources: [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md).
 
 For the specific SU(2)-connected Sierpiński-gasket operator $H_C$, its specified commuting control $H_{C'}$, and the definitions and assumptions in the source repository, the stated fourth-moment trace-defect identity is
-
-$$
+$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
-$$
-
+$
 The normalized quantity is
-
-$$
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)=-\frac{16}{9}\sin^2(\theta/2).
-$$
-
+$
 At $\theta=\pi/2$, the limiting value is $-8/9$.
 
 **Correct status language:** the source project reports that its Lean 4 formalization proves the stated fourth-moment identity for every $m\ge1$ and all angles covered by the formal statement, for the concrete formalized operators. This is a machine-checked result within that formal system and scope. Independent review that the formal definitions capture the intended mathematical construction, peer review, and independent replication remain separate matters.
@@ -76,18 +72,31 @@ Preserve negative results, failed checks, and open questions. They are part of t
 
 ## 6. SIRM engineering invariants are a different strand
 
-The stated SIRM model uses four constraints:
-
-$$
+The stated SIRM model uses four constraints. To keep the equations readable across GitHub's Markdown renderers, the equations use short mathematical symbols; the table immediately below maps each symbol to the implementation variable.
+$
 \begin{aligned}
-I_1:\quad &\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\quad &\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\quad &\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\quad &\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\quad & S = B + Gp,\\
+I_2:\quad & S = M - D,\\
+I_3:\quad & d < p \quad (p>0),\\
+I_4:\quad & E_i \ge -\frac{S}{10p}.
 \end{aligned}
-$$
+$
+The effective-balance relation is
+$
+E_i = b_i + G.
+$
+| Symbol | Implementation variable |
+|---|---|
+| $S$ | `total_supply` |
+| $B$ | `total_base_sum` |
+| $G$ | `global_field` |
+| $M$ | `total_minted` |
+| $D$ | `total_burned` |
+| $d$ | `dust_accumulator` |
+| $E_i$ | `effective_balance[i]` |
+| $b_i$ | `base_balance[i]` |
 
-Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, subject to the implementation's stated integer and scaling conventions.
+These expressions remain subject to the implementation's stated integer and scaling conventions.
 
 These are model/runtime constraints. Do not state that the fourth-moment theorem proves them, or that passing fuzz tests is a formal proof of all possible executions.
 
