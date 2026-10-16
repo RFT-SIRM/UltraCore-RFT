@@ -30,19 +30,19 @@ Primary sources: [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) ·
 
 For the specific SU(2)-connected Sierpiński-gasket operator $H_C$, its specified commuting control $H_{C'}$, and the definitions and assumptions in the source repository, the stated fourth-moment trace-defect identity is
 
-$
+$$
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
-$
+$$
 
 The normalized quantity is
 
-$
+$$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)=-\frac{16}{9}\sin^2(\theta/2).
-$
+$$
 
 At $\theta=\pi/2$, the limiting value is $-8/9$.
 
@@ -78,14 +78,14 @@ Preserve negative results, failed checks, and open questions. They are part of t
 
 The stated SIRM model uses four constraints:
 
-$
+$$
 \begin{aligned}
 I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
 I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
 I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
-$
+$$
 
 Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, subject to the implementation's stated integer and scaling conventions.
 
