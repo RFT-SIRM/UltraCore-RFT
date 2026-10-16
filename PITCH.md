@@ -114,16 +114,16 @@ SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the e
 $
 
 \begin{aligned}
-I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
+I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
+I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
 
 $
 
 
-With $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, and the integer/scaling conventions of the implementation.
+With $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, and the integer/scaling conventions of the implementation.
 
 An $O(1)$ global distribution can follow from updating a shared scalar and deriving each participant's effective balance on read. That does not imply that every operation in the system is constant-time, nor that a design statement proves every implementation correct. Tests, fuzzing, audits, and deployment checks are engineering evidence with bounded scope.
 
