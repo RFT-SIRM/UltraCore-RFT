@@ -78,20 +78,20 @@ Preserve negative results, failed checks, and open questions. They are part of t
 
 The stated SIRM model uses four constraints. To keep the equations readable across GitHub's Markdown renderers, the equations use short mathematical symbols; the table immediately below maps each symbol to the implementation variable.
 
-$
+$$
 \begin{aligned}
 I_1:\quad & S = B + Gp,\\
 I_2:\quad & S = M - D,\\
 I_3:\quad & d < p \quad (p>0),\\
 I_4:\quad & E_i \ge -\frac{S}{10p}.
 \end{aligned}
-$
+$$
 
 The effective-balance relation is
 
-$
+$$
 E_i = b_i + G.
-$
+$$
 
 | Symbol | Implementation variable |
 |---|---|
