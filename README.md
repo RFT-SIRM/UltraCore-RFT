@@ -58,23 +58,19 @@ See [CONTACT.md](CONTACT.md) for the submission and attribution policy. Public c
 ### Evgeny's Theorem: a closed fourth-moment identity
 
 The primary theorem repository studies a specified SU(2)-valued connection on a Sierpiński-gasket graph and compares a noncommuting configuration $C$ with a commuting control $C'$. For the definitions and assumptions in the source project, the fourth-moment trace defect is stated as
-$$
-
+$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m=1,2,3,\ldots.
-
-$$
+$
 The normalized quantity is
-$$
-
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty} I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-
-$$
+$
 At the special angle $\theta=\frac{\pi}{2}$, the limit simplifies to:
 
 ```math
@@ -149,16 +145,14 @@ Start with [the repository status and methods](https://github.com/RFT-SIRM/Phi-G
 SIRM (Stable Invariant Rift Model) is the systems-engineering strand: define state invariants and require every state transition to preserve them or fail atomically.
 
 The four stated runtime constraints are:
-$$
-
+$
 \begin{aligned}
 I_1:\quad &\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
 I_2:\quad &\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
 I_3:\quad &\mathtt{dust\_accumulator}<p\quad (p>0),\\
 I_4:\quad &\mathtt{effective\_balance}[i]\geq-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
-
-$$
+$
 Here $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's stated integer and scaling conventions. The $O(1)$ distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is $O(1)$, nor does it itself establish security of every implementation.
 
 SIRM is an engineering model and specification. The Lean theorem above is a separate mathematical result; there is no claim that the spectral theorem proves the runtime invariants.
