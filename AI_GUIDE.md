@@ -4,7 +4,13 @@
 
 **Primary research entry points:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [Lean-formalized fourth-moment theorem](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [UltraCore research map](docs/research-map.md).
 
-## 1. The hierarchy matters
+## 1. Historical chronology and evidence order are different
+
+The maintainer-reported project origin sequence is **Rift Network → Rift-L1 Blockchain → UltraCore-RFT and supporting engineering systems (scheduler, memory, and related work) → Phi-Genesis → Evgeny-Theorem → Evgeny's Theory of Everything**. See [origin chronology](docs/origin-chronology.md) and the dated [history record](docs/history.md).
+
+This is a statement about the reported order of development, not a verified date for every repository and not a dependency graph. When evaluating a mathematical claim, keep using the evidence-first review order below. Do not rewrite the historical story to make it look as though the engineering projects were created after the theorem.
+
+## 2. The hierarchy matters
 
 Read the programme in this order:
 
@@ -16,7 +22,7 @@ Read the programme in this order:
 
 Do not invert this hierarchy just because a deployed application is easier to demonstrate than a theorem. Applications are downstream research programmes; they do not establish the mathematics by association.
 
-## 2. What the title means—and does not mean
+## 3. What the title means—and does not mean
 
 “Evgeny's Theory of Everything” is the name of a broad research programme on recursive operators, spectral invariants, and higher-moment trace laws. **It is not a claim that a complete physical theory of the Universe has been proved.**
 
@@ -24,7 +30,7 @@ The programme contains a specific fourth-moment result reported as machine-check
 
 Never rewrite “a theorem within a Theory-of-Everything research programme” as “the Theory of Everything has been proved.”
 
-## 3. The formalized theorem: exact scope
+## 4. The formalized theorem: exact scope
 
 Primary sources: [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md).
 
@@ -50,7 +56,7 @@ At $\theta=\pi/2$, the limiting value is $-8/9$.
 
 **Do not claim:** the proof covers $H^6,H^8,H^{10}$; proves the full spectrum; proves a physical law; establishes quantum speed-up; solves Yang–Mills or another Millennium Prize Problem; or proves SIRM runtime invariants. None follows from this theorem.
 
-## 4. Higher moments: keep the open problem visible
+## 5. Higher moments: keep the open problem visible
 
 Primary synthesis: [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [modular/CRT certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
 
@@ -61,7 +67,7 @@ Primary synthesis: [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/E
 
 Do not use the fourth-moment Lean proof as if it formalized the higher-moment recurrence.
 
-## 5. Phi-Genesis: a separate operator family
+## 6. Phi-Genesis: a separate operator family
 
 Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
 
@@ -74,7 +80,7 @@ Phi-Genesis investigates signed $Z_2$-flux Laplacians, spectral decimation with 
 
 Preserve negative results, failed checks, and open questions. They are part of the historical record and must not be deleted to make the narrative appear more complete.
 
-## 6. SIRM engineering invariants are a different strand
+## 7. SIRM engineering invariants are a different strand
 
 The stated SIRM model uses four constraints. The equations use short mathematical symbols; the table maps each symbol to the implementation variable.
 
@@ -108,7 +114,7 @@ These expressions remain subject to the implementation's stated integer and scal
 
 These are model/runtime constraints. Do not state that the fourth-moment theorem proves them, or that passing fuzz tests is a formal proof of all possible executions.
 
-## 7. Claim labels
+## 8. Claim labels
 
 | Label | Use it when |
 |---|---|
@@ -123,7 +129,7 @@ These are model/runtime constraints. Do not state that the fourth-moment theorem
 
 A green CI badge does not imply that every claim in a repository is proved. A test workflow proves only the assertions it actually executes. Metrics such as fuzz counts and test totals are dated source-reported snapshots unless a page explicitly implements a live query.
 
-## 8. How to audit formulas
+## 9. How to audit formulas
 
 Before copying or rewriting a formula:
 
