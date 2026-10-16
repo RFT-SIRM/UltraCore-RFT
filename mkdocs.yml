@@ -51,11 +51,12 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Platform: platform.md
+  - Interactive Portal: interactive.md
   - Research Map: research-map.md
+  - Platform: platform.md
   - Architecture: architecture.md
-  - Strategy: strategy.md
   - Foundations: foundations.md
+  - Strategy: strategy.md
   - Implementation: implementation.md
   - Field Trials: field_trials.md
   - seL4 CDT Verification: field_trials_sel4.md
