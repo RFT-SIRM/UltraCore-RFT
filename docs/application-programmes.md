@@ -1,23 +1,26 @@
-# RFT-SIRM Application Programmes: QPU/Sierpiński and Invariant Battery
+# RFT-SIRM Application Programmes: QPU/Sierpiński, Invariant Battery, and Cosmology Genesis
 
-**Purpose:** a source-linked, evidence-bounded index of two distinct RFT-SIRM application research tracks. This page records their place in the wider programme; it does not merge their implementations into UltraCore-RFT or certify their technical, commercial, or legal status.
+**Purpose:** a source-linked, evidence-bounded index of three distinct RFT-SIRM application research tracks. This page records their place in the wider programme; it does not merge their implementations into UltraCore-RFT or certify their technical, commercial, or legal status.
 
 [![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
 
 [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
 
-[![Evidence boundary](https://img.shields.io/badge/Evidence-Model%20and%20research%20status-d97706?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/application-programmes.md#4-evidence-and-claim-boundaries)
+[![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20cosmology%20model-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
+
+[![Evidence boundary](https://img.shields.io/badge/Evidence-Model%20and%20research%20status-d97706?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/application-programmes.md#5-evidence-and-claim-boundaries)
 
 > **Reading rule:** the badges are navigation and status labels only. They are not certification marks, experimental results, patent-status indicators, or endorsements.
 
 ## 1. Where these programmes sit
 
-UltraCore-RFT is the documentation and coordination hub. The two programmes below are downstream application research tracks with their own repositories, assumptions, code, tests, and licensing terms. They are **not corollaries of the fourth-moment theorem**, and no mathematical or engineering result should be transferred between them without an explicit derivation and evidence.
+UltraCore-RFT is the documentation and coordination hub. The programmes below are distinct application research tracks with their own repositories, assumptions, code, tests, and licensing terms. They are **not corollaries of the fourth-moment theorem**, and no mathematical or engineering result should be transferred between them without an explicit derivation and evidence.
 
 | Track | Primary source | Current description | What is not established by the repository description |
 |---|---|---|---|
 | Quantum-processing architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | A proposed graph-based architecture using self-similar Sierpiński-gasket connectivity, SU(2)-valued edge transport, and a candidate two-dimensional logical subspace. The repository includes a minimal research simulator and a patent-oriented technical disclosure for counsel review. | A fabricated or experimentally validated device; fault tolerance; measured gate fidelity; universal noise protection; demonstrated quantum advantage or speed-up; patent grant or established patentability. |
 | Energy-system model | [RFT-Invariant-Battery.](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | An invariant-driven state-transition model and reproducible vehicle/energy scenarios, with assumptions and CSV outputs described by the source repository. | A physically demonstrated 10,000-km battery; new cell chemistry; validated battery-management controller; safety certification; independently demonstrated energy savings; patent grant or established patentability. |
+| Cosmology / CMB phenomenology | [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) | A reduced Pass-1 phenomenological model mapping the stated intensive invariant to a photon-sector coupling ansatz and computing a background/geometric CMB response. The repository includes an exact algebraic limit/remainder derivation on PR branch [#1](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/pull/1); CI has passed, while human review and merge remain pending. | A physical photon-sector interaction; explanation or fit of observed CMB data; full Boltzmann treatment; Planck/ACT/SPT/BAO likelihood analysis; observational detection; a new physical law; Lean formalization of the new remainder theorem. |
 
 ## 2. RFT-QPU-Sierpinski
 
@@ -44,7 +47,35 @@ It reports a 10,000-km vehicle/energy-system scenario under a deliberately high 
 
 The project itself states that it has not established a physical 10,000-km battery, new cell chemistry, validated BMS controller, safety certification, or experimental benefit from invariant-driven control. This status must remain explicit in public descriptions.
 
-## 4. Evidence and claim boundaries
+## 4. RFT-Cosmology-Genesis
+
+The source repository records a reproducible **Pass-1 phenomenological** calculation using the stated invariant
+
+\[
+I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}\sin^2\!\left(\frac{\theta}{2}\right),
+\qquad
+q_m=1+\epsilon I_m(\theta).
+\]
+
+The repository now has a proposed analytic statement for the exact limit and finite-level remainder:
+
+\[
+I_\infty(\theta)=-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right),
+\qquad
+I_m(\theta)-I_\infty(\theta)
+=-\frac{32}{9(3^m+1)}\sin^2\!\left(\frac{\theta}{2}\right).
+\]
+
+The theorem document and regression tests are being reviewed in the source repository's [PR #1](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/pull/1). The source PR's CI has passed, but human review and merge remain pending. This hub treats the statement as an analytic result under review, not as a merged release or Lean-formalized theorem.
+
+The cosmology repository itself explicitly limits its scope: the coupling is phenomenological; the acoustic calculation is reduced; baseline acoustic multipoles are reference values; and no full CMB likelihood is implemented. No observational detection, new physical law, or physical origin for \(\epsilon\) is claimed.
+
+- **Primary source:** [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
+- **Model specification:** [MODEL_SPEC.md](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/MODEL_SPEC.md)
+- **Limitations:** [LIMITATIONS.md](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/LIMITATIONS.md)
+- **Theorem review:** [PR #1](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/pull/1)
+
+## 5. Evidence and claim boundaries
 
 Use these labels consistently across the programme:
 
@@ -57,9 +88,9 @@ Use these labels consistently across the programme:
 
 A successful test suite, an attractive banner, a numerical fit, or a patent-oriented document cannot by itself promote a claim to a stronger evidence category. Report unresolved validation items rather than silently treating them as complete.
 
-## 5. Attribution, licensing, and public-disclosure discipline
+## 6. Attribution, licensing, and public-disclosure discipline
 
-The two source repositories currently publish their own `LICENSE.md` files describing **Business 1.0 proprietary / all-rights-reserved terms**. Those terms are separate from the Apache-2.0 license for original UltraCore-RFT content.
+The QPU and Invariant Battery source repositories publish their own `LICENSE.md` files describing **Business 1.0 proprietary / all-rights-reserved terms**. Cosmology-Genesis declares Apache-2.0. All upstream licenses remain separate from the Apache-2.0 license for original UltraCore-RFT content.
 
 Accordingly, this hub provides source links and short factual descriptions; it does not copy source code, figures, tables, or substantial passages from those repositories. The UltraCore-RFT license must not be read as relicensing upstream project materials. Permission to reuse third-party material must be checked against the relevant source license and, where necessary, obtained in writing from the rights holder.
 
@@ -67,9 +98,10 @@ Public GitHub publication is not a substitute for an IP strategy. Before making 
 
 No employment, partnership, institutional sponsorship, endorsement, regulatory approval, or commercial readiness is implied by inclusion in this index.
 
-## 6. Maintenance checklist
+## 7. Maintenance checklist
 
 - [ ] Keep each description synchronized with its primary repository and current evidence.
+- [ ] Confirm Cosmology-Genesis PR #1 CI and review status before changing the theorem's status label.
 - [ ] Preserve the exact repository URL for the battery project, including the final period in its repository name.
 - [ ] Keep model assumptions and experimental status beside any quoted numerical result.
 - [ ] Do not imply that the fourth-moment theorem validates either application.

@@ -60,6 +60,8 @@ The following projects are linked to the wider ecosystem but are not inserted in
 - [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) — exploratory invariant-driven energy-system model.
 - Cosmology-related work is intentionally outside the scope of this chronology update.
 
+- [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) — reduced Pass-1 phenomenological cosmology calculation; no observational CMB likelihood fit or physical interaction is claimed.
+
 Their inclusion in the ecosystem map does not establish a technical dependency on the theorem or the Theory-of-Everything synthesis. Each project retains its own assumptions, evidence requirements, intellectual-property considerations, and licensing terms.
 
 ## Two different orders — do not conflate them
