@@ -2,7 +2,7 @@
 
 ## About This Laboratory
 
-UltraCore RFT is an independent research laboratory investigating deterministic state invariants and scalar field economics for distributed systems. The work is led by Eugeny under the RFT-SIRM organization.
+UltraCore RFT is an independent research laboratory investigating deterministic state invariants and scalar field economics for distributed systems. The work is led by Evgeniy Zaprudnov under the RFT-SIRM organization.
 
 ## Collaboration
 
@@ -38,4 +38,4 @@ All repositories are licensed under Apache License 2.0.
 
 ---
 
-Copyright 2026 Eugeny (RFT-SIRM)
+Copyright 2026 Evgeniy Zaprudnov (RFT-SIRM)
