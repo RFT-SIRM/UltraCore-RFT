@@ -20,25 +20,33 @@ These layers are connected through research motivation, not by automatic implica
 
 For the operator definitions and assumptions in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the fourth-moment trace defect is stated as
 
-\[
+
+$
+
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \quad m\ge1.
-\]
+
+$
+
 
 With the source's normalization,
 
-\[
+
+$
+
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-\]
 
-At \(\theta=\pi/2\), the limit is \(-8/9\). The dimension \(3^{m+1}+3\) is the stated dimension of the operator Hilbert space, twice the vertex count \(n(m)=(3^{m+1}+3)/2\).
+$
 
-**Formal status:** the primary repository reports a Lean 4 formalization for every \(m\ge1\) and all angles in the formal statement, for the concrete operators encoded in the project. This establishes the formal proposition in the specified environment. Independent review of the formalization-to-mathematics correspondence, peer review, and external replication are separate questions.
+
+At $\theta=\pi/2$, the limit is $-8/9$. The dimension $3^{m+1}+3$ is the stated dimension of the operator Hilbert space, twice the vertex count $n(m)=(3^{m+1}+3)/2$.
+
+**Formal status:** the primary repository reports a Lean 4 formalization for every $m\ge1$ and all angles in the formal statement, for the concrete operators encoded in the project. This establishes the formal proposition in the specified environment. Independent review of the formalization-to-mathematics correspondence, peer review, and external replication are separate questions.
 
 **Not implied:** the full spectrum, all higher moments, a physical law, a quantum speed-up, the SIRM runtime invariants, or a complete physical Theory of Everything.
 
@@ -48,7 +56,7 @@ Sources: [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/mai
 
 [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) is a synthesis and research programme for recursive operators, higher-moment trace laws, Fourier coefficients, and recurrence audits.
 
-The repository documents modular/CRT certificates for selected finite-level coefficients for \(p\in\{6,8,10\}\), plus numerical holdouts and sparse-matrix-power checks. These certificates are finite and conditional on their explicit construction and bounds.
+The repository documents modular/CRT certificates for selected finite-level coefficients for $p\in\{6,8,10\}$, plus numerical holdouts and sparse-matrix-power checks. These certificates are finite and conditional on their explicit construction and bounds.
 
 The all-level recurrence remains **open**. The fourth-moment Lean proof does not prove it. The exceptional first-transition correction also needs a derivation from the graph/operator recursion. A finite set of levels and angles—even with small residuals—does not establish a universal statement.
 
@@ -56,7 +64,7 @@ Primary sources: [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-E
 
 ## 4. Phi-Genesis: signed-flux spectral research
 
-[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) investigates signed \(Z_2\)-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns.
+[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) investigates signed $Z_2$-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns.
 
 - Gate A remains open while the complete exceptional set and residual mismatches are unresolved.
 - Passing tests support only the assertions and parameter range that they actually test.
@@ -69,18 +77,22 @@ Rejected claims and failed experiments are part of the scientific record and sho
 
 SIRM (Stable Invariant Rift Model) uses four stated runtime constraints:
 
-\[
+
+$
+
 \begin{aligned}
 I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
 I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
 I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
-\]
 
-Where \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), under the implementation's integer and scaling conventions.
+$
 
-An \(O(1)\) distribution model can update a shared scalar and derive effective balances on read. That observation concerns this representation; it does not assert every operation is \(O(1)\), nor does it prove the correctness of every implementation. Runtime tests, fuzzing, audits, and deployment checks are engineering evidence bounded by the code and assertions examined.
+
+Where $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, under the implementation's integer and scaling conventions.
+
+An $O(1)$ distribution model can update a shared scalar and derive effective balances on read. That observation concerns this representation; it does not assert every operation is $O(1)$, nor does it prove the correctness of every implementation. Runtime tests, fuzzing, audits, and deployment checks are engineering evidence bounded by the code and assertions examined.
 
 The SIRM constraints are not consequences of the spectral theorem. The theorem and runtime model are separate results.
 
