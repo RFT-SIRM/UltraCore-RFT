@@ -12,25 +12,59 @@ Build a deterministic, mathematically verified economic layer for distributed sy
 
 ## 2. Strategic priority: mathematics and evidence first
 
-The roadmap presents the research in evidence order before moving to implementation and deployment:
+This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does **not** prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage.
 
-1. **Formal mathematical anchor:** the specific fourth-moment trace-defect identity and its Lean 4 formalization, within the definitions and assumptions recorded in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
-2. **Higher-moment programme:** finite-level certificates and numerical cross-checks, with the all-level recurrence kept explicitly open until proved.
-3. **Independent spectral audit:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis), including spectral-decimation checks, boundary/corner corrections, and unresolved Gate A criteria.
-4. **SIRM engineering specification:** four runtime constraints, deterministic transition semantics, and implementation-specific tests, fuzzing, and audits.
-5. **Applications and deployment:** Rift-L1, Rift-Network, scheduler, memory-context, and exploratory application tracks, each assessed against its own evidence.
+### Priority I — protect and independently audit the formal theorem
 
-### SIRM invariant notation
+**Primary source:** [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md).
 
-The engineering strand uses four stated runtime constraints. To avoid renderer-specific failures with underscores in identifiers, the equations use short mathematical symbols and the table maps each symbol to its implementation variable.
+For the specific operator definitions and assumptions in the source repository, the fourth-moment trace defect is stated as
 
 $$
-\\begin{aligned}
-I_1:\\quad & S = B + Gp,\\\\
-I_2:\\quad & S = M - D,\\\\
-I_3:\\quad & d < p \\quad (p>0),\\\\
-I_4:\\quad & E_i \\ge -\\frac{S}{10p}.
-\\end{aligned}
+\Delta_m(H^4,\theta)
+= \operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+= -16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
+\qquad m\ge 1.
+$$
+
+With the documented normalization,
+
+$$
+I_m(\theta)
+= \frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
+\longrightarrow
+-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
+\qquad
+I_m\left(\frac{\pi}{2}\right)\longrightarrow-\frac{8}{9}.
+$$
+
+#### Closure and maintenance tasks
+
+- Keep the theorem statement, operator definitions, and normalization synchronized with the primary repository; treat that repository as authoritative.
+- Re-run the Lean build from the documented formalization directory after any theorem or dependency change, and report the exact command and result.
+- Independently check the finite-level trace identity against the stated formula, including the boundary cases and the angle convention.
+- Keep the fourth-moment result separate from the higher-moment recurrence: do not describe the all-level recurrence as proved unless its proof is present and verified.
+- Track numerical or spectral-decimation observations as separate evidence; they do not replace the formal theorem's assumptions or proof.
+
+### Priority II — establish the higher-moment programme
+
+Maintain finite-level certificates and numerical cross-checks as evidence, while marking the all-level recurrence as open until a complete proof is available.
+
+### Priority III — audit the spectral-decimation programme independently
+
+Use [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) to track spectral-decimation checks, boundary/corner corrections, and unresolved Gate A criteria. Report residual mismatches rather than describing the mechanism as fully closed.
+
+### Priority IV — specify and verify SIRM as an engineering model
+
+SIRM uses four stated runtime constraints. Short symbols are used below to keep the equations robust across GitHub Markdown renderers; the table maps each symbol to the implementation variable.
+
+$$
+\begin{aligned}
+I_1:\quad & S = B + Gp,\\
+I_2:\quad & S = M - D,\\
+I_3:\quad & d < p \quad (p>0),\\
+I_4:\quad & E_i \ge -\frac{S}{10p}.
+\end{aligned}
 $$
 
 The effective-balance relation is
@@ -50,9 +84,11 @@ $$
 | $E_i$ | `effective_balance[i]` |
 | $b_i$ | `base_balance[i]` |
 
-This ordering is a research and documentation priority, not a claim that the spectral theorem proves SIRM invariants or that exploratory applications are validated production systems.
+These constraints are an engineering specification; they are not consequences of the fourth-moment theorem.
 
+### Priority V — evaluate applications against their own evidence
 
+Assess Rift-L1, Rift-Network, scheduler, memory-context, and exploratory application tracks using their own tests, audits, benchmarks, and deployment criteria. Do not infer production readiness or quantum advantage from the mathematical results above.
 ---
 
 ## 3. The RFT Methodology
