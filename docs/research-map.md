@@ -37,7 +37,7 @@ $$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
-\qquad m\geq1.
+\qquad m=1,2,3,\ldots.
 $$
 
 With the source's normalization,
@@ -49,7 +49,7 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
 
-At \(\theta=\pi/2\), the limiting value is \(-8/9\).
+At the special angle \(\theta=\frac{\pi}{2}\), the limiting value simplifies to \(-\frac{8}{9}\).
 
 ### Algebraic sanity checks
 
