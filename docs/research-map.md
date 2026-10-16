@@ -27,13 +27,16 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 | 3. Separate spectral model | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Signed-flux Laplacians, decimation audit, boundary/corner corrections; Gate A remains open |
 | 4. Systems methodology | [SIRM foundations](foundations.md) | Runtime state invariants and deterministic transition model; not proved by the spectral theorem |
 | 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
-| 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Pre-experimental or exploratory; no speed-up or physical-device claim is implied |
+| 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Pre-experimental or exploratory; no speed-up or physical-device claim is implied |
 
 ## Global test and evidence control
 
 UltraCore-RFT is being developed as the central observability layer for cross-repository CI. The [Ecosystem Control Plane](ecosystem-control.md) documents the registered projects, status meanings, run artifacts, and evidence boundaries. Its first phase reads public Actions status; it does not yet dispatch workflows in other repositories.
 
 ## Engineering and application tracks
+
+**Featured application index:** [RFT-QPU-Sierpinski and RFT-Invariant-Battery — scope, status, and evidence boundaries](application-programmes.md).
+
 
 These tracks have their own repositories, validation methods, and limitations; they are not corollaries of the fourth-moment theorem.
 

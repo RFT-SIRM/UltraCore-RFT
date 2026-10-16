@@ -4,6 +4,10 @@
 
 [![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 
+[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
+
+[Detailed application programme index](docs/application-programmes.md).
+
 This roadmap describes research priorities and closure criteria, not completed achievements. “Evgeny's Theory of Everything” is the name of a broad research programme; it does not assert that a complete physical theory of the Universe has been established.
 
 ## 1. Programme structure
@@ -115,7 +119,7 @@ Every public metric should point to a report or dated workflow. Passing tests de
 
 ## 6. Priority V — applications remain explicitly exploratory
 
-- **[RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski):** pre-experimental architecture. Do not claim hardware advantage, circuit efficiency, or quantum speed-up without resource estimates and experiments.
+- **[RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski):** pre-experimental architecture. Do not claim hardware advantage, circuit efficiency, or quantum speed-up without resource estimates and experiments. See the [application programme index](docs/application-programmes.md) for validation and disclosure boundaries.
 - **[RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.):** exploratory computational scenarios. Model outputs are not independent experimental validation of a battery technology.
 - Other physical, biological, and temporal-topology directions remain hypotheses or planned research unless a specific model, experiment, and evidence record is linked.
 
