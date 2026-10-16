@@ -51,7 +51,7 @@ At \(\theta=\pi/2\), the limiting value is \(-8/9\). The primary repository repo
 | Signed-flux spectral decimation | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Gate A remains open; claims are audited and status-labelled |
 | SIRM and deterministic execution | [Foundations](foundations.md) · [Architecture](architecture.md) | Engineering model and implementation-specific evidence |
 | Quantum architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental |
-| Energy-system modelling | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory |
+| Energy-system modelling | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Exploratory |
 
 ## Documentation
 
