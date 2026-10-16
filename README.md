@@ -34,7 +34,7 @@ The primary theorem repository studies a specified SU(2)-valued connection on a 
 
 $$
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\geq 1.
 $$
