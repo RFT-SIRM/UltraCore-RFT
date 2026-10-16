@@ -235,7 +235,7 @@ A passing workflow supports only the assertions it runs. A proof in one reposito
 
 Original material in this repository is distributed under [Apache-2.0](LICENSE), subject to the license and NOTICE files. Linked repositories are separate works with their own histories, content, and licensing terms.
 
-_Copyright 2026 Eugeny (RFT-SIRM)._
+_Copyright 2026 Evgeniy Zaprudnov (RFT-SIRM)._
 
 ## Cross-repository verification: Theory of Everything
 
