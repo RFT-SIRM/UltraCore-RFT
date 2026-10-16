@@ -7,8 +7,8 @@
 This map is deliberately hierarchical. The title *Evgeny's Theory of Everything* names a broad research programme, not a claim that a complete physical theory of the Universe has been established.
 
 ## 1. The programme at a glance
+$
 
-$$
 \boxed{\text{Definitions and theorem}}
 \longrightarrow
 \boxed{\text{Reproducible evidence}}
@@ -16,8 +16,8 @@ $$
 \boxed{\text{Open extensions}}
 \longrightarrow
 \boxed{\text{Engineering applications}}
-$$
 
+$
 The arrows describe an evidence-first reading order, not a theorem asserting that every downstream application follows from the mathematical result.
 
 | Layer | Programme | Status and boundary |
@@ -46,29 +46,29 @@ These tracks have their own repositories, validation methods, and limitations; t
 ## 2. Mathematical anchor: the fourth-moment identity
 
 For the definitions and assumptions documented by the primary theorem repository,
+$
 
-$$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m=1,2,3,\ldots.
-$$
 
+$
 With the source's normalization,
+$
 
-$$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-$$
 
+$
 At the special angle $\theta=\frac{\pi}{2}$, the limiting value is:
+$
 
-$$
 -\frac{8}{9}
-$$
 
+$
 ### Algebraic sanity checks
 
 - $3^{m+1}+3=3(3^m+1)$.
@@ -103,16 +103,16 @@ Keep failed checks and rejected claims in the historical record. They are eviden
 ## 5. SIRM: engineering model and invariants
 
 SIRM specifies runtime constraints for deterministic state transitions:
+$
 
-$$
 \begin{aligned}
 I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
 I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
 I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
-$$
 
+$
 Where $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's integer and scaling conventions.
 
 The $O(1)$ distribution argument concerns a shared scalar update and lazy effective-balance calculation. It does not imply every operation is $O(1)$, nor does the spectral theorem prove the SIRM invariants. Runtime tests, fuzzing, audits, and deployment evidence have implementation-specific scope.
