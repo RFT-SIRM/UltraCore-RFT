@@ -26,6 +26,7 @@ $$
 =-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\ge1.
 $$
+
 The normalized quantity is
 
 $$
@@ -34,6 +35,7 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
+
 At $\theta=\pi/2$, the limiting value is $-8/9$.
 
 The denominator is the stated Hilbert-space dimension $3^{m+1}+3$. Since $3^{m+1}+3=3(3^m+1)$, the limit follows by dividing numerator and denominator by $3^m$. At $m=1,\theta=\pi/2$, $\Delta_1=-16(1+1)/2=-16$, the dimension is $12$, and $I_1=-4/3$. These elementary checks guard against index and normalization transcription errors.
@@ -108,6 +110,7 @@ I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
 $$
+
 With $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, and the integer/scaling conventions of the implementation.
 
 An $O(1)$ global distribution can follow from updating a shared scalar and deriving each participant's effective balance on read. That does not imply that every operation in the system is constant-time, nor that a design statement proves every implementation correct. Tests, fuzzing, audits, and deployment checks are engineering evidence with bounded scope.
