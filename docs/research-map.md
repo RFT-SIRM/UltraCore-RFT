@@ -24,7 +24,7 @@ These steps describe the documentation and evidence transition. They do not impl
 | Spectral mass-formula audit | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Computational claims are tested, rejected, or labelled open in that project's evidence record | A spectral fit or invariant does not become a physical mass law without independent derivation and validation |
 | Quantum-processing architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | A pre-experimental architecture exploring Sierpiński connectivity and SU(2) transport | No quantum speed-up, hardware advantage, or circuit-cost result is implied |
 | Invariant-driven energy model | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory deterministic scenarios with stated assumptions and auditable outputs | Model outputs are not independent experimental validation of a battery technology |
-| Kernel stress-verification | [seL4 report](../SEL4_CDT_FUZZING.md), [field-trial report](field_trials_sel4.md) | Complementary stress-testing of a specific seL4 subsystem | Fuzzing does not replace or extend the kernel's formal proof |
+| Kernel stress-verification | [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md), [field-trial report](field_trials_sel4.md) | Complementary stress-testing of a specific seL4 subsystem | Fuzzing does not replace or extend the kernel's formal proof |
 
 ## Mathematical anchor: fourth-moment trace defect
 
