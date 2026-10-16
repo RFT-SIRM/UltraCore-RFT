@@ -8,7 +8,7 @@
 
 [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20cosmology%20model-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
 
-[![Evidence boundary](https://img.shields.io/badge/Evidence-Model%20and%20research%20status-d97706?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/application-programmes.md#4-evidence-and-claim-boundaries)
+[![Evidence boundary](https://img.shields.io/badge/Evidence-Model%20and%20research%20status-d97706?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/application-programmes.md#5-evidence-and-claim-boundaries)
 
 > **Reading rule:** the badges are navigation and status labels only. They are not certification marks, experimental results, patent-status indicators, or endorsements.
 
