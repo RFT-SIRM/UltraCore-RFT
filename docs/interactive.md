@@ -1,6 +1,6 @@
 # Interactive Research Portal
 
-Open the [animated UltraCore-RFT research portal](https://rft-sirm.github.io/UltraCore-RFT/interactive/).
+Open the [animated UltraCore-RFT research portal](https://rft-sirm.github.io/ultracore/).
 
 The portal presents the fourth-moment theorem, the higher-moment open problem, the separate Phi-Genesis audit, and downstream engineering applications. It is a navigational visualization; the linked primary repositories and evidence records remain authoritative.
 
