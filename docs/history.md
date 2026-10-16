@@ -2,7 +2,13 @@
 
 This page records a **selected, commit-backed chronology** across the research repositories. It is not a complete log of every experiment, nor does it reinterpret old results in light of later work. For exhaustive history, use each repository's Git log and versioned evidence files.
 
-## 1. Selected dated milestones
+## 1. Maintainer-reported origin sequence
+
+For the broad origin story, the maintainer reports this order: **Rift Network → Rift-L1 Blockchain → UltraCore-RFT and supporting engineering systems (scheduler, memory, and related work) → Phi-Genesis → Evgeny-Theorem → Evgeny's Theory of Everything**. The [dedicated origin chronology](origin-chronology.md) explains the scope and links to the source repositories.
+
+This is an explicitly attributed historical sequence. It is not a complete commit audit, and it does not replace the dated, commit-linked milestones below. Where exact dates or precedence have not been independently checked against repository history, they are not inferred here.
+
+## 2. Selected dated milestones
 
 | Date (UTC) | Repository | Recorded milestone | What the record does—and does not—establish |
 |---|---|---|---|
@@ -16,7 +22,7 @@ This page records a **selected, commit-backed chronology** across the research r
 | 2026-10-15 | [Theory-of-Everything synthesis](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commit/c04785a8d3baa88e4ff2e6fd36b78583a4f52cde) | Higher-moment Fourier coefficient candidates reconstructed | Candidate coefficients and certificates have the scope specified in the accompanying report |
 | 2026-10-16 | [UltraCore-RFT](https://github.com/RFT-SIRM/UltraCore-RFT/commit/c1aaecaae6af68dd352d2b358c6d7ae44bdac070) | Research hierarchy and evidence boundaries documented; README badge clutter reduced | A documentation/navigation milestone, not a new mathematical proof |
 
-## 2. How to read this chronology
+## 3. How to read this chronology
 
 ### The fourth-moment result
 
@@ -34,7 +40,7 @@ The Gate A and look-elsewhere-effect commits show why negative results and resid
 
 Runtime, protocol, scheduler, memory-isolation, and kernel-stress milestones should be reconstructed from their own commit histories, tests, audit records, and deployments. They are not used as proxies for the status of the mathematical theorem.
 
-## 3. Provenance rules
+## 4. Provenance rules
 
 - Preserve old failed workflows and reports; do not replace them with later success without retaining the earlier record.
 - Tie every numeric claim to a repository, commit or dated workflow, input scope, and method.
@@ -42,7 +48,7 @@ Runtime, protocol, scheduler, memory-isolation, and kernel-stress milestones sho
 - Distinguish commit timestamps from publication, review, or independent-replication dates.
 - Do not infer peer review, external validation, or novelty from a merge or a passing CI job.
 
-## 4. Full histories
+## 5. Full histories
 
 - [UltraCore-RFT commits](https://github.com/RFT-SIRM/UltraCore-RFT/commits/main)
 - [Evgeny-Theorem commits](https://github.com/RFT-SIRM/Evgeny-Theorem/commits/main)
@@ -50,7 +56,7 @@ Runtime, protocol, scheduler, memory-isolation, and kernel-stress milestones sho
 - [Phi-Genesis commits](https://github.com/RFT-SIRM/Phi-Genesis/commits/main)
 - [RFT-SIRM organization portal source history](https://github.com/RFT-SIRM/RFT-SIRM.github.io/commits/main)
 
-## 3. Cross-project engineering strands
+## 6. Cross-project engineering strands
 
 The mathematical research is one part of a wider public repository history. These implementation tracks are documented separately so their evidence is not conflated with the theorem:
 

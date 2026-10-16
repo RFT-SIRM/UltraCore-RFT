@@ -4,6 +4,12 @@
 
 Primary routes: [README](README.md) · [AI evidence guide](AI_GUIDE.md) · [Research map](docs/research-map.md) · [Main RFT-SIRM portal](https://rft-sirm.github.io/).
 
+## Project origin and chronology
+
+The maintainer-reported sequence begins with [Rift Network](https://github.com/RFT-SIRM/Rift-Network), proceeds to [Rift-L1 Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain), then expands through UltraCore-RFT and supporting systems such as the scheduler and memory-context work. The later research sequence is [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis), [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), and then [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything). The [origin chronology](docs/origin-chronology.md) distinguishes this reported history from dates verified through commit records.
+
+This chronology does not imply that the theorem retroactively caused earlier engineering projects, or that later research automatically validates the implementations.
+
 ## Executive thesis
 
 UltraCore-RFT coordinates a research ecosystem built around exact mathematical constructions, recursive spectral questions, invariant-based computation, and deterministic systems engineering. The programme is strongest when it makes the boundary between a proved statement, a finite computational certificate, an engineering test, and an open hypothesis explicit.

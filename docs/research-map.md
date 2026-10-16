@@ -1,10 +1,12 @@
 # Research Map: Mathematical Foundations, Evidence, and Applications
 
-**Reading order:** dissertation and mathematical theorem → formal evidence → higher-moment research → separate spectral-decimation programme → systems methodology → implementations and applications.
+**Evidence-first reading order (not historical chronology):** dissertation and mathematical theorem → formal evidence → higher-moment research → separate spectral-decimation programme → systems methodology → implementations and applications.
+
+> **Historical origin:** the maintainer-reported sequence is [Rift Network](https://github.com/RFT-SIRM/Rift-Network) → [Rift-L1 Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) → UltraCore-RFT and supporting systems → [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) → [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) → [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything). See the [origin chronology](origin-chronology.md); exact dates are kept separate unless verified from source history.
 
 > 🟢 **Featured dissertation:** [Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md). This research monograph separates formal results, finite certificates, numerical evidence, and open questions; it does not claim a completed physical Theory of Everything.
 
-This map is deliberately hierarchical. The title *Evgeny's Theory of Everything* names a broad research programme, not a claim that a complete physical theory of the Universe has been established.
+This map is deliberately organized by evidence and research relationships, not by the historical order in which the repositories were created. The title *Evgeny's Theory of Everything* names a broad research programme, not a claim that a complete physical theory of the Universe has been established.
 
 ## 1. The programme at a glance
 
