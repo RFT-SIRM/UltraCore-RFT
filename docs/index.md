@@ -2,8 +2,15 @@
 
 **Mathematical foundations, formal evidence, recursive spectral research, and invariant-based systems engineering.**
 
+> 🟢 **FEATURED DISSERTATION**
+>
+> **[Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)**
+>
+> The central research synthesis distinguishes the fourth-moment theorem, finite higher-moment certificates, numerical evidence, and open conjectures. It is a research dissertation/monograph—not a claim that a complete physical Theory of Everything has been established.
+
 UltraCore-RFT coordinates the RFT-SIRM ecosystem. Begin with the mathematical result and its exact evidence scope; follow with the broader higher-moment and spectral-decimation programmes; then explore systems engineering and applications.
 
+- [**Dissertation — read the research synthesis**](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)
 - [Evgeny's Theory of Everything — synthesis repository](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything)
 - [Evgeny's Theorem — Lean 4 formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization)
 - [Phi-Genesis — spectral audit](https://github.com/RFT-SIRM/Phi-Genesis)
@@ -44,7 +51,7 @@ At \(\theta=\pi/2\), the limiting value is \(-8/9\). The primary repository repo
 | Signed-flux spectral decimation | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Gate A remains open; claims are audited and status-labelled |
 | SIRM and deterministic execution | [Foundations](foundations.md) · [Architecture](architecture.md) | Engineering model and implementation-specific evidence |
 | Quantum architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental |
-| Energy-system modelling | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory |
+| Energy-system modelling | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Exploratory |
 
 ## Documentation
 

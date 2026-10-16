@@ -2,6 +2,12 @@
 
 **A research programme spanning exact spectral identities, recursive operators, invariant-based computation, and deterministic systems engineering.**
 
+> **Featured dissertation — [Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)**
+>
+> Start here for the research synthesis: the fourth-moment theorem, finite-level higher-moment certificates, numerical cross-checks, and clearly stated open problems. The dissertation is a research monograph, not a claim that a complete physical Theory of Everything has been established.
+>
+> [![Read the dissertation](https://img.shields.io/badge/READ%20THE%20DISSERTATION-Research%20synthesis-16a765?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)
+
 [![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalized-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis) [![Interactive portal](https://img.shields.io/badge/Interactive-Research%20portal-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
 
 [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml) [![Pages deployment](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml) [![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
