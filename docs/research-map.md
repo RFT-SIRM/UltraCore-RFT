@@ -29,6 +29,10 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 | 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
 | 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Pre-experimental or exploratory; no speed-up or physical-device claim is implied |
 
+## Global test and evidence control
+
+UltraCore-RFT is being developed as the central observability layer for cross-repository CI. The [Ecosystem Control Plane](ecosystem-control.md) documents the registered projects, status meanings, run artifacts, and evidence boundaries. Its first phase reads public Actions status; it does not yet dispatch workflows in other repositories.
+
 ## Engineering and application tracks
 
 These tracks have their own repositories, validation methods, and limitations; they are not corollaries of the fourth-moment theorem.
@@ -37,7 +41,7 @@ These tracks have their own repositories, validation methods, and limitations; t
 - **seL4 kernel testing:** [CDT stress-verification report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials_sel4.md). Empirical stress testing is not a replacement for formal kernel verification.
 - **DeFi model review:** [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review); this is not an Aave endorsement.
 - **Other systems:** [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), and [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.). Exploratory architecture and model studies should not be presented as validated production or physical-device results without separate evidence.
-- **Formal contact:** see the [contact and research submission policy](../CONTACT.md) for attribution, institutional correspondence, and confidential-material handling.
+- **Formal contact:** see the [contact and research submission policy](support.md) for attribution, institutional correspondence, and confidential-material handling.
 
 ## 2. Mathematical anchor: the fourth-moment identity
 

@@ -1,0 +1,43 @@
+name: Ecosystem Control Plane
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 */6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ecosystem-control.yml"
+      - "docs/ecosystem-control.md"
+      - "scripts/ecosystem_status.py"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ecosystem-control-plane
+  cancel-in-progress: true
+
+jobs:
+  collect-status:
+    name: Collect upstream CI status
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect public workflow status
+        run: python scripts/ecosystem_status.py --json ecosystem-status.json --markdown ecosystem-status.md
+      - name: Publish status in workflow summary
+        run: cat ecosystem-status.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload status artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecosystem-status
+          path: |
+            ecosystem-status.json
+            ecosystem-status.md
+          if-no-files-found: error
+          retention-days: 30

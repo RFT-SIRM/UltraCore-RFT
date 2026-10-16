@@ -55,7 +55,7 @@ Runtime, protocol, scheduler, memory-isolation, and kernel-stress milestones sho
 The mathematical research is one part of a wider public repository history. These implementation tracks are documented separately so their evidence is not conflated with the theorem:
 
 - **Solana / Agave:** [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler), and [ABIv2 memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts).
-- **seL4:** [UltraCore seL4 CDT stress-verification report](field_trials_sel4.md) and [fuzzing notes](../SEL4_CDT_FUZZING.md). These describe empirical testing and do not supersede the seL4 project's formal verification.
+- **seL4:** [UltraCore seL4 CDT stress-verification report](field_trials_sel4.md) and [fuzzing notes](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md). These describe empirical testing and do not supersede the seL4 project's formal verification.
 - **DeFi model review:** [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review), a separate model-analysis track and not an Aave endorsement.
 - **Standalone and exploratory systems:** [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), and [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.). Each project has its own scope and evidence requirements.
 
