@@ -10,6 +10,12 @@
 
 This roadmap describes research priorities and closure criteria, not completed achievements. “Evgeny's Theory of Everything” is the name of a broad research programme; it does not assert that a complete physical theory of the Universe has been established.
 
+## Historical chronology versus present research priorities
+
+The project history, as reported by the maintainer, begins with Rift Network, continues through Rift-L1 Blockchain and UltraCore-RFT with supporting scheduler/memory systems, and later includes Phi-Genesis, Evgeny-Theorem, and Evgeny's Theory of Everything. The [origin chronology](docs/origin-chronology.md) records that sequence separately from commit-verified milestones.
+
+The priority order below is a current research and evidence-management plan, **not** a claim about which repository was created first.
+
 ## 1. Programme structure
 
 The programme has three principal mathematical strands and a downstream engineering strand.
