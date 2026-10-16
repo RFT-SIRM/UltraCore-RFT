@@ -4,9 +4,10 @@
 
 ## 1. Contact channel
 
-Use the maintainer-designated contact address published on the official RFT-SIRM website or GitHub profile. A dedicated mailbox controlled by the maintainer is preferred over a personal inbox for long-term institutional correspondence.
+**Research contact:** [evgeniyzaprudnov@gmail.com](mailto:evgeniyzaprudnov@gmail.com)  
+**Maintainer:** Evgeniy Zaprudnov (RFT-SIRM)
 
-Do not treat an email address visible in commit metadata as the official legal, contractual, or notice address unless it is explicitly designated as such. Before publishing this file, the maintainer should confirm the chosen mailbox is monitored and appropriate for public use.
+Use this address for research correspondence and technical questions. Do not send passwords, access tokens, private keys, or other secrets by email. Listing this address identifies a research contact; it does not by itself designate a legal-notice address or establish any institutional affiliation.
 
 ## 2. What to include
 
