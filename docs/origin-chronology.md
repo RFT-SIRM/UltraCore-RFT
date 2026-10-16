@@ -14,7 +14,6 @@
 
 ## The development sequence
 
-<box></box>
 
 ### 1. Rift Network — the initial network direction
 
