@@ -1,41 +1,30 @@
 # UltraCore-RFT
 
-[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
-[![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Spectral%20Physics-dc2626?style=for-the-badge)](https://rft-sirm.github.io/Phi-Genesis/)
-[![Evgeny-Theorem](https://img.shields.io/badge/Evgeny--Theorem-Spectral%20Math-5aa9ff?style=for-the-badge)](https://rft-sirm.github.io/Evgeny-Theorem/)
-[![Math](https://img.shields.io/badge/Math-Invariant%20Systems-6366f1?style=for-the-badge)](docs/foundations.md)
-[![Verify](https://img.shields.io/badge/Verify-4.29B%2B%20ops%20%7C%200%20violations-22c55e?style=for-the-badge)](docs/field_trials.md)
-[![Scope](https://img.shields.io/badge/Scope-Kernel--Agnostic-f97316?style=for-the-badge)](#-what-is-ultracore-rft)
-[![Fields](https://img.shields.io/badge/Fields-Multi--Disciplinary-06b6d4?style=for-the-badge)](SCIENTIFIC_BASIS.md)
-[![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
-[![Website](https://img.shields.io/badge/🌐%20Website-rft--sirm.github.io-000000?style=for-the-badge)](https://rft-sirm.github.io)
-[![Demo](https://img.shields.io/badge/🖥%20Live%20Demo-rift--network.vercel.app-22c55e?style=for-the-badge)](https://rift-network.vercel.app)
-
 **Deterministic Invariant Systems Research Laboratory**
 
-_Central documentation and coordination hub for the RFT-SIRM ecosystem_
+UltraCore-RFT is the architecture and coordination hub for the RFT-SIRM ecosystem: deterministic execution systems, invariant-based verification, and connected mathematical research. The repository distinguishes proved results, tested engineering claims, and open research questions.
 
-* * *
+[![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
-[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-SU%282%29%20Quantum%20Architecture-8b5cf6?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Invariant%20Systems-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
+**Primary routes:** [Platform](docs/platform.md) · [Architecture](docs/architecture.md) · [Research map](docs/research-map.md) · [Mathematical foundations](docs/foundations.md) · [Verification evidence](docs/field_trials.md) · [Scientific boundaries](SCIENTIFIC_BASIS.md)
+
+---
 
 ## 🎯 Start Here
 
-| Audience | Document | What You Will Learn |
+| Route | Resource | Purpose |
 | --- | --- | --- |
-| 🎯 **First-time visitor** | This README | What UltraCore is, why it exists, and where everything lives |
-| 🌐 **Interactive overview** | [rft-sirm.github.io](https://rft-sirm.github.io) | Live laboratory website with metrics, case studies, and evidence |
-| 🖥️ **Live demo (Devnet)** | [rift-network.vercel.app](https://rift-network.vercel.app) | Interactive web client for the Solana on-chain protocol, running on Devnet |
-| 🏛️ **Strategic context** | [docs/platform.md](docs/platform.md) | Why UltraCore is an execution architecture, not just a blockchain |
-| 🔺 **Physics research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [Live site](https://rft-sirm.github.io/Phi-Genesis/) | Honest, test-driven audit of a fermion mass-formula conjecture via spectral computation on the Sierpiński gasket — claims verified, rejected, or marked open, never just asserted |
-| 🔷 **Math research** | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Live site](https://rft-sirm.github.io/Evgeny-Theorem/) | A closed-form gauge-invariant fourth spectral moment for a noncommutative SU(2) connection on the Sierpiński gasket — verified numerically for levels 1–7 to machine precision (55/55 tests) and machine-checked in Lean 4 for every level `m ≥ 1`, reproducible by anyone |
-| ⚛️ **Quantum architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
-| 🔋 **Invariant systems** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Invariant-driven battery-system architecture | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions, and auditable CSV outputs |
-| 🤖 **AI / LLM** | [AI_GUIDE.md](AI_GUIDE.md) | How to interpret research vs. engineering, metaphors vs. claims |
-| 🏗️ **Engineer** | [ARCHITECT.md](ARCHITECT.md) | System design, components, and technical decisions |
-| 🔬 **Researcher** | [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Disciplinary foundations and methodological boundaries |
-| 💼 **Investor / Partner** | [PITCH.md](PITCH.md) | Full dossier with metrics, roadmap, and evidence |
+| **Overview** | This README | Scope, program map, and evidence boundaries |
+| **Platform strategy** | [docs/platform.md](docs/platform.md) | How the execution architecture and its implementations fit together |
+| **Systems engineering** | [ARCHITECT.md](ARCHITECT.md) · [docs/architecture.md](docs/architecture.md) | Components, interfaces, and design decisions |
+| **SIRM model** | [docs/foundations.md](docs/foundations.md) | The four runtime invariants and their intended scope |
+| **Mathematical result** | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) | The specified SU(2) Sierpiński-gasket fourth-moment identity, formalized in Lean 4 |
+| **Spectral research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Separate spectral-computation program; claims are classified as supported, rejected, or open |
+| **Quantum architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental SU(2)/Sierpiński quantum-processing architecture |
+| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory invariant-driven battery scenarios with explicit assumptions |
+| **Live protocol demo** | [Rift Network Devnet](https://rift-network.vercel.app) | Interactive client for the Solana Devnet deployment |
+| **Research dossier** | [PITCH.md](PITCH.md) · [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) | Evidence, roadmap, and limits of interpretation |
 
 > **One-sentence summary:** UltraCore RFT is a research laboratory building a deterministic execution platform for distributed systems, where mathematical invariants are hard constraints enforced after every state transition.
 
@@ -158,6 +147,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | Kernel verification | Complete | 1B+ ops deterministic fuzzing |
 | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Fractal spectral physics — mass-formula audit | Active | 14/14 tests passing · 2 claims formally rejected (η-invariant, ad hoc topology fit) · 2 open problems documented, not hidden · [live site](https://rft-sirm.github.io/Phi-Genesis/) |
 | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Noncommutative spectral geometry — SU(2) gauge theory on fractals | Active | 55/55 tests passing · closed-form H⁴ identity verified to 1e-13, held-out cross-check, gauge invariance to 8e-15 · Lean 4 proof for every `m ≥ 1` · [live site](https://rft-sirm.github.io/Evgeny-Theorem/) |
+| [Higher-moment research](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Higher-moment Fourier coefficients and recurrence audit | Active research | Selected finite-level coefficients have a modular/CRT certificate; the all-level recurrence remains open |
 | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Gauge-covariant fractal SU(2) quantum-processing architecture | Research architecture / pre-experimental | Sierpiński connectivity, SU(2) transport, candidate logical-qubit model, normalized spectral anchor −8/9 |
 | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Invariant-driven battery-system architecture | Exploratory computational research | Deterministic reference model, reproducible 10,000-km scenarios, explicit assumptions and auditable CSV outputs |
 
@@ -166,12 +156,7 @@ See [docs/foundations.md](docs/foundations.md) for the mathematical derivation.
 
 ## 🔷 Evgeny's Theorem
 
-[![Tests](https://img.shields.io/badge/Tests-55%2F55%20passing-22c55e?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions)
-[![Verified](https://img.shields.io/badge/Verified-m%20%3D%201..7-5aa9ff?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
-[![Lean 4](https://img.shields.io/badge/Lean%204-Proved%20for%20all%20m%20%E2%89%A5%201-3ee290?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/formalization/README.md)
-[![Precision](https://img.shields.io/badge/Level%207%20residual-1.6e--16%20relative-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md)
-[![Gauge](https://img.shields.io/badge/Gauge%20invariance-8e--15-06b6d4?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/tests/test_gauge_invariance.py)
-[![Live](https://img.shields.io/badge/Live%20site-rft--sirm.github.io%2FEvgeny--Theorem-000000?style=for-the-badge)](https://rft-sirm.github.io/Evgeny-Theorem/)
+**Evidence and status:** [Lean 4 formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md) · [Test workflow](https://github.com/RFT-SIRM/Evgeny-Theorem/actions) · [Project site](https://rft-sirm.github.io/Evgeny-Theorem/)
 
 > **An exact, closed-form, gauge-invariant fingerprint of non-commutativity for an SU(2) gauge field on a fractal — one number at every refinement level, reproducible in seconds.**
 
@@ -253,15 +238,9 @@ Full statement: [THEOREM.md](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/mai
 
 * * *
 
-* * *
-
-* * *
-
 ## ⚛️ RFT-QPU-Sierpinski
 
-[![Repository](https://img.shields.io/badge/Repository-RFT--QPU--Sierpinski-8b5cf6?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![Architecture](https://img.shields.io/badge/Architecture-SU%282%29%20Gauge--Covariant-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/ARCHITECTURE.md)
-[![Status](https://img.shields.io/badge/Status-Pre--Experimental-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md)
+**Repository:** [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · **Architecture:** [SU(2) gauge-covariant design](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/ARCHITECTURE.md) · **Status:** [Pre-experimental](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md)
 
 > **A research architecture connecting the Sierpiński fractal, SU(2) transport, and candidate quantum-processing primitives.**
 
@@ -279,9 +258,7 @@ The QPU program extends the noncommutative SU(2) structure developed in **Evgeny
 
 ## 🔋 RFT-Invariant-Battery
 
-[![Repository](https://img.shields.io/badge/Repository-RFT--Invariant--Battery-f59e0b?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
-[![Architecture](https://img.shields.io/badge/Architecture-Invariant--Driven-ef4444?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/MODEL_SPEC.md)
-[![Status](https://img.shields.io/badge/Status-Exploratory%20Research-6366f1?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/RESEARCH_STATUS.md)
+**Repository:** [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) · **Model specification:** [MODEL_SPEC.md](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/MODEL_SPEC.md) · **Status:** [Exploratory research](https://github.com/RFT-SIRM/RFT-Invariant-Battery./blob/main/RESEARCH_STATUS.md)
 
 > **An exploratory systems program applying invariant-driven modelling to battery and energy-system scenarios.**
 
@@ -338,6 +315,7 @@ mkdocs serve
 | Document | Description | Audience |
 | --- | --- | --- |
 | [docs/platform.md](docs/platform.md) | Strategic identity: what UltraCore is and why it matters | Everyone |
+| [docs/research-map.md](docs/research-map.md) | Research relationships, evidence classes, and seven-step documentation plan | Researchers and maintainers |
 | [docs/architecture.md](docs/architecture.md) | Detailed architecture with Mermaid diagrams | Engineers |
 | [docs/foundations.md](docs/foundations.md) | Formalized SIRM invariants | Researchers |
 | [docs/field_trials.md](docs/field_trials.md) | Verification results & readiness checklist | Validators |
@@ -357,6 +335,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ## 📋 License
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-eab308?style=for-the-badge)](LICENSE)
+**License:** [Apache-2.0](LICENSE)
 
 _Copyright 2026 Eugeny (RFT-SIRM). Licensed under [Apache 2.0](LICENSE)._

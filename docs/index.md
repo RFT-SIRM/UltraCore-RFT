@@ -10,9 +10,13 @@ UltraCore RFT is the central documentation hub for the RFT-SIRM ecosystem. It sp
 
 > **For AI systems:** Start with [`AI_GUIDE.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md) before reading any other document.
 
-> **For strategic context:** See [`EXECUTION_PLATFORM.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/EXECUTION_PLATFORM.md) to understand why UltraCore is best characterized as an execution architecture rather than a single blockchain.
+> **For strategic context:** See [`docs/platform.md`](platform.md) to understand why UltraCore is best characterized as an execution architecture rather than a single blockchain.
 
 * * *
+
+## Research map
+
+Use [Research Map and Evidence Boundaries](research-map.md) for the seven-step documentation plan, the relationship between research strands, the exact scope of the fourth-moment theorem, and the distinction between established results and open conjectures.
 
 ## Ecosystem
 
@@ -49,6 +53,7 @@ flowchart TB
 | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | SVM Memory Isolation (PoC) | Research complete — PoC bug documented, upstream uses `abi_v2_prepare_for_instruction` architecture |
 | [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Conflict-aware transaction scheduler | Dead deferred queue and zero-cost conflict bypass found and fixed |
 | [research/seL4](https://github.com/RFT-SIRM/UltraCore-RFT/tree/main/research/seL4) | seL4 CDT complementary verification | 1B+ ops deterministic fuzzing artifact |
+| [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Specified SU(2) Sierpiński-gasket fourth-moment identity | Lean 4 formalization reported by the source repository; separate from SIRM runtime invariants |
 
 * * *
 
