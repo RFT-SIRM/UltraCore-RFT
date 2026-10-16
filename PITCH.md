@@ -20,23 +20,23 @@ The systems strand, SIRM, applies invariant-first design to deterministic state 
 
 For the specific operator definitions and assumptions in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the raw fourth-moment trace defect is stated as
 
-$
+$$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\ge1.
 
-$
+$$
 
 The normalized quantity is
 
-$
+$$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 
-$
+$$
 
 At $\theta=\pi/2$, the limiting value is $-8/9$.
 
@@ -104,7 +104,7 @@ A high-quality scientific narrative includes failed hypotheses and unresolved re
 
 SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The current model summary states:
 
-$
+$$
 \begin{aligned}
 I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
 I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
@@ -112,7 +112,7 @@ I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
 
-$
+$$
 
 With $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, and the integer/scaling conventions of the implementation.
 
