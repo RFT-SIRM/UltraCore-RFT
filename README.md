@@ -24,6 +24,33 @@ UltraCore-RFT is the documentation and coordination hub for the RFT-SIRM ecosyst
 
 > **Important scope statement.** The phrase *Evgeny's Theory of Everything* names a broad, ongoing research programme. It does not mean that a complete physical theory of the Universe has been established. The source repository reports a Lean 4 proof of a specific fourth-moment identity for defined SU(2) operators on Sierpiński-gasket graphs. Higher-moment all-level recurrence and the Phi-Genesis Gate A mechanism remain open. Those boundaries are part of the result, not footnotes to hide.
 
+
+
+## Historical record: research and engineering strands
+
+This programme has developed across separate repositories. The following are **documented workstreams**, not claims of institutional endorsement or that every project has the same verification status.
+
+| Workstream | Public record | Scope and evidence boundary |
+|---|---|---|
+| Mathematical research and dissertation | [Theory of Everything dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [fourth-moment formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) | A specific fourth-moment identity is reported formalized in Lean 4; higher-moment all-level recurrence remains open. |
+| Spectral computation and audit | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Numerical inertia, spectral-decimation and boundary/corner-correction research; unresolved residuals remain visible. |
+| Solana / Agave engineering | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) · [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) · [ABIv2 memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | On-chain protocol, scheduler and memory-context research; claims are scoped to their code, tests and documented environments. |
+| seL4 kernel stress research | [seL4 CDT report](SEL4_CDT_FUZZING.md) · [field-trial report](docs/field_trials_sel4.md) | Reproducible empirical stress-testing report. It does not replace or extend the seL4 project's formal verification claims. |
+| DeFi model review | [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | Separate model-based review and invariant-analysis work; not an Aave endorsement. |
+| Standalone L1 and exploratory applications | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain) · [QPU/Sierpiński](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · [Invariant Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Distinct implementation or exploratory tracks; no implied production, quantum speed-up or physical-device result beyond the linked evidence. |
+| Research chronology | [Commit-backed history](docs/history.md) · [Research map](docs/research-map.md) | Selected milestones with direct links; use each repository's commit log for the complete record. |
+
+### External organizations and attribution
+
+Repository activity, public issues, or work in an open-source ecosystem must not be presented as employment, a contract, a partnership, sponsorship, approval, or endorsement by NASA, Anza, Solana, the seL4 project, Aave, or any other institution unless a specific public source establishes that relationship. The current curated project history links to verifiable repository artifacts. A standalone NASA- or MATLAB-specific project is **not listed here as verified** because the available repository and commit evidence reviewed for this update did not identify a matching artifact. If such work exists in a separate public repository or contribution, its exact URL should be added to the chronology rather than inferred from a profile screenshot.
+
+## Formal contact and research submissions
+
+For collaboration proposals, research correspondence, licensing questions, or requests for formal review, use the designated contact route and include a clear subject, the relevant repository/commit, the requested action, and the sender's institutional or organizational affiliation where applicable. A GitHub issue or pull request is appropriate for public, technical, reproducible discussion; confidential, contractual, licensing, or personal information should not be posted publicly.
+
+See [CONTACT.md](CONTACT.md) for the submission and attribution policy. Public contact details should be a dedicated, controlled mailbox that the maintainer intends to monitor; do not assume that a commit-author email is automatically the official legal or business contact.
+
+
 ---
 
 ## 1. The mathematical anchor
