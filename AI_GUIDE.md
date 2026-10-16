@@ -139,6 +139,7 @@ Before copying or rewriting a formula:
 - [PITCH.md](PITCH.md) — public-facing research dossier and claims register.
 - [SCIENTIFIC_BASIS.md](SCIENTIFIC_BASIS.md) — mathematical statements versus computational modelling vocabulary.
 - [docs/research-map.md](docs/research-map.md) — relationships, evidence classes, and open problems.
+- [docs/history.md](docs/history.md) — selected dated milestones linked to source commits.
 - [docs/foundations.md](docs/foundations.md) — SIRM model and the linked theorem scope.
 - [docs/field_trials.md](docs/field_trials.md) — implementation-specific verification evidence.
 - [docs/interactive/index.html](docs/interactive/index.html) — animated, source-linked research portal.
