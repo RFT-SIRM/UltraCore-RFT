@@ -75,4 +75,4 @@ The organization-wide [RFT-SIRM portal](https://rft-sirm.github.io/) remains int
 
 [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
 
-_Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0._
+_Copyright 2026 Evgeniy Zaprudnov (RFT-SIRM). License: Apache 2.0._
