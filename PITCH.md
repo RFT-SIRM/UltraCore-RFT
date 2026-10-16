@@ -100,16 +100,33 @@ A high-quality scientific narrative includes failed hypotheses and unresolved re
 
 ## 4. SIRM: invariant-first systems engineering
 
-SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The current model summary states:
+SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The four stated constraints are written with short symbols to avoid renderer-specific failures; the table maps them to implementation variables.
 
 $$
 \begin{aligned}
-I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
-I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
-I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
+I_1:\quad & S = B + Gp,\\
+I_2:\quad & S = M - D,\\
+I_3:\quad & d < p \quad (p>0),\\
+I_4:\quad & E_i \ge -\frac{S}{10p}.
 \end{aligned}
 $$
+
+The effective-balance relation is
+
+$$
+E_i = b_i + G.
+$$
+
+| Symbol | Implementation variable |
+|---|---|
+| $S$ | `total_supply` |
+| $B$ | `total_base_sum` |
+| $G$ | `global_field` |
+| $M$ | `total_minted` |
+| $D$ | `total_burned` |
+| $d$ | `dust_accumulator` |
+| $E_i$ | `effective_balance[i]` |
+| $b_i$ | `base_balance[i]` |
 
 With $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, and the integer/scaling conventions of the implementation.
 
