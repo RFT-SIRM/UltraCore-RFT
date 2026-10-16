@@ -49,3 +49,16 @@ Runtime, protocol, scheduler, memory-isolation, and kernel-stress milestones sho
 - [Theory-of-Everything commits](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commits/main)
 - [Phi-Genesis commits](https://github.com/RFT-SIRM/Phi-Genesis/commits/main)
 - [RFT-SIRM organization portal source history](https://github.com/RFT-SIRM/RFT-SIRM.github.io/commits/main)
+
+## 3. Cross-project engineering strands
+
+The mathematical research is one part of a wider public repository history. These implementation tracks are documented separately so their evidence is not conflated with the theorem:
+
+- **Solana / Agave:** [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler), and [ABIv2 memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts).
+- **seL4:** [UltraCore seL4 CDT stress-verification report](field_trials_sel4.md) and [fuzzing notes](../SEL4_CDT_FUZZING.md). These describe empirical testing and do not supersede the seL4 project's formal verification.
+- **DeFi model review:** [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review), a separate model-analysis track and not an Aave endorsement.
+- **Standalone and exploratory systems:** [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), and [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.). Each project has its own scope and evidence requirements.
+
+### Attribution standard
+
+This chronology records public artifacts and does not infer employment, contracts, partnerships, sponsorship, or endorsement from open-source activity or a repository name. NASA- or MATLAB-specific work should be added as a dated milestone only when its direct public artifact (repository, commit, paper, or documented contribution) has been identified and checked. A profile activity screenshot is useful as a lead, but is not sufficient to establish the exact project, technical contribution, or institutional relationship.
