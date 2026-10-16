@@ -10,7 +10,7 @@
 
 [![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalized-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis) [![Interactive portal](https://img.shields.io/badge/Interactive-Research%20portal-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
 
-[![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml) [![Pages deployment](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml) [![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+[![Theory of Everything upstream verification](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml) [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml) [![Pages deployment](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml) [![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
 **Core engineering and formal-verification strands**
 
@@ -209,3 +209,12 @@ A passing workflow supports only the assertions it runs. A proof in one reposito
 Original material in this repository is distributed under [Apache-2.0](LICENSE), subject to the license and NOTICE files. Linked repositories are separate works with their own histories, content, and licensing terms.
 
 _Copyright 2026 Eugeny (RFT-SIRM)._
+
+## Cross-repository verification: Theory of Everything
+
+The **Theory of Everything — upstream verification** workflow checks the current `main` revision of [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) from this repository. It validates the dissertation and required research files, runs the documentation/provenance audit, and executes the recurrence arithmetic audit and its regression tests.
+
+- [Workflow runs and logs](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml)
+- Triggered manually with **Run workflow**, on relevant changes to this integration, and on a daily schedule.
+- The job log records the exact upstream Git revision it checked, so a green result can be traced to a specific source snapshot.
+- A passing run means only that these listed checks passed. It does **not** establish the still-open all-level higher-moment recurrence or replace the pinned Lean and specialized numerical workflows in the source repository.
