@@ -46,7 +46,7 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
 
-In particular, at $\theta=\pi/2$, the limiting value is \(-8/9\). The normalized value is a spectral anchor used by related exploratory work; it does not by itself establish a quantum-computing advantage or a physical law.
+In particular, at $\theta=\pi/2$, the limiting value is $-8/9$. The normalized value is a spectral anchor used by related exploratory work; it does not by itself establish a quantum-computing advantage or a physical law.
 
 ## Claim-status vocabulary
 
