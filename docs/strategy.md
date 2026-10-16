@@ -10,9 +10,22 @@ Build a deterministic, mathematically verified economic layer for distributed sy
 
 **Core principle:** Correctness is not assumed — it is measured, fuzzed, and documented. Every state transition must satisfy the SIRM invariant suite (I1–I4) or be explicitly rejected.
 
+## 2. Strategic priority: mathematics and evidence first
+
+The roadmap presents the research in evidence order before moving to implementation and deployment:
+
+1. **Formal mathematical anchor:** the specific fourth-moment trace-defect identity and its Lean 4 formalization, within the definitions and assumptions recorded in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem).
+2. **Higher-moment programme:** finite-level certificates and numerical cross-checks, with the all-level recurrence kept explicitly open until proved.
+3. **Independent spectral audit:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis), including spectral-decimation checks, boundary/corner corrections, and unresolved Gate A criteria.
+4. **SIRM engineering specification:** four runtime constraints, deterministic transition semantics, and implementation-specific tests, fuzzing, and audits.
+5. **Applications and deployment:** Rift-L1, Rift-Network, scheduler, memory-context, and exploratory application tracks, each assessed against its own evidence.
+
+This ordering is a research and documentation priority, not a claim that the spectral theorem proves SIRM invariants or that exploratory applications are validated production systems.
+
+
 ---
 
-## 2. The RFT Methodology
+## 3. The RFT Methodology
 
 RFT-SIRM operates as a **multi-stage research pipeline**. Each stage feeds into the next, but stages are independent enough to be evaluated, funded, and deployed separately.
 
@@ -33,7 +46,7 @@ RFT-SIRM operates as a **multi-stage research pipeline**. Each stage feeds into 
 
 ---
 
-## 3. Research Phases
+## 4. Research Phases
 
 ### Phase 0 — Mathematical Foundation (Complete)
 
