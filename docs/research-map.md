@@ -29,6 +29,16 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 | 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
 | 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Pre-experimental or exploratory; no speed-up or physical-device claim is implied |
 
+## Engineering and application tracks
+
+These tracks have their own repositories, validation methods, and limitations; they are not corollaries of the fourth-moment theorem.
+
+- **Solana / Agave:** [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler), and [ABIv2 memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts).
+- **seL4 kernel testing:** [CDT stress-verification report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials_sel4.md). Empirical stress testing is not a replacement for formal kernel verification.
+- **DeFi model review:** [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review); this is not an Aave endorsement.
+- **Other systems:** [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), and [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.). Exploratory architecture and model studies should not be presented as validated production or physical-device results without separate evidence.
+- **Formal contact:** see the [contact and research submission policy](../CONTACT.md) for attribution, institutional correspondence, and confidential-material handling.
+
 ## 2. Mathematical anchor: the fourth-moment identity
 
 For the definitions and assumptions documented by the primary theorem repository,
