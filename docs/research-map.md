@@ -37,7 +37,7 @@ These tracks have their own repositories, validation methods, and limitations; t
 - **seL4 kernel testing:** [CDT stress-verification report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/field_trials_sel4.md). Empirical stress testing is not a replacement for formal kernel verification.
 - **DeFi model review:** [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review); this is not an Aave endorsement.
 - **Other systems:** [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), and [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.). Exploratory architecture and model studies should not be presented as validated production or physical-device results without separate evidence.
-- **Formal contact:** see the [contact and research submission policy](../CONTACT.md) for attribution, institutional correspondence, and confidential-material handling.
+- **Formal contact:** see the [contact and research submission policy](support.md) for attribution, institutional correspondence, and confidential-material handling.
 
 ## 2. Mathematical anchor: the fourth-moment identity
 
