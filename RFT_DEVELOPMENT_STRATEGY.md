@@ -1,132 +1,150 @@
-<div align="center">
+# RFT-SIRM Research Strategy and Roadmap
 
-[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
-[![Type](https://img.shields.io/badge/TYPE-STRATEGY-4a148c?style=for-the-badge)](RFT_DEVELOPMENT_STRATEGY.md)
-[![Status](https://img.shields.io/badge/STATUS-EVOLVING-eab308?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
-[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
+**Priority order:** exact mathematics → evidence and open problems → systems methodology → implementations → exploratory applications.
 
-</div>
+[![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 
-<h1 align="center">RFT Development Strategy & Roadmap</h1>
+This roadmap describes research priorities and closure criteria, not completed achievements. “Evgeny's Theory of Everything” is the name of a broad research programme; it does not assert that a complete physical theory of the Universe has been established.
 
-UltraCore RFT is a multi-domain deterministic systems framework focused on invariant preservation, temporal topology, and anti-entropy execution architecture.
+## 1. Programme structure
 
-This document describes the strategy behind the RFT ecosystem and explains how parallel research tracks are unified through the Stable Invariant Rift Model (SIRM).
+The programme has three principal mathematical strands and a downstream engineering strand.
 
-## Core Philosophy
+**Defined mathematical objects and assumptions**
+→ **Evgeny's Theorem:** fourth-moment identity; Lean 4 formalization reported
+→ **Theory-of-Everything synthesis:** higher moments and recursive operators; all-level recurrence OPEN
+→ **Phi-Genesis:** signed-flux spectral decimation; Gate A OPEN
+→ **SIRM:** invariant-based state transitions
+→ **Implementations and experiments:** runtime, protocol, scheduler, kernel stress tests
+→ **Exploratory applications:** quantum architecture and energy models
 
-Reality Fractal Theory treats mathematics, code, physics, economics, distributed systems, and biological processes as aspects of a single evolving temporal topology.
+This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does not prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage.
 
-Within this framework:
+## 2. Priority I — protect and independently audit the formal theorem
 
-- execution becomes topology coordination
-- invariants become structural anchors for stability
-- entropy becomes a measurable destabilization force
-- deterministic architecture emerges through controlled state transitions
+**Primary source:** [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md).
 
-> **Important:** Physical and mathematical terminology herein serves as a modeling language for computational processes. See [`SCIENTIFIC_BASIS.md`](SCIENTIFIC_BASIS.md) for the full methodological foundation.
+For the specific operator definitions and assumptions in the source repository, the fourth-moment trace defect is stated as
 
-## SIRM — Stable Invariant Rift Model
+\[
+\Delta_m(H^4,\theta)
+=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
+\]
 
-SIRM defines a deterministic invariant-preservation model designed to maintain coherence across:
+With the documented normalization,
 
-- runtime execution
-- memory regions
-- scheduler topology
-- economic state transitions
-- distributed validation systems
+\[
+I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
+\longrightarrow-\frac{16}{9}\sin^2(\theta/2),
+\qquad I_m(\pi/2)\longrightarrow-\frac89.
+\]
 
-The primary objective is long-term structural stability under extreme concurrency.
+### Closure and maintenance tasks
 
-## Parallel Development Tracks
+- Keep the theorem statement, Lean declaration, definitions, assumptions, toolchain, and reproducibility commands synchronized.
+- Check that the proof covers the exact quantifiers and concrete formalized operators claimed in public summaries.
+- Invite independent review of the formal definitions and their correspondence to the intended mathematical construction.
+- Publish a precise literature comparison and replication status; do not imply peer review until it occurs.
+- Keep numerical residuals and finite-level tests separate from the universal formal statement.
 
-```mermaid
-flowchart TB
-    subgraph CORE["RFT-Core Framework"]
-        INV["Invariant Theory"]
-        TOPO["Temporal Topology"]
-        NEG["Anti-Entropy Dynamics"]
-        COH["Structural Coherence"]
-        MOD["Deterministic State-Space Modeling"]
-    end
-    subgraph PHYS["Temporal Physics & Field Engine"]
-        ENG["Energy Field Modeling"]
-        REAC["Reactor Concepts"]
-        INFO["Informational Field Structures"]
-        SIM["Anti-Entropy Simulation"]
-        STAB["Field Stabilization Mechanics"]
-    end
-    subgraph BIO["BioRift / Living Systems"]
-        MET["Metabolic Invariants"]
-        REG["Regeneration Dynamics"]
-        IMM["Immunity Stability"]
-        AGE["Aging Topology"]
-        TFRAC["Temporal-Fractal Structures"]
-    end
-    subgraph SOL["Solana Integration — UltraCore Rift"]
-        ECON["Core Economic Layer"]
-        SCHED["Scheduler & Memory Contexts"]
-        ABI["ABIv2 Execution Concepts"]
-        ROLL["Rollback Protection"]
-        DET["Deterministic Execution Pathways"]
-    end
-    subgraph MILL["Millennium Problems Research"]
-        PNP["P vs NP"]
-        RIEM["Riemann Hypothesis"]
-        NAV["Navier-Stokes"]
-        YM["Yang-Mills"]
-        HOD["Hodge Conjecture"]
-        BSD["Birch–Swinnerton-Dyer"]
-    end
-    CORE --> SOL
-    PHYS --> SOL
-    MILL --> SOL
-    BIO --> PHYS
-```
+The theorem is a fourth-moment result for specified operators, not a proof of every claim in the wider programme.
 
-| Track | Description | Status |
-|-------|-------------|--------|
-| **RFT-Core Framework** | Mathematical and conceptual foundation layer | ✅ Stable |
-| **Temporal Physics & Field Engine** | Anti-entropy field behavior and runtime physics | 🔬 Active |
-| **BioRift / Living Systems** | RFT principles applied to biological models | 📅 Planned |
-| **Solana Integration** | Applied implementation for blockchain runtimes | 🔄 RC v1.0 |
-| **Millennium Problems Research** | Structured exploration as runtime stability operators | 🔬 Active |
+## 3. Priority II — resolve the higher-moment recurrence
 
-## Development Plan
+**Primary source:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
 
-### Current Phase
+The synthesis repository records numerical holdouts and modular/CRT certificates for selected finite-level Fourier coefficients associated with moments \(p\in\{6,8,10\}\). The graph/operator construction, denominator control, norm bounds, coefficient bounds, and finite transitions define the certificate's scope.
 
-- expand RFT-Core architecture
-- validate runtime stabilization concepts
-- improve Solana execution models
-- unify documentation and visualization
-- conduct deterministic validation experiments
+### Open obligations
 
-### Next Phase
+1. Derive the exceptional first-transition correction from the recursive graph/operator construction.
+2. Prove or refute the candidate all-level recurrence \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for every \(m\ge3\) and every stated admissible angle.
+3. Test edge cases and alternative graph levels before fixing the theorem statement.
+4. Preserve numerical holdouts and certificate inputs as versioned reproducibility artifacts.
+5. After a complete written derivation, formalize key lemmas and the theorem in Lean where feasible.
 
-- integrate the ecosystem across domains
-- extend physics simulation models
-- develop BioRift experiments
-- advance scheduler research
-- build runtime invariant verification systems
-- connect parallel research tracks
+**Current status: open.** The fourth-moment Lean proof does not close this task. Finite certificates and small numerical residuals are evidence for specified cases, not an infinite-level proof.
 
-## Collaboration
+Closure requires a derivation with explicit indexing and boundary conditions, proof over all required levels and angles, independent counterexample checks, a clean reproducible build, and a public statement that matches the formalization.
 
-The project is open to collaboration in areas such as:
+## 4. Priority III — close or delimit Phi-Genesis Gate A
 
-- Solana runtime architecture
-- scheduler design
-- deterministic execution
-- topology-based computation
-- anti-entropy systems
-- complex systems research
-- biological modeling
+**Primary source:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [commit documenting rigorous decimation verification](https://github.com/RFT-SIRM/Phi-Genesis/commit/c8611cc532b17c1944e2701c10780de99cae4548).
 
-For implementation details, see:
+Phi-Genesis studies signed \(Z_2\)-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns. This is a distinct operator family from the SU(2)-connected theorem.
 
-https://github.com/RFT-SIRM/Rift-Network
+### Closure criteria
+
+- Characterize the complete exceptional set, including recursively generated cases if that mechanism survives further testing.
+- Explain residual mismatches and report matching rates by level and method.
+- Retain one-to-one matching constraints and explicit numerical tolerances.
+- Test proposed criteria prospectively on levels not used to derive them.
+- Keep rejected mass-index fits and look-elsewhere-effect analyses visible.
+- Do not describe a selected mass-index pattern as a predictive physical law without a selection mechanism, prospective predictions, held-out validation, and independent derivation.
+
+**Current status: Gate A remains open.** If a complete characterization cannot be proved, publish the exact domain where the criterion works and where it fails rather than claiming general closure.
+
+## 5. Priority IV — maintain SIRM engineering evidence
+
+SIRM defines runtime invariants for state transitions. Its stated constraints are
+
+\[
+\begin{aligned}
+I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
+I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
+I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+\end{aligned}
+\]
+
+Here \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), subject to the implementation's integer and scaling conventions.
+
+The global-scalar representation can make the distribution update \(O(1)\); that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
+
+| Workstream | Evidence discipline |
+|---|---|
+| [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Runtime tests, fuzz configuration, invariant assertions, versioned outputs |
+| [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) | Devnet evidence, audit findings, test coverage, explicit network status |
+| [Agave memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Distinguish proof-of-concept findings from upstream architecture and current releases |
+| [Agave scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) | Reproducible benchmark scenarios, source revision, workload assumptions, upstream discussion |
+| [seL4 CDT stress test](SEL4_CDT_FUZZING.md) | Complementary stress testing, not a replacement for seL4's formal proof |
+| [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | Model review, not protocol-wide formal verification |
+
+Every public metric should point to a report or dated workflow. Passing tests demonstrate the assertions executed, not every possible execution.
+
+## 6. Priority V — applications remain explicitly exploratory
+
+- **[RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski):** pre-experimental architecture. Do not claim hardware advantage, circuit efficiency, or quantum speed-up without resource estimates and experiments.
+- **[RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.):** exploratory computational scenarios. Model outputs are not independent experimental validation of a battery technology.
+- Other physical, biological, and temporal-topology directions remain hypotheses or planned research unless a specific model, experiment, and evidence record is linked.
+
+## 7. Evidence labels and promotion rules
+
+| Label | Promotion criterion |
+|---|---|
+| **Machine-checked** | Exact formal statement builds with a pinned toolchain; assumptions and definitions are linked |
+| **Analytically proved** | Complete written proof with quantifiers, assumptions, boundary conditions, and exceptional cases |
+| **Certified finite-level** | Certificate and bounds establish the stated finite cases only |
+| **Numerically reproduced** | Inputs, parameters, code revision, tolerance, outputs, and limitations are recorded |
+| **Engineering-tested** | Tests, fuzzing, audits, or deployments support a specified implementation claim |
+| **Hypothesis / open** | A clear proposed claim with a falsifiable closure plan |
+| **Rejected / not established** | Counterexample or evidence record explains why the stronger claim is unsupported |
+
+A claim moves to a stronger category only when its evidence changes. A new badge, successful workflow, or rewritten pitch cannot upgrade the underlying result.
+
+## 8. Historical and release discipline
+
+The history is part of the evidence. Preserve failed workflows, corrections, rejected hypotheses, and earlier status reports. Later results should add context rather than rewrite what was known at the time.
+
+- [Commit-backed historical chronology](docs/history.md)
+- [Research map](docs/research-map.md)
+- [AI reading guide](AI_GUIDE.md)
+- [Scientific basis](SCIENTIFIC_BASIS.md)
+- [Main RFT-SIRM portal](https://rft-sirm.github.io/) — remains the organization-wide entry point
+
+Before a release, verify formulas against primary sources; run the documented tests; build MkDocs strictly; check internal and external links; confirm the interactive page output; verify status labels; and report any remaining failure explicitly.
 
 ---
 
-*Copyright 2026 Eugeny (RFT-SIRM). License: Apache 2.0.*
+_Copyright 2026 Eugeny (RFT-SIRM). License: Apache-2.0 for original repository content, subject to LICENSE and NOTICE._
