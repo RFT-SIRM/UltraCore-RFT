@@ -174,6 +174,7 @@ A workflow passing means only that its assertions passed. Independent review, pe
 - [AI_GUIDE.md](AI_GUIDE.md) — required guardrails for AI summaries.
 - [Scientific basis](SCIENTIFIC_BASIS.md) — mathematical results versus modelling vocabulary.
 - [Research map](docs/research-map.md) — evidence hierarchy and open problems.
+- [Historical development](docs/history.md) — selected commit-backed milestones.
 - [Architecture](docs/architecture.md) and [platform strategy](docs/platform.md) — systems design.
 - [Verification evidence](docs/field_trials.md) — engineering results and limitations.
 - [Main RFT-SIRM portal](https://rft-sirm.github.io/) — preserved organization-wide interactive entry point.
