@@ -24,7 +24,7 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 | 2. Recursive extension | [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts for higher moments; all-level recurrence remains open |
 | 3. Separate spectral model | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Signed-flux Laplacians, decimation audit, boundary/corner corrections; Gate A remains open |
 | 4. Systems methodology | [SIRM foundations](foundations.md) | Runtime state invariants and deterministic transition model; not proved by the spectral theorem |
-| 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](../SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
+| 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
 | 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Pre-experimental or exploratory; no speed-up or physical-device claim is implied |
 
 ## 2. Mathematical anchor: the fourth-moment identity
