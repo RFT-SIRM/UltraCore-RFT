@@ -8,7 +8,7 @@ This map is deliberately hierarchical. The title *Evgeny's Theory of Everything*
 
 ## 1. The programme at a glance
 
-\[
+$
 \boxed{\text{Definitions and theorem}}
 \longrightarrow
 \boxed{\text{Reproducible evidence}}
@@ -16,7 +16,7 @@ This map is deliberately hierarchical. The title *Evgeny's Theory of Everything*
 \boxed{\text{Open extensions}}
 \longrightarrow
 \boxed{\text{Engineering applications}}
-\]
+$
 
 The arrows describe an evidence-first reading order, not a theorem asserting that every downstream application follows from the mathematical result.
 
@@ -33,21 +33,21 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 
 For the definitions and assumptions documented by the primary theorem repository,
 
-\[
+$
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\geq1.
-\]
+$
 
 With the source's normalization,
 
-\[
+$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-\]
+$
 
 At \(\theta=\pi/2\), the limiting value is \(-8/9\).
 
@@ -86,14 +86,14 @@ Keep failed checks and rejected claims in the historical record. They are eviden
 
 SIRM specifies runtime constraints for deterministic state transitions:
 
-\[
+$
 \begin{aligned}
 I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
 I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
 I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
-\]
+$
 
 Where \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), under the model's integer and scaling conventions.
 
