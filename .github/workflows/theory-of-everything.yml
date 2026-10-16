@@ -1,0 +1,67 @@
+name: Theory of Everything — upstream verification
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/theory-of-everything.yml"
+      - "README.md"
+      - "docs/research-map.md"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: theory-of-everything-upstream-verification
+  cancel-in-progress: true
+
+jobs:
+  verify-upstream:
+    name: Verify current Theory of Everything main
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out UltraCore-RFT
+        uses: actions/checkout@v4
+
+      - name: Check out Theory of Everything source
+        uses: actions/checkout@v4
+        with:
+          repository: RFT-SIRM/Evgeny-s-Theory-of-Everything
+          ref: main
+          path: theory-source
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Record exact upstream revision
+        working-directory: theory-source
+        run: |
+          echo "Verified upstream revision:"
+          git rev-parse HEAD
+
+      - name: Validate dissertation and source documentation
+        working-directory: theory-source
+        run: |
+          test -s README.md
+          test -s DISSERTATION.md
+          test -s computational/HIGHER_MOMENT_RECURRENCE_NOTE.md
+          python scripts/check_docs.py
+
+      - name: Run recurrence arithmetic audit
+        working-directory: theory-source
+        run: python computational/audit_recurrence.py
+
+      - name: Run regression tests for the recurrence audit
+        working-directory: theory-source
+        run: python -m unittest discover -s tests -p 'test_reference_recurrence_audit.py' -v
+
+      - name: Publish evidence boundary
+        run: |
+          echo "The workflow validates only the checks listed above."
+          echo "Passing finite-level tests does not prove the all-level higher-moment recurrence."
