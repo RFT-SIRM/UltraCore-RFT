@@ -20,6 +20,12 @@
 
 These are **separate repositories and separate evidence scopes**. Rift-L1 and Rift Network publish source-available code under their own restrictive terms; the Apache-2.0 badge above applies only to original material in this UltraCore-RFT repository. Scheduler CI/fuzz and Lean 4 test badges link to their source workflows; a badge reflects that workflow, not a universal proof of the wider programme.
 
+## Historical origin sequence
+
+The project family's historical order is distinct from the evidence-first reading order used to assess claims. The maintainer-reported sequence is **Rift Network → Rift-L1 Blockchain → UltraCore-RFT and supporting systems (scheduler, memory, and related engineering) → Phi-Genesis → Evgeny-Theorem → Evgeny's Theory of Everything**. See the [origin chronology](docs/origin-chronology.md) for scope, source links, and the distinction between reported order and commit-verified dates.
+
+This order records development history; it does not claim that every later project depends technically on every earlier one.
+
 **Start with the research, not the applications:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [Lean-formalized fourth-moment theorem](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Phi-Genesis spectral audit](https://github.com/RFT-SIRM/Phi-Genesis) · [Research map](docs/research-map.md) · [AI reading guide](AI_GUIDE.md)
 
 UltraCore-RFT is the documentation and coordination hub for the RFT-SIRM ecosystem. Its scientific story begins with mathematical definitions, theorem statements, and their evidence boundaries. Runtime systems, blockchain protocols, and other applications are downstream research programmes—not the foundation used to certify the mathematics.
