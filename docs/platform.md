@@ -30,7 +30,7 @@ While the Rift-L1 Blockchain and Rift Network are concrete implementations, the 
 
 ### Not a Completed Physical Theory of Everything
 
-The title of the [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) repository names a broad research programme; it does not claim that a complete physical theory of the Universe has been proved. The fourth-moment theorem in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) is a literal mathematical statement about defined operators and is reported as formalized in Lean 4. The all-level higher-moment recurrence remains open, and Phi-Genesis studies a separate signed-flux operator family. Physical vocabulary used elsewhere in RFT documents remains modelling language unless supported by a separate physical theory and evidence. See [Scientific Basis](../SCIENTIFIC_BASIS.md) and the [AI Guide](../AI_GUIDE.md).
+The title of the [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) repository names a broad research programme; it does not claim that a complete physical theory of the Universe has been proved. The fourth-moment theorem in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) is a literal mathematical statement about defined operators and is reported as formalized in Lean 4. The all-level higher-moment recurrence remains open, and Phi-Genesis studies a separate signed-flux operator family. Physical vocabulary used elsewhere in RFT documents remains modelling language unless supported by a separate physical theory and evidence. See [Scientific Basis](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SCIENTIFIC_BASIS.md) and the [AI Guide](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/AI_GUIDE.md).
 
 * * *
 
