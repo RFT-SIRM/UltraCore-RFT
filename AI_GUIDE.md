@@ -111,10 +111,7 @@ A green CI badge does not imply that every claim in a repository is proved. A te
 Before copying or rewriting a formula:
 
 1. Open the primary theorem/specification and check symbol definitions, domains, quantifiers, index origin, and boundary conditions.
-2. Check equivalent forms algebraically. For example, with $F=3^m$,
-   $
-   -16(3^{m-1}+1)=-\frac{16}{3}(3^m+3).
-   $
+2. Check equivalent forms algebraically. For example, with $F=3^m$, the identity is $-16(3^{m-1}+1)=-\frac{16}{3}(3^m+3)$.
 3. Check the normalization independently: $3^{m+1}+3=3(3^m+1)$, so the stated ratio tends to $-16/9\sin^2(\theta/2)$.
 4. Substitute a small level and angle as a sanity check; for $m=1,\theta=\pi/2$, the raw defect is $-16$, and division by dimension $12$ gives $-4/3$.
 5. Distinguish exact algebra, floating-point tolerance, finite-grid tests, and proof-assistant theorems.
