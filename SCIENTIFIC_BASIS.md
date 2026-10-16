@@ -20,20 +20,20 @@ These layers are connected through research motivation, not by automatic implica
 
 For the operator definitions and assumptions in [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the fourth-moment trace defect is stated as
 
-$
+$$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16\left(3^{m-1}+1\right)\sin^2\left(\frac{\theta}{2}\right),
 \quad m\ge1.
-$
+$$
 With the source's normalization,
 
-$
+$$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 \qquad
 \lim_{m\to\infty}I_m(\theta)
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
-$
+$$
 At $\theta=\pi/2$, the limit is $-8/9$. The dimension $3^{m+1}+3$ is the stated dimension of the operator Hilbert space, twice the vertex count $n(m)=(3^{m+1}+3)/2$.
 
 **Formal status:** the primary repository reports a Lean 4 formalization for every $m\ge1$ and all angles in the formal statement, for the concrete operators encoded in the project. This establishes the formal proposition in the specified environment. Independent review of the formalization-to-mathematics correspondence, peer review, and external replication are separate questions.
@@ -67,14 +67,14 @@ Rejected claims and failed experiments are part of the scientific record and sho
 
 SIRM (Stable Invariant Rift Model) uses four stated runtime constraints:
 
-$
+$$
 \begin{aligned}
 I_1:\;&\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
 I_2:\;&\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
 I_3:\;&\mathtt{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\mathtt{effective\_balance}[i]\ge-\frac{\mathtt{total\_supply}}{10p}.
 \end{aligned}
-$
+$$
 Where $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the implementation's integer and scaling conventions.
 
 An $O(1)$ distribution model can update a shared scalar and derive effective balances on read. That observation concerns this representation; it does not assert every operation is $O(1)$, nor does it prove the correctness of every implementation. Runtime tests, fuzzing, audits, and deployment checks are engineering evidence bounded by the code and assertions examined.
