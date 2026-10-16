@@ -76,7 +76,7 @@ Preserve negative results, failed checks, and open questions. They are part of t
 
 ## 6. SIRM engineering invariants are a different strand
 
-The stated SIRM model uses four constraints. To keep the equations readable across GitHub's Markdown renderers, the equations use short mathematical symbols; the table immediately below maps each symbol to the implementation variable.
+The stated SIRM model uses four constraints. The equations use short mathematical symbols; the table maps each symbol to the implementation variable.
 
 $$
 \begin{aligned}

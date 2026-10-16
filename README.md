@@ -145,16 +145,33 @@ Start with [the repository status and methods](https://github.com/RFT-SIRM/Phi-G
 
 SIRM (Stable Invariant Rift Model) is the systems-engineering strand: define state invariants and require every state transition to preserve them or fail atomically.
 
-The four stated runtime constraints are:
+The four stated runtime constraints are shown below using compact mathematical symbols. The mapping table identifies the implementation variables.
 
 $$
 \begin{aligned}
-I_1:\quad &\mathtt{total\_supply}=\mathtt{total\_base\_sum}+\mathtt{global\_field}\cdot p,\\
-I_2:\quad &\mathtt{total\_supply}=\mathtt{total\_minted}-\mathtt{total\_burned},\\
-I_3:\quad &\mathtt{dust\_accumulator}<p\quad (p>0),\\
-I_4:\quad &\mathtt{effective\_balance}[i]\geq-\frac{\mathtt{total\_supply}}{10p}.
+I_1:\quad & S = B + Gp,\\
+I_2:\quad & S = M - D,\\
+I_3:\quad & d < p \quad (p>0),\\
+I_4:\quad & E_i \ge -\frac{S}{10p}.
 \end{aligned}
 $$
+
+The effective-balance relation is
+
+$$
+E_i = b_i + G.
+$$
+
+| Symbol | Implementation variable |
+|---|---|
+| $S$ | `total_supply` |
+| $B$ | `total_base_sum` |
+| $G$ | `global_field` |
+| $M$ | `total_minted` |
+| $D$ | `total_burned` |
+| $d$ | `dust_accumulator` |
+| $E_i$ | `effective_balance[i]` |
+| $b_i$ | `base_balance[i]` |
 
 Here $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_field}$, under the model's stated integer and scaling conventions. The $O(1)$ distribution claim follows from changing a shared scalar and computing each effective balance on read; it does not mean every runtime operation is $O(1)$, nor does it itself establish security of every implementation.
 
