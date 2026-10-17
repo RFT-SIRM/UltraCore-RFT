@@ -1,22 +1,47 @@
 # UltraCore-RFT — Mathematical Foundations, Evidence, and Systems
 
-**A research programme spanning exact spectral identities, recursive operators, invariant-based computation, and deterministic systems engineering.**
+**The RFT-SIRM research and engineering hub:** exact mathematical results first, related research programmes second, applications and implementations third.
 
 > **Featured dissertation — [Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)**
 >
-> Start here for the research synthesis: the fourth-moment theorem, finite-level higher-moment certificates, numerical cross-checks, and clearly stated open problems. The dissertation is a research monograph, not a claim that a complete physical Theory of Everything has been established.
+> Start with the research synthesis: the fourth-moment theorem, finite-level higher-moment certificates, numerical cross-checks, and explicitly stated open problems. This is a research monograph—not a claim that a complete physical Theory of Everything has been established.
 >
-> [![Read the dissertation](https://img.shields.io/badge/READ%20THE%20DISSERTATION-Research%20synthesis-16a765?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)
+> [![Read the dissertation](https://img.shields.io/badge/READ%20THE%20DISSERTATION-Research%20synthesis-16a765?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)
 
-[![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalized-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis) [![Interactive portal](https://img.shields.io/badge/Interactive-Research%20portal-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
+## Research and evidence
 
-[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20model-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
+These links describe the scientific work and its current evidence status. Badge colours have a consistent meaning: **purple = research programme**, **teal = formalized result**, **amber = open or evidence-limited work**, and **blue = navigation or portal**.
 
-[![Theory of Everything upstream verification](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml) [![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml) [![Pages deployment](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml) [![Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+[![Theory of Everything research programme](https://img.shields.io/badge/Research-Theory%20of%20Everything-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything)
+[![Fourth-moment theorem](https://img.shields.io/badge/Formal%20result-Fourth--moment%20theorem-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization)
+[![Phi-Genesis](https://img.shields.io/badge/Open%20research-Phi--Genesis%20Gate%20A-d97706?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
+[![Interactive portal](https://img.shields.io/badge/Portal-Research%20explorer-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
 
-**Core engineering and formal-verification strands**
+## Related application programmes
 
-[![Rift-L1 Blockchain](https://img.shields.io/badge/Rift--L1-Blockchain-2563eb?style=flat-square)](https://github.com/RFT-SIRM/Rift-L1-Blockchain) [![Rift Network](https://img.shields.io/badge/Rift-Network-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/Rift-Network) [![Agave Rift Scheduler CI](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml/badge.svg)](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml) [![Agave Rift Scheduler Fuzz](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml/badge.svg)](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml) [![Lean 4 formalization tests](https://img.shields.io/github/actions/workflow/status/RFT-SIRM/Evgeny-Theorem/tests.yml?branch=main&label=Lean%204%20tests&style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/workflows/tests.yml)
+These are separate exploratory or application tracks—not additional proofs of the mathematical claims above. They use one badge size and a restrained colour system so they read as one group.
+
+[![RFT-QPU-Sierpinski](https://img.shields.io/badge/Architecture-RFT--QPU--Sierpinski-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
+[![RFT-Invariant-Battery](https://img.shields.io/badge/Exploratory%20model-RFT--Invariant--Battery-0f766e?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
+[![RFT-Cosmology-Genesis](https://img.shields.io/badge/Phenomenological%20model-RFT--Cosmology--Genesis-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
+[![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
+
+## Verification and repository status
+
+These badges report the status of specific workflows only. They do not certify the entire research programme or transfer proof status between repositories.
+
+[![Theory of Everything upstream verification](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml/badge.svg?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/theory-of-everything.yml)
+[![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
+[![Pages deployment](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml/badge.svg?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/pages.yml)
+[![Apache-2.0 license](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=flat-square)](LICENSE)
+
+## Core engineering and formal-verification strands
+
+[![Rift-L1 Blockchain](https://img.shields.io/badge/Engineering-Rift--L1%20Blockchain-2563eb?style=flat-square)](https://github.com/RFT-SIRM/Rift-L1-Blockchain)
+[![Rift Network](https://img.shields.io/badge/Engineering-Rift%20Network-2563eb?style=flat-square)](https://github.com/RFT-SIRM/Rift-Network)
+[![Agave Rift Scheduler CI](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml/badge.svg?style=flat-square)](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/ci.yml)
+[![Agave Rift Scheduler Fuzz](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml/badge.svg?style=flat-square)](https://github.com/RFT-SIRM/agave-rift-scheduler/actions/workflows/fuzz-daily.yml)
+[![Lean 4 formalization tests](https://img.shields.io/github/actions/workflow/status/RFT-SIRM/Evgeny-Theorem/tests.yml?branch=main&label=Lean%204%20tests&style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/actions/workflows/tests.yml)
 
 These are **separate repositories and separate evidence scopes**. Rift-L1 and Rift Network publish source-available code under their own restrictive terms; the Apache-2.0 badge above applies only to original material in this UltraCore-RFT repository. Scheduler CI/fuzz and Lean 4 test badges link to their source workflows; a badge reflects that workflow, not a universal proof of the wider programme.
 
@@ -43,7 +68,7 @@ This programme has developed across separate repositories. The following are **d
 | Solana / Agave engineering | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) · [Agave Rift Scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) · [ABIv2 memory contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | On-chain protocol, scheduler and memory-context research; claims are scoped to their code, tests and documented environments. |
 | seL4 kernel stress research | [seL4 CDT report](SEL4_CDT_FUZZING.md) · [field-trial report](docs/field_trials_sel4.md) | Reproducible empirical stress-testing report. It does not replace or extend the seL4 project's formal verification claims. |
 | DeFi model review | [Aave V4 Hub model review](https://github.com/RFT-SIRM/aave-v4-hub-model-review) | Separate model-based review and invariant-analysis work; not an Aave endorsement. |
-| Standalone L1 and exploratory applications | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain) · [QPU/Sierpiński](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · [Invariant Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Distinct implementation or exploratory tracks; no implied production, quantum speed-up or physical-device result beyond the linked evidence. |
+| Standalone L1 and exploratory applications | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain) · [QPU/Sierpiński](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · [Invariant Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Distinct implementation or exploratory tracks; no implied production, quantum speed-up or physical-device result beyond the linked evidence. |
 | Research chronology | [Commit-backed history](docs/history.md) · [Research map](docs/research-map.md) | Selected milestones with direct links; use each repository's commit log for the complete record. |
 
 ### External organizations and attribution
@@ -199,7 +224,7 @@ The project hierarchy is intentional: theorem and evidence first, related resear
 | **Higher-moment research** | [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts; all-level recurrence open |
 | **Signed-flux spectral research** | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Spectral decimation and mass-formula audit; Gate A open |
 | **Quantum-processing architecture** | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental architecture; no quantum advantage or speed-up established |
-| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) | Exploratory computational scenarios with explicit assumptions |
+| **Energy-system model** | [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Exploratory computational scenarios with explicit assumptions |
 | **Standalone execution runtime** | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) | Implementation-specific runtime, invariant checks, and fuzzing reports |
 | **On-chain protocol** | [Rift-Network](https://github.com/RFT-SIRM/Rift-Network) · [Devnet client](https://rift-network.vercel.app) | Solana Devnet research deployment; not a claim of mainnet readiness |
 | **SVM memory-context research** | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts) | Proof-of-concept investigation; findings are specific to its studied code path |
