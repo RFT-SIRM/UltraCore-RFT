@@ -6,7 +6,7 @@
 >
 > Start with the research synthesis: the fourth-moment theorem, finite-level higher-moment certificates, numerical cross-checks, and explicitly stated open problems. This is a research monograph—not a claim that a complete physical Theory of Everything has been established.
 >
-> [![Read the dissertation](https://img.shields.io/badge/READ%20THE%20DISSERTATION-Research%20synthesis-16a765?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)
+> [![Read the dissertation](https://img.shields.io/badge/READ%20THE%20DISSERTATION-Research%20synthesis-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)
 
 ## Research and evidence
 
@@ -22,8 +22,8 @@ These links describe the scientific work and its current evidence status. Badge 
 These are separate exploratory or application tracks—not additional proofs of the mathematical claims above. They use one badge size and a restrained colour system so they read as one group.
 
 [![RFT-QPU-Sierpinski](https://img.shields.io/badge/Architecture-RFT--QPU--Sierpinski-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
-[![RFT-Invariant-Battery](https://img.shields.io/badge/Exploratory%20model-RFT--Invariant--Battery-0f766e?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
-[![RFT-Cosmology-Genesis](https://img.shields.io/badge/Phenomenological%20model-RFT--Cosmology--Genesis-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
+[![RFT-Invariant-Battery](https://img.shields.io/badge/Exploratory%20model-RFT--Invariant--Battery-d97706?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
+[![RFT-Cosmology-Genesis](https://img.shields.io/badge/Phenomenological%20model-RFT--Cosmology--Genesis-d97706?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
 [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
 
 ## Verification and repository status
