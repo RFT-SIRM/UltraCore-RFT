@@ -1,6 +1,6 @@
 # UltraCore-RFT — Mathematical Foundations, Evidence, and Systems
 
-**The RFT-SIRM research and engineering hub:** exact mathematical results first, related research programmes second, applications and implementations third. **RFT** means **Resonant Field Theory** (резонансная теория поля); **SIRM** means **Synthetic Intelligence Reasoning Model** (Синтетическая искусственная модель рассуждений).
+**The RFT-SIRM research and engineering hub:** exact mathematical results first, related research programmes second, applications and implementations third. **RFT** means **Resonant Field Theory** (резонансная теория поля); **SIRM** means **Synthetic Intelligence Reasoning Model** (Синтетическая интеллектуальная модель рассуждений).
 
 > **Featured dissertation — [Recursive Graph Operators, Spectral Trace Defects, and Higher-Moment Recurrence](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md)**
 >
