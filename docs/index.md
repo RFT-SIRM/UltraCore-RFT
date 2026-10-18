@@ -25,20 +25,25 @@ Use [Research Map](research-map.md) for the research hierarchy, formula, claim-s
 
 ## The mathematical anchor
 
-For the specific operator definitions and assumptions in [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem),
+For the specific operator definitions and assumptions in [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), the fourth-moment trace defect is
 
 $$
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
-=-16(3^{m-1}+1)\sin^2(\theta/2),\quad m\ge1.
+= \operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+= -16\bigl(3^{m-1}+1\bigr)\sin^2\!\left(\frac{\theta}{2}\right),
+\qquad m\ge 1.
 $$
+
 With the documented normalization,
 
 $$
-I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
-\longrightarrow -\frac{16}{9}\sin^2(\theta/2).
+I_m(\theta)
+= \frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
+\longrightarrow
+-\frac{16}{9}\sin^2\!\left(\frac{\theta}{2}\right).
 $$
-At $\theta=\pi/2$, the limiting value is $-8/9$. The primary repository reports a Lean 4 proof for the concrete formalized operators and its stated quantifiers. This does not prove higher moments, physical laws, quantum advantage, or runtime invariants.
+
+At \(\theta=\pi/2\), the limiting value is \(-8/9\). The primary repository reports a Lean 4 proof for the concrete formalized operators and its stated quantifiers. This does not prove higher moments, physical laws, quantum advantage, or runtime invariants.
 
 ## Research strands
 
