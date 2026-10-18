@@ -22,7 +22,7 @@ For the specific operator definitions and assumptions in the source repository, 
 
 $$
 \Delta_m(H^4,\theta)
-= \operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+= \mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 = -16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\ge 1.
 $$
@@ -116,7 +116,7 @@ RFT-SIRM operates as a **multi-stage research pipeline**. Each stage feeds into 
 
 ### Phase 0 — Mathematical Foundation (Complete)
 
-**Goal:** Define the Synthetic Intelligence Reasoning Model (Синтетическая интеллектуальная модель рассуждений) and prove its correctness properties.
+**Goal:** Specify the Synthetic Intelligence Reasoning Model and establish its implementation-level correctness properties.
 
 | Deliverable | Status |
 |:------------|:-------|
