@@ -24,11 +24,12 @@ The programme has three principal mathematical strands and a downstream engineer
 → **Evgeny's Theorem:** fourth-moment identity; Lean 4 formalization reported
 → **Theory-of-Everything synthesis:** higher moments and recursive operators; all-level recurrence OPEN
 → **Phi-Genesis:** signed-flux spectral decimation; Gate A OPEN
+→ **RFT-Cosmology-Genesis:** exact invariant limit/remainder plus a phenomenological cosmology model; physical interpretation OPEN
 → **SIRM:** invariant-based state transitions
 → **Implementations and experiments:** runtime, protocol, scheduler, kernel stress tests
 → **Exploratory applications:** quantum architecture, energy-system model, and phenomenological cosmology
 
-This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does not prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage.
+This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does not prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage. The exact invariant limit/remainder in RFT-Cosmology-Genesis is a separate algebraic result; its phenomenological cosmology model is not observationally validated.
 
 ## 2. Priority I — protect and independently audit the formal theorem
 
@@ -97,7 +98,7 @@ Phi-Genesis studies signed $Z_2$-flux Laplacians, spectral decimation, boundary/
 
 ## 5. Priority IV — maintain SIRM engineering evidence
 
-SIRM (Synthetic Intelligence Reasoning Model; СИРМ — «Синтетическая интеллектуальная модель рассуждений») defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
+SIRM (Synthetic Intelligence Reasoning Model) defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
 
 - \(S\): total supply
 - \(B\): total base sum
