@@ -67,7 +67,7 @@ Rejected claims and failed experiments are part of the scientific record and sho
 
 ## 5. SIRM: mathematical model for software systems
 
-SIRM (Stable Invariant Rift Model) uses four stated runtime constraints, expressed in compact notation and mapped to implementation variables below.
+SIRM (Synthetic Intelligence Reasoning Model) uses four stated runtime constraints, expressed in compact notation and mapped to implementation variables below.
 
 $$
 \begin{aligned}
