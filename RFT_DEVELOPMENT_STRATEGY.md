@@ -97,7 +97,7 @@ Phi-Genesis studies signed $Z_2$-flux Laplacians, spectral decimation, boundary/
 
 ## 5. Priority IV — maintain SIRM engineering evidence
 
-SIRM defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
+SIRM (Synthetic Intelligence Reasoning Model) defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
 
 - \(S\): total supply
 - \(B\): total base sum
