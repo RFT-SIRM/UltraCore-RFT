@@ -106,7 +106,7 @@ A high-quality scientific narrative includes failed hypotheses and unresolved re
 
 ## 4. SIRM: invariant-first systems engineering
 
-SIRM (Stable Invariant Rift Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The four stated constraints are written with short symbols to avoid renderer-specific failures; the table maps them to implementation variables.
+SIRM (Synthetic Intelligence Reasoning Model) specifies runtime state constraints and the expectation that every mutating transition preserve them or fail atomically. The four stated constraints are written with short symbols to avoid renderer-specific failures; the table maps them to implementation variables.
 
 $$
 \begin{aligned}
