@@ -34,12 +34,12 @@ The dashed links indicate research context only; they do not imply a proved math
 
 For the specific operator definitions and assumptions in that project, the stated identity is
 
-$
+$$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\geq1.
-$
+$$
 
 The source project reports a Lean 4 formalization. The scope of that formalization is the encoded proposition and its definitions. It does not, by itself, prove the higher-moment recurrence, the signed-flux decimation criterion, SIRM runtime invariants, or a physical interpretation.
 
@@ -61,18 +61,18 @@ Phi-Genesis investigates signed \(\mathbb{Z}_2\)-flux graph Laplacians on Sierpi
 
 For the normalized invariant defined in that repository,
 
-$
+$$
 I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}\sin^2\left(\frac{\theta}{2}\right),
-$
+$$
 
 the exact limit and finite-level remainder are
 
-$
+$$
 I_\infty(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
 \qquad
 I_m(\theta)-I_\infty(\theta)
 =-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
-$
+$$
 
 The repository records an algebraic derivation and Lean-checked results for the stated invariant. Its photon-sector coupling and background/CMB response are **phenomenological**. No physical origin for the coupling, detection of a new interaction, or agreement with a full observational CMB likelihood is established by this mathematical identity.
 
