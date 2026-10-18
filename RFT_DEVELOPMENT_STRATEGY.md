@@ -99,16 +99,23 @@ Phi-Genesis studies signed $Z_2$-flux Laplacians, spectral decimation, boundary/
 
 SIRM defines runtime invariants for state transitions. Its stated constraints are
 
-$$
-\begin{aligned}
-I_1:\;&\mathrm{total\_supply}=\mathrm{total\_base\_sum}+\mathrm{global\_field}\cdot p,\\
-I_2:\;&\mathrm{total\_supply}=\mathrm{total\_minted}-\mathrm{total\_burned},\\
-I_3:\;&\mathrm{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\mathrm{effective\_balance}[i]\ge-\frac{\mathrm{total\_supply}}{10p}.
-\end{aligned}
-$$
+$
+I_1: \mathrm{total\_supply}=\mathrm{total\_base\_sum}+\mathrm{global\_field}\,p
+$
 
-Here $\mathrm{effective\_balance}[i]=\mathrm{base\_balance}[i]+\mathrm{global\_field}$, subject to the implementation's integer and scaling conventions.
+$
+I_2: \mathrm{total\_supply}=\mathrm{total\_minted}-\mathrm{total\_burned}
+$
+
+$
+I_3: \mathrm{dust\_accumulator}<p,\qquad p>0
+$
+
+$
+I_4: \mathrm{effective\_balance}[i]\ge -\frac{\mathrm{total\_supply}}{10p}
+$
+
+Here the effective balance is defined by $b_{\\mathrm{eff}}[i]=b_{\\mathrm{base}}[i]+g$, subject to the implementation's integer and scaling conventions.
 
 The global-scalar representation can make the distribution update $O(1)$; that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
 
