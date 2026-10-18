@@ -6,7 +6,7 @@
 
 ## 1. Architecture Overview
 
-The RFT-SIRM ecosystem uses the **Synthetic Intelligence Reasoning Model (SIRM; Синтетическая интеллектуальная модель рассуждений)** for invariant-driven state transitions across three execution domains. RFT means **Resonant Field Theory** (резонансная теория поля); it names the theory and is distinct from the SIRM model.
+The RFT-SIRM ecosystem brings together **Resonant Field Theory (RFT)**, the **Synthetic Intelligence Reasoning Model (SIRM)**, formal mathematics, reproducible computation, and engineering applications. RFT names the theory; SIRM names the reasoning and invariant-based systems model. The projects below are related research tracks, not claims that every application follows mathematically from every theorem.
 
 ```mermaid
 flowchart TB
@@ -43,7 +43,78 @@ flowchart TB
 
 ---
 
-## 2. SIRM Core: The Mathematical Foundation
+## 2. Research programme: results, scope, and evidence
+
+UltraCore-RFT is the integration and navigation layer for the research programme. Primary repositories remain authoritative for their own definitions, code, proofs, test results, and status. The following tracks must be assessed independently.
+
+### 2.1 Evgeny's Theorem — fourth-moment trace-defect identity
+
+**Primary source:** [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [Theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/THEOREM.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Verification record](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/VERIFICATION.md).
+
+For the concrete operator definitions and assumptions in the source project, the fourth-moment trace defect is stated as
+
+$
+\Delta_m(H^4,\theta)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
+=-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
+\qquad m\geq1.
+$
+
+The source repository reports a Lean 4 formalization. This status applies to that specific proposition and its formal definitions; it does not prove the higher-moment recurrence, the Phi-Genesis decimation criterion, SIRM runtime invariants, or a cosmological interpretation.
+
+### 2.2 Evgeny's Theory of Everything — higher moments and synthesis
+
+**Primary source:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [Dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [Final status](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/FINAL_STATUS.md) · [Claims and evidence ledger](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/CLAIMS_AND_EVIDENCE.md).
+
+This synthesis track investigates recursive graph operators, Fourier coefficients, residuals, and candidate recurrence relations for moments \(H^6\), \(H^8\), and \(H^{10}\). Exact modular/CRT certificates cover specified finite-level coefficient claims, and independent sparse-matrix calculations provide finite numerical holdouts. The all-level recurrence remains **open**; finite certificates and numerical agreement must not be presented as an all-level proof.
+
+### 2.3 Phi-Genesis — signed-flux spectral research
+
+**Primary source:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [Research map](https://rft-sirm.github.io/Phi-Genesis/research-map.html) · [Verified results](https://rft-sirm.github.io/Phi-Genesis/verified-results.html) · [Reproducibility guide](https://rft-sirm.github.io/Phi-Genesis/reproducibility.html).
+
+Phi-Genesis studies signed \(\mathbb{Z}_2\)-flux Laplacians on Sierpiński-gasket graph approximations, spectral decimation, spectral gaps, boundary/corner corrections, inertia, and candidate integer mass-index patterns. The factor-5 decimation structure is reported with boundary/corner qualifications. **Gate A remains open:** the full exceptional set and residual mismatches are not completely characterized. The proposed index set \(\{1,12,17,40\}\) has not been established as a predictive selection law. This operator family is distinct from the SU(2)-connected operators in Evgeny's Theorem unless and until a precise bridge is proved.
+
+### 2.4 RFT-Cosmology-Genesis — exact invariant limit and phenomenological model
+
+**Primary source:** [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) · [Exact Invariant Remainder Theorem](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/EXACT_INVARIANT_REMAINDER_THEOREM.md) · [Model specification](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/MODEL_SPEC.md) · [Results](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/RESULTS.md) · [Limitations](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/LIMITATIONS.md).
+
+For the repository's defined normalized invariant,
+
+$
+I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}
+\sin^2\left(\frac{\theta}{2}\right),
+$
+
+the exact algebraic limit and finite-level remainder are
+
+$
+I_\infty(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
+\qquad
+I_m(\theta)-I_\infty(\theta)
+=-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+$
+
+The repository documents an algebraic derivation and Lean-checked results for the stated invariant, with Python tests for representative cases. Its cosmological coupling and CMB response are **phenomenological**. No physical interaction, observational detection, or agreement with a full CMB likelihood is established.
+
+### 2.5 SIRM engineering model and runtime invariants
+
+SIRM specifies deterministic state transitions through implementation-level invariants. These constraints are separate from the spectral trace theorem. Their validity and performance must be supported by the relevant source code, tests, fuzzing configuration, and reports; they must not be inferred from the mathematical theorem.
+
+### Cross-project evidence boundary
+
+| Track | What is supported | What remains open or is not implied |
+|---|---|---|
+| Evgeny's Theorem | A specified fourth-moment identity reported as Lean-formalized | Independent semantic review, literature novelty, and any broader theorem |
+| Theory-of-Everything synthesis | Finite coefficient certificates and numerical holdouts for stated cases | All-level higher-moment recurrence |
+| Phi-Genesis | Reproducible finite-level spectral observations with stated corrections | Complete Gate A closure and a predictive mass-index law |
+| RFT-Cosmology-Genesis | Exact algebraic limit/remainder for the defined invariant; reduced model calculations | Physical origin of the coupling and observational cosmology validation |
+| SIRM engineering | Runtime invariant specification and implementation-specific test evidence | Formal proof or production readiness unless supported by separate evidence |
+
+Do not transfer evidence status between tracks. A result in one repository does not automatically prove a claim in another.
+
+---
+
+## 3. SIRM Core: The Mathematical Foundation
 
 All RFT-SIRM systems are instances of a single deterministic state machine:
 
@@ -62,7 +133,7 @@ where effective_balance[i] = base_balance[i] + global_field
 
 ---
 
-## 3. Component Breakdown
+## 4. Component Breakdown
 
 ### 3.1 Rift L1 Blockchain
 
@@ -128,7 +199,7 @@ Rift Network brings SIRM invariants to the Solana ecosystem. It demonstrates tha
 
 ---
 
-## 4. Upstream Contributions
+## 5. Upstream Contributions
 
 Security research and runtime improvements developed within the RFT-SIRM ecosystem are reported back to the Solana core infrastructure.
 
@@ -139,7 +210,7 @@ Security research and runtime improvements developed within the RFT-SIRM ecosyst
 
 ---
 
-## 5. Repository Alignment
+## 6. Repository Alignment
 
 | UltraCore-RFT | Rift-Network | Rift-L1-Blockchain | agave-abiv2-memory-contexts | agave-rift-scheduler |
 |:--------------|:-------------|:-------------------|:----------------------------|:---------------------|
@@ -149,7 +220,7 @@ All repositories track `main` as the primary branch. Version tags are synchroniz
 
 ---
 
-## 6. Build and Test
+## 7. Build and Test
 
 ### 6.1 Rift L1 Blockchain
 
@@ -187,7 +258,7 @@ cargo +nightly fuzz run scheduler_fuzz -- -max_total_time=300
 
 ---
 
-## 7. Technology Stack
+## 8. Technology Stack
 
 | Layer | Technology | Version | Purpose |
 |:------|:-----------|:--------|:--------|
@@ -199,7 +270,7 @@ cargo +nightly fuzz run scheduler_fuzz -- -max_total_time=300
 
 ---
 
-## 8. Research Roadmap
+## 9. Engineering Roadmap
 
 | Phase | Component | Target | Deliverable |
 |:------|:----------|:-------|:------------|
@@ -215,7 +286,7 @@ cargo +nightly fuzz run scheduler_fuzz -- -max_total_time=300
 
 ---
 
-## 9. Cross-References
+## 10. Cross-References
 
 - [Architecture](architecture.md) — System architecture and design decisions
 - [Field Trials](field_trials.md) — Verification results and readiness checklist
