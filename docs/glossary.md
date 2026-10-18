@@ -6,7 +6,7 @@ This glossary defines the canonical terminology used across the RFT-SIRM researc
 
 | Term | Canonical definition |
 |------|----------------------|
-| **SIRM** | **Synthetic Intelligence Reasoning Model** — Russian: **Синтетическая искусственная модель рассуждений**. The name of the invariant-driven reasoning and systems model used in this ecosystem. Do not expand SIRM as “Scalar Invariant Resource Model” or another alternative. |
+| **SIRM** | **Synthetic Intelligence Reasoning Model** — Russian: **Синтетическая интеллектуальная модель рассуждений**. The name of the invariant-driven reasoning and systems model used in this ecosystem. Do not expand SIRM as “Scalar Invariant Resource Model” or another alternative. |
 | **RFT** | **Resonant Field Theory** — Russian: **резонансная теория поля**. This is the canonical expansion of RFT. Do not use “Reality Fractal Theory” as an expansion of RFT. |
 | **RFT-SIRM** | The project/ecosystem identifier combining Resonant Field Theory (RFT) and the Synthetic Intelligence Reasoning Model (SIRM). Keep the two names distinct: RFT names the theory; SIRM names the model. |
 | **UltraCore-RFT** | The documentation and coordination hub for the research, systems-engineering, and application programmes in this repository. |
@@ -43,7 +43,7 @@ This glossary defines the canonical terminology used across the RFT-SIRM researc
 | Term | Definition |
 |------|------------|
 | **RFT** | Resonant Field Theory. Use this exact expansion consistently. |
-| **SIRM** | Synthetic Intelligence Reasoning Model (Синтетическая искусственная модель рассуждений). Use this exact expansion consistently. |
+| **SIRM** | Synthetic Intelligence Reasoning Model (Синтетическая интеллектуальная модель рассуждений). Use this exact expansion consistently. |
 | **O(1) distribution** | A constant-time shared-scalar update in the specified balance representation; it does not mean every runtime operation is O(1). |
 | **deterministic invariant** | A mathematical or logical constraint that the implementation checks or enforces after a state transition. |
 | **upstream contribution** | Bug fix or RFC submitted to an external project (e.g., Anza/Agave). |
