@@ -12,7 +12,7 @@ Build a deterministic, mathematically verified economic layer for distributed sy
 
 ## 2. Strategic priority: mathematics and evidence first
 
-This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does **not** prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage.
+This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does **not** prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage. The separate [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) repository now records an exact algebraic limit and finite-level remainder for its defined normalized invariant; its cosmological extension remains phenomenological and has no full observational-likelihood validation.
 
 ### Priority I — protect and independently audit the formal theorem
 
