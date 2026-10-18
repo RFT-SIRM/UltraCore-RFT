@@ -27,6 +27,7 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 | 1. Mathematical anchor | [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Source repository reports a Lean 4 proof of a specific fourth-moment identity for concrete SU(2) operators |
 | 2. Recursive extension | [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | Finite-level certificates and numerical holdouts for higher moments; all-level recurrence remains open |
 | 3. Separate spectral model | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Signed-flux Laplacians, decimation audit, boundary/corner corrections; Gate A remains open |
+| 4. Exact invariant limit and cosmology model | [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) | Exact algebraic limit/remainder for the defined invariant; cosmological response remains phenomenological and observationally unvalidated |
 | 4. Systems methodology | [SIRM foundations](foundations.md) | Runtime state invariants and deterministic transition model; not proved by the spectral theorem |
 | 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
 | 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.), [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) | QPU is pre-experimental; battery is a modelled energy scenario; cosmology is a reduced phenomenological model without observational likelihood validation |
@@ -37,7 +38,7 @@ UltraCore-RFT is being developed as the central observability layer for cross-re
 
 ## Engineering and application tracks
 
-**Featured application index:** [RFT-QPU-Sierpinski, RFT-Invariant-Battery, and RFT-Cosmology-Genesis — scope, status, and evidence boundaries](application-programmes.md).
+**Featured application index:** [RFT-QPU-Sierpinski, RFT-Invariant-Battery, and RFT-Cosmology-Genesis — scope, status, and evidence boundaries](application-programmes.md). The cosmology project also has a distinct mathematical result: the exact limit and finite-level remainder of its defined normalized invariant, documented in the [theorem dossier](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/EXACT_INVARIANT_REMAINDER_THEOREM.md). This algebraic result does not establish a physical coupling or an observational cosmology claim.
 
 
 These tracks have their own repositories, validation methods, and limitations; they are not corollaries of the fourth-moment theorem.
