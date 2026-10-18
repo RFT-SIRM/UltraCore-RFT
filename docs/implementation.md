@@ -53,12 +53,12 @@ UltraCore-RFT is the integration and navigation layer for the research programme
 
 For the concrete operator definitions and assumptions in the source project, the fourth-moment trace defect is stated as
 
-$
+$$
 \Delta_m(H^4,\theta)
 =\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\geq1.
-$
+$$
 
 The source repository reports a Lean 4 formalization. This status applies to that specific proposition and its formal definitions; it does not prove the higher-moment recurrence, the Phi-Genesis decimation criterion, SIRM runtime invariants, or a cosmological interpretation.
 
@@ -80,19 +80,19 @@ Phi-Genesis studies signed \(\mathbb{Z}_2\)-flux Laplacians on Sierpiński-gaske
 
 For the repository's defined normalized invariant,
 
-$
+$$
 I_m(\theta)=-16\frac{3^{m-1}+1}{3^{m+1}+3}
 \sin^2\left(\frac{\theta}{2}\right),
-$
+$$
 
 the exact algebraic limit and finite-level remainder are
 
-$
+$$
 I_\infty(\theta)=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
 \qquad
 I_m(\theta)-I_\infty(\theta)
 =-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
-$
+$$
 
 The repository documents an algebraic derivation and Lean-checked results for the stated invariant, with Python tests for representative cases. Its cosmological coupling and CMB response are **phenomenological**. No physical interaction, observational detection, or agreement with a full CMB likelihood is established.
 
