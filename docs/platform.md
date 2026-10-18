@@ -49,7 +49,7 @@ flowchart TB
  MATH["Mathematics · Graph Theory · Category Theory\nInformation Theory · Dynamical Systems · Invariant Theory"]
  end
  subgraph L1["L1: Conceptual Framework"]
- RFT["Reality Fractal Theory"]
+ RFT["Resonant Field Theory"]
  end
  subgraph L2["L2: Execution Model"]
  SIRM["Synthetic Intelligence Reasoning Model\nI1–I4 Hard Constraints"]
@@ -89,7 +89,7 @@ The mathematical programmes and the execution stack are connected through resear
 |-------|---------------|-----------------|
 | **L−1: Mathematical Research Programme** | Exact fourth-moment result, higher-moment recurrence research, and separate signed-flux spectral audit | [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), [Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything), [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) |
 | **L0: Scientific Foundations** | Disciplinary tools: graph theory, category theory, information theory, invariant theory, dynamical systems | [`SCIENTIFIC_BASIS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SCIENTIFIC_BASIS.md) |
-| **L1: Reality Fractal Theory** | Conceptual framework: execution as topology coordination, invariants as structural anchors | [`RFT_MATHEMATICAL_FOUNDATIONS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/RFT_MATHEMATICAL_FOUNDATIONS.md) |
+| **L1: Resonant Field Theory** | Conceptual framework: execution as topology coordination, invariants as structural anchors | [`RFT_MATHEMATICAL_FOUNDATIONS.md`](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/RFT_MATHEMATICAL_FOUNDATIONS.md) |
 | **L2: SIRM** | Mathematical execution model: four hard invariants (I1–I4) enforced after every state transition | [Foundations](foundations.md) |
 | **L3: UltraCore Runtime** | Deterministic state machine engine: O(1) distribution, atomic operations, checked arithmetic | [Rift-L1-Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) |
 | **L4: Deterministic Execution Architecture** | Runtime coordination: memory isolation, conflict-aware scheduling, permission rollback | [agave-abiv2-memory-contexts](https://github.com/RFT-SIRM/agave-abiv2-memory-contexts), [agave-rift-scheduler](https://github.com/RFT-SIRM/agave-rift-scheduler) |
