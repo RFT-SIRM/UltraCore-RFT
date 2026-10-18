@@ -52,7 +52,7 @@ flowchart TB
  RFT["Reality Fractal Theory"]
  end
  subgraph L2["L2: Execution Model"]
- SIRM["Stable Invariant Rift Model\nI1–I4 Hard Constraints"]
+ SIRM["Synthetic Intelligence Reasoning Model\nI1–I4 Hard Constraints"]
  end
  subgraph L3["L3: Runtime Engine"]
  UC["UltraCore Runtime\nDeterministic State Machine · O(1) Distribution"]
