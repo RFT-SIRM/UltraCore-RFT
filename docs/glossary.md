@@ -2,9 +2,11 @@
 
 ## Core Terminology
 
+**Canonical naming:** SIRM is *Synthetic Intelligence Reasoning Model* (СИРМ: «Синтетическая искусственная модель рассуждений»). RFT is *Resonant Field Theory* («Резонансная теория поля»). These names are distinct: SIRM names the reasoning/invariant model; RFT names the broader theory. Do not expand SIRM as “Scalar Invariant Resource Model” or RFT as “Reality Fractal Theory”.
+
 | Term | Definition |
 |------|------------|
-| SIRM | Scalar Invariant Resource Model -- the mathematical framework governing all RFT-SIRM systems |
+| SIRM / СИРМ | **Synthetic Intelligence Reasoning Model** — «Синтетическая искусственная модель рассуждений»; the invariant-based model for deterministic state transitions. |
 | CoreState | The central state structure containing `global_field`, `total_base_sum`, `total_supply`, and participant accounts |
 | global_field | A uniform scalar shift applied to all participants' effective balances |
 | base_balance | Individual deviation from the `global_field`; unique per participant |
@@ -37,7 +39,7 @@
 
 | Term | Definition |
 |------|------------|
-| RFT | Reality Fractal Theory -- the overarching research framework |
+| RFT | **Resonant Field Theory** — «Резонансная теория поля»; the overarching research framework. |
 | O(1) distribution | Constant-time reward distribution via scalar field update |
 | deterministic invariant | Hard mathematical constraint enforced after every operation |
 | upstream contribution | Bug fix or RFC submitted to external project (e.g., anza-xyz) |
