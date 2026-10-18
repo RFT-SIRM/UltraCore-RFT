@@ -6,7 +6,7 @@
 
 ## 1. Architecture Overview
 
-The RFT-SIRM ecosystem is built around a single mathematical core — the **Scalar Invariant Resource Model (SIRM)** — which is instantiated across three execution domains:
+The RFT-SIRM ecosystem uses the **Synthetic Intelligence Reasoning Model (SIRM; Синтетическая искусственная модель рассуждений)** for invariant-driven state transitions across three execution domains. RFT means **Resonant Field Theory** (резонансная теория поля); it names the theory and is distinct from the SIRM model.
 
 ```mermaid
 flowchart TB
