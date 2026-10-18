@@ -273,7 +273,7 @@ research/seL4/src/rft_cdt_fuzzer_sel4.c
 
 - seL4 Reference Manual. seL4 Foundation. https://docs.sel4.systems/
 - Klein G., Elphinstone K., Heiser G., et al. *seL4: formal verification of an OS kernel*. SOSP 2009.
-- RFT-SIRM. *Scalar Invariant Resource Model (SIRM) — Mathematical Foundations*. `RFT_MATHEMATICAL_FOUNDATIONS.md`, UltraCore-RFT repository.
+- RFT-SIRM. *Synthetic Intelligence Reasoning Model (SIRM; Синтетическая искусственная модель рассуждений) — Mathematical Foundations*. `RFT_MATHEMATICAL_FOUNDATIONS.md`, UltraCore-RFT repository.
 
 ---
 
