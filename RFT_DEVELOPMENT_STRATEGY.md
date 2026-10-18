@@ -36,19 +36,19 @@ This is a reading order and research map, not a theorem asserting that each down
 
 For the specific operator definitions and assumptions in the source repository, the fourth-moment trace defect is stated as
 
-\[
+$$
 \Delta_m(H^4,\theta)
 =\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
-\]
+$$
 
 With the documented normalization,
 
-\[
+$$
 I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
 \longrightarrow-\frac{16}{9}\sin^2(\theta/2),
 \qquad I_m(\pi/2)\longrightarrow-\frac89.
-\]
+$$
 
 ### Closure and maintenance tasks
 
@@ -64,12 +64,12 @@ The theorem is a fourth-moment result for specified operators, not a proof of ev
 
 **Primary source:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
 
-The synthesis repository records numerical holdouts and modular/CRT certificates for selected finite-level Fourier coefficients associated with moments \(p\in\{6,8,10\}\). The graph/operator construction, denominator control, norm bounds, coefficient bounds, and finite transitions define the certificate's scope.
+The synthesis repository records numerical holdouts and modular/CRT certificates for selected finite-level Fourier coefficients associated with moments $p\in\{6,8,10\}$. The graph/operator construction, denominator control, norm bounds, coefficient bounds, and finite transitions define the certificate's scope.
 
 ### Open obligations
 
 1. Derive the exceptional first-transition correction from the recursive graph/operator construction.
-2. Prove or refute the candidate all-level recurrence \(R_m^{(p)}(\theta)=R_4^{(p)}(\theta)\) for every \(m\ge3\) and every stated admissible angle.
+2. Prove or refute the candidate all-level recurrence $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\ge3$ and every stated admissible angle.
 3. Test edge cases and alternative graph levels before fixing the theorem statement.
 4. Preserve numerical holdouts and certificate inputs as versioned reproducibility artifacts.
 5. After a complete written derivation, formalize key lemmas and the theorem in Lean where feasible.
@@ -82,7 +82,7 @@ Closure requires a derivation with explicit indexing and boundary conditions, pr
 
 **Primary source:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [commit documenting rigorous decimation verification](https://github.com/RFT-SIRM/Phi-Genesis/commit/c8611cc532b17c1944e2701c10780de99cae4548).
 
-Phi-Genesis studies signed \(Z_2\)-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns. This is a distinct operator family from the SU(2)-connected theorem.
+Phi-Genesis studies signed $Z_2$-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns. This is a distinct operator family from the SU(2)-connected theorem.
 
 ### Closure criteria
 
@@ -99,18 +99,18 @@ Phi-Genesis studies signed \(Z_2\)-flux Laplacians, spectral decimation, boundar
 
 SIRM defines runtime invariants for state transitions. Its stated constraints are
 
-\[
+$$
 \begin{aligned}
 I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
 I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
 I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
 I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
 \end{aligned}
-\]
+$$
 
-Here \(\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}\), subject to the implementation's integer and scaling conventions.
+Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, subject to the implementation's integer and scaling conventions.
 
-The global-scalar representation can make the distribution update \(O(1)\); that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
+The global-scalar representation can make the distribution update $O(1)$; that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
 
 | Workstream | Evidence discipline |
 |---|---|
