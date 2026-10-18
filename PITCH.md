@@ -2,6 +2,8 @@
 
 **Mathematical results first. Distinct evidence classes. Engineering applications downstream.**
 
+**Canonical names:** RFT = **Resonant Field Theory** (резонансная теория поля); SIRM = **Synthetic Intelligence Reasoning Model** (Синтетическая искусственная модель рассуждений). RFT names the theory; SIRM names the invariant-driven reasoning and systems model.
+
 Primary routes: [README](README.md) · [AI evidence guide](AI_GUIDE.md) · [Research map](docs/research-map.md) · [Main RFT-SIRM portal](https://rft-sirm.github.io/).
 
 ## Project origin and chronology
