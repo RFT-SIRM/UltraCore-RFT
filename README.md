@@ -176,7 +176,7 @@ Start with [the repository status and methods](https://github.com/RFT-SIRM/Phi-G
 <details>
 <summary><strong>Strand C — SIRM and deterministic execution</strong></summary>
 
-SIRM (Stable Invariant Rift Model) is the systems-engineering strand: define state invariants and require every state transition to preserve them or fail atomically.
+SIRM (Synthetic Intelligence Reasoning Model) is the systems-engineering strand: define state invariants and require every state transition to preserve them or fail atomically.
 
 The four stated runtime constraints are shown below using compact mathematical symbols. The mapping table identifies the implementation variables.
 
