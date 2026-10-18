@@ -116,7 +116,7 @@ RFT-SIRM operates as a **multi-stage research pipeline**. Each stage feeds into 
 
 ### Phase 0 — Mathematical Foundation (Complete)
 
-**Goal:** Define the Synthetic Intelligence Reasoning Model (Синтетическая искусственная модель рассуждений) and prove its correctness properties.
+**Goal:** Define the Synthetic Intelligence Reasoning Model (Синтетическая интеллектуальная модель рассуждений) and prove its correctness properties.
 
 | Deliverable | Status |
 |:------------|:-------|
