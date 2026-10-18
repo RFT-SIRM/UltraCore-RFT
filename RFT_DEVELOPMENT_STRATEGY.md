@@ -97,25 +97,34 @@ Phi-Genesis studies signed $Z_2$-flux Laplacians, spectral decimation, boundary/
 
 ## 5. Priority IV — maintain SIRM engineering evidence
 
-SIRM defines runtime invariants for state transitions. Its stated constraints are
+SIRM defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
+
+- \(S\): total supply
+- \(B\): total base sum
+- \(G\): global field
+- \(M\): total minted
+- \(R\): total burned
+- \(D\): dust accumulator
+- \(b_i\): effective balance of account \(i\)
+- \(q_i\): base balance of account \(i\)
 
 $$
-I_1: \mathrm{total\_supply}=\mathrm{total\_base\_sum}+\mathrm{global\_field}\,p
+I_{1}: S = B + Gp
 $$
 
 $$
-I_2: \mathrm{total\_supply}=\mathrm{total\_minted}-\mathrm{total\_burned}
+I_{2}: S = M - R
 $$
 
 $$
-I_3: \mathrm{dust\_accumulator}<p,\qquad p>0
+I_{3}: 0 \le D < p,\qquad p > 0
 $$
 
 $$
-I_4: \mathrm{effective\_balance}[i]\ge -\frac{\mathrm{total\_supply}}{10p}
+I_{4}: b_i \ge -\frac{S}{10p}
 $$
 
-Here the effective balance is defined by \(b_{\mathrm{eff}}[i]=b_{\mathrm{base}}[i]+g\), subject to the implementation's integer and scaling conventions.
+The effective balance is defined by \(b_i = q_i + G\), subject to the implementation's integer and scaling conventions.
 
 The global-scalar representation can make the distribution update $O(1)$; that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
 
