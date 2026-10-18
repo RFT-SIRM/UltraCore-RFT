@@ -38,7 +38,7 @@ For the specific operator definitions and assumptions in the source repository, 
 
 $$
 \Delta_m(H^4,\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
 $$
 
@@ -101,14 +101,14 @@ SIRM defines runtime invariants for state transitions. Its stated constraints ar
 
 $$
 \begin{aligned}
-I_1:\;&\text{total\_supply}=\text{total\_base\_sum}+\text{global\_field}\cdot p,\\
-I_2:\;&\text{total\_supply}=\text{total\_minted}-\text{total\_burned},\\
-I_3:\;&\text{dust\_accumulator}<p\quad(p>0),\\
-I_4:\;&\text{effective\_balance}[i]\ge-\frac{\text{total\_supply}}{10p}.
+I_1:\;&\mathrm{total\_supply}=\mathrm{total\_base\_sum}+\mathrm{global\_field}\cdot p,\\
+I_2:\;&\mathrm{total\_supply}=\mathrm{total\_minted}-\mathrm{total\_burned},\\
+I_3:\;&\mathrm{dust\_accumulator}<p\quad(p>0),\\
+I_4:\;&\mathrm{effective\_balance}[i]\ge-\frac{\mathrm{total\_supply}}{10p}.
 \end{aligned}
 $$
 
-Here $\text{effective\_balance}[i]=\text{base\_balance}[i]+\text{global\_field}$, subject to the implementation's integer and scaling conventions.
+Here $\mathrm{effective\_balance}[i]=\mathrm{base\_balance}[i]+\mathrm{global\_field}$, subject to the implementation's integer and scaling conventions.
 
 The global-scalar representation can make the distribution update $O(1)$; that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
 
