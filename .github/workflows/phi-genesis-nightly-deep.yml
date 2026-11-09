@@ -1,0 +1,72 @@
+name: Phi-Genesis — Nightly Deep Verification
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # same daily slot as Phi-Genesis upstream
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phi-genesis-nightly-deep-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  nightly-deep-tests:
+    name: Level-9 dense spectrum and deep statistical audits
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - name: Check out UltraCore-RFT
+        uses: actions/checkout@v4
+
+      - name: Check out the canonical Phi-Genesis source
+        uses: actions/checkout@v4
+        with:
+          repository: RFT-SIRM/Phi-Genesis
+          ref: main
+          path: phi-genesis
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install canonical source and test dependencies
+        working-directory: phi-genesis
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest
+
+      - name: Record hub and upstream revisions
+        run: |
+          {
+            echo "UltraCore-RFT revision:"
+            git rev-parse HEAD
+            echo
+            echo "Phi-Genesis source revision:"
+            git -C phi-genesis rev-parse HEAD
+            echo
+            echo "UTC start:"
+            date -u --iso-8601=seconds
+          } | tee run-metadata.txt
+
+      - name: Run the canonical nightly deep suite
+        working-directory: phi-genesis
+        shell: bash
+        run: |
+          set -o pipefail
+          pytest -v -s -m nightly 2>&1 | tee nightly-deep-tests.log
+
+      - name: Preserve the computation log and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phi-genesis-nightly-deep-${{ github.run_number }}
+          path: |
+            phi-genesis/nightly-deep-tests.log
+            run-metadata.txt
+          if-no-files-found: warn
+          retention-days: 30
