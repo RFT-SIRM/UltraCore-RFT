@@ -30,6 +30,12 @@ These are separate exploratory or application tracks—not additional proofs of 
 [![RFT-Cosmology-Genesis](https://img.shields.io/badge/Phenomenological%20model-RFT--Cosmology--Genesis-d97706?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
 [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
 
+## Daily spectral computation record
+
+UltraCore-RFT runs the two canonical Phi-Genesis daily computational workloads independently: the level-9 deep suite and the high-precision A1/E spectral-matrix jobs. Each run records the exact upstream Phi-Genesis commit and preserves logs as Actions artifacts.
+
+[Daily computation record](docs/phi-genesis-computations.md) · [Nightly deep workflow](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/phi-genesis-nightly-deep.yml) · [High-precision matrix workflow](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/phi-genesis-high-precision.yml)
+
 ## Verification and repository status
 
 These badges report the status of specific workflows only. They do not certify the entire research programme or transfer proof status between repositories.
