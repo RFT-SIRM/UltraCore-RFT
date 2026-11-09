@@ -31,10 +31,12 @@ The mathematical statements below concern **explicitly defined graph operators a
 For the specified non-commuting SU(2)-connection operator \(H_C\) on the Sierpiński-gasket graph and its commuting control \(H_{C'}\), the Lean formalization proves
 
 $$
-\Delta_m^{(4)}(\theta)
-=\operatorname{Tr}(H_C^4)-\operatorname{Tr}(H_{C'}^4)
+$
+\Delta_m(H^4,\theta)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
 =-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right),
 \qquad m\ge1.
+$
 $$
 
 The normalized trace defect has the exact limit
