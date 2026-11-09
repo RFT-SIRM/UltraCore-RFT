@@ -2,7 +2,7 @@
 
 **Priority order:** exact mathematics → evidence and open problems → systems methodology → implementations → exploratory applications.
 
-[![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
+[![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Convergence%20and%20derivatives%20proved%20%7C%20Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 
 [![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=flat-square)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery) [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20model-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
 
@@ -22,7 +22,8 @@ This dated register updates the mathematical status without erasing the earlier 
 | H⁶ / H⁸ | Lean recurrences for $m\ge3$; exact symbolic certificates for the exceptional $m=2\to3$ transitions. | Formalize the finite transition bridges in Lean; do not yet describe those bridges as Lean-kernel proofs. |
 | H¹⁰ | Lean-proved radius-four transport and unconditional affine recurrence for $m\ge4$; affine form for $m\ge5$. | The level-five correction is an exact finite trace expression; simplifying it is a presentation task. |
 | Phi-Genesis lower bound | Every real eigenvalue with a nonzero real eigenvector of the defined signed Laplacian satisfies $\lambda\ge1$, at every refinement level. | Preserve the precise matrix and eigenvector hypotheses in every summary. |
-| Phi-Genesis least eigenvalue | For $N\ge6$, least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to $\lambda_\infty$. | Exact rational enclosure; its endpoints differ by exactly $2\cdot10^{-36}$, with midpoint near $1.309128920280813421888623088170810188$. |
+| Phi-Genesis least eigenvalue | For $N\ge6$, least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to $\lambda_\infty$. | Exact rational enclosure; full interval width is exactly $2\cdot10^{-36}$. Midpoint is approximately $1.309128920280813421888623088170810188$. |
+| Phi-Genesis derivative recursion | Both Schur boundary coordinates have Lean-proved parameter derivatives at every finite level throughout the bootstrap interval. | Exact recursive derivative formula is formalized; this does not prove the quadratic increment law or existence of its coefficient. |
 | SIRM and applications | Separate runtime-invariant, protocol, scheduler, memory-isolation, stress-testing, and exploratory application workstreams. | Each retains its own validation criteria; no mathematical result transfers to an application by association. |
 
 The Phi-Genesis value $1.309128920280813421888623088170810188\ldots$ is a **limiting least-eigenvalue value for a specified graph-matrix sequence**, not a known closed-form constant and not a claim about a universal constant of nature.
@@ -33,8 +34,9 @@ The Phi-Genesis value $1.309128920280813421888623088170810188\ldots$ is a **limi
 2. Formalize the exact H⁶/H⁸ $m=2\to3$ finite bridges in Lean while preserving the existing reproducible certificates.
 3. Simplify the H¹⁰ level-five correction coefficient without changing the proved recurrence.
 4. Investigate a unified higher-moment recurrence as a separate theorem.
-5. Extend the Phi-Genesis least-eigenvalue result beyond its proved $N\ge6$ range; investigate Gate A's exceptional set and residuals independently.
-6. Prove or refute the numerical quadratic increment law; seek a closed form for $\lambda_\infty$ as a separate problem.
+5. Use the proved Phi-Genesis parameter-derivative recursion as an analytic lemma for further asymptotics, without claiming that it proves the quadratic increment law.
+6. Keep Gate A's exceptional set, extension to levels $N<6$, and the external $\theta=2\pi$ identification as separate open problems.
+7. Seek a closed form for $\lambda_\infty$ independently of the numerical convergence evidence.
 7. Establish any external $\theta=2\pi$ operator identification by an explicit operator map and proof, not by numerical resemblance.
 
 **Status rule:** the least-eigenvalue convergence theorem is complete within its stated matrix and level range; Gate A and the listed extensions remain open. Do not hide a completed result behind a broader open problem, and do not present a broader open problem as completed because a related theorem is proved.
@@ -113,32 +115,54 @@ The H⁶/H⁸ transition certificates are exact but are not yet Lean-kernel theo
 
 ## 4. Priority III — extend the proved Phi-Genesis spectral result and audit Gate A separately
 
-**Primary sources:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [spectral-gap dossier](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/README.md) · [Schur eigenvalue theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [signed transfer](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean).
+**Primary sources:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [spectral-gap dossier](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/README.md) · [Schur eigenvalue theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [signed transfer](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean) · [derivative recursion](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurDerivTrajectory.lean) · [proof map](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/PROOF_MAP.md).
 
-### Completed spectral theorems
+### Completed theorems
 
-1. **Uniform lower bound:** every real eigenvalue with a nonzero real eigenvector of the explicitly defined signed Laplacian satisfies $\lambda\ge1$, at every refinement level. See \`sgSignedLaplacianMatrix_eigenvalue_ge_one\`.
-2. **Least-eigenvalue identification:** for the signless Laplacians $Q_{6+n}$, the canonical A1 Schur root in the fixed bootstrap interval is the least eigenvalue. The same result transfers to the gauge-conjugate signed matrices.
-3. **Convergence:** both least-eigenvalue sequences converge to $\lambda_\infty$, with
+1. **Uniform signed-Laplacian lower bound.** Every real eigenvalue with a nonzero real eigenvector of the specified signed Laplacian satisfies
+
+$$
+\lambda\ge1
+$$
+
+   at every refinement level. The corresponding Lean declaration is sgSignedLaplacianMatrix_eigenvalue_ge_one.
+
+2. **Least-eigenvalue identification.** For each signless Laplacian $Q_{6+n}$, the canonical A1 Schur root in the fixed bootstrap interval is the least eigenvalue. The same result transfers to the gauge-conjugate signed matrices.
+
+3. **Least-eigenvalue convergence.** Both least-eigenvalue sequences converge to $\lambda_\infty$. The exact rational enclosure is
+
 $$
 \frac{1309128920280813421888623088170810187}{10^{36}}
 \le\lambda_\infty\le
 \frac{1309128920280813421888623088170810189}{10^{36}}.
 $$
-   Its decimal location is approximately $1.309128920280813421888623088170810188$, with interval width exactly $2\cdot10^{-36}$.
 
-The number $1.3091289\ldots$ is a limiting least-eigenvalue value for the specified graph matrices. It is not currently known in closed form and is not claimed to be a fundamental physical constant.
+   In decimal notation, the same enclosure is
+
+$$
+1.309128920280813421888623088170810187
+\le\lambda_\infty\le
+1.309128920280813421888623088170810189.
+$$
+
+   The interval width is exactly $2\cdot10^{-36}$; its half-width is $10^{-36}$. The midpoint is approximately $1.309128920280813421888623088170810188$. The convergence theorem covers levels $N\ge6$.
+
+4. **Parameter-derivative recursion.** The Lean definition schurDerivTrajectory gives the exact recursive derivatives of the two Schur boundary coordinates with respect to the parameter $\lambda$. The theorem schurBoundaryTrajectory_hasDerivAt proves the derivative formula under the finite nonzero-pivot hypotheses. Within the bootstrap interval, schurBoundaryTrajectory_hasDerivAt_bootstrap proves differentiability at every finite level; strict pivot positivity discharges those hypotheses.
+
+This derivative result is an analytic ingredient for further asymptotics. It does **not** prove the quadratic increment law or the existence of its coefficient.
+
+The value $1.3091289\ldots$ is the limiting least eigenvalue of the specified graph-matrix sequence. It is not currently known in closed form and is not claimed to be a universal or fundamental physical constant.
 
 ### Remaining Gate A and extension criteria
 
 - Characterize the complete exceptional set in the broader spectral-decimation correspondence.
-- Explain residual mismatches and retain matching rates by level and method.
-- Prove or refute the observed quadratic increment law and determine whether its numerical coefficient has a rigorous limit.
+- Prove or refute the observed quadratic increment law $\delta_{m+1}\sim c\delta_m^2$ and establish whether the coefficient $c$ exists.
 - Extend the least-eigenvalue convergence theorem to levels $N<6$.
+- Find a closed form for $\lambda_\infty$.
 - Prove any external $\theta=2\pi$ operator identification using an explicit operator map, boundary conditions, and a proof.
 - Keep mass-index hypotheses separate from proved graph-spectral statements.
 
-**Current status:** the lower-bound and least-eigenvalue convergence theorems are proved within their stated matrix and level ranges. Gate A remains open; it is not closed by the least-eigenvalue theorem.
+**Current status:** the lower bound, least-eigenvalue identification and convergence, and parameter-derivative recursion are proved within their stated matrix, parameter, and level ranges. Gate A, the quadratic increment law, levels $N<6$, the closed form, and the external operator identification remain open. No bridge to the SU(2) operator family is claimed.
 
 ## 5. Priority IV — maintain SIRM engineering evidence
 
