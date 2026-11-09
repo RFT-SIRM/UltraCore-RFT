@@ -1,6 +1,6 @@
 ---
 title: "Phi-Genesis Daily Computational Verification"
-description: "Daily high-cost spectral matrix computations, Schur interval certificates, and deep statistical audits reproduced by UltraCore-RFT from the canonical Phi-Genesis source."
+description: "Daily high-cost spectral matrix computations and deep statistical audits reproduced by UltraCore-RFT from the canonical Phi-Genesis source."
 keywords:
   - Phi-Genesis
   - daily spectral computation
@@ -36,7 +36,7 @@ Each run records both the UltraCore-RFT commit and the exact Phi-Genesis commit 
 
     **03:00 UTC every day**
 
-    A1 level 9, A1 level 10, E level 9, plus independent Schur interval / derivative certificates.
+    A1 level 9, A1 level 10, and E level 9, run as three parallel 360-digit mixed-precision jobs.
 
     [Open workflow](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/phi-genesis-high-precision.yml) · [View all runs](https://github.com/RFT-SIRM/UltraCore-RFT/actions?query=workflow%3A%22Phi-Genesis+High-Precision+Spectral+Matrix%22)
 
