@@ -39,6 +39,14 @@ keywords:
 
     [Open the results register](results.md)
 
+-   :material-server-network:{ .lg .middle } **Daily spectral computations**
+
+    ---
+
+    Reproducible nightly deep tests and high-precision A1/E spectral-matrix calculations, run from the canonical Phi-Genesis source with archived logs and commit provenance.
+
+    [View daily computation record](phi-genesis-computations.md)
+
 -   :material-graph:{ .lg .middle } **Interactive research explorer**
 
     ---
