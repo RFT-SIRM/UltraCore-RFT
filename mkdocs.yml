@@ -1,5 +1,6 @@
 site_name: UltraCore RFT
 site_url: https://rft-sirm.github.io/UltraCore-RFT/
+site_description: "UltraCore-RFT: formal SU(2) fourth-moment trace-defect theorem on Sierpiński-gasket graphs, higher spectral moments, and Phi-Genesis signed graph-Laplacian bounds and limiting least eigenvalue near 1.3091289."
 theme:
   name: material
   palette:
@@ -34,6 +35,7 @@ plugins:
   - search
 
 markdown_extensions:
+  - meta
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite

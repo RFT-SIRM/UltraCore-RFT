@@ -1,3 +1,15 @@
+---
+title: "SU(2) Fourth-Moment Trace-Defect Theorem on Sierpiński-Gasket Graphs"
+description: "Research dissertation stating the exact all-level fourth spectral-moment trace-defect identity for a specified non-commuting SU(2) graph connection, its normalized limit, and the separate H6, H8, and H10 results."
+keywords:
+  - SU(2) connection
+  - fourth spectral moment
+  - trace-defect identity
+  - Sierpiński-gasket graph
+  - Lean 4 formalization
+  - higher spectral moments
+---
+
 # Spectral Trace Defects of Noncommutative SU(2) Connections on Sierpiński-Gasket Graphs
 
 ## Research dissertation

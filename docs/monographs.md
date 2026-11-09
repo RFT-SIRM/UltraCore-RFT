@@ -1,3 +1,13 @@
+---
+title: "Research Monographs: SU(2) Trace Defect and Recursive Graph Operators"
+description: "Two distinct research dissertations: the focused SU(2) fourth-moment theorem and the broader recursive graph-operator synthesis."
+keywords:
+  - SU(2) theorem dissertation
+  - fourth-moment trace defect
+  - recursive graph operators
+  - higher-moment recurrence
+---
+
 # Research Monographs
 
 UltraCore-RFT links two complementary research dissertations maintained in their primary repositories. They address related graph-operator themes, but they do not make the same theorem claims.

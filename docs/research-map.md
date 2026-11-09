@@ -1,3 +1,15 @@
+---
+title: "Research Map: SU(2) Trace Defect, Phi-Genesis Spectrum, and SIRM"
+description: "Evidence map for the machine-checked SU(2) fourth-moment identity, higher-moment recurrence results, the Phi-Genesis signed graph Laplacian lower bound, and its limiting least eigenvalue near 1.3091289."
+keywords:
+  - mathematical research map
+  - SU(2) trace defect
+  - Phi-Genesis spectrum
+  - signed graph Laplacian
+  - A1 Schur root
+  - least eigenvalue convergence
+---
+
 # Research Map: Mathematical Foundations, Evidence, and Applications
 
 **Evidence-first reading order (not historical chronology):** dissertation and mathematical theorem → formal evidence → higher-moment research → separate spectral-decimation programme → systems methodology → implementations and applications.
@@ -119,7 +131,17 @@ $$
 \right].
 $$
 
-The interval width is $2\times10^{-36}$. The result is recorded in [SchurEigenvalue.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) and transferred to the signed matrix in [SchurSignedTransfer.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean). See also [PR #31](https://github.com/RFT-SIRM/Phi-Genesis/pull/31) and [PR #32](https://github.com/RFT-SIRM/Phi-Genesis/pull/32).
+The interval width is $2\times10^{-36}$. In decimal notation, the certified enclosure is
+
+$$
+1.309128920280813421888623088170810187
+\le\lambda_\infty\le
+1.309128920280813421888623088170810189.
+$$
+
+The midpoint is approximately $1.309128920280813421888623088170810188$. This is the limiting least-eigenvalue value for the specified graph-matrix sequence, not a known fundamental physical constant.
+
+The result is recorded in [SchurEigenvalue.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) and transferred to the signed matrix in [SchurSignedTransfer.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean). See also [PR #31](https://github.com/RFT-SIRM/Phi-Genesis/pull/31) and [PR #32](https://github.com/RFT-SIRM/Phi-Genesis/pull/32).
 
 ### What remains open
 

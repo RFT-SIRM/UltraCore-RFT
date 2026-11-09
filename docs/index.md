@@ -1,3 +1,15 @@
+---
+title: "UltraCore-RFT research hub"
+description: "Research hub for the SU(2) fourth-moment trace-defect theorem, higher spectral moments, the Phi-Genesis graph-Laplacian lower bound and limiting eigenvalue near 1.3091289, and SIRM engineering research."
+keywords:
+  - SU(2) fourth-moment trace-defect theorem
+  - Sierpiński-gasket graph spectrum
+  - Phi-Genesis least eigenvalue
+  - spectral limit 1.309128920280813421888623088170810188
+  - higher spectral moments H6 H8 H10
+  - SIRM runtime invariants
+---
+
 # UltraCore-RFT — Research Home
 
 **Mathematical foundations, formal evidence, recursive spectral research, and invariant-based systems engineering.**
