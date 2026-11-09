@@ -88,27 +88,15 @@ A verified historical high-precision run completed in about 124 minutes overall.
 
 **Canonical code:** [symmetry_sector_bottom.py](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/symmetry_sector_bottom.py) · [source workflow](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/.github/workflows/spectral-gap-high-precision.yml).
 
-## 3. Schur interval certificates
+## 3. Related Schur certificates
 
-The high-precision workflow also runs two outward-rounded interval computations directly from the Phi-Genesis source.
+Phi-Genesis also maintains separate finite-level Schur interval and derivative certificates. They are part of the research record, but they are **not silently folded into the two daily workflows above**:
 
-### Finite-level Schur / inertia certificate
+- [Schur inertia certificate source](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/schur_inertia_certificate.py) checks finite-level A1 ground-state and E-doublet claims using outward-rounded intervals.
+- [Schur derivative certificate source](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/schur_derivative_certificate.py) checks the specified finite root transitions at 10,000-digit working precision.
+- [Source derivative-certificate workflow](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/.github/workflows/spectral-gap-derivative-certificate.yml) is a separate manually dispatched / branch-triggered workflow in Phi-Genesis.
 
-```bash
-python computational/spectral_gap_theta_2pi/schur_inertia_certificate.py --max-level 12 --dps 2450 --radius-digits 2390
-```
-
-This checks the A1 ground-state root and E doublet through finite levels 1–12, including root brackets, derivative signs, and positive midpoint pivots. Its scope is a finite-level computer-assisted interval/inertia certificate, not a Lean-kernel theorem and not an infinite-level limit proof.
-
-### Schur derivative-transition certificate
-
-```bash
-python computational/spectral_gap_theta_2pi/schur_derivative_certificate.py --max-level 14 --start-level 5 --dps 10000 --radius-digits 9400
-```
-
-This certifies the specified finite transitions 5 through 13 using interval arithmetic at 10,000 decimal digits. It provides estimates relevant to the proposed quadratic increment law; it does **not** prove that law for all levels or establish a global limiting coefficient.
-
-**Canonical code:** [Schur inertia certificate](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/schur_inertia_certificate.py) · [Schur derivative certificate](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/schur_derivative_certificate.py) · [Schur proof map](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/PROOF_MAP.md).
+These certificates can be added as a further scheduled workload after their runtime and resource costs are deliberately assessed. The present UltraCore-RFT mirror is limited to the two existing daily source workflows, avoiding an accidental expansion of the compute schedule.
 
 ## Provenance and evidence boundary
 
