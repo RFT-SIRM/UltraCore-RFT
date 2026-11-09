@@ -4,7 +4,7 @@
 
 [![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 
-[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20model-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
+[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=flat-square)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery) [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20model-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
 
 [Detailed application programme index](docs/application-programmes.md).
 
@@ -19,23 +19,23 @@ This dated register updates the mathematical status without erasing the earlier 
 | Workstream | Established result | Remaining boundary / next priority |
 |---|---|---|
 | SU(2) fourth moment | Exact all-level, all-angle H⁴ trace-defect identity in Lean for the defined operator and commuting control; exact normalized limit and finite-level remainder. | Independent semantic review, literature comparison, and external replication remain separate tasks. |
-| H⁶ / H⁸ | Lean recurrences for (mge3); exact symbolic certificates for the exceptional (m=2	o3) transitions. | Formalize the finite transition bridges in Lean; do not yet describe those bridges as Lean-kernel proofs. |
-| H¹⁰ | Lean-proved radius-four transport and unconditional affine recurrence for (mge4); affine form for (mge5). | The level-five correction is an exact finite trace expression; simplifying it is a presentation task. |
+| H⁶ / H⁸ | Lean recurrences for \(m\ge3\); exact symbolic certificates for the exceptional \(m=2\to3\) transitions. | Formalize the finite transition bridges in Lean; do not yet describe those bridges as Lean-kernel proofs. |
+| H¹⁰ | Lean-proved radius-four transport and unconditional affine recurrence for \(m\ge4\); affine form for \(m\ge5\). | The level-five correction is an exact finite trace expression; simplifying it is a presentation task. |
 | Phi-Genesis lower bound | Every real eigenvalue with a nonzero real eigenvector of the defined signed Laplacian is at least (1), at every refinement level. | Preserve the precise matrix and eigenvector hypotheses in every summary. |
-| Phi-Genesis least eigenvalue | For (Nge6), least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to (lambda_infty). | Exact rational enclosure of width (2	imes10^{-36}), centred near (1.309128920280813421888623088170810188). |
+| Phi-Genesis least eigenvalue | For \(N\ge6\), least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to \(\lambda_\infty\). | Exact rational enclosure of width \(2\times10^{-36}\), centred near (1.309128920280813421888623088170810188). |
 | SIRM and applications | Separate runtime-invariant, protocol, scheduler, memory-isolation, stress-testing, and exploratory application workstreams. | Each retains its own validation criteria; no mathematical result transfers to an application by association. |
 
-The Phi-Genesis value (1.309128920280813421888623088170810188ldots) is a **limiting least-eigenvalue value for a specified graph-matrix sequence**, not a known closed-form constant and not a claim about a universal constant of nature.
+The Phi-Genesis value \(1.309128920280813421888623088170810188\ldots\) is a **limiting least-eigenvalue value for a specified graph-matrix sequence**, not a known closed-form constant and not a claim about a universal constant of nature.
 
 ### Current research priorities
 
 1. Review the formal SU(2) operator definitions independently and compare the theorem with the relevant literature.
-2. Formalize the exact H⁶/H⁸ (m=2	o3) finite bridges in Lean while preserving the existing reproducible certificates.
+2. Formalize the exact H⁶/H⁸ \(m=2\to3\) finite bridges in Lean while preserving the existing reproducible certificates.
 3. Simplify the H¹⁰ level-five correction coefficient without changing the proved recurrence.
 4. Investigate a unified higher-moment recurrence as a separate theorem.
-5. Extend the Phi-Genesis least-eigenvalue result beyond its proved (Nge6) range; investigate Gate A's exceptional set and residuals independently.
-6. Prove or refute the numerical quadratic increment law; seek a closed form for (lambda_infty) as a separate problem.
-7. Establish any external (	heta=2pi) operator identification by an explicit operator map and proof, not by numerical resemblance.
+5. Extend the Phi-Genesis least-eigenvalue result beyond its proved \(N\ge6\) range; investigate Gate A's exceptional set and residuals independently.
+6. Prove or refute the numerical quadratic increment law; seek a closed form for \(\lambda_\infty\) as a separate problem.
+7. Establish any external \(\theta=2\pi\) operator identification by an explicit operator map and proof, not by numerical resemblance.
 
 **Status rule:** the least-eigenvalue convergence theorem is complete within its stated matrix and level range; Gate A and the listed extensions remain open. Do not hide a completed result behind a broader open problem, and do not present a broader open problem as completed because a related theorem is proved.
 
@@ -52,13 +52,13 @@ The programme has three principal mathematical strands and a downstream engineer
 **Defined mathematical objects and assumptions**
 → **Evgeny's Theorem:** exact H⁴ SU(2) trace-defect identity; machine-checked in Lean 4
 → **Higher-moment programme:** H⁶/H⁸ recurrences and H¹⁰ affine recurrence with distinct finite/formal proof boundaries; a unified general recurrence remains open
-→ **Phi-Genesis:** signed/signless graph-Laplacian lower bound (lambdage1) at every level and least-eigenvalue convergence for (Nge6); Gate A remains open
+→ **Phi-Genesis:** signed-Laplacian lower bound \(\lambda\ge1\) at every level; least-eigenvalue convergence for \(N\ge6\); exact Schur parameter-derivative recursion in the bootstrap window. Gate A and the quadratic increment law remain open.
 → **RFT-Cosmology-Genesis:** separate exact invariant limit/remainder and a phenomenological cosmology model; physical interpretation remains open
 → **SIRM:** invariant-based state transitions and engineering constraints
 → **Implementations and experiments:** runtime, protocol, scheduler, kernel stress tests
 → **Exploratory applications:** quantum architecture, energy-system model, and phenomenological cosmology
 
-This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The H⁴ trace-defect theorem does not prove the SIRM invariants, a unified higher-moment recurrence, the Phi-Genesis Gate A mechanism, or a quantum advantage. The Phi-Genesis lower bound and least-eigenvalue convergence theorem are separate, completed spectral results within their stated matrix and level ranges. The exact invariant limit/remainder in RFT-Cosmology-Genesis is also a separate algebraic result; its phenomenological cosmology model is not observationally validated.This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does not prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage. The exact invariant limit/remainder in RFT-Cosmology-Genesis is a separate algebraic result; its phenomenological cosmology model is not observationally validated.
+This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The H⁴ trace-defect theorem does not prove the SIRM invariants, a unified higher-moment recurrence, the Phi-Genesis Gate A mechanism, or a quantum advantage. The Phi-Genesis lower bound and least-eigenvalue convergence theorem are separate completed spectral results within their stated matrix and level ranges. The exact invariant limit/remainder in RFT-Cosmology-Genesis is a separate algebraic result; its phenomenological cosmology model is not observationally validated.
 
 ## 2. Priority I — protect and independently audit the formal theorem
 
@@ -96,15 +96,15 @@ The theorem is a fourth-moment result for specified operators, not a proof of ev
 
 The proof status is moment-specific:
 
-- **H⁶:** Lean proves the all-angle recurrence for (mge3); the exact (m=2	o3) transition is supplied by a Gaussian-integer polynomial certificate.
-- **H⁸:** Lean proves the all-angle recurrence for (mge3); the exact (m=2	o3) transition is supplied by a sparse-polynomial certificate.
-- **H¹⁰:** Lean proves the radius-four transport and unconditional affine recurrence for (mge4), with the affine formula for (mge5). Its level-five correction remains a finite exact trace expression.
+- **H⁶:** Lean proves the all-angle recurrence for \(m\ge3\); the exact \(m=2\to3\) transition is supplied by a Gaussian-integer polynomial certificate.
+- **H⁸:** Lean proves the all-angle recurrence for \(m\ge3\); the exact \(m=2\to3\) transition is supplied by a sparse-polynomial certificate.
+- **H¹⁰:** Lean proves the radius-four transport and unconditional affine recurrence for \(m\ge4\), with the affine formula for \(m\ge5\). Its level-five correction remains a finite exact trace expression.
 
 The H⁶/H⁸ transition certificates are exact but are not yet Lean-kernel theorems. This is the next formalization target; it is inaccurate to describe every higher-moment result as either wholly open or wholly proved.
 
 ### Current open obligations
 
-1. Move the exact H⁶ and H⁸ (m=2	o3) bridges into the Lean kernel.
+1. Move the exact H⁶ and H⁸ \(m=2\to3\) bridges into the Lean kernel.
 2. Simplify the H¹⁰ correction expression while preserving the current unconditional theorem.
 3. Prove or refute a unified recurrence for the wider family of higher moments, with explicit indexing, angles, and boundary assumptions.
 4. Keep modular/CRT certificates, numerical holdouts, and Lean theorems labelled by their actual scope.

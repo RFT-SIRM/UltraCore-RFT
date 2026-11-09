@@ -2,13 +2,13 @@
 
 **Purpose:** preserve the maintainer-reported order in which the RFT-SIRM project family emerged, while keeping historical order separate from present-day technical dependencies and evidence strength.
 
-[![Rift Network](https://img.shields.io/badge/01-Rift%20Network-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/Rift-Network)
-[![Rift-L1 Blockchain](https://img.shields.io/badge/02-Blockchain-2563eb?style=for-the-badge)](https://github.com/RFT-SIRM/Rift-L1-Blockchain)
-[![UltraCore-RFT](https://img.shields.io/badge/03-UltraCore--RFT-334155?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![Rift Network](https://img.shields.io/badge/01-Rift%20Network-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/Rift-Network)
+[![Rift-L1 Blockchain](https://img.shields.io/badge/02-Blockchain-2563eb?style=flat-square)](https://github.com/RFT-SIRM/Rift-L1-Blockchain)
+[![UltraCore-RFT](https://img.shields.io/badge/03-UltraCore--RFT-334155?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT)
 
-[![Phi-Genesis](https://img.shields.io/badge/05-Phi--Genesis-d97706?style=for-the-badge)](https://github.com/RFT-SIRM/Phi-Genesis)
-[![Evgeny-Theorem](https://img.shields.io/badge/06-Evgeny--Theorem-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-Theorem)
-[![Theory of Everything](https://img.shields.io/badge/07-Theory%20of%20Everything-5b4bc4?style=for-the-badge)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything)
+[![Phi-Genesis](https://img.shields.io/badge/05-Phi--Genesis-d97706?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
+[![Evgeny-Theorem](https://img.shields.io/badge/06-Evgeny--Theorem-0f766e?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem)
+[![Theory of Everything](https://img.shields.io/badge/07-Theory%20of%20Everything-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything)
 
 > **Provenance note:** the sequence below records the project maintainer's account of the development order. It is a historical orientation, not a complete commit-by-commit audit. Exact dates are intentionally omitted where they have not been verified against repository history. The dated, commit-linked milestones remain in [Historical Development and Provenance](history.md).
 
@@ -57,7 +57,7 @@ These are separate implementation tracks. Their tests, fuzzing, audits, and depl
 The following projects are linked to the wider ecosystem but are not inserted into the core origin sequence without verified dates:
 
 - [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) — pre-experimental quantum-processing architecture.
-- [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) — exploratory invariant-driven energy-system model.
+- [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) — exploratory invariant-driven energy-system model.
 - Cosmology-related work is intentionally outside the scope of this chronology update.
 
 - [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) — reduced Pass-1 phenomenological cosmology calculation; no observational CMB likelihood fit or physical interaction is claimed.

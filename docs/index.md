@@ -105,6 +105,6 @@ This is a separate signed-flux graph problem, not a bridge to the SU(2) operator
 
 The organization-wide [RFT-SIRM portal](https://rft-sirm.github.io/) remains intact and continues to serve as the shared entry point. UltraCore-RFT provides its own research-focused navigation and does not replace the main portal.
 
-[![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
+[![Docs CI](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml/badge.svg?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT/actions/workflows/docs.yml)
 
 _Copyright 2026 Evgeniy Zaprudnov (RFT-SIRM). License: Apache 2.0._

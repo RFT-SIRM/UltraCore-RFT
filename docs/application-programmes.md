@@ -2,13 +2,13 @@
 
 **Purpose:** a source-linked, evidence-bounded index of three distinct RFT-SIRM application research tracks. This page records their place in the wider programme; it does not merge their implementations into UltraCore-RFT or certify their technical, commercial, or legal status.
 
-[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
+[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=flat-square)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
 
-[![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.)
+[![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery)
 
-[![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20cosmology%20model-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
+[![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20cosmology%20model-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis)
 
-[![Evidence boundary](https://img.shields.io/badge/Evidence-Model%20and%20research%20status-d97706?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/application-programmes.md#5-evidence-and-claim-boundaries)
+[![Evidence boundary](https://img.shields.io/badge/Evidence-Model%20and%20research%20status-d97706?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/application-programmes.md#5-evidence-and-claim-boundaries)
 
 > **Reading rule:** the badges are navigation and status labels only. They are not certification marks, experimental results, patent-status indicators, or endorsements.
 

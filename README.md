@@ -18,7 +18,7 @@ These links describe the scientific work and its current evidence status. Badge 
 
 [![Theory of Everything research programme](https://img.shields.io/badge/Research-Theory%20of%20Everything-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything)
 [![Fourth-moment theorem](https://img.shields.io/badge/Formal%20result-Fourth--moment%20theorem-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization)
-[![Phi-Genesis](https://img.shields.io/badge/Open%20research-Phi--Genesis%20Gate%20A-d97706?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
+[![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Convergence%20proved%20-%20Gate%20A%20open-d97706?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 [![Interactive portal](https://img.shields.io/badge/Portal-Research%20explorer-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
 
 ## Related application programmes
