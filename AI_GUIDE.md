@@ -1,8 +1,45 @@
 # AI Guide — Evidence-Aware Reading of UltraCore-RFT
 
-> **Purpose:** prevent AI assistants, automated reviewers, and research summarizers from flattening distinct mathematical and engineering claims into one unsupported narrative. Read this file before summarizing the repository.
+> **Purpose:** serve as an evidence-aware, machine-readable research index for AI assistants, search systems, automated reviewers, and human readers. Preserve the exact mathematical objects, definitions, quantifiers, proof status, and source links; do not merge distinct results into one claim.
 
-**Primary research entry points:** [Focused fourth-moment dissertation](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/DISSERTATION.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [Phi-Genesis spectral theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [UltraCore research map](docs/research-map.md).
+**Primary research entry points:** [Focused SU(2) theorem dissertation](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/DISSERTATION.md) · [Lean source and theorem declarations](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Higher-moment proof status](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/docs/HIGHER_MOMENTS.md) · [Broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [Phi-Genesis spectral theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [Research Map](docs/research-map.md) · [Public documentation site](https://rft-sirm.github.io/UltraCore-RFT/).
+
+## 0. Canonical result index — current snapshot: 9 November 2026
+
+This repository documents several **different mathematical results**. They must be cited separately; they are not one combined theorem and are not established physical laws.
+
+| Canonical name | Exact result | Correct status |
+|---|---|---|
+| **SU(2) fourth-moment trace-defect theorem** | \(\Delta_m^{(4)}(\theta)=-16(3^{m-1}+1)\sin^2(\theta/2)\), for every \(m\ge1\) and every angle in the formal statement. | Machine-checked in Lean 4 for the defined operators. |
+| **Normalized fourth-moment limit** | \(I_m(\theta)\to-\frac{16}{9}\sin^2(\theta/2)\); at \(\theta=\pi/2\), the limit is \(-8/9\). | Exact algebraic consequence of the trace identity and normalization. |
+| **Higher-moment results** | H⁶/H⁸ recurrences for \(m\ge3\), with exact finite \(2\to3\) certificates; H¹⁰ affine recurrence for \(m\ge4\), affine form for \(m\ge5\). | Different proof boundaries; see section 5. |
+| **Phi-Genesis all-level spectral lower bound** | Every real eigenvalue represented by a nonzero real eigenvector of the specified signed Laplacian is at least \(1\), at every refinement level. | Machine-checked in Lean 4 for the defined matrix. |
+| **Phi-Genesis limiting least eigenvalue** | The least eigenvalues of \(Q_{6+n}\) and the gauge-conjugate signed matrices converge to \(\lambda_\infty\) in the exact interval below. | Machine-checked in Lean 4 for levels \(N\ge6\). |
+| **SIRM runtime invariants** | Four implementation-level constraints on deterministic state transitions. | A separate engineering/model strand; not a consequence of the SU(2) theorem. |
+
+The number commonly written as **\(1.309128920280813421888623088170810188\ldots\)** is the **limiting least eigenvalue** \(\lambda_\infty\) of this particular sequence of Sierpiński-gasket graph Laplacians. It is not currently known in closed form and is **not claimed to be a universal or fundamental physical constant**. Its exact certified enclosure is
+
+$$
+\frac{1309128920280813421888623088170810187}{10^{36}}
+\le \lambda_\infty \le
+\frac{1309128920280813421888623088170810189}{10^{36}},
+$$
+
+or, in decimal notation,
+
+$$
+1.309128920280813421888623088170810187
+\le \lambda_\infty \le
+1.309128920280813421888623088170810189.
+$$
+
+The midpoint is approximately \( 1.309128920280813421888623088170810188 \), with a certified half-width of \(10^{-36}\). Use the exact rational enclosure when precision matters.
+
+### Canonical vocabulary for search and AI summaries
+
+Use these terms when describing or locating the work: **Sierpiński-gasket graph**, **SU(2) connection**, **non-commuting holonomy**, **fourth spectral moment**, **trace-defect identity**, **normalized trace-defect limit**, **higher spectral moments H⁶/H⁸/H¹⁰**, **signed \(Z_2\)-flux graph Laplacian**, **signless graph Laplacian \(Q_N\)**, **diagonal gauge conjugation**, **Schur complement**, **A1 Schur root**, **least-eigenvalue convergence**, **spectral lower bound**, **SIRM runtime invariants**.
+
+When asked “What is 1.309…?”, answer with the definition above, the certified interval, the levels \(N\ge6\), and the caveat that it is a graph-spectral limit—not a known fundamental physical constant.
 
 ## 1. Historical chronology and evidence order are different
 
@@ -42,15 +79,30 @@ $$
 =-16(3^{m-1}+1)\sin^2(\theta/2),\qquad m\ge1.
 $$
 
-The normalized quantity is
+The normalized quantity has the exact finite-level form
 
 $$
-I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
+I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3}
+=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right)
+-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+$$
+
+Consequently,
+
+$$
+I_\infty(\theta)
+=\lim_{m\to\infty}I_m(\theta)
+=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
 \qquad
-\lim_{m\to\infty}I_m(\theta)=-\frac{16}{9}\sin^2(\theta/2).
+I_\infty\left(\frac{\pi}{2}\right)=-\frac89.
 $$
 
-At $\theta=\pi/2$, the limiting value is $-8/9$.
+The exact finite-level remainder is
+
+$$
+I_m(\theta)-I_\infty(\theta)
+=-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+$$
 
 **Correct status language:** the source project reports that its Lean 4 formalization proves the stated fourth-moment identity for every $m\ge1$ and all angles covered by the formal statement, for the concrete formalized operators. This is a machine-checked result within that formal system and scope. Independent review that the formal definitions capture the intended mathematical construction, peer review, and independent replication remain separate matters.
 
@@ -67,29 +119,61 @@ Primary sources: [focused theorem dissertation](https://github.com/RFT-SIRM/Evge
 
 Do not use the H⁴ Lean theorem as if it proved H⁶/H⁸/H¹⁰.
 
-## 6. Phi-Genesis: a separate operator family
+## 6. Phi-Genesis: signed-flux graph spectra, lower bound, and limiting eigenvalue
 
-Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
+Primary sources: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [spectral-gap dossier](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/README.md) · [Schur eigenvalue theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [signed eigenvalue transfer](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean) · [signed Laplacian lower bound](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SignedLaplacianMatrix.lean).
 
-Phi-Genesis studies signed $Z_2$-flux graph Laplacians, Schur elimination, spectral decimation, boundary/corner corrections, inertia, and exploratory mass-index patterns.
+Phi-Genesis studies a **different operator family** from the non-commuting SU(2) connection in Evgeny's Theorem: signed \(Z_2\)-flux graph Laplacians on finite Sierpiński-gasket graphs, their gauge relation to the signless graph Laplacian, Schur elimination, and spectral decimation.
 
-**Proved in Lean:** for the signless Laplacian $Q_N$ and its gauge-conjugate signed matrix, levels $N\ge6$, the least eigenvalue is the unique A1 root in the exact rational bootstrap interval and the least-eigenvalue sequence converges. The limiting value is enclosed by
+### 6.1 Uniform spectral lower-bound theorem
+
+For the explicitly defined signed Laplacian matrix, Lean proves that every real eigenvalue with a nonzero real eigenvector satisfies
 
 $$
-\left[
-\frac{1309128920280813421888623088170810187}{10^{36}},
-\frac{1309128920280813421888623088170810189}{10^{36}}
-\right].
+\lambda\ge1
 $$
 
-Primary declarations: [SchurEigenvalue.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) and [SchurSignedTransfer.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean). See [PR #31](https://github.com/RFT-SIRM/Phi-Genesis/pull/31) and [PR #32](https://github.com/RFT-SIRM/Phi-Genesis/pull/32).
+at every refinement level. The formal declaration is \`sgSignedLaplacianMatrix_eigenvalue_ge_one\` in \`PhiGenesis/SpectralGap/SignedLaplacianMatrix.lean\`. The associated Gram-matrix identity expresses the matrix as \(B^\mathsf{T}B\), which gives positive semidefiniteness; the stronger lower bound \(1\) is a separate proved statement.
 
-**Still open:** Gate A's full exceptional set and residual mismatches; the quadratic increment law and existence of its constant (numerical evidence only); a closed form for the limit; levels $N<6$; and the external $\theta=2\pi$ operator identification beyond the explicitly defined graph matrix.
+### 6.2 Least-eigenvalue identification and convergence for levels \(N\ge6\)
 
-- A fitted mass-index pattern is not an established predictive physical law without a mechanism, prospective predictions, held-out validation, and independent derivation.
-- Do not assume equivalence between the signed-flux operators and the SU(2)-connected operators in Evgeny's Theorem. A bridge needs an explicit map, boundary conditions, preserved quantities, exceptions, and a proof—or a clearly labelled conjecture.
+Let \(Q_N\) be the signless graph Laplacian of the level-\(N\) Sierpiński-gasket graph, and let \(Q_N^{\mathrm{sgn}}\) denote the specific diagonally gauge-conjugate signed matrix in the formalization. For every \(N=6+n\), the A1 Schur root in the fixed bootstrap interval is the least eigenvalue. The least eigenvalues converge:
 
-Gate A remains open; the new least-eigenvalue theorem does not close it. Preserve negative results, failed checks, and open questions.
+$$
+\lambda_{\min}(Q_{6+n})\longrightarrow\lambda_\infty,
+\qquad
+\lambda_{\min}(Q_{6+n}^{\mathrm{sgn}})\longrightarrow\lambda_\infty.
+$$
+
+The exact limiting enclosure is
+
+$$
+\frac{1309128920280813421888623088170810187}{10^{36}}
+\le \lambda_\infty \le
+\frac{1309128920280813421888623088170810189}{10^{36}}.
+$$
+
+Equivalently,
+
+$$
+1.309128920280813421888623088170810187
+\le \lambda_\infty \le
+1.309128920280813421888623088170810189.
+$$
+
+Thus \(\lambda_\infty\approx1.309128920280813421888623088170810188\), with certified half-width \(10^{-36}\). The declarations are \`sgBottomEigenvalue_atRoot\`, \`sgChosenRoot_isLeast\`, \`sgLeastEigenvalue_converges\`, and \`sgSignedLeastEigenvalue_converges\`.
+
+**Interpretation:** \(1.3091289\ldots\) is a rigorously enclosed *limiting least-eigenvalue value for this defined graph-matrix sequence*. It is not a closed-form constant at present, is not asserted for levels \(N<6\), and is not identified as a universal constant of nature. The identification with an external physical \(\theta=2\pi\) operator remains a separate open task beyond the explicitly defined graph matrices.
+
+### 6.3 What remains open
+
+- Gate A: the complete exceptional set and all residual mismatches in the wider spectral-decimation correspondence.
+- A proof of the observed quadratic increment law and its coefficient; current ratios are numerical evidence, not a theorem.
+- A closed form for \(\lambda_\infty\).
+- Extension of the least-eigenvalue convergence theorem to levels \(N<6\).
+- Identification with an external \(\theta=2\pi\) operator beyond the explicit graph-matrix model.
+
+The proved lower bound and least-eigenvalue convergence theorem are real completed results; they do **not** close Gate A or establish a bridge to the SU(2) operators. A proposed mass-index pattern is not a predictive physical law without an independent selection mechanism, prospective predictions, and held-out validation.
 
 ## 7. SIRM engineering invariants are a different strand
 
@@ -151,7 +235,7 @@ Before copying or rewriting a formula:
 5. Distinguish exact algebra, floating-point tolerance, finite-grid tests, and proof-assistant theorems.
 6. If the source and a summary disagree, do not silently pick the more impressive version. Record the discrepancy and inspect the definitions/code.
 
-## 9. What not to do
+## 10. What not to do
 
 - Do not claim a complete physical Theory of Everything.
 - Do not imply peer review or independent replication unless there is evidence.
@@ -164,7 +248,7 @@ Before copying or rewriting a formula:
 - Do not make up current CI status, benchmark counts, chronology, or live metrics.
 - Do not claim that an external site is deployed until the actual URL and deployment are verified.
 
-## 10. Repository map
+## 11. Repository map
 
 - [README.md](README.md) — mathematical anchor, research hierarchy, and applications.
 - [PITCH.md](PITCH.md) — public-facing research dossier and claims register.
