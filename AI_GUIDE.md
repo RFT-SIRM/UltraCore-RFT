@@ -2,7 +2,7 @@
 
 > **Purpose:** prevent AI assistants, automated reviewers, and research summarizers from flattening distinct mathematical and engineering claims into one unsupported narrative. Read this file before summarizing the repository.
 
-**Primary research entry points:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [Lean-formalized fourth-moment theorem](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [UltraCore research map](docs/research-map.md).
+**Primary research entry points:** [Focused fourth-moment dissertation](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/DISSERTATION.md) · [Lean formalization](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) · [Broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [Phi-Genesis spectral theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [UltraCore research map](docs/research-map.md).
 
 ## 1. Historical chronology and evidence order are different
 
@@ -26,7 +26,7 @@ Do not invert this hierarchy just because a deployed application is easier to de
 
 “Evgeny's Theory of Everything” is the name of a broad research programme on recursive operators, spectral invariants, and higher-moment trace laws. **It is not a claim that a complete physical theory of the Universe has been proved.**
 
-The programme contains a specific fourth-moment result reported as machine-checked in Lean 4, alongside higher-moment finite-level certificates, numerical experiments, open recurrences, and a separate signed-flux spectral-decimation programme. These have different logical status.
+The programme contains an all-level SU(2) fourth-moment theorem, moment-specific H⁶/H⁸/H¹⁰ results with different formal and certificate boundaries, and a separate Phi-Genesis least-eigenvalue/convergence theorem for signed/signless graph matrices at levels $N\ge6$. Gate A and further Phi-Genesis extensions remain open. These are distinct operator families and evidence classes.
 
 Never rewrite “a theorem within a Theory-of-Everything research programme” as “the Theory of Everything has been proved.”
 
@@ -56,29 +56,40 @@ At $\theta=\pi/2$, the limiting value is $-8/9$.
 
 **Do not claim:** the proof covers $H^6,H^8,H^{10}$; proves the full spectrum; proves a physical law; establishes quantum speed-up; solves Yang–Mills or another Millennium Prize Problem; or proves SIRM runtime invariants. None follows from this theorem.
 
-## 5. Higher moments: keep the open problem visible
+## 5. Higher moments: report each proof boundary separately
 
-Primary synthesis: [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [modular/CRT certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
+Primary sources: [focused theorem dissertation](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/DISSERTATION.md) · [higher-moment status](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/docs/HIGHER_MOMENTS.md) · [broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
 
-- The repository reports finite-level modular/CRT certificates for specified Fourier coefficients and transitions for $p\in\{6,8,10\}$, under the certificate's explicit construction and bounds.
-- Numerical holdouts and sparse-matrix-power checks are finite computational evidence.
-- **The all-level higher-moment recurrence remains open.** A finite certificate does not quantify over all graph levels. Numerical agreement over finite levels and angles does not establish a universal identity.
-- The exceptional first-transition correction needs a derivation from the recursive graph/operator construction; proposed explanations remain hypotheses until proved.
+- **H⁶ and H⁸:** Lean proves the all-angle recurrences for $m\ge3$; exact symbolic certificates supply the exceptional $m=2\to3$ bridges. Those finite bridges are not yet Lean-kernel theorems.
+- **H¹⁰:** Lean proves the radius-four transport and unconditional affine recurrence for $m\ge4$, with affine form for $m\ge5$. The level-five correction is still an exact finite trace expression.
+- A unified general recurrence theorem covering all higher moments remains open. Do not flatten these distinct statuses into “all higher moments are proved” or “no higher moments are proved”.
+- Finite certificates and numerical holdouts do not quantify over all levels unless their theorem explicitly does so.
 
-Do not use the fourth-moment Lean proof as if it formalized the higher-moment recurrence.
+Do not use the H⁴ Lean theorem as if it proved H⁶/H⁸/H¹⁰.
 
 ## 6. Phi-Genesis: a separate operator family
 
 Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
 
-Phi-Genesis investigates signed $Z_2$-flux Laplacians, spectral decimation with boundary/corner corrections, inertia computations, and exploratory mass-index patterns.
+Phi-Genesis studies signed $Z_2$-flux graph Laplacians, Schur elimination, spectral decimation, boundary/corner corrections, inertia, and exploratory mass-index patterns.
 
-- Gate A is **not closed** while decimation residual mismatches and the full exceptional set remain unresolved.
-- Reported test success is evidence only for assertions actually run.
+**Proved in Lean:** for the signless Laplacian $Q_N$ and its gauge-conjugate signed matrix, levels $N\ge6$, the least eigenvalue is the unique A1 root in the exact rational bootstrap interval and the least-eigenvalue sequence converges. The limiting value is enclosed by
+
+$$
+\left[
+\frac{1309128920280813421888623088170810187}{10^{36}},
+\frac{1309128920280813421888623088170810189}{10^{36}}
+\right].
+$$
+
+Primary declarations: [SchurEigenvalue.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) and [SchurSignedTransfer.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean). See [PR #31](https://github.com/RFT-SIRM/Phi-Genesis/pull/31) and [PR #32](https://github.com/RFT-SIRM/Phi-Genesis/pull/32).
+
+**Still open:** Gate A's full exceptional set and residual mismatches; the quadratic increment law and existence of its constant (numerical evidence only); a closed form for the limit; levels $N<6$; and the external $\theta=2\pi$ operator identification beyond the explicitly defined graph matrix.
+
 - A fitted mass-index pattern is not an established predictive physical law without a mechanism, prospective predictions, held-out validation, and independent derivation.
 - Do not assume equivalence between the signed-flux operators and the SU(2)-connected operators in Evgeny's Theorem. A bridge needs an explicit map, boundary conditions, preserved quantities, exceptions, and a proof—or a clearly labelled conjecture.
 
-Preserve negative results, failed checks, and open questions. They are part of the historical record and must not be deleted to make the narrative appear more complete.
+Gate A remains open; the new least-eigenvalue theorem does not close it. Preserve negative results, failed checks, and open questions.
 
 ## 7. SIRM engineering invariants are a different strand
 

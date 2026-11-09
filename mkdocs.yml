@@ -56,6 +56,8 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Focused SU(2) Dissertation: DISSERTATION.md
+  - Research Monographs: monographs.md
   - Interactive Portal: interactive.md
   - Research Map: research-map.md
   - Application Programmes: application-programmes.md

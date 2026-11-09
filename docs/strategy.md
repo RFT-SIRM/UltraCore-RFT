@@ -46,13 +46,15 @@ $$
 - Keep the fourth-moment result separate from the higher-moment recurrence: do not describe the all-level recurrence as proved unless its proof is present and verified.
 - Track numerical or spectral-decimation observations as separate evidence; they do not replace the formal theorem's assumptions or proof.
 
-### Priority II — establish the higher-moment programme
+### Priority II — maintain the higher-moment proof hierarchy
 
-Maintain finite-level certificates and numerical cross-checks as evidence, while marking the all-level recurrence as open until a complete proof is available.
+Keep the proof status moment-specific: H⁶ and H⁸ have Lean recurrences for $m\ge3$ plus exact finite $m=2\to3$ certificates; H¹⁰ has an unconditional Lean recurrence for $m\ge4$ and affine form for $m\ge5$. Continue the derivation of a unified general recurrence without promoting finite certificates or one moment's theorem to a universal result.
 
-### Priority III — audit the spectral-decimation programme independently
+### Priority III — extend the proved Phi-Genesis spectral result and audit Gate A separately
 
-Use [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) to track spectral-decimation checks, boundary/corner corrections, and unresolved Gate A criteria. Report residual mismatches rather than describing the mechanism as fully closed.
+[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) now has a Lean theorem identifying the least eigenvalue of the signless graph Laplacian (and its gauge-conjugate signed matrix) with the unique A1 root and proving convergence for levels $N\ge6$ into an exact rational interval of width $2\times10^{-36}$. Preserve this as a completed result.
+
+Continue the separate work on Gate A's exceptional set, the quadratic increment law, the closed form of the limit, levels $N<6$, and the external $\theta=2\pi$ identification. Report residual mismatches rather than describing the entire spectral-decimation mechanism as closed.
 
 ### Priority IV — specify and verify SIRM as an engineering model
 
