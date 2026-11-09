@@ -19,23 +19,23 @@ This dated register updates the mathematical status without erasing the earlier 
 | Workstream | Established result | Remaining boundary / next priority |
 |---|---|---|
 | SU(2) fourth moment | Exact all-level, all-angle H⁴ trace-defect identity in Lean for the defined operator and commuting control; exact normalized limit and finite-level remainder. | Independent semantic review, literature comparison, and external replication remain separate tasks. |
-| H⁶ / H⁸ | Lean recurrences for \(m\ge3\); exact symbolic certificates for the exceptional \(m=2\to3\) transitions. | Formalize the finite transition bridges in Lean; do not yet describe those bridges as Lean-kernel proofs. |
-| H¹⁰ | Lean-proved radius-four transport and unconditional affine recurrence for \(m\ge4\); affine form for \(m\ge5\). | The level-five correction is an exact finite trace expression; simplifying it is a presentation task. |
+| H⁶ / H⁸ | Lean recurrences for $m\ge3$; exact symbolic certificates for the exceptional $m=2\to3$ transitions. | Formalize the finite transition bridges in Lean; do not yet describe those bridges as Lean-kernel proofs. |
+| H¹⁰ | Lean-proved radius-four transport and unconditional affine recurrence for $m\ge4$; affine form for $m\ge5$. | The level-five correction is an exact finite trace expression; simplifying it is a presentation task. |
 | Phi-Genesis lower bound | Every real eigenvalue with a nonzero real eigenvector of the defined signed Laplacian is at least (1), at every refinement level. | Preserve the precise matrix and eigenvector hypotheses in every summary. |
-| Phi-Genesis least eigenvalue | For \(N\ge6\), least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to \(\lambda_\infty\). | Exact rational enclosure of width \(2\times10^{-36}\), centred near \(1.309128920280813421888623088170810188\). |
+| Phi-Genesis least eigenvalue | For $N\ge6$, least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to $\lambda_\infty$. | Exact rational enclosure; its endpoints differ by exactly $2\cdot10^{-36}$, with midpoint near $1.309128920280813421888623088170810188$. |
 | SIRM and applications | Separate runtime-invariant, protocol, scheduler, memory-isolation, stress-testing, and exploratory application workstreams. | Each retains its own validation criteria; no mathematical result transfers to an application by association. |
 
-The Phi-Genesis value \(1.309128920280813421888623088170810188\ldots\) is a **limiting least-eigenvalue value for a specified graph-matrix sequence**, not a known closed-form constant and not a claim about a universal constant of nature.
+The Phi-Genesis value $1.309128920280813421888623088170810188\ldots$ is a **limiting least-eigenvalue value for a specified graph-matrix sequence**, not a known closed-form constant and not a claim about a universal constant of nature.
 
 ### Current research priorities
 
 1. Review the formal SU(2) operator definitions independently and compare the theorem with the relevant literature.
-2. Formalize the exact H⁶/H⁸ \(m=2\to3\) finite bridges in Lean while preserving the existing reproducible certificates.
+2. Formalize the exact H⁶/H⁸ $m=2\to3$ finite bridges in Lean while preserving the existing reproducible certificates.
 3. Simplify the H¹⁰ level-five correction coefficient without changing the proved recurrence.
 4. Investigate a unified higher-moment recurrence as a separate theorem.
-5. Extend the Phi-Genesis least-eigenvalue result beyond its proved \(N\ge6\) range; investigate Gate A's exceptional set and residuals independently.
-6. Prove or refute the numerical quadratic increment law; seek a closed form for \(\lambda_\infty\) as a separate problem.
-7. Establish any external \(\theta=2\pi\) operator identification by an explicit operator map and proof, not by numerical resemblance.
+5. Extend the Phi-Genesis least-eigenvalue result beyond its proved $N\ge6$ range; investigate Gate A's exceptional set and residuals independently.
+6. Prove or refute the numerical quadratic increment law; seek a closed form for $\lambda_\infty$ as a separate problem.
+7. Establish any external $\theta=2\pi$ operator identification by an explicit operator map and proof, not by numerical resemblance.
 
 **Status rule:** the least-eigenvalue convergence theorem is complete within its stated matrix and level range; Gate A and the listed extensions remain open. Do not hide a completed result behind a broader open problem, and do not present a broader open problem as completed because a related theorem is proved.
 
@@ -52,7 +52,7 @@ The programme has three principal mathematical strands and a downstream engineer
 **Defined mathematical objects and assumptions**
 → **Evgeny's Theorem:** exact H⁴ SU(2) trace-defect identity; machine-checked in Lean 4
 → **Higher-moment programme:** H⁶/H⁸ recurrences and H¹⁰ affine recurrence with distinct finite/formal proof boundaries; a unified general recurrence remains open
-→ **Phi-Genesis:** signed-Laplacian lower bound \(\lambda\ge1\) at every level; least-eigenvalue convergence for \(N\ge6\); exact Schur parameter-derivative recursion in the bootstrap window. Gate A and the quadratic increment law remain open.
+→ **Phi-Genesis:** signed-Laplacian lower bound $\lambda\ge1$ at every level; least-eigenvalue convergence for $N\ge6$; exact Schur parameter-derivative recursion in the bootstrap window. Gate A and the quadratic increment law remain open.
 → **RFT-Cosmology-Genesis:** separate exact invariant limit/remainder and a phenomenological cosmology model; physical interpretation remains open
 → **SIRM:** invariant-based state transitions and engineering constraints
 → **Implementations and experiments:** runtime, protocol, scheduler, kernel stress tests
@@ -96,15 +96,15 @@ The theorem is a fourth-moment result for specified operators, not a proof of ev
 
 The proof status is moment-specific:
 
-- **H⁶:** Lean proves the all-angle recurrence for \(m\ge3\); the exact \(m=2\to3\) transition is supplied by a Gaussian-integer polynomial certificate.
-- **H⁸:** Lean proves the all-angle recurrence for \(m\ge3\); the exact \(m=2\to3\) transition is supplied by a sparse-polynomial certificate.
-- **H¹⁰:** Lean proves the radius-four transport and unconditional affine recurrence for \(m\ge4\), with the affine formula for \(m\ge5\). Its level-five correction remains a finite exact trace expression.
+- **H⁶:** Lean proves the all-angle recurrence for $m\ge3$; the exact $m=2\to3$ transition is supplied by a Gaussian-integer polynomial certificate.
+- **H⁸:** Lean proves the all-angle recurrence for $m\ge3$; the exact $m=2\to3$ transition is supplied by a sparse-polynomial certificate.
+- **H¹⁰:** Lean proves the radius-four transport and unconditional affine recurrence for $m\ge4$, with the affine formula for $m\ge5$. Its level-five correction remains a finite exact trace expression.
 
 The H⁶/H⁸ transition certificates are exact but are not yet Lean-kernel theorems. This is the next formalization target; it is inaccurate to describe every higher-moment result as either wholly open or wholly proved.
 
 ### Current open obligations
 
-1. Move the exact H⁶ and H⁸ \(m=2\to3\) bridges into the Lean kernel.
+1. Move the exact H⁶ and H⁸ $m=2\to3$ bridges into the Lean kernel.
 2. Simplify the H¹⁰ correction expression while preserving the current unconditional theorem.
 3. Prove or refute a unified recurrence for the wider family of higher moments, with explicit indexing, angles, and boundary assumptions.
 4. Keep modular/CRT certificates, numerical holdouts, and Lean theorems labelled by their actual scope.
@@ -117,25 +117,25 @@ The H⁶/H⁸ transition certificates are exact but are not yet Lean-kernel theo
 
 ### Completed spectral theorems
 
-1. **Uniform lower bound:** every real eigenvalue with a nonzero real eigenvector of the explicitly defined signed Laplacian satisfies \(\lambda\ge1\), at every refinement level. See \`sgSignedLaplacianMatrix_eigenvalue_ge_one\`.
-2. **Least-eigenvalue identification:** for the signless Laplacians \(Q_{6+n}\), the canonical A1 Schur root in the fixed bootstrap interval is the least eigenvalue. The same result transfers to the gauge-conjugate signed matrices.
-3. **Convergence:** both least-eigenvalue sequences converge to \(\lambda_\infty\), with
+1. **Uniform lower bound:** every real eigenvalue with a nonzero real eigenvector of the explicitly defined signed Laplacian satisfies $\lambda\ge1$, at every refinement level. See \`sgSignedLaplacianMatrix_eigenvalue_ge_one\`.
+2. **Least-eigenvalue identification:** for the signless Laplacians $Q_{6+n}$, the canonical A1 Schur root in the fixed bootstrap interval is the least eigenvalue. The same result transfers to the gauge-conjugate signed matrices.
+3. **Convergence:** both least-eigenvalue sequences converge to $\lambda_\infty$, with
 $$
 \frac{1309128920280813421888623088170810187}{10^{36}}
 \le\lambda_\infty\le
 \frac{1309128920280813421888623088170810189}{10^{36}}.
 $$
-   Its decimal location is approximately \(1.309128920280813421888623088170810188\), with interval width \(2\times10^{-36}\).
+   Its decimal location is approximately $1.309128920280813421888623088170810188$, with interval width exactly $2\cdot10^{-36}$.
 
-The number \(1.3091289\ldots\) is a limiting least-eigenvalue value for the specified graph matrices. It is not currently known in closed form and is not claimed to be a fundamental physical constant.
+The number $1.3091289\ldots$ is a limiting least-eigenvalue value for the specified graph matrices. It is not currently known in closed form and is not claimed to be a fundamental physical constant.
 
 ### Remaining Gate A and extension criteria
 
 - Characterize the complete exceptional set in the broader spectral-decimation correspondence.
 - Explain residual mismatches and retain matching rates by level and method.
 - Prove or refute the observed quadratic increment law and determine whether its numerical coefficient has a rigorous limit.
-- Extend the least-eigenvalue convergence theorem to levels \(N<6\).
-- Prove any external \(\theta=2\pi\) operator identification using an explicit operator map, boundary conditions, and a proof.
+- Extend the least-eigenvalue convergence theorem to levels $N<6$.
+- Prove any external $\theta=2\pi$ operator identification using an explicit operator map, boundary conditions, and a proof.
 - Keep mass-index hypotheses separate from proved graph-spectral statements.
 
 **Current status:** the lower-bound and least-eigenvalue convergence theorems are proved within their stated matrix and level ranges. Gate A remains open; it is not closed by the least-eigenvalue theorem.
@@ -144,14 +144,14 @@ The number \(1.3091289\ldots\) is a limiting least-eigenvalue value for the spec
 
 SIRM (Synthetic Intelligence Reasoning Model) defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
 
-- \(S\): total supply
-- \(B\): total base sum
-- \(G\): global field
-- \(M\): total minted
-- \(R\): total burned
-- \(D\): dust accumulator
-- \(b_i\): effective balance of account \(i\)
-- \(q_i\): base balance of account \(i\)
+- $S$: total supply
+- $B$: total base sum
+- $G$: global field
+- $M$: total minted
+- $R$: total burned
+- $D$: dust accumulator
+- $b_i$: effective balance of account $i$
+- $q_i$: base balance of account $i$
 
 $$
 I_{1}: S = B + Gp
@@ -169,7 +169,7 @@ $$
 I_{4}: b_i \ge -\frac{S}{10p}
 $$
 
-The effective balance is defined by \(b_i = q_i + G\), subject to the implementation's integer and scaling conventions.
+The effective balance is defined by $b_i = q_i + G$, subject to the implementation's integer and scaling conventions.
 
 The global-scalar representation can make the distribution update $O(1)$; that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
 
