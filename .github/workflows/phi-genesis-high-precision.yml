@@ -1,0 +1,102 @@
+name: Phi-Genesis — High-Precision Spectral Matrix
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phi-genesis-high-precision-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  OPENBLAS_NUM_THREADS: "1"
+  OMP_NUM_THREADS: "1"
+
+jobs:
+  spectral-matrix:
+    name: ${{ matrix.sector }} sector — level ${{ matrix.level }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - sector: A1
+            level: 9
+            artifact: phi-genesis-a1-level-9
+          - sector: A1
+            level: 10
+            artifact: phi-genesis-a1-level-10
+          - sector: E
+            level: 9
+            artifact: phi-genesis-e-level-9
+    steps:
+      - name: Check out UltraCore-RFT
+        uses: actions/checkout@v4
+
+      - name: Check out the canonical Phi-Genesis source
+        uses: actions/checkout@v4
+        with:
+          repository: RFT-SIRM/Phi-Genesis
+          ref: main
+          path: phi-genesis
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install canonical source
+        working-directory: phi-genesis
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Record exact source provenance
+        run: |
+          {
+            echo "UltraCore-RFT revision:"
+            git rev-parse HEAD
+            echo
+            echo "Phi-Genesis source revision:"
+            git -C phi-genesis rev-parse HEAD
+            echo
+            echo "UTC start:"
+            date -u --iso-8601=seconds
+            echo
+            echo "Sector: ${{ matrix.sector }}"
+            echo "Level: ${{ matrix.level }}"
+            echo "Working precision: 360 decimal digits"
+            echo "Linear solve target: 210 decimal digits"
+            echo "Iterations: 250"
+          } | tee run-metadata.txt
+
+      - name: Compute the mixed-precision spectral sector
+        working-directory: phi-genesis
+        shell: bash
+        run: |
+          set -o pipefail
+          python computational/spectral_gap_theta_2pi/symmetry_sector_bottom.py \
+            --mixed-precision-only \
+            --mixed-precision-levels ${{ matrix.level }} \
+            --mixed-precision-sectors ${{ matrix.sector }} \
+            --mixed-precision-dps 360 \
+            --mixed-precision-solve-digits 210 \
+            --mixed-precision-iterations 250 \
+            --mixed-precision-progress-every 20 2>&1 | tee spectral-sector.log
+
+      - name: Preserve spectral output and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}-${{ github.run_number }}
+          path: |
+            phi-genesis/spectral-sector.log
+            run-metadata.txt
+          if-no-files-found: warn
+          retention-days: 30

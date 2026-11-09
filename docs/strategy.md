@@ -1,6 +1,8 @@
 # Development Strategy
 
 > **Scope:** Strategic roadmap, research phases, and ecosystem positioning for the RFT-SIRM deterministic invariant systems laboratory.
+>
+> **Dated status snapshot: 9 November 2026.** This file preserves earlier programme phases as an archival planning record while the current priorities track the proved H⁴, H⁶/H⁸/H¹⁰, and Phi-Genesis results. Past target dates are historical planning targets, not current delivery promises.
 
 ---
 
@@ -46,13 +48,26 @@ $$
 - Keep the fourth-moment result separate from the higher-moment recurrence: do not describe the all-level recurrence as proved unless its proof is present and verified.
 - Track numerical or spectral-decimation observations as separate evidence; they do not replace the formal theorem's assumptions or proof.
 
-### Priority II — establish the higher-moment programme
+### Priority II — maintain the higher-moment proof hierarchy
 
-Maintain finite-level certificates and numerical cross-checks as evidence, while marking the all-level recurrence as open until a complete proof is available.
+Keep the proof status moment-specific: H⁶ and H⁸ have Lean recurrences for $m\ge3$ plus exact finite $m=2\to3$ certificates; H¹⁰ has an unconditional Lean recurrence for $m\ge4$ and affine form for $m\ge5$. Continue the derivation of a unified general recurrence without promoting finite certificates or one moment's theorem to a universal result.
 
-### Priority III — audit the spectral-decimation programme independently
+### Priority III — extend the proved Phi-Genesis spectral results and audit Gate A separately
 
-Use [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) to track spectral-decimation checks, boundary/corner corrections, and unresolved Gate A criteria. Report residual mismatches rather than describing the mechanism as fully closed.
+[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) now has two distinct machine-checked results:
+
+1. **Uniform lower bound:** every real eigenvalue with a nonzero real eigenvector of the explicitly defined signed Laplacian is at least \(1\), at every refinement level.
+2. **Least-eigenvalue convergence:** for the signless graph matrices \(Q_{6+n}\) and their gauge-conjugate signed matrices, the least eigenvalues converge to \(\lambda_\infty\). The exact enclosure is
+
+$$
+\frac{1309128920280813421888623088170810187}{10^{36}}
+\le\lambda_\infty\le
+\frac{1309128920280813421888623088170810189}{10^{36}}.
+$$
+
+Thus \(\lambda_\infty\approx1.309128920280813421888623088170810188\), with interval width \(2\times10^{-36}\). The convergence statement covers levels \(N\ge6\). This is a graph-spectral limit, not a known fundamental physical constant.
+
+Preserve these as completed results within their exact matrix and level scopes. Continue the separate work on Gate A's exceptional set, the quadratic increment law, a closed form for the limit, levels \(N<6\), and the external \(\theta=2\pi\) identification. Do not describe the whole spectral-decimation mechanism as closed.
 
 ### Priority IV — specify and verify SIRM as an engineering model
 
@@ -111,6 +126,8 @@ RFT-SIRM operates as a **multi-stage research pipeline**. Each stage feeds into 
 **Key insight:** Stages are decoupled. SIRM can be instantiated in any runtime — Solana, standalone L1, or future environments — without changing the invariant specification.
 
 ---
+
+> **Archival note:** The phase tables below preserve earlier project planning, completion labels, and Q3/Q4 2026 target dates. Since those dates have passed, do not read them as a live schedule. Use the dated priorities in section 2 and the source repository histories to determine present status. Historical entries are retained to show how the programme developed; they are not silently reinterpreted as new commitments.
 
 ## 4. Research Phases
 

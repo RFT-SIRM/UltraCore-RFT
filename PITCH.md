@@ -1,4 +1,4 @@
-# UltraCore-RFT — Research Dossier and Programme Thesis
+# UltraCore-RFT — SU(2) Fourth-Moment Trace-Defect Theorem, Phi-Genesis Spectral Limit, and SIRM Research Dossier
 
 **Mathematical results first. Distinct evidence classes. Engineering applications downstream.**
 
@@ -22,6 +22,59 @@ The systems strand, SIRM, applies invariant-first design to deterministic state 
 
 **The title “Theory of Everything” is a research-programme name, not a declaration that a complete physical theory of the Universe has been proved.**
 
+## Principal mathematical results — dated research register
+
+The mathematical statements below concern **explicitly defined graph operators and models**. “Law” in this dossier means an exact mathematical identity or theorem; it does not mean that a new universal physical law has been established.
+
+### Result A — SU(2) fourth-moment trace-defect theorem
+
+For the specified non-commuting SU(2)-connection operator $H_C$ on the Sierpiński-gasket graph and its commuting control $H_{C'}$, the Lean formalization proves, for every level $m\ge1$ and every real parameter $\theta$, the exact identity
+
+$$
+\Delta_m(H^4,\theta)
+=\mathrm{Tr}(H_C^4)-\mathrm{Tr}(H_{C'}^4)
+=-16(3^{m-1}+1)\sin^2\left(\frac{\theta}{2}\right).
+$$
+
+The normalized trace defect has the exact limit
+
+$$
+I_\infty(\theta)
+=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right),
+\qquad
+I_\infty\left(\frac{\pi}{2}\right)=-\frac89.
+$$
+
+### Result B — higher spectral moments
+
+H⁶ and H⁸ have Lean-proved all-angle recurrences for $m\ge3$, combined with exact finite certificates for the $m=2\to3$ transition. These finite bridges are not yet Lean-kernel theorems. H¹⁰ has an unconditional Lean-proved affine recurrence for $m\ge4$, with the affine formula for $m\ge5$. A single general theorem covering all higher moments remains open.
+
+### Result C — Phi-Genesis signed/signless graph spectrum
+
+For the explicitly defined signed Laplacian in Phi-Genesis, every real eigenvalue with a nonzero real eigenvector is at least $1$, at every refinement level.
+
+For the signless graph Laplacians $Q_{6+n}$ and their gauge-conjugate signed matrices, Lean proves that the least eigenvalues converge to a common limit, denoted by $\lambda_\infty$. The exact rational enclosure is
+
+$$
+\frac{1309128920280813421888623088170810187}{10^{36}}
+\le \lambda_\infty \le
+\frac{1309128920280813421888623088170810189}{10^{36}}.
+$$
+
+In decimal notation, the same enclosure is
+
+$$
+1.309128920280813421888623088170810187
+\le \lambda_\infty \le
+1.309128920280813421888623088170810189.
+$$
+
+The endpoints differ by exactly $2\cdot10^{-36}$. The midpoint is approximately $1.309128920280813421888623088170810188$. This value is the limiting least eigenvalue of the specified graph-matrix sequence; it is not known in closed form and is not claimed to be a universal physical constant. The convergence theorem covers levels $N\ge6$.
+
+### Evidence boundary
+
+These results belong to separate operator families: the SU(2) trace-defect problem, the signed $Z_2$-flux graph spectral problem, and the SIRM engineering model. No operator equivalence between the first two is claimed. Gate A, the quadratic increment law, a closed form for $\lambda_\infty$, levels $N<6$, and the external $\theta=2\pi$ identification remain open.
+
 ## 1. Research anchor: the fourth-moment theorem
 
 ### 1.1 Statement and normalization
@@ -44,7 +97,18 @@ I_m(\theta)=\frac{\Delta_m(H^4,\theta)}{3^{m+1}+3},
 =-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right).
 $$
 
-At $\theta=\pi/2$, the limiting value is $-8/9$.
+At $\theta=\pi/2$, the limiting value is $-8/9$. The exact finite-level expression and remainder are
+
+$$
+I_m(\theta)
+=-\frac{16}{9}\sin^2\left(\frac{\theta}{2}\right)
+-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right),
+$$
+
+$$
+I_m(\theta)-I_\infty(\theta)
+=-\frac{32}{9(3^m+1)}\sin^2\left(\frac{\theta}{2}\right).
+$$
 
 The denominator is the stated Hilbert-space dimension $3^{m+1}+3$. Since $3^{m+1}+3=3(3^m+1)$, the limit follows by dividing numerator and denominator by $3^m$. At $m=1,\theta=\pi/2$, $\Delta_1=-16(1+1)/2=-16$, the dimension is $12$, and $I_1=-4/3$. These elementary checks guard against index and normalization transcription errors.
 
@@ -70,41 +134,79 @@ The formula can be evaluated in constant arithmetic work for any stated level, w
 
 Possible uses in quantum simulation and trace estimation remain hypotheses until a circuit or algorithm, resource estimate, error analysis, and reproducible experiment are published. No speed-up is claimed.
 
-## 2. Evgeny's Theory of Everything: the higher-moment programme
+## 2. Higher spectral moments: H⁶, H⁸, and H¹⁰
 
-Primary source: [RFT-SIRM/Evgeny-s-Theory-of-Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
+The higher-moment programme is not an all-or-nothing claim. Each moment has its own theorem, index range, and evidence boundary. The primary source is [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem), with the broader synthesis recorded in [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything).
 
-The synthesis repository studies recursive operator families and higher trace moments $H^6,H^8,H^{10}$, Fourier coefficient structure, transition residuals, and a candidate recurrence.
+| Moment | Proved statement | Exact boundary |
+|---|---|---|
+| H⁶ | All-angle recurrence for $m\ge3$; combined formula for $m\ge2$. | The recurrence is in Lean. The exceptional $m=2\to3$ bridge is an exact Gaussian-integer polynomial certificate, not yet a Lean-kernel theorem. |
+| H⁸ | All-angle recurrence for $m\ge3$; combined formula for $m\ge2$. | The recurrence is in Lean. The exceptional $m=2\to3$ bridge is an exact sparse-polynomial certificate, not yet a Lean-kernel theorem. |
+| H¹⁰ | Unconditional affine recurrence for $m\ge4$, and affine form for $m\ge5$. | Lean proves the required radius-four transport. The level-five correction remains an exact finite trace expression. |
 
-### Evidence already documented
+A unified all-level recurrence theorem covering the wider higher-moment family remains open. Finite certificates and numerical residuals must not be promoted to universal theorems.
 
-- Finite-level modular/CRT certificates for specified Fourier coefficients and transitions, for $p\in\{6,8,10\}$, under explicit denominator, norm, prime, and coefficient-bound arguments.
-- Predeclared finite-angle holdouts and a sparse-matrix-power route that does not use eigenspectrum evaluation.
-- Versioned numerical outputs and reports that allow the stated calculations to be reproduced.
+Primary records: [higher-moment formal status](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/docs/HIGHER_MOMENTS.md) · [focused dissertation](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/DISSERTATION.md) · [broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
 
-### What remains open
+## 3. Phi-Genesis: signed-flux graph Laplacian, spectral lower bound, and limiting eigenvalue
 
-The all-level recurrence $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for all $m\ge3$ and all stated admissible angles has not been proved. The exceptional first-transition correction still requires an explanation derived from the recursive graph/operator construction. Finite certificates and small numerical residuals do not prove these universal claims.
+Primary sources: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [spectral-gap dossier](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/README.md) · [Schur eigenvalue formalization](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [signed matrix transfer](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean).
 
-Closure criteria should include a complete derivation, explicit indexing and boundary conditions, proof for all required levels and angles, counterexample search, reproducible regression tests, and formalization where feasible. Until then, the correct status is **active research / open theorem**.
+Phi-Genesis studies signed $Z_2$-flux graph Laplacians, their diagonal gauge relation to the signless graph Laplacian, recursive Schur elimination, and spectral decimation. This is a **separate operator family** from the non-commuting SU(2) connection in Evgeny's Theorem.
 
-Evidence routes: [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [sparse level-7 report](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_SPARSE_LEVEL7.md) · [coefficient candidates](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_COEFFICIENT_CANDIDATES.md) · [modular certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
+### 3.1 Uniform lower-bound theorem
 
-## 3. Phi-Genesis: spectral decimation and mass-formula audit
+For the specific signed Laplacian matrix in the formalization, Lean proves that every real eigenvalue with a nonzero real eigenvector satisfies
 
-Primary source: [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [live site](https://rft-sirm.github.io/Phi-Genesis/).
+$$
+\lambda\ge1
+$$
 
-Phi-Genesis examines signed $Z_2$-flux Laplacians, spectral decimation, boundary/corner corrections, inertia computation, and exploratory mass-index patterns. It is a distinct mathematical model from the SU(2)-connected operator family in Evgeny's Theorem.
+at every refinement level. The corresponding declaration is \`sgSignedLaplacianMatrix_eigenvalue_ge_one\` in [SignedLaplacianMatrix.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SignedLaplacianMatrix.lean).
 
-The current status must preserve both positive and negative findings:
+The matrix is also identified with a Gram matrix of a signed incidence operator, which establishes positive semidefiniteness. The strict lower bound $1$ is a separate theorem. Do not confuse this all-level lower-bound statement with the convergence result below.
 
-- Computations and tests support only the statements within their declared inputs, algorithms, and checks.
-- Claims contradicted by the audit should remain marked rejected or narrowed, with evidence links.
-- **Gate A remains open:** residual mismatches and the full exceptional set are not completely explained.
-- The proposed mass-index pattern is not an established predictive physical law without a selection mechanism, prospective predictions, held-out validation, and independent derivation.
-- A connection to the SU(2) model is not assumed. Any bridge must define an operator map, boundary conditions, preserved quantities, exceptional cases, and a proof or a falsifiable conjecture.
+### 3.2 Least-eigenvalue theorem and convergence for $N\ge6$
 
-A high-quality scientific narrative includes failed hypotheses and unresolved residuals. It does not erase them to produce an artificially complete story.
+Let $Q_N$ denote the signless Laplacian of the level-$N$ Sierpiński-gasket graph. For every $N=6+n$, the canonical A1 Schur root in the fixed bootstrap interval is the least eigenvalue of $Q_N$. The same least-eigenvalue statement holds for the diagonally gauge-conjugate signed matrix.
+
+The two least-eigenvalue sequences converge to the same limit:
+
+$$
+\lambda_{\min}(Q_{6+n})\longrightarrow\lambda_\infty,
+\qquad
+\lambda_{\min}(Q_{6+n}^{\mathrm{sgn}})\longrightarrow\lambda_\infty.
+$$
+
+The limit is enclosed by the following exact rational bounds:
+
+$$
+\frac{1309128920280813421888623088170810187}{10^{36}}
+\le \lambda_\infty \le
+\frac{1309128920280813421888623088170810189}{10^{36}}.
+$$
+
+Equivalently, the certified decimal enclosure is
+
+$$
+1.309128920280813421888623088170810187
+\le \lambda_\infty \le
+1.309128920280813421888623088170810189.
+$$
+
+The endpoints differ by exactly $2\cdot10^{-36}$. The midpoint is approximately $1.309128920280813421888623088170810188$. This is the limiting least eigenvalue of the specified graph-matrix sequence. It is not currently known in closed form and is not claimed to be a universal or fundamental physical constant.
+
+The formal declarations are \`sgBottomEigenvalue_atRoot\`, \`sgChosenRoot_isLeast\`, \`sgLeastEigenvalue_converges\`, and \`sgSignedLeastEigenvalue_converges\`.
+
+### 3.3 What remains open
+
+- Gate A: the full exceptional set and all residual mismatches in the broader spectral-decimation correspondence.
+- A proof of the observed quadratic increment law and its coefficient; current ratios are numerical evidence, not a theorem.
+- A closed form for $\lambda_\infty$.
+- The least-eigenvalue convergence statement for levels $N<6$.
+- Identification with an external $\theta=2\pi$ physical operator beyond the explicit graph-matrix model.
+
+The completed least-eigenvalue theorem does not close Gate A. A proposed mass-index pattern is not an established predictive physical law without an independent selection mechanism, prospective predictions, held-out validation, and derivation. No bridge to the SU(2) operator family is assumed.
 
 ## 4. SIRM: invariant-first systems engineering
 

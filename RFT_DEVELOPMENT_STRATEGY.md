@@ -2,15 +2,46 @@
 
 **Priority order:** exact mathematics → evidence and open problems → systems methodology → implementations → exploratory applications.
 
-[![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
+[![Theory of Everything research programme](https://img.shields.io/badge/Theory%20of%20Everything-Research%20programme-5b4bc4?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) [![Fourth-moment theorem](https://img.shields.io/badge/Fourth--moment%20theorem-Lean%204%20formalization-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization) [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Convergence%20and%20derivatives%20proved%20%7C%20Gate%20A%20open-d79a31?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 
-[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Invariant-Battery.) [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20model-7c3aed?style=for-the-badge)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
+[![RFT-QPU-Sierpinski](https://img.shields.io/badge/RFT--QPU--Sierpinski-Pre--experimental%20architecture-4f46e5?style=flat-square)](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) [![RFT-Invariant-Battery](https://img.shields.io/badge/RFT--Invariant--Battery-Exploratory%20energy%20model-0f766e?style=flat-square)](https://github.com/RFT-SIRM/RFT-Invariant-Battery) [![RFT-Cosmology-Genesis](https://img.shields.io/badge/RFT--Cosmology--Genesis-Phenomenological%20model-7c3aed?style=flat-square)](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) [![Application evidence boundaries](https://img.shields.io/badge/Application%20tracks-Evidence%20bounded-d97706?style=flat-square)](docs/application-programmes.md)
 
 [Detailed application programme index](docs/application-programmes.md).
 
 This roadmap describes research priorities and closure criteria, not completed achievements. “Evgeny's Theory of Everything” is the name of a broad research programme; it does not assert that a complete physical theory of the Universe has been established.
 
 ## Historical chronology versus present research priorities
+
+## Current evidence and priority snapshot — 9 November 2026
+
+This dated register updates the mathematical status without erasing the earlier planning history below. The primary theorem repositories remain authoritative for exact definitions, theorem declarations, and proof artifacts.
+
+| Workstream | Established result | Remaining boundary / next priority |
+|---|---|---|
+| SU(2) fourth moment | Exact all-level, all-angle H⁴ trace-defect identity in Lean for the defined operator and commuting control; exact normalized limit and finite-level remainder. | Independent semantic review, literature comparison, and external replication remain separate tasks. |
+| H⁶ / H⁸ | Lean recurrences for $m\ge3$; exact symbolic certificates for the exceptional $m=2\to3$ transitions. | Formalize the finite transition bridges in Lean; do not yet describe those bridges as Lean-kernel proofs. |
+| H¹⁰ | Lean-proved radius-four transport and unconditional affine recurrence for $m\ge4$; affine form for $m\ge5$. | The level-five correction is an exact finite trace expression; simplifying it is a presentation task. |
+| Phi-Genesis lower bound | Every real eigenvalue with a nonzero real eigenvector of the defined signed Laplacian satisfies $\lambda\ge1$, at every refinement level. | Preserve the precise matrix and eigenvector hypotheses in every summary. |
+| Phi-Genesis least eigenvalue | For $N\ge6$, least eigenvalues of the signless graph matrices and their gauge-conjugate signed matrices converge to $\lambda_\infty$. | Exact rational enclosure; full interval width is exactly $2\cdot10^{-36}$. Midpoint is approximately $1.309128920280813421888623088170810188$. |
+| Phi-Genesis derivative recursion | Both Schur boundary coordinates have Lean-proved parameter derivatives at every finite level throughout the bootstrap interval. | Exact recursive derivative formula is formalized; this does not prove the quadratic increment law or existence of its coefficient. |
+| SIRM and applications | Separate runtime-invariant, protocol, scheduler, memory-isolation, stress-testing, and exploratory application workstreams. | Each retains its own validation criteria; no mathematical result transfers to an application by association. |
+
+The Phi-Genesis value $1.309128920280813421888623088170810188\ldots$ is a **limiting least-eigenvalue value for a specified graph-matrix sequence**, not a known closed-form constant and not a claim about a universal constant of nature.
+
+### Current research priorities
+
+1. Review the formal SU(2) operator definitions independently and compare the theorem with the relevant literature.
+2. Formalize the exact H⁶/H⁸ $m=2\to3$ finite bridges in Lean while preserving the existing reproducible certificates.
+3. Simplify the H¹⁰ level-five correction coefficient without changing the proved recurrence.
+4. Investigate a unified higher-moment recurrence as a separate theorem.
+5. Use the proved Phi-Genesis parameter-derivative recursion as an analytic lemma for further asymptotics, without claiming that it proves the quadratic increment law.
+6. Keep Gate A's exceptional set, extension to levels $N<6$, and the external $\theta=2\pi$ identification as separate open problems.
+7. Seek a closed form for $\lambda_\infty$ independently of the numerical convergence evidence.
+7. Establish any external $\theta=2\pi$ operator identification by an explicit operator map and proof, not by numerical resemblance.
+
+**Status rule:** the least-eigenvalue convergence theorem is complete within its stated matrix and level range; Gate A and the listed extensions remain open. Do not hide a completed result behind a broader open problem, and do not present a broader open problem as completed because a related theorem is proved.
+
+
 
 The project history, as reported by the maintainer, begins with Rift Network, continues through Rift-L1 Blockchain and UltraCore-RFT with supporting scheduler/memory systems, and later includes Phi-Genesis, Evgeny-Theorem, and Evgeny's Theory of Everything. The [origin chronology](docs/origin-chronology.md) records that sequence separately from commit-verified milestones.
 
@@ -21,15 +52,15 @@ The priority order below is a current research and evidence-management plan, **n
 The programme has three principal mathematical strands and a downstream engineering strand.
 
 **Defined mathematical objects and assumptions**
-→ **Evgeny's Theorem:** fourth-moment identity; Lean 4 formalization reported
-→ **Theory-of-Everything synthesis:** higher moments and recursive operators; all-level recurrence OPEN
-→ **Phi-Genesis:** signed-flux spectral decimation; Gate A OPEN
-→ **RFT-Cosmology-Genesis:** exact invariant limit/remainder plus a phenomenological cosmology model; physical interpretation OPEN
-→ **SIRM:** invariant-based state transitions
+→ **Evgeny's Theorem:** exact H⁴ SU(2) trace-defect identity; machine-checked in Lean 4
+→ **Higher-moment programme:** H⁶/H⁸ recurrences and H¹⁰ affine recurrence with distinct finite/formal proof boundaries; a unified general recurrence remains open
+→ **Phi-Genesis:** signed-Laplacian lower bound $\lambda\ge1$ at every level; least-eigenvalue convergence for $N\ge6$; exact Schur parameter-derivative recursion in the bootstrap window. Gate A and the quadratic increment law remain open.
+→ **RFT-Cosmology-Genesis:** separate exact invariant limit/remainder and a phenomenological cosmology model; physical interpretation remains open
+→ **SIRM:** invariant-based state transitions and engineering constraints
 → **Implementations and experiments:** runtime, protocol, scheduler, kernel stress tests
 → **Exploratory applications:** quantum architecture, energy-system model, and phenomenological cosmology
 
-This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The fourth-moment theorem does not prove the SIRM invariants, the higher-moment recurrence, the Phi-Genesis decimation mechanism, or a quantum advantage. The exact invariant limit/remainder in RFT-Cosmology-Genesis is a separate algebraic result; its phenomenological cosmology model is not observationally validated.
+This is a reading order and research map, not a theorem asserting that each downstream application follows from the mathematics. The H⁴ trace-defect theorem does not prove the SIRM invariants, a unified higher-moment recurrence, the Phi-Genesis Gate A mechanism, or a quantum advantage. The Phi-Genesis lower bound and least-eigenvalue convergence theorem are separate completed spectral results within their stated matrix and level ranges. The exact invariant limit/remainder in RFT-Cosmology-Genesis is a separate algebraic result; its phenomenological cosmology model is not observationally validated.
 
 ## 2. Priority I — protect and independently audit the formal theorem
 
@@ -61,53 +92,90 @@ $$
 
 The theorem is a fourth-moment result for specified operators, not a proof of every claim in the wider programme.
 
-## 3. Priority II — resolve the higher-moment recurrence
+## 3. Priority II — complete finite higher-moment bridges and investigate the general recurrence
 
-**Primary source:** [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) · [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
+**Primary sources:** [Evgeny-Theorem higher-moment status](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/docs/HIGHER_MOMENTS.md) · [focused theorem dissertation](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/docs/DISSERTATION.md) · [broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md).
 
-The synthesis repository records numerical holdouts and modular/CRT certificates for selected finite-level Fourier coefficients associated with moments $p\in\{6,8,10\}$. The graph/operator construction, denominator control, norm bounds, coefficient bounds, and finite transitions define the certificate's scope.
+The proof status is moment-specific:
 
-### Open obligations
+- **H⁶:** Lean proves the all-angle recurrence for $m\ge3$; the exact $m=2\to3$ transition is supplied by a Gaussian-integer polynomial certificate.
+- **H⁸:** Lean proves the all-angle recurrence for $m\ge3$; the exact $m=2\to3$ transition is supplied by a sparse-polynomial certificate.
+- **H¹⁰:** Lean proves the radius-four transport and unconditional affine recurrence for $m\ge4$, with the affine formula for $m\ge5$. Its level-five correction remains a finite exact trace expression.
 
-1. Derive the exceptional first-transition correction from the recursive graph/operator construction.
-2. Prove or refute the candidate all-level recurrence $R_m^{(p)}(\theta)=R_4^{(p)}(\theta)$ for every $m\ge3$ and every stated admissible angle.
-3. Test edge cases and alternative graph levels before fixing the theorem statement.
-4. Preserve numerical holdouts and certificate inputs as versioned reproducibility artifacts.
-5. After a complete written derivation, formalize key lemmas and the theorem in Lean where feasible.
+The H⁶/H⁸ transition certificates are exact but are not yet Lean-kernel theorems. This is the next formalization target; it is inaccurate to describe every higher-moment result as either wholly open or wholly proved.
 
-**Current status: open.** The fourth-moment Lean proof does not close this task. Finite certificates and small numerical residuals are evidence for specified cases, not an infinite-level proof.
+### Current open obligations
 
-Closure requires a derivation with explicit indexing and boundary conditions, proof over all required levels and angles, independent counterexample checks, a clean reproducible build, and a public statement that matches the formalization.
+1. Move the exact H⁶ and H⁸ $m=2\to3$ bridges into the Lean kernel.
+2. Simplify the H¹⁰ correction expression while preserving the current unconditional theorem.
+3. Prove or refute a unified recurrence for the wider family of higher moments, with explicit indexing, angles, and boundary assumptions.
+4. Keep modular/CRT certificates, numerical holdouts, and Lean theorems labelled by their actual scope.
 
-## 4. Priority III — close or delimit Phi-Genesis Gate A
+**Current status:** moment-specific results exist; a unified general higher-moment recurrence remains open.
 
-**Primary source:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [commit documenting rigorous decimation verification](https://github.com/RFT-SIRM/Phi-Genesis/commit/c8611cc532b17c1944e2701c10780de99cae4548).
+## 4. Priority III — extend the proved Phi-Genesis spectral result and audit Gate A separately
 
-Phi-Genesis studies signed $Z_2$-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns. This is a distinct operator family from the SU(2)-connected theorem.
+**Primary sources:** [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) · [spectral-gap dossier](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/README.md) · [Schur eigenvalue theorem](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean) · [signed transfer](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean) · [derivative recursion](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurDerivTrajectory.lean) · [proof map](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/computational/spectral_gap_theta_2pi/PROOF_MAP.md).
 
-### Closure criteria
+### Completed theorems
 
-- Characterize the complete exceptional set, including recursively generated cases if that mechanism survives further testing.
-- Explain residual mismatches and report matching rates by level and method.
-- Retain one-to-one matching constraints and explicit numerical tolerances.
-- Test proposed criteria prospectively on levels not used to derive them.
-- Keep rejected mass-index fits and look-elsewhere-effect analyses visible.
-- Do not describe a selected mass-index pattern as a predictive physical law without a selection mechanism, prospective predictions, held-out validation, and independent derivation.
+1. **Uniform signed-Laplacian lower bound.** Every real eigenvalue with a nonzero real eigenvector of the specified signed Laplacian satisfies
 
-**Current status: Gate A remains open.** If a complete characterization cannot be proved, publish the exact domain where the criterion works and where it fails rather than claiming general closure.
+$$
+\lambda\ge1
+$$
+
+   at every refinement level. The corresponding Lean declaration is sgSignedLaplacianMatrix_eigenvalue_ge_one.
+
+2. **Least-eigenvalue identification.** For each signless Laplacian $Q_{6+n}$, the canonical A1 Schur root in the fixed bootstrap interval is the least eigenvalue. The same result transfers to the gauge-conjugate signed matrices.
+
+3. **Least-eigenvalue convergence.** Both least-eigenvalue sequences converge to $\lambda_\infty$. The exact rational enclosure is
+
+$$
+\frac{1309128920280813421888623088170810187}{10^{36}}
+\le\lambda_\infty\le
+\frac{1309128920280813421888623088170810189}{10^{36}}.
+$$
+
+   In decimal notation, the same enclosure is
+
+$$
+1.309128920280813421888623088170810187
+\le\lambda_\infty\le
+1.309128920280813421888623088170810189.
+$$
+
+   The interval width is exactly $2\cdot10^{-36}$; its half-width is $10^{-36}$. The midpoint is approximately $1.309128920280813421888623088170810188$. The convergence theorem covers levels $N\ge6$.
+
+4. **Parameter-derivative recursion.** The Lean definition schurDerivTrajectory gives the exact recursive derivatives of the two Schur boundary coordinates with respect to the parameter $\lambda$. The theorem schurBoundaryTrajectory_hasDerivAt proves the derivative formula under the finite nonzero-pivot hypotheses. Within the bootstrap interval, schurBoundaryTrajectory_hasDerivAt_bootstrap proves differentiability at every finite level; strict pivot positivity discharges those hypotheses.
+
+This derivative result is an analytic ingredient for further asymptotics. It does **not** prove the quadratic increment law or the existence of its coefficient.
+
+The value $1.3091289\ldots$ is the limiting least eigenvalue of the specified graph-matrix sequence. It is not currently known in closed form and is not claimed to be a universal or fundamental physical constant.
+
+### Remaining Gate A and extension criteria
+
+- Characterize the complete exceptional set in the broader spectral-decimation correspondence.
+- Prove or refute the observed quadratic increment law $\delta_{m+1}\sim c\delta_m^2$ and establish whether the coefficient $c$ exists.
+- Extend the least-eigenvalue convergence theorem to levels $N<6$.
+- Find a closed form for $\lambda_\infty$.
+- Prove any external $\theta=2\pi$ operator identification using an explicit operator map, boundary conditions, and a proof.
+- Keep mass-index hypotheses separate from proved graph-spectral statements.
+
+**Current status:** the lower bound, least-eigenvalue identification and convergence, and parameter-derivative recursion are proved within their stated matrix, parameter, and level ranges. Gate A, the quadratic increment law, levels $N<6$, the closed form, and the external operator identification remain open. No bridge to the SU(2) operator family is claimed.
 
 ## 5. Priority IV — maintain SIRM engineering evidence
 
 SIRM (Synthetic Intelligence Reasoning Model) defines runtime invariants for state transitions. The constraints below use compact symbols to keep the equations readable in GitHub's Markdown renderer:
 
-- \(S\): total supply
-- \(B\): total base sum
-- \(G\): global field
-- \(M\): total minted
-- \(R\): total burned
-- \(D\): dust accumulator
-- \(b_i\): effective balance of account \(i\)
-- \(q_i\): base balance of account \(i\)
+- $S$: total supply
+- $B$: total base sum
+- $G$: global field
+- $M$: total minted
+- $R$: total burned
+- $D$: dust accumulator
+- $b_i$: effective balance of account $i$
+- $q_i$: base balance of account $i$
 
 $$
 I_{1}: S = B + Gp
@@ -125,7 +193,7 @@ $$
 I_{4}: b_i \ge -\frac{S}{10p}
 $$
 
-The effective balance is defined by \(b_i = q_i + G\), subject to the implementation's integer and scaling conventions.
+The effective balance is defined by $b_i = q_i + G$, subject to the implementation's integer and scaling conventions.
 
 The global-scalar representation can make the distribution update $O(1)$; that statement does not imply every operation is constant-time. Engineering validation should remain tied to the code and tested configuration.
 

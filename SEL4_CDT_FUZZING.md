@@ -1,10 +1,10 @@
 <div align="center">
 
-[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=for-the-badge)](https://github.com/RFT-SIRM/UltraCore-RFT)
-[![seL4](https://img.shields.io/badge/SEL4-CDT%20VERIFICATION-4a148c?style=for-the-badge)](SEL4_CDT_FUZZING.md)
-[![Operations](https://img.shields.io/badge/OPERATIONS-%3E1B-2563eb?style=for-the-badge)](docs/field_trials_sel4.md)
-[![Kernel Crashes](https://img.shields.io/badge/KERNEL%20CRASHES-0-22c55e?style=for-the-badge)](docs/field_trials.md)
-[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=for-the-badge)](LICENSE)
+[![Lab](https://img.shields.io/badge/Lab-Research%20Platform-dc2626?style=flat-square)](https://github.com/RFT-SIRM/UltraCore-RFT)
+[![seL4](https://img.shields.io/badge/SEL4-CDT%20VERIFICATION-4a148c?style=flat-square)](SEL4_CDT_FUZZING.md)
+[![Operations](https://img.shields.io/badge/OPERATIONS-%3E1B-2563eb?style=flat-square)](docs/field_trials_sel4.md)
+[![Kernel Crashes](https://img.shields.io/badge/KERNEL%20CRASHES-0-22c55e?style=flat-square)](docs/field_trials.md)
+[![License](https://img.shields.io/badge/LICENSE-APACHE%202.0-eab308?style=flat-square)](LICENSE)
 
 </div>
 

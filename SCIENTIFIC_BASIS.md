@@ -9,8 +9,8 @@ Primary routes: [README](README.md) · [AI evidence guide](AI_GUIDE.md) · [Rese
 The research programme is presented in this order:
 
 1. **Literal mathematics:** the source-stated fourth-moment trace-defect identity for a specified SU(2)-connected Sierpiński-gasket operator and commuting control.
-2. **Formal and computational evidence:** the Lean 4 proof reported by the primary theorem repository, direct numerical checks, and separately scoped finite-level certificates.
-3. **Open mathematical programmes:** the all-level higher-moment recurrence and the Phi-Genesis Gate A decimation mechanism.
+2. **Formal and computational evidence:** the Lean 4 proof of the SU(2) fourth-moment identity, the separate Phi-Genesis least-eigenvalue/convergence theorem, direct numerical checks, and separately scoped finite-level certificates.
+3. **Open mathematical programmes and extensions:** a unified general higher-moment law and the Phi-Genesis Gate A exceptional-set problem; these remain distinct from the already proved, level-restricted spectral result.
 4. **Engineering methodology:** SIRM state invariants, deterministic execution, tests, fuzzing, audit records, and deployment evidence.
 5. **Applications and hypotheses:** blockchain systems, quantum-processing architecture, and invariant-driven energy modelling.
 
@@ -46,19 +46,35 @@ Sources: [theorem statement](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/mai
 
 ## 3. Higher moments and the broader Theory-of-Everything programme
 
-[Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) is a synthesis and research programme for recursive operators, higher-moment trace laws, Fourier coefficients, and recurrence audits.
+The two research monographs have different scopes: the [focused SU(2) theorem dissertation](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/DISSERTATION.md) records the theorem and its proof boundaries; the [broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) collects the wider recursive-operator programme.
 
-The repository documents modular/CRT certificates for selected finite-level coefficients for $p\in\{6,8,10\}$, plus numerical holdouts and sparse-matrix-power checks. These certificates are finite and conditional on their explicit construction and bounds.
+The current higher-moment status in the primary theorem repository is not a single yes/no statement:
 
-The all-level recurrence remains **open**. The fourth-moment Lean proof does not prove it. The exceptional first-transition correction also needs a derivation from the graph/operator recursion. A finite set of levels and angles—even with small residuals—does not establish a universal statement.
+- **H⁶ and H⁸:** Lean proves the all-angle recurrences for $m\ge3$. Exact symbolic certificates close the exceptional $m=2\to3$ transition, but those finite bridges are not yet Lean-kernel theorems.
+- **H¹⁰:** Lean proves the required radius-four transport, the affine recurrence for $m\ge4$, and the affine formula for $m\ge5$. The level-five correction remains an exact finite trace expression.
+- **General extension:** one unified recurrence theorem covering the full higher-moment family remains open.
 
-Primary sources: [dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [modular certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
+The broader synthesis dissertation is dated 15 October 2026; it is a dated research record, not the authority for every later status change. Use the primary repositories and their formal declarations for current claims. Finite certificates and numerical checks remain distinct evidence classes.
+
+Sources: [Evgeny-Theorem dissertation](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/DISSERTATION.md) · [higher-moment status](https://github.com/RFT-SIRM/Evgeny-Theorem/blob/main/docs/HIGHER_MOMENTS.md) · [broader synthesis dissertation](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/DISSERTATION.md) · [recurrence note](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_RECURRENCE_NOTE.md) · [modular certificate](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/blob/main/computational/HIGHER_MOMENT_MODULAR_CERTIFICATE.md).
 
 ## 4. Phi-Genesis: signed-flux spectral research
 
-[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) investigates signed $Z_2$-flux Laplacians, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns.
+[Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) investigates signed $Z_2$-flux graph Laplacians, Schur elimination, spectral decimation, boundary/corner corrections, inertia calculations, and exploratory mass-index patterns. It is a separate operator family from the SU(2) construction.
 
-- Gate A remains open while the complete exceptional set and residual mismatches are unresolved.
+**Proved in Lean:** for the signless Laplacian $Q_N$ and its diagonal-gauge-conjugate signed matrix, at levels $N\ge6$, the least eigenvalue is the unique A1 root in the bootstrap interval and the least-eigenvalue sequence converges. The limit belongs to the exact rational interval
+
+$$
+\left[
+\frac{1309128920280813421888623088170810187}{10^{36}},
+\frac{1309128920280813421888623088170810189}{10^{36}}
+\right],
+$$
+
+of width $2\times10^{-36}$. See [SchurEigenvalue.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurEigenvalue.lean), [SchurSignedTransfer.lean](https://github.com/RFT-SIRM/Phi-Genesis/blob/main/PhiGenesis/SpectralGap/SchurSignedTransfer.lean), [PR #31](https://github.com/RFT-SIRM/Phi-Genesis/pull/31), and [PR #32](https://github.com/RFT-SIRM/Phi-Genesis/pull/32).
+
+**Still open:** Gate A's complete exceptional set, the quadratic increment law and its constant, a closed form for the limit, levels $N<6$, and identification with an external $\theta=2\pi$ operator beyond the defined graph matrix. This result does not close Gate A.
+
 - Passing tests support only the assertions and parameter range that they actually test.
 - A fitted mass-index pattern is not an established predictive physical law without a mechanism, predeclared predictions, held-out validation, and independent derivation.
 - No equivalence with the SU(2)-connected operators is assumed. A bridge needs an explicit operator map, boundary conditions, preserved quantities, exceptional cases, and a proof or a clearly labelled conjecture.
