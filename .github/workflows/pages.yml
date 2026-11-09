@@ -35,15 +35,17 @@ jobs:
       - name: Build documentation strictly
         run: mkdocs build --strict --site-dir site
 
-      - name: Copy interactive HTML portal into site artifact
+      - name: Expand interactive portal bundle into site artifact
         run: |
           mkdir -p site/interactive
-          cp docs/interactive/index.html site/interactive/index.html
+          gzip -dc portal-src/index.html.gz > site/interactive/index.html
 
       - name: Verify interactive portal output
         run: |
           test -s site/interactive/index.html
-          grep -q "UltraCore-RFT.*Interactive Research Portal" site/interactive/index.html
+          grep -q "UltraCore-RFT.*Research Explorer" site/interactive/index.html
+          grep -q "id=\"theta-range\"" site/interactive/index.html
+          grep -q "id=\"level-range\"" site/interactive/index.html
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
