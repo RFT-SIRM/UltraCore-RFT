@@ -1,6 +1,6 @@
 ---
 title: "UltraCore-RFT Research Hub"
-description: "Research hub for the SU(2) fourth-moment theorem, higher spectral moments, the Phi-Genesis signed graph-Laplacian results, and invariant-based systems engineering."
+description: "RFT-SIRM hub for the SU(2) fourth-moment theorem, Phi-Genesis spectral results, the Sierpiński quantum-processing architecture, and Lean-formalized financial infrastructure."
 keywords:
   - SU(2) fourth-moment trace-defect theorem
   - Sierpiński-gasket graph spectrum
@@ -22,6 +22,30 @@ keywords:
     The exact fourth-moment trace-defect theorem, normalized limit, graph-operator definitions, Lean proof architecture, and separate H⁶/H⁸/H¹⁰ results.
 
     [Read the dissertation](DISSERTATION.md)
+
+-   :material-graph:{ .lg .middle } **Phi-Genesis spectral results**
+
+    ---
+
+    Signed-flux graph Laplacians, Schur analysis, the proved least-eigenvalue result for $N\ge6$, and the exact limiting enclosure. Gate A and the quadratic increment law remain open.
+
+    [Open Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis)
+
+-   :material-chip:{ .lg .middle } **RFT-QPU-Sierpinski**
+
+    ---
+
+    A proposed Sierpiński/SU(2) quantum-processing architecture with a candidate two-dimensional logical subspace and a 12-transmon level-1 mapping. Pre-experimental; no fabricated or measured device is claimed.
+
+    [Explore the QPU project](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski)
+
+-   :material-bank:{ .lg .middle } **SIRM Financial Infrastructure**
+
+    ---
+
+    A Lean 4 financial-state and accounting specification covering holder/GL transitions, authorization, registries, migration, replay receipts, and escrow invariants. Production deployment remains out of scope.
+
+    [Open the financial specification](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure)
 
 -   :material-bookshelf:{ .lg .middle } **Research monographs**
 
@@ -52,8 +76,6 @@ keywords:
     ---
 
     Navigate the research map, vary the parameters in the H⁴ formula, and inspect the evidence boundary attached to each strand.
-
-    [Open the interactive portal](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
 
 </div>
 
@@ -97,6 +119,28 @@ $$
 
 The interval width is exactly $2\times10^{-36}$. The midpoint is approximately $1.309128920280813421888623088170810188$. This is the limiting least eigenvalue for the specified graph-matrix sequence, not a known closed-form or universal physical constant. Gate A, the quadratic increment law, levels $N<6$, and external $\theta=2\pi$ identification remain open. See the [Mathematical Results register](results.md) and [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis).
 
+
+## Core engineering programmes
+
+### RFT-QPU-Sierpinski — proposed logical-qubit architecture
+
+The level-1 design maps a Sierpiński-gasket graph with 6 sites and 9 edges to 12 transmon modes and 22 effective exchange channels. Three selected non-commuting X/Y/Z SU(2) links define the graph transport, and the candidate logical qubit is a two-dimensional low-energy subspace.
+
+The Stage 11B local retune reports a projected process overlap of 0.9999999793763371 after local-Z fitting and an average logical-state fidelity including leakage of 0.9999999803654352 at five retained levels and 480 steps per pump period. These are closed-system projections of a three-mode A–coupler–B model, **not measured gate fidelities and not a full 12-transmon-tile simulation**. The resonant complex-Z link, graph-wide multi-tone plan, open-system noise modelling, and hardware validation remain open.
+
+Sources: [QPU project](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · [repository status](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md) · [validation plan](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/VALIDATION_PLAN.md).
+
+### SIRM Financial Infrastructure — Lean 4 financial-state model
+
+The financial repository develops a normative abstract state-transition and accounting specification. It combines holder-balance changes with matching signed general-ledger postings in one Lean state transition, and layers authorization, finite authority/control registries, typed assets/accounts, exact base-unit and migration arithmetic, per-principal nonce/receipt rules, cached authorization/insufficient-funds denials, and integrated pooled escrow, time-lock, and first-stage dispute-freeze invariants.
+
+Its current CI design consists of one Lean build/theorem-test job and 17 independent static audits. This describes the workflow structure, not a blanket claim that every revision has passed. The repository uses Lean 4.33.1. The model does not yet prove production database persistence/atomicity, cryptographic signing, custody, reserve backing, external settlement, or Lean-to-Rust refinement; the Rust reference implementation remains planned.
+
+Sources: [financial infrastructure](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure) · [formalization status](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/FORMALIZATION_STATUS.md) · [mathematical scope](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/MATHEMATICAL_SCOPE.md) · [testing guide](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/TESTING.md).
+
+!!! note "Independent evidence boundaries"
+    These engineering programmes are part of the same RFT-SIRM portfolio, but they are not consequences of the same theorem. The SU(2) trace-defect result does not certify a physical QPU; the Phi-Genesis signed-flux spectrum is a separate operator family; and Lean financial proofs apply only to the abstract model and assumptions stated in the financial repository.
+
 ## Research strands at a glance
 
 | Strand | Primary source | Current evidence boundary |
@@ -104,8 +148,9 @@ The interval width is exactly $2\times10^{-36}$. The midpoint is approximately $
 | SU(2) fourth moment | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Lean 4 theorem for the specified operators, $m\ge1$ |
 | Higher moments | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | H⁶/H⁸ recurrences for $m\ge3$ with exact finite bridges; H¹⁰ recurrence for $m\ge4$ and affine form for $m\ge5$ |
 | Signed-flux spectral research | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Uniform lower bound and least-eigenvalue convergence proved in their stated scopes; Gate A remains open |
-| SIRM runtime model | [Foundations](foundations.md) · [Architecture](architecture.md) | Independent invariant model and implementation-specific validation |
-| Quantum architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental |
+| SIRM Financial Infrastructure | [Lean specification](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure) | Lean 4 model of holder/supply reconciliation, balanced holder/GL transitions, authorization, typed registries, migration, replay/receipt handling, and integrated escrow safety; production runtime and Rust refinement remain open |
+| SIRM runtime model | [Foundations](foundations.md) · [Architecture](architecture.md) | Separate deterministic-runtime invariant model and implementation-specific validation |
+| Quantum-processing architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Pre-experimental Sierpiński/SU(2) architecture; candidate logical subspace and 12-transmon mapping are numerical/design artifacts, not fabricated or measured hardware |
 | Energy and cosmology models | [Application Programmes](application-programmes.md) | Exploratory / phenomenological; separate assumptions and validation |
 
 !!! note "Two dissertations, two scopes"

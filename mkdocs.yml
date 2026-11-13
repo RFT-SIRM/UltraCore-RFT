@@ -63,13 +63,17 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Core Development:
+      - Research Map: research-map.md
+      - Mathematical Results: results.md
+      - Phi-Genesis: https://github.com/RFT-SIRM/Phi-Genesis
+      - RFT-QPU-Sierpinski: https://github.com/RFT-SIRM/RFT-QPU-Sierpinski
+      - SIRM Financial Infrastructure: https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure
   - Focused SU(2) Dissertation: DISSERTATION.md
   - Research Monographs: monographs.md
-  - Mathematical Results: results.md
   - Daily Phi-Genesis Computations: phi-genesis-computations.md
   - Interactive Portal: https://rft-sirm.github.io/UltraCore-RFT/interactive/
   - Portal Guide: portal-guide.md
-  - Research Map: research-map.md
   - Application Programmes: application-programmes.md
   - Ecosystem Control: ecosystem-control.md
   - History: history.md

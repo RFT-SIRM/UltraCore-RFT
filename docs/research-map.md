@@ -12,7 +12,7 @@ keywords:
 
 # Research Map: Mathematical Foundations, Evidence, and Applications
 
-**Evidence-first reading order (not historical chronology):** dissertation and mathematical theorem → formal evidence → higher-moment research → separate spectral-decimation programme → systems methodology → implementations and applications.
+**Evidence-first reading order (not historical chronology):** mathematical theorem and formal evidence → separate Phi-Genesis spectral result → proposed Sierpiński quantum architecture and formal SIRM financial infrastructure → systems methodology → implementations and other applications.
 
 > **Historical origin:** the maintainer-reported sequence is [Rift Network](https://github.com/RFT-SIRM/Rift-Network) → [Rift-L1 Blockchain](https://github.com/RFT-SIRM/Rift-L1-Blockchain) → UltraCore-RFT and supporting systems → [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) → [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) → [Evgeny's Theory of Everything](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything). See the [origin chronology](origin-chronology.md); exact dates are kept separate unless verified from source history.
 
@@ -38,14 +38,14 @@ The arrows describe an evidence-first reading order, not a theorem asserting tha
 
 | Layer | Programme | Status and boundary |
 |---|---|---|
-| 1. Mathematical anchor | [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Source repository reports a Lean 4 proof of a specific fourth-moment identity for concrete SU(2) operators |
-| 2. Higher-moment extension | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) · [broader synthesis](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | H⁶/H⁸ Lean recurrences for $m\ge3$ plus finite bridges; H¹⁰ Lean recurrence for $m\ge4$ and affine form for $m\ge5$; unified general extension remains open |
-| 3. Separate spectral model | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Lean proves least-eigenvalue identification and convergence for signed/signless graph matrices at $N\ge6$; Gate A, the quadratic law, and external-model identification remain open |
-| 4. Exact invariant limit and cosmology model | [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) | Exact algebraic limit/remainder for the defined invariant; cosmological response remains phenomenological and observationally unvalidated |
-| 4. Systems methodology | [SIRM foundations](foundations.md) | Runtime state invariants and deterministic transition model; not proved by the spectral theorem |
-| 5. Implementations | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md) | Implementation-specific tests, fuzzing, audit, and deployment evidence |
-| 6. Exploratory applications | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), [RFT-Invariant-Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery.), [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) | QPU is pre-experimental; battery is a modelled energy scenario; cosmology is a reduced phenomenological model without observational likelihood validation |
-
+| 1. Mathematical anchor | [Evgeny's Theorem](https://github.com/RFT-SIRM/Evgeny-Theorem) | Lean 4 proof of the stated fourth-moment identity for the specified SU(2) operators and quantifiers |
+| 2. Higher-moment extension | [Evgeny-Theorem](https://github.com/RFT-SIRM/Evgeny-Theory-of-Everything) · [broader synthesis](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything) | H⁶/H⁸ recurrences for $mge3$ with finite bridges; H¹⁰ recurrence for $mge4$ and affine form for $mge5$; a unified general recurrence remains open |
+| 3. Separate spectral model | [Phi-Genesis](https://github.com/RFT-SIRM/Phi-Genesis) | Lean proves the stated signed-Laplacian lower bound and least-eigenvalue convergence for the specified signed/signless graph matrices at $Nge6$; Gate A and the quadratic law remain open |
+| 4. Quantum-processing architecture | [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) | Proposed 12-transmon mapping and candidate two-dimensional logical subspace; closed-system model only, pre-experimental, no fabricated or measured device |
+| 5. Formal financial infrastructure | [SIRM-Financial-Infrastructure](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure) | Lean 4.33.1 abstract financial-state and accounting specification; production runtime, cryptographic identity, custody, reserves, and Rust refinement remain open |
+| 6. Exact invariant limit and phenomenological models | [RFT-Cosmology-Genesis](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis) | Exact algebraic limit/remainder for its defined invariant; physical coupling and cosmological response remain phenomenological and observationally unvalidated |
+| 7. Systems methodology | [SIRM foundations](foundations.md) | Separate runtime-state invariants and implementation methodology; not proved by the spectral theorem |
+| 8. Implementations and exploratory applications | [Rift-L1](https://github.com/RFT-SIRM/Rift-L1-Blockchain), [Rift-Network](https://github.com/RFT-SIRM/Rift-Network), [seL4 report](https://github.com/RFT-SIRM/UltraCore-RFT/blob/main/SEL4_CDT_FUZZING.md), [Invariant Battery](https://github.com/RFT-SIRM/RFT-Invariant-Battery) | Implementation-specific tests and exploratory models; evidence does not transfer between repositories |
 ## Global test and evidence control
 
 UltraCore-RFT is being developed as the central observability layer for cross-repository CI. The [Ecosystem Control Plane](ecosystem-control.md) documents the registered projects, status meanings, run artifacts, and evidence boundaries. Its first phase reads public Actions status; it does not yet dispatch workflows in other repositories.
@@ -151,7 +151,35 @@ The result is recorded in [SchurEigenvalue.lean](https://github.com/RFT-SIRM/Phi
 - Identification with an external $\theta=2\pi$ operator beyond the explicitly defined graph matrix.
 
 A fitted mass-index pattern is not an established predictive physical law without a prospective selection mechanism, predeclared predictions, held-out validation, and independent derivation. No equivalence between the SU(2) operators and signed-flux Laplacians is assumed; any bridge needs a precise operator map and proof.
-## 5. SIRM: engineering model and invariants
+
+## 5. RFT-QPU-Sierpinski: proposed logical-qubit architecture
+
+The source repository studies a proposed quantum-processing element on a self-similar Sierpiński-gasket graph with non-commuting SU(2) edge transport. Its level-1 mapping contains 6 graph sites, 9 graph edges, 3 selected X/Y/Z links, 12 transmon modes, and 22 effective exchange channels. The candidate logical qubit is a selected two-dimensional low-energy subspace.
+
+The Stage 11B local retune reports a projected process overlap of 0.9999999793763371 after local-Z fitting and average logical-state fidelity including leakage of 0.9999999803654352 for a five-level, 480-step-per-period, three-mode A–coupler–B model. This is a closed-system numerical projection—not measured hardware fidelity and not a full driven simulation of the 12-mode tile.
+
+**Status: pre-experimental.** No chip has been fabricated or measured. The resonant complex-Z implementation, graph-wide nine-tone schedule, seven-level 240/480 convergence, open-system noise analysis, and layout-extracted circuit validation remain open. The source project reports 73 primary and 653 conditional resonance warnings in its current first-order multi-tone screen; simultaneous nine-tone operation is not cleared.
+
+Sources: [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski) · [repository status](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md) · [validation plan](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/VALIDATION_PLAN.md) · [evidence boundary](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/DISCLOSURE_BOUNDARY.md).
+
+## 6. SIRM Financial Infrastructure: Lean 4 financial-state specification
+
+[SIRM-Financial-Infrastructure](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure) is the dedicated formal specification for SIRM financial-state transitions and accounting. Its combined authorized financial machine represents holder updates and corresponding signed general-ledger postings together in one abstract Lean state transition. Additional modules cover:
+
+- supply/holder reconciliation and balanced per-asset journals;
+- finite principal/account control and exact operation grants, including issuer/recipient-aware issuance;
+- typed finite account and asset registries, exact base-unit conversion, and route-specific rational migration residuals;
+- per-principal nonces, typed transaction receipts, exact retry behaviour, and cached authorization/insufficient-funds denials;
+- concurrent escrow records, pooled reserve/vault/GL reconciliation, discrete time-lock expiry, and first-stage per-ID dispute intake/freeze.
+
+The pinned toolchain is Lean 4.33.1. The configured CI topology has one Lean build/theorem-test job and 17 static audits. These are formal-model and source/documentation checks, not a production runtime certification.
+
+The current declarations do not establish real-world account ownership, key custody, cryptographic signature validation, production database persistence or atomicity, complete production transaction encoding, Rust/Lean refinement, reserve backing, external settlement, dispute adjudication, or legal/regulatory compliance. The Rust reference implementation remains planned.
+
+Primary sources: [README](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure#readme) · [formalization status](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/FORMALIZATION_STATUS.md) · [mathematical scope](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/MATHEMATICAL_SCOPE.md) · [testing and verification](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/TESTING.md).
+
+
+## 7. SIRM runtime model and invariants
 
 SIRM specifies runtime constraints for deterministic state transitions. The compact notation below is mapped to implementation variables immediately afterward.
 
@@ -185,7 +213,7 @@ Where $\mathtt{effective\_balance}[i]=\mathtt{base\_balance}[i]+\mathtt{global\_
 
 The $O(1)$ distribution argument concerns a shared scalar update and lazy effective-balance calculation. It does not imply every operation is $O(1)$, nor does the spectral theorem prove the SIRM invariants. Runtime tests, fuzzing, audits, and deployment evidence have implementation-specific scope.
 
-## 6. Evidence vocabulary
+## 8. Evidence vocabulary
 
 | Label | Meaning |
 |---|---|
@@ -200,7 +228,7 @@ The $O(1)$ distribution argument concerns a shared scalar update and lazy effect
 
 A passing workflow proves only the assertions it executes. Fuzz counts and test totals are source-reported snapshots unless the page explicitly implements a live data source.
 
-## 7. Historical reading order
+## 9. Historical reading order
 
 1. **Invariant-first engineering:** define runtime state constraints and check them at transitions.
 2. **Specific spectral theorem:** state a closed fourth-moment identity for a defined SU(2) operator family; preserve the formal and numerical evidence separately.
@@ -210,7 +238,7 @@ A passing workflow proves only the assertions it executes. Fuzz counts and test 
 
 This is a conceptual map, not a substitute for commit-backed chronology. Use [UltraCore history](https://github.com/RFT-SIRM/UltraCore-RFT/commits/main), [theorem history](https://github.com/RFT-SIRM/Evgeny-Theorem/commits/main), [synthesis history](https://github.com/RFT-SIRM/Evgeny-s-Theory-of-Everything/commits/main), and [Phi-Genesis history](https://github.com/RFT-SIRM/Phi-Genesis/commits/main) for exact dates and changes.
 
-## 8. Release checklist
+## 10. Release checklist
 
 - [ ] Verify formulas and hypotheses against the primary theorem/specification.
 - [ ] Keep the fourth-moment Lean theorem separate from higher-moment conjectures.

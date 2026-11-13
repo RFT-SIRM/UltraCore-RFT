@@ -4,23 +4,27 @@
 
 RFT-SIRM separates research claims, mathematical definitions, executable implementations, and verification evidence. Engineering components should enforce their specified invariants and reject invalid state transitions atomically where the implementation supports that guarantee. Guarantees are scoped to the relevant code, threat model, and tests; documentation must not imply that every component or research result is formally verified.
 
-## Research Architecture: Four Distinct Evidence Tracks
+## Research Architecture: Connected Workstreams, Independent Evidence
 
 UltraCore-RFT is the integration and navigation layer for a portfolio of related research and engineering projects. It connects the projects without treating their results as interchangeable. Each source repository remains authoritative for its theorem statements, definitions, code, tests, formal proof status, and limitations.
 
 ```mermaid
 flowchart TB
   HUB["UltraCore-RFT<br/>Integration, architecture, evidence ledger"]
-  ET["Evgeny's Theorem<br/>Fourth-moment trace-defect identity"]
+  ET["Evgeny's Theorem<br/>SU(2) fourth-moment identity"]
   TOE["Evgeny's Theory of Everything<br/>Higher-moment recurrence research"]
-  PG["Phi-Genesis<br/>Signed-flux spectral decimation"]
+  PG["Phi-Genesis<br/>Signed-flux spectral results"]
+  QPU["RFT-QPU-Sierpinski<br/>Proposed logical-qubit architecture"]
+  FIN["SIRM Financial Infrastructure<br/>Lean 4 financial-state and accounting model"]
   CG["RFT-Cosmology-Genesis<br/>Exact invariant limit + phenomenological model"]
-  SIRM["SIRM engineering<br/>State transitions and runtime invariants"]
+  RUNTIME["SIRM runtime invariants<br/>Separate deterministic-runtime strand"]
   HUB --> ET
   HUB --> TOE
   HUB --> PG
+  HUB --> QPU
+  HUB --> FIN
   HUB --> CG
-  HUB --> SIRM
+  HUB --> RUNTIME
   ET -. "finite-moment starting point" .-> TOE
   TOE -. "no proven operator bridge" .-> PG
   ET -. "shared research context, not proof of cosmology" .-> CG
@@ -55,7 +59,25 @@ This programme studies trace defects for higher even moments $H^6$, $H^8$, and $
 
 Phi-Genesis investigates signed $\mathbb{Z}_2$-flux graph Laplacians on Sierpiński-gasket approximations, spectral decimation, spectral gaps, boundary/corner corrections, inertia-based counting, and exploratory integer mass-index patterns. The factor-5 decimation structure is reported with boundary/corner qualifications. **Gate A remains open** because the full exceptional set and all residual mismatches have not been explained. The proposed index set $\{1,12,17,40\}$ is not established as a predictive selection law. The signed-flux operators are not assumed equivalent to the SU(2)-connected operators in Evgeny's Theorem.
 
-### 4. RFT-Cosmology-Genesis: exact invariant and phenomenological extension
+
+### 4. RFT-QPU-Sierpinski: proposed quantum-processing architecture
+
+**Primary source:** [RFT-QPU-Sierpinski](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski), including its [repository status](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/REPOSITORY_STATUS.md), [validation plan](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/VALIDATION_PLAN.md), and [evidence boundary](https://github.com/RFT-SIRM/RFT-QPU-Sierpinski/blob/main/docs/DISCLOSURE_BOUNDARY.md).
+
+The proposed level-1 Sierpiński tile has 6 graph sites, 9 graph edges, 3 selected non-commuting X/Y/Z SU(2) links, 12 transmon modes, and 22 effective exchange channels. A candidate logical qubit is encoded in a selected two-dimensional low-energy subspace. Stage 11B contains a re-quantized three-mode A–coupler–B gate-model study and local pulse retuning.
+
+The reported five-level/480-grid local process overlap and average logical-state fidelity are closed-system projections of that three-mode model. They are not measured gate fidelities and do not constitute a full driven simulation of the 12-mode tile. No chip has been fabricated or measured. The complex-Z edge, multi-tone plan, open-system noise, device-specific circuit extraction, and one-/two-cell hardware demonstrations remain open. The source repository is licensed separately under BUSL-1.1; this hub's Apache-2.0 licence does not relicense it.
+
+### 5. SIRM Financial Infrastructure: formal financial-state model
+
+**Primary source:** [SIRM-Financial-Infrastructure](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure) · [formalization status](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/FORMALIZATION_STATUS.md) · [mathematical scope](https://github.com/RFT-SIRM/SIRM-Financial-Infrastructure/blob/main/docs/MATHEMATICAL_SCOPE.md).
+
+This dedicated Lean 4.33.1 workstream formalizes financial state and admissible transitions. Its combined authorized financial machine updates holder balances and the corresponding signed general-ledger journal together in one abstract state transition. Additional modules cover authority and account-control gates, typed account/asset registries, exact base-unit and migration arithmetic with residual carry-forward, per-principal nonces and typed request receipts, cached denial responses, concurrent pooled escrow, discrete time-lock expiry, and first-stage per-ID dispute freeze.
+
+The repository's CI is configured as one Lean build/theorem-test job plus 17 static audits. This describes the workflow structure; individual results must be cited against their exact commit and run. The model does not yet prove production database persistence/atomicity, cryptographic signatures, key custody, reserve backing, external settlement, legal ownership, regulatory compliance, or Lean-to-Rust refinement. The Rust reference implementation is planned, not complete. The older runtime-invariant strand described below is a separate systems model and should not be conflated with this financial specification.
+
+
+### 6. RFT-Cosmology-Genesis: exact invariant and phenomenological extension
 
 **Primary sources:** [repository](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis), [exact invariant remainder theorem](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/EXACT_INVARIANT_REMAINDER_THEOREM.md), [model specification](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/MODEL_SPEC.md), [results](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/RESULTS.md), and [limitations](https://github.com/RFT-SIRM/RFT-Cosmology-Genesis/blob/main/LIMITATIONS.md).
 
@@ -76,7 +98,7 @@ $$
 
 The repository records an algebraic derivation and Lean-checked results for the stated invariant. Its photon-sector coupling and background/CMB response are **phenomenological**. No physical origin for the coupling, detection of a new interaction, or agreement with a full observational CMB likelihood is established by this mathematical identity.
 
-### 5. SIRM engineering architecture
+### 7. SIRM runtime-invariant engineering architecture
 
 SIRM is the Synthetic Intelligence Reasoning Model. In the engineering repositories, the operational core is a state-transition model constrained by explicit invariants, arithmetic checks, permission boundaries, and reproducible tests. These implementation-level constraints must be documented and verified against the actual code. They are not consequences of the spectral trace identity unless a separate formal connection is stated and proved.
 
