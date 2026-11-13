@@ -11,6 +11,10 @@ keywords:
 
 The [UltraCore-RFT Research Explorer](https://rft-sirm.github.io/UltraCore-RFT/interactive/) is the visual entry point to the research programme. It complements the documentation; it does not replace the primary repositories, Lean proof files, or verification reports.
 
+## Separate pages, separate purposes
+
+The Research Explorer remains a dedicated interactive page. The [Core Development Portfolio](core-development.md) is a separate documentation page for the active engineering and formalization programmes. It is linked from the **Core Development** navigation group and is not appended to the Explorer page.
+
 ## What the portal contains
 
 - **Research monographs:** direct routes to the focused SU(2) dissertation and the broader recursive-operator synthesis.

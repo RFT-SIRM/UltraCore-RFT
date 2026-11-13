@@ -15,6 +15,14 @@ keywords:
 
 <div class="grid cards" markdown>
 
+-   :material-layers:{ .lg .middle } **Core Development Portfolio**
+
+    ---
+
+    A separate page for the proposed Sierpiński QPU architecture, Lean financial-state model, SU(2) theorem, and Phi-Genesis spectral work, with the current validation boundaries made explicit.
+
+    [Open Core Development](core-development.md)
+
 -   :material-book-open-variant:{ .lg .middle } **Focused SU(2) dissertation**
 
     ---

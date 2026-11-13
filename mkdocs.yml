@@ -64,6 +64,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Core Development:
+      - Portfolio: core-development.md
       - Research Map: research-map.md
       - Mathematical Results: results.md
       - Phi-Genesis: https://github.com/RFT-SIRM/Phi-Genesis
