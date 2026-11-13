@@ -27,3 +27,15 @@ jobs:
 
       - name: Build documentation
         run: mkdocs build --strict
+
+      - name: Test interactive portfolio injector
+        run: |
+          python scripts/inject_core_portfolio.py --self-test
+          mkdir -p /tmp/ultracore-interactive-test
+          gzip -dc portal-src/index.html.gz > /tmp/ultracore-interactive-test/index.html
+          python scripts/inject_core_portfolio.py /tmp/ultracore-interactive-test/index.html portal-src/core-development.html
+          grep -q 'id="ultracore-core-development"' /tmp/ultracore-interactive-test/index.html
+          grep -q "RFT-QPU-Sierpinski" /tmp/ultracore-interactive-test/index.html
+          grep -q "SIRM Financial Infrastructure" /tmp/ultracore-interactive-test/index.html
+          grep -q "Evgeny's Theorem" /tmp/ultracore-interactive-test/index.html
+          grep -q "Phi-Genesis" /tmp/ultracore-interactive-test/index.html

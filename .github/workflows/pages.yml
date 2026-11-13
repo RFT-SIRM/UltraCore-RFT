@@ -40,12 +40,21 @@ jobs:
           mkdir -p site/interactive
           gzip -dc portal-src/index.html.gz > site/interactive/index.html
 
+      - name: Inject core development portfolio into interactive page
+        run: |
+          python scripts/inject_core_portfolio.py site/interactive/index.html portal-src/core-development.html
+
       - name: Verify interactive portal output
         run: |
           test -s site/interactive/index.html
           grep -q "UltraCore-RFT.*Research Explorer" site/interactive/index.html
-          grep -q "id=\"theta-range\"" site/interactive/index.html
-          grep -q "id=\"level-range\"" site/interactive/index.html
+          grep -q 'id="theta-range"' site/interactive/index.html
+          grep -q 'id="level-range"' site/interactive/index.html
+          grep -q 'id="ultracore-core-development"' site/interactive/index.html
+          grep -q "RFT-QPU-Sierpinski" site/interactive/index.html
+          grep -q "SIRM Financial Infrastructure" site/interactive/index.html
+          grep -q "Evgeny's Theorem" site/interactive/index.html
+          grep -q "Phi-Genesis" site/interactive/index.html
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
