@@ -34,6 +34,7 @@ These links describe the scientific work and its current evidence status. Badge 
 [![Fourth-moment theorem](https://img.shields.io/badge/Formal%20result-Fourth--moment%20theorem-168f83?style=flat-square)](https://github.com/RFT-SIRM/Evgeny-Theorem/tree/main/formalization)
 [![Phi-Genesis](https://img.shields.io/badge/Phi--Genesis-Convergence%20proved%20-%20Gate%20A%20open-d97706?style=flat-square)](https://github.com/RFT-SIRM/Phi-Genesis)
 [![Interactive portal](https://img.shields.io/badge/Portal-Research%20explorer-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/interactive/)
+[![Core development portfolio](https://img.shields.io/badge/Portfolio-Core%20Development-4777bd?style=flat-square)](https://rft-sirm.github.io/UltraCore-RFT/core-development/)
 
 ## Other exploratory application programmes
 

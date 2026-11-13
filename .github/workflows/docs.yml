@@ -28,14 +28,17 @@ jobs:
       - name: Build documentation
         run: mkdocs build --strict
 
-      - name: Test interactive portfolio injector
+      - name: Verify separate research and portfolio pages
         run: |
-          python scripts/inject_core_portfolio.py --self-test
-          mkdir -p /tmp/ultracore-interactive-test
-          gzip -dc portal-src/index.html.gz > /tmp/ultracore-interactive-test/index.html
-          python scripts/inject_core_portfolio.py /tmp/ultracore-interactive-test/index.html portal-src/core-development.html
-          grep -q 'id="ultracore-core-development"' /tmp/ultracore-interactive-test/index.html
-          grep -q "RFT-QPU-Sierpinski" /tmp/ultracore-interactive-test/index.html
-          grep -q "SIRM Financial Infrastructure" /tmp/ultracore-interactive-test/index.html
-          grep -q "Evgeny's Theorem" /tmp/ultracore-interactive-test/index.html
-          grep -q "Phi-Genesis" /tmp/ultracore-interactive-test/index.html
+          test -s site/core-development/index.html
+          grep -q "Core Development Portfolio" site/core-development/index.html
+          grep -q "RFT-QPU-Sierpinski" site/core-development/index.html
+          grep -q "SIRM Financial Infrastructure" site/core-development/index.html
+          grep -q "Evgeny's Theorem" site/core-development/index.html
+          grep -q "Phi-Genesis" site/core-development/index.html
+          gzip -dc portal-src/index.html.gz > /tmp/ultracore-research-explorer.html
+          grep -q "UltraCore-RFT.*Research Explorer" /tmp/ultracore-research-explorer.html
+          if grep -q "Sierpiński-first research and engineering" /tmp/ultracore-research-explorer.html; then
+            echo "Core Development content must remain on its own page."
+            exit 1
+          fi
